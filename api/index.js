@@ -1,8 +1,9 @@
-const express = require('express')
-const app = express()
+require('dotenv').config();
 
-app.get('/', function (req, res) {
-    res.send('hello world')
-})
+const express = require('express');
 
-app.listen(3000)
+const app = express();
+
+const port = process.env.PORT || 3500;
+
+app.listen(port, _ => {console.log(`http://localhost:port`)});
