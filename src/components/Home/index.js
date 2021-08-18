@@ -19,7 +19,7 @@ function Home({projects}) {
             key={project.id}
             {...project}
           />
-        ))};
+        ))}
       </div>
       <button className="home__button">Voir plus de projets</button>
       <Footer />

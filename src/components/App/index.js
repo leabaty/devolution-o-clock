@@ -3,7 +3,7 @@ import React from 'react';
 
 // == Import
 import Home from 'src/components/Home';
-
+import SearchPageDisconnect from 'src/components/SearchPageDisconnect'
 import DataProjects from 'src/data/projects';
 import './style.scss';
 
@@ -12,9 +12,8 @@ import './style.scss';
 function App (props) {
   return (
     <div className="app">
-    <Home 
-    projects={DataProjects}
-    />
+    {/* <Home projects={DataProjects}/> */}
+    <SearchPageDisconnect projects={DataProjects}/>
   </div>
   )
 }
