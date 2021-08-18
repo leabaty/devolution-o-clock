@@ -38,10 +38,10 @@ $ git push origin my_new_branch
 
 6. Une fois l'approbation donnée, l'*auteur* de la demande de pull doit la fusionner dans la branche `main` en utilisant le mode **Merge pull request** .
 
-
 ## Conflits process
 
-1. Aller sur le ou les fichiers en conflits dans votre vscode
+1. Ouvrir dans vscode le ou les fichiers en conflits sur votre ordinateur en local
+
 2. Editez le fichier (enleve ce que t'aime ou pas) ======> head
 3. sauvegardez
 4. git add le/chemin/du/fichier
