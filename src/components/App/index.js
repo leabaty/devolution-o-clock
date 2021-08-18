@@ -1,15 +1,20 @@
 // == Import npm
 import React from 'react';
 
-// == Import
-import reactLogo from './react-logo.svg';
-import './styles.css';
+// == Import components
+import Login from 'src/components/Login';
+// import ProfilePage from 'src/components/ProfilePage';
 
-// == Composant
+
+// data, styles et utilitaires
+// import fakeData from 'src/data/fakedata';
+
+// == App
 const App = () => (
   <div className="app">
-    <img src={reactLogo} alt="react logo" />
-    <h1>Composant : App</h1>
+    <Login/>
+    {/* < ProfilePage/> */}
+
   </div>
 );
 
