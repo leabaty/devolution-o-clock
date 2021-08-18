@@ -1,3 +1,5 @@
+const { Project} = require("../Models")
+
 const projectController = {
 
     getAllProjects: async (request, response, next) => {
@@ -42,3 +44,5 @@ const projectController = {
     
 
 }
+
+module.exports=projectController

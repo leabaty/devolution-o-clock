@@ -1,18 +1,23 @@
 BEGIN;
 
+--  CREATE TYPE status as ENUM ('d','nd','bd');
+
+-- //user_status doit etre un ENUM , 
 CREATE TABLE "user" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "email" TEXT NOT NULL,
-    "password" INT NOT NULL,
+    "password" TEXT NOT NULL,
     "pseudo" TEXT NOT NULL,
-    "image_url" TEXT NOT NULL,
-    "user_status" TEXT NOT NULL ,
+    "image_url" TEXT,
+    "user_status" status,
     "lastname" TEXT NOT NULL,
     "firstname" TEXT NOT NULL,
-    "phone" TEXT ,
+    "phone" TEXT,
     "city" TEXT,
-    "links" TEXT,
-    "expérience" TEXT
+    "links" TEXT[],
+    "experience" TEXT,
+    "createdAt" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    "updatedAt" TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 CREATE TABLE "project" (
@@ -22,19 +27,25 @@ CREATE TABLE "project" (
     "project_description" TEXT,
     "need_of_the_project" TEXT,
     "beginning_date" DATE,
-    "icon"TEXT
+    "icon"TEXT,
+    "createdAt" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    "updatedAt" TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 
 CREATE TABLE "skill" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "label" TEXT NOT NULL
+    "label" TEXT NOT NULL,
+    "createdAt" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    "updatedAt" TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 
 CREATE TABLE "role" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "label" TEXT NOT NULL
+    "label" TEXT NOT NULL,
+    "createdAt" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    "updatedAt" TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 COMMIT ;
