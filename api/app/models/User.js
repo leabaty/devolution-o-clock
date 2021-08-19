@@ -1,11 +1,5 @@
-<<<<<<< HEAD:api/app/models/User.js
 const {  Model, DataTypes } = require('sequelize');
 const sequelize = require('../database')
-=======
-const { Sequelize, Model, DataTypes } = require('sequelize');
-
-const sequelize = new Sequelize('postgresql://postgres@localhost:5432/devolution');
->>>>>>> 1353f192ffbe2ca780ca09d4b2678abb6e71df08:api/Models/User.js
 
 class User extends Model{}
 User.init({
@@ -38,4 +32,6 @@ User.init({
     sequelize,
     tableName: "user"
   });
-module.exports=User
+
+  
+  module.exports=User

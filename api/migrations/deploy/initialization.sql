@@ -1,11 +1,6 @@
 BEGIN;
 
-<<<<<<< HEAD
   CREATE TYPE status as ENUM ('d','nd','bd');
-=======
-
---  CREATE TYPE status as ENUM ('d','nd','bd');
->>>>>>> 1353f192ffbe2ca780ca09d4b2678abb6e71df08
 
 -- //user_status doit etre un ENUM , 
 --DROP TABLE IF EXISTS "role","user","project","skill","user_participate_projects","user_has_skills"; a verifier !
@@ -46,14 +41,9 @@ CREATE TABLE "project" (
     "is_available" BOOLEAN NOT NULL,
     "description" TEXT,
     "need_of_the_project" TEXT,
-<<<<<<< HEAD
     "beginning_date" TIMESTAMPTZ,
     "icon"TEXT,
     "owner_id" INTEGER NOT NULL REFERENCES "user"("id"),
-=======
-    "beginning_date" DATE,
-    "icon" TEXT,
->>>>>>> 1353f192ffbe2ca780ca09d4b2678abb6e71df08
     "createdAt" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     "updatedAt" TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
@@ -74,7 +64,6 @@ CREATE TABLE "user_participate_projects"(
     "project_id" INTEGER NOT NULL REFERENCES "project"("id")
 );
 
-<<<<<<< HEAD
 CREATE TABLE "user_has_skills"(
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "user_id" INTEGER NOT NULL REFERENCES "user"("id"),
@@ -84,6 +73,3 @@ CREATE TABLE "user_has_skills"(
 
 
 COMMIT ;
-=======
-COMMIT;
->>>>>>> 1353f192ffbe2ca780ca09d4b2678abb6e71df08
