@@ -13,6 +13,7 @@ import userReducer from './user';
 const rootReducer = combineReducers({
   search: searchReducer,
   user: userReducer,
+  project : projectReducer,
 });
 
 export default rootReducer;

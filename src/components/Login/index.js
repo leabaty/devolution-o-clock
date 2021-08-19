@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 // Composants
 import SignIn from './SignIn';
-import SignUp from './SignUp';
+import SignUp from './SignUp/index';
 
 // Style
 import './style.scss';

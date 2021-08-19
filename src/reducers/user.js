@@ -1,7 +1,9 @@
 
 export const initialState = {
+  userName:'',
   email:'',
   password:'',
+  confirmPassword:''
 };
 
 const userReducer = (state = initialState, action = {}) => {
