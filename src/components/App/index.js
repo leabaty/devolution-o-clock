@@ -1,22 +1,30 @@
 // == Import npm
 import React from 'react';
 
-// == Import components
+// == Import
+import Home from 'src/components/Home';
+import SearchPageDisconnect from 'src/components/SearchPageDisconnect'
+
 // import Login from 'src/components/Login';
 import ProfilePage from 'src/components/ProfilePage';
 
 
-// data, styles et utilitaires
-// import fakeData from 'src/data/fakedata';
+import DataProjects from 'src/data/projects';
+import './style.scss';
 
-// == App
-const App = () => (
-  <div className="app">
+// == Composant
+
+function App (props) {
+  return (
+    <div className="app">
+    {/* <Home projects={DataProjects}/> */}
+    <SearchPageDisconnect projects={DataProjects}/>
     {/* <Login/> */}
     < ProfilePage/>
 
   </div>
-);
+  )
+}
 
 // == Export
 export default App;

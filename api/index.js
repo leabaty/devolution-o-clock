@@ -1,8 +1,22 @@
-const express = require('express')
-const app = express()
+require('dotenv').config();
 
-app.get('/', function (req, res) {
-    res.send('hello world')
-})
+const express = require('express');
 
 app.listen(3000)
+
+const app = express();
+
+const routeur = require('./Router/router');
+app.use(routeur);
+
+const port = process.env.PORT || 3600;
+const DATABASE_URL = process.env.BASE_URL;
+
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.json());
+
+app.listen(port, (_) =>{
+  console.log(`http://localhost:${port}`)
+});
