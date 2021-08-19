@@ -2,8 +2,8 @@
 import React from 'react';
 
 // == Import components
-import Login from 'src/components/Login';
-// import ProfilePage from 'src/components/ProfilePage';
+// import Login from 'src/components/Login';
+import ProfilePage from 'src/components/ProfilePage';
 
 
 // data, styles et utilitaires
@@ -12,8 +12,8 @@ import Login from 'src/components/Login';
 // == App
 const App = () => (
   <div className="app">
-    <Login/>
-    {/* < ProfilePage/> */}
+    {/* <Login/> */}
+    < ProfilePage/>
 
   </div>
 );
