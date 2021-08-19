@@ -2,16 +2,21 @@
 import React from 'react';
 
 // == Import
-import reactLogo from './react-logo.svg';
-import './styles.css';
+import Home from 'src/components/Home';
+import SearchPageDisconnect from 'src/components/SearchPageDisconnect'
+import DataProjects from 'src/data/projects';
+import './style.scss';
 
 // == Composant
-const App = () => (
-  <div className="app">
-    <img src={reactLogo} alt="react logo" />
-    <h1>Composant : App</h1>
+
+function App (props) {
+  return (
+    <div className="app">
+    {/* <Home projects={DataProjects}/> */}
+    <SearchPageDisconnect projects={DataProjects}/>
   </div>
-);
+  )
+}
 
 // == Export
 export default App;

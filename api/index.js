@@ -6,6 +6,17 @@ app.listen(3000)
 
 const app = express();
 
-const port = process.env.PORT || 3500;
+const routeur = require('./Router/router');
+app.use(routeur);
 
-app.listen(port, _ => {console.log(`http://localhost:port`)});
+const port = process.env.PORT || 3600;
+const DATABASE_URL = process.env.BASE_URL;
+
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.json());
+
+app.listen(port, (_) =>{
+  console.log(`http://localhost:${port}`)
+});
