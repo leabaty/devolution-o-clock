@@ -1,6 +1,10 @@
 {
-  "name": "react-modele",
+  "name": "Apo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "lint": "eslint src/**/*.js",
@@ -47,9 +51,11 @@
     "webpack-dev-server": "*",
     "webpack-merge": "*"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "prop-types": "*",
-    "react": "*",
-    "react-dom": "*"
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
   }
 }
