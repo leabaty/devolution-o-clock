@@ -1,7 +1,9 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('sqlite::memory:');
 
-class Project extends Model {}
+const sequelize = require('../database');
+
+class Project extends Sequelize.Model{}
+
 Project.init({
     name:DataTypes.STRING,
     project_status:DataTypes.BOOLEAN,

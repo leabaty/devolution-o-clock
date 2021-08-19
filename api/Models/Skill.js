@@ -1,8 +1,9 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('sqlite::memory:');
+
+const sequelize = new Sequelize('postgresql://postgres@localhost:5432/devolution');
 
 class Skill extends Model {}
-User.init({
+Skill.init({
     label:DataTypes.STRING
 },{
     sequelize,

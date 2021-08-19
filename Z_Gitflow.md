@@ -41,7 +41,8 @@ $ git push origin my_new_branch
 
 ## Conflits process
 
-1. Aller sur le ou les fichiers en conflits dans votre vscode
+
+1. Ouvrir dans vscode le ou les fichiers en conflits sur votre ordinateur en local
 2. Editez le fichier (enleve ce que t'aime ou pas) ======> head
 3. sauvegardez
 4. git add le/chemin/du/fichier
