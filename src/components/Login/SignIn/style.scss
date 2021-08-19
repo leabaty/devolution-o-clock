@@ -1,0 +1,42 @@
+//TODO: aligner le titre "J'ai déjà un compte" à gauche
+
+.signin {
+    &__component{
+        width: 50%;
+        padding-right: 5%;
+        text-align: right;
+    }
+
+    &__title{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    &__form{
+        flex-direction: column;
+        align-content: flex-end;
+    }
+
+    &__input{
+        border-radius: 25px;
+        padding: 10px;
+        width: 300px;
+        border:none;
+        margin-bottom: 20px;
+    }
+
+    &__input::placeholder {
+        font-family: 'Nunito';
+      }
+
+    &__send{
+        border-radius: 25px;
+        padding: 10px;
+        width: 300px;
+        border:none;
+        margin-bottom: 20px;
+        background-color: #0D273F;
+        color: white;
+        font-family: 'Nunito';
+    }
+}
