@@ -5,6 +5,7 @@ import React from 'react';
 
 // Composants
 import Menu from 'src/components/Menu';
+import ProfileBio from './ProfileBio';
 
 // Style
 import './style.scss';
@@ -33,12 +34,15 @@ function ProfilePage() {
       <div className="profile__status element">
         <p className="profile__status-indicator">Disponible</p>
       </div>
+      <ProfileStatus/>
 
       <div className="profile__contact-info element">
         <p className="profile__name"> Maxime Durand </p>
         <p className="profile__email"> maxime@gmail.com </p>
         <p className="profile__phone"> 07878677A0</p>
       </div>
+
+      <ProfileContact/>
 
       <div className="profile__city-links element">
         <p className="profile__city-name"> Paris</p>
@@ -52,19 +56,23 @@ function ProfilePage() {
           <img className="profile__github-icon" src="" alt="GitHub icon"/>
         </a>
       </div>
+      <ProfileCityLinks/>
 
       <div className="profile__competencies element">
         <h3 className="profile__category-title">Mes compétences</h3>
       </div>
+      <ProfileCompetencies/>
 
       <div className="profile__bio element">
         <h3 className="profile__category-title">Ma bio</h3>
         <p className="profile__description">Nia nia nia</p>
       </div>
+      <ProfileBio/>
 
       <div className="profile__portfolio element">
         <a className="profile__portfolio-link" alt="Portfolio Link">Nia nia nia</a>
       </div>
+      <ProfilePortfolio/>
 
     </div>
     </div>

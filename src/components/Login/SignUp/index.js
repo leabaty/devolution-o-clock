@@ -7,10 +7,8 @@ function SignUp ({
   // userNameValue,
   // emailValue,
   // passwordValue,
-  changeUserName
-  // onEmailChange,
-  // onPasswordChange,
   // onSignUpSubmit,
+  onChangeInputValue,
 }) {
   const onSignUpSubmit = (event) => {
     event.preventDefault();
@@ -18,20 +16,21 @@ function SignUp ({
     // onFormSubmit();
   }
   const onChangeUserName = (event) => {
-    console.log("name")
-    changeUserName();
+    console.log("username")
+    onChangeInputValue(event.target.value);
   }
+
   const onChangeEmail = (event) => {
     console.log("email")
-    // onChangeUserName();
+    onChangeInputValue(event.target.value);
   }
   const onChangePassword = (event) => {
     console.log("mdp")
-    // onChangeUserName();
+    onChangeInputValue(event.target.value);
   }
   const onChangePasswordconfirm = (event) => {
     console.log("mdp confirm")
-    // onChangeUserName();
+    onChangeInputValue(event.target.value);
   }
   return(
   <div className="signup__component">
@@ -79,6 +78,7 @@ function SignUp ({
 };
 
 SignUp.propTypes = {
+  onChangeInputValue: PropTypes.func.isRequired,
   // userNameValue: PropTypes.string.isRequired,
   // emailValue: PropTypes.string.isRequired,
   // passwordValue: PropTypes.string.isRequired,
