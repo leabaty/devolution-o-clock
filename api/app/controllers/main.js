@@ -13,7 +13,7 @@ const mainController = {
 
   searchProject :async (req, res) => {
 
-    // console.log(req.params.query +'.query');  
+    //console.log(req.params.query +'.query');  
     try {
         const inputSearchParam = await req.params.query;
         const inputSearchQuery = await req.query;
