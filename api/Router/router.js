@@ -15,6 +15,7 @@ const userController=require('../controllers/userController');
 router.get('/',mainController.homePage);
 router.get('/login', userController.login);
 router.post('/login', userController.login);
+router.post('/create' , userController.signUp);
 
  module.exports=router
 

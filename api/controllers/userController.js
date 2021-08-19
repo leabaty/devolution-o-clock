@@ -32,7 +32,9 @@ const userController={
 
     signUp : async (request, response, next) => {  
        try {
-        const user = await User.create({
+        const user = await User.build({ name:"newUserBySequelize",
+        password:"wokey",
+        pseudo:request.query.pseudo,
          
         });console.log(req.body);
         if (!user) {
