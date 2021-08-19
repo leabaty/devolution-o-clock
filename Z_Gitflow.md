@@ -36,7 +36,7 @@ $ git push origin my_new_branch
 
 5. Sur GitHub, créez une nouvelle `pull request` pour merge `my_new_branch` dans `main`.
 
-6. Une fois l'approbation donnée, l'*auteur* de la demande de pull doit la fusionner dans la branche `main` en utilisant le mode **Merge pull request** .
+6. Une fois l'approbation donnée, l'*auteur* de la demande de pull doit la fusionner dans la branche `main` en utilisant le mode **Merge pull request**.
 
 ## Conflits process
 
