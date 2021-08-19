@@ -2,7 +2,6 @@ require('dotenv').config();
 
 const express = require('express');
 
-
 const app = express();
 const cors = require("cors");
 const router = require('./app/routers');
@@ -19,4 +18,3 @@ const port = process.env.PORT || 3600;
 app.listen(port, (_) =>{
   console.log(`http://localhost:${port}`)
 });
-
