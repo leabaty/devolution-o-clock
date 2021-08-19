@@ -1,0 +1,23 @@
+.projectDisconnect{
+  &__header{
+    height: 20vh;
+    min-height: 170px;
+    background: linear-gradient(180deg, #1A3A58 20%, #346797 100%);
+    padding: 30px;
+    text-align: center;
+    color: white;
+    &__title{
+      font-size: 2rem;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    &__pseudo{
+      display: inline-block;
+      background-color: white;
+      color: #2A5680;
+
+      padding: 2px 15px;
+      border-radius: 20px;
+    }
+  }
+}
