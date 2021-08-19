@@ -1,0 +1,33 @@
+.header {
+  height: 40vh;
+  color: white;
+  background: linear-gradient(180deg, #1A3A58 20%, #346797 100%);
+  padding: 30px;
+  text-align: center;
+  &__logo{
+    display: flex;
+    justify-content: space-between;
+    &__devolution{
+      height: 50px;
+    }
+    &__login{
+      height: 30px;
+    }
+  }
+  &__title{
+    font-size: 2rem;
+    margin-top: 70px;
+  }
+  &__description{
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  &__input{
+    margin-top: 25px;
+    width: 300px;
+    height: 25px;
+    border-radius: 30px;
+    border: none;
+    padding-left: 20px;
+  }
+}

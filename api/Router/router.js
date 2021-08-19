@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const router = express.Router();
@@ -17,5 +18,4 @@ router.get('/login', userController.login);
 router.post('/login', userController.login);
 router.post('/create' , userController.signUp);
 
- module.exports=router
-
+module.exports=router

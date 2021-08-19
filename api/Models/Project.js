@@ -1,7 +1,9 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
+
 const sequelize = require('../database');
 
 class Project extends Sequelize.Model{}
+
 Project.init({
     name:DataTypes.STRING,
     project_status:DataTypes.BOOLEAN,

@@ -1,5 +1,6 @@
 BEGIN;
 
+
 --  CREATE TYPE status as ENUM ('d','nd','bd');
 
 -- //user_status doit etre un ENUM , 
@@ -27,7 +28,7 @@ CREATE TABLE "project" (
     "project_description" TEXT,
     "need_of_the_project" TEXT,
     "beginning_date" DATE,
-    "icon"TEXT,
+    "icon" TEXT,
     "createdAt" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     "updatedAt" TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
@@ -48,4 +49,4 @@ CREATE TABLE "role" (
     "updatedAt" TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-COMMIT ;
+COMMIT;

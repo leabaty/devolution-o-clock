@@ -1,3 +1,4 @@
+
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('postgresql://postgres@localhost:5432/devolution');
 
@@ -5,7 +6,6 @@ const User = require('./User');
 const Project = require ('./Project');
 const Role = require ('./Role');
 const Skill = require('./Skill');
-
 
 //revoir les tables de liaisons et les clés étrangéres !!!! 
 
@@ -48,10 +48,3 @@ const Skill = require('./Skill');
 
 
 module.exports = {User,Skill,Project,Role}
-
-
-
-
-
-
-
