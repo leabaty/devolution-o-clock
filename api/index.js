@@ -2,11 +2,12 @@ require('dotenv').config();
 
 const express = require('express');
 
+app.listen(3000)
+
 const app = express();
 
 const routeur = require('./Router/router');
 app.use(routeur);
-
 
 const port = process.env.PORT || 3600;
 const DATABASE_URL = process.env.BASE_URL;
