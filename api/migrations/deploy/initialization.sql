@@ -1,11 +1,6 @@
 BEGIN;
 
-<<<<<<< HEAD
-  CREATE TYPE status as ENUM ('d','nd','bd');
-=======
-
---  CREATE TYPE status as ENUM ('d','nd','bd');
->>>>>>> 1353f192ffbe2ca780ca09d4b2678abb6e71df08
+CREATE TYPE status as ENUM ('d','nd','bd');
 
 -- //user_status doit etre un ENUM , 
 --DROP TABLE IF EXISTS "role","user","project","skill","user_participate_projects","user_has_skills"; a verifier !

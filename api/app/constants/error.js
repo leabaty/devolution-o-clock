@@ -12,7 +12,7 @@ module.exports = {
   MISSING_TOKEN: "You must provide a token",
   TOKEN_AUTH_FAILED: "Failed to authenticate token.",
   UNAUTHORIZED: "You are not authorized to perform this action",
-  MISSING_EXPLORATION_NAME: "Please provide an exploration name",
+  MISSING_PROJECT_NAME: "Please provide an exploration name",
   PROJECT_LIMIT_REACHED: "You have reached the maximum number of participants allowed",
   PASSWORD_TOO_SHORT: "The password must be at least 8 characters long",
   PASSWORD_UPDATED: "Password updated. Please login again",
