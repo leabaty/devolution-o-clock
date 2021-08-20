@@ -3,6 +3,7 @@ const { Op } = require("sequelize");
 
 const mainController = {
   homePage : (req, res) => {
+    console.log('toto')
     res.json({"Project": "Dévolution",
     "version":"0.1",
     "Product Owner" : "Léa-B",
