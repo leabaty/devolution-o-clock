@@ -79,29 +79,83 @@ const userController={
         }
     },
 
-    getOneUser : async (request, response, next) => {
-        try {
+    getAll: async (request, response, next) => {
+      try {
+        const users = await User.findAll();
+        response.json(users);
+      } catch (error) {
+          console.log(error)
+      }
+  },
 
+    getOne : async (request, response) => {
+      console.log('je suis avant le try')
+        try {
+            const user = await User.findByPk(request.params.id);
+            console.log(user);
+            if(!user){
+              return response.status(404).json({
+              "message":"user Not Found !"
+              });
+            }
+           
+            return response.json({user})
         } catch (error) {
-            
+          console.error(error);
+          return res.status(500).send({
+              message: "Internal server error. Please retry later",
+          });
         }
+        
     },
 
-    updateOneUser : async (request, response, next) => {
-        try {
-            
-        } catch (error) {
-            
+
+    updateOne : async (request, res, next) => {
+      console.log('je passe par le updateOne')
+      try {
+        const userToUpdate = await User.findByPk(request.params.id);
+        console.log(userToUpdate)
+        if (!userToUpdate) {
+            return res.status(404).json({
+                message: "User not found",
+            });
         }
+
+        await userToUpdate.update({
+            ...request.body,
+        });
+        //const result = {...request.body} cibler le champ qui a été modifier .
+        return res.status(200).json({
+            message: `Informations updated `
+        });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send({
+            message: "Internal server error. Please retry later",
+        });
+    }
+      next()
     },
 
-    deleteOneUser : async (request, response, next) => {
-        try {
-            
-        } catch (error) {
-            
-        }
-    },
+    deleteOne : async (request, response) => {
+      try {
+          const userToDelete = await User.findByPk(request.params.id);
+          console.log(userToDelete);
+          if(!userToDelete){
+            return response.status(404).json({
+            "message":"user Not Found !"
+            });
+          }
+          await userToDelete.destroy()
+          return response.json({"message":"Your user is deleted"})
+      } catch (error) {
+        console.error(error);
+        return res.status(500).send({
+            message: "Internal server error. Please retry later",
+        });
+      }
+      
+  },
 
     getMyParticipatedProject: async (request, response, next) => {
         try {
