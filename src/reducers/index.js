@@ -2,8 +2,9 @@ import { combineReducers } from 'redux';
 // combineReducers est une fonction de Redux qui permet d'agréger plusieurs
 // sous-reducers
 
-import searchReducer from './recipes';
+import searchReducer from './search';
 import userReducer from './user';
+import projectReducer from './project';
 
 // on passe en argument un objet qui viendra prendre les propriétés principales
 // de notre state global

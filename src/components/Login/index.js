@@ -12,7 +12,16 @@ import SignUp from './SignUp/index';
 import './style.scss';
 
 // == Composant
-function Login() {
+function Login({
+  changeInputNameValue,
+  changeInputEmailValue,
+  changeInputPasswordValue,
+  changeInputPasswordConfirmValue,
+  name,
+  email,
+  password
+}) {
+  console.log(name)
   return (
     <div className="login">
       <Link to="/">
@@ -20,7 +29,15 @@ function Login() {
       </Link>
       <div className="login__forms">
         <SignIn />
-        <SignUp />
+        <SignUp 
+          onChangeInputNameValue={changeInputNameValue}
+          onChangeInputEmailValue={changeInputEmailValue}
+          onChangeInputPasswordValue={changeInputPasswordValue}
+          onChangeInputPasswordConfirmValue={changeInputPasswordConfirmValue}
+          name={name}
+          email={email}
+          password={password}
+        />
       </div>
     </div>
   );

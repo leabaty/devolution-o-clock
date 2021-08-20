@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 function SignUp ({
-  // userNameValue,
-  // emailValue,
-  // passwordValue,
-  // onSignUpSubmit,
-  onChangeInputValue,
+  onChangeInputNameValue,
+  onChangeInputEmailValue,
+  onChangeInputPasswordValue,
+  onChangeInputPasswordConfirmValue,
+  name,
+  email,
+  password
 }) {
   const onSignUpSubmit = (event) => {
     event.preventDefault();
@@ -16,21 +18,21 @@ function SignUp ({
     // onFormSubmit();
   }
   const onChangeUserName = (event) => {
-    console.log("username")
-    onChangeInputValue(event.target.value);
+    console.log(event.target.value)
+    onChangeInputNameValue(event.target.value);
   }
 
   const onChangeEmail = (event) => {
     console.log("email")
-    onChangeInputValue(event.target.value);
+    onChangeInputEmailValue(event.target.value);
   }
   const onChangePassword = (event) => {
     console.log("mdp")
-    onChangeInputValue(event.target.value);
+    onChangeInputPasswordValue(event.target.value);
   }
-  const onChangePasswordconfirm = (event) => {
+  const onChangePasswordConfirm = (event) => {
     console.log("mdp confirm")
-    onChangeInputValue(event.target.value);
+    onChangeInputPasswordConfirmValue(event.target.value);
   }
   return(
   <div className="signup__component">
@@ -41,19 +43,19 @@ function SignUp ({
     >
       <input
         className="signup__input"
-        // value={userNameValue}
+        value={name}
         onChange={onChangeUserName}
         placeholder="Nom d'utilisateur"
       />
       <input
         className="signup__input"
-        // value={emailValue}
+        value={email}
         onChange={onChangeEmail}
         placeholder="Adresse email"
       />
       <input
         className="signup__input"
-        // value={passwordValue}
+        value={password}
         onChange={onChangePassword}
         type="password"
         placeholder="Mot de passe"
@@ -61,7 +63,7 @@ function SignUp ({
       <input
         className="signup__input"
         // value={passwordConfirmValue}
-        onChange={onChangePasswordconfirm}
+        onChange={onChangePasswordConfirm}
         type="password"
         placeholder="Répétez le mot de passe"
       />
@@ -78,7 +80,7 @@ function SignUp ({
 };
 
 SignUp.propTypes = {
-  onChangeInputValue: PropTypes.func.isRequired,
+  // onChangeInputValue: PropTypes.func.isRequired,
   // userNameValue: PropTypes.string.isRequired,
   // emailValue: PropTypes.string.isRequired,
   // passwordValue: PropTypes.string.isRequired,

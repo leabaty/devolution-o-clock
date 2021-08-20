@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 // == Import
 import Home from 'src/components/Home';
 import SearchPageDisconnect from 'src/components/SearchPageDisconnect'
-import Login from 'src/components/Login';
+import Login from 'src/containers/Login';
 import ProfilePage from 'src/components/ProfilePage';
 
 

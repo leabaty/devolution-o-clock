@@ -1,15 +1,18 @@
 import {
-  CHANGE_FIELD_VALUE
+  CHANGE_NAME_VALUE,
+  CHANGE_EMAIL_VALUE,
+  CHANGE_PASSWORD_VALUE,
+  CHANGE_PASSWORD_CONFIRM_VALUE,
 } from 'src/actions';
 
 // les valeurs par défaut sont stockées dans le state initial
 const initialState = {
   messages: [],
-  pseudo: 'Anonyme',
+  pseudo: '',
   newMessage: '',
   isOpen: true,
-  email: 'acidman@herocorp.io',
-  password: 'fructis',
+  email: '',
+  password: '',
   loginError: false,
   isConnected: false,
 };
@@ -20,12 +23,36 @@ const reducer = (state = initialState, action = {}) => {
   // en fonction de la propriété type de l'action
   // on va retourner un state changer ou pas
   switch (action.type) {
-    case CHANGE_FIELD_VALUE: {
+    case CHANGE_NAME_VALUE: {
       return {
         ...state,
         // ici on vient changer dynamiquement la propriété du state
         // celle-ci sera fonction de la valeur stockée dans action.key
-        [action.key]: action.value,
+        pseudo: action.value,
+      };
+    }
+    case CHANGE_EMAIL_VALUE: {
+      return {
+        ...state,
+        // ici on vient changer dynamiquement la propriété du state
+        // celle-ci sera fonction de la valeur stockée dans action.key
+        email: action.value,
+      };
+    }
+    case CHANGE_PASSWORD_VALUE: {
+      return {
+        ...state,
+        // ici on vient changer dynamiquement la propriété du state
+        // celle-ci sera fonction de la valeur stockée dans action.key
+        password: action.value,
+      };
+    }
+    case CHANGE_PASSWORD_CONFIRM_VALUE: {
+      return {
+        ...state,
+        // ici on vient changer dynamiquement la propriété du state
+        // celle-ci sera fonction de la valeur stockée dans action.key
+        // pseudo: action.value,
       };
     }
 
