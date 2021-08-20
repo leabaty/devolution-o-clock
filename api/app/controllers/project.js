@@ -1,8 +1,8 @@
-const { Project} = require("../Models")
+const { Project} = require("../models")
 
-const projectController = {
+module.exports = {
 
-    getAllProjects: async (request, response, next) => {
+    getAll: async (request, response, next) => {
         try {
             
         } catch (error) {
@@ -10,7 +10,7 @@ const projectController = {
         }
     },
 
-    getOneProject : async (request, response, next) => {
+    getOne : async (request, response, next) => {
         try {
             
         } catch (error) {
@@ -18,7 +18,7 @@ const projectController = {
         }
     },
 
-    updateOneProject : async (request, response, next) => {
+    updateOne : async (request, response, next) => {
         try {
             
         } catch (error) {
@@ -26,7 +26,7 @@ const projectController = {
         }
     },
 
-    deleteOneProject : async (request, response, next) => {
+    deleteOne : async (request, response, next) => {
         try {
             
         } catch (error) {
@@ -45,4 +45,4 @@ const projectController = {
 
 }
 
-module.exports=projectController
+

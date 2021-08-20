@@ -1,6 +1,5 @@
-const { Sequelize, Model, DataTypes } = require('sequelize');
-
-const sequelize = new Sequelize('postgresql://postgres@localhost:5432/devolution');
+const {  Model, DataTypes } = require('sequelize');
+const sequelize = require('../database')
 
 class User extends Model{}
 User.init({
@@ -13,10 +12,26 @@ User.init({
   firstname:DataTypes.STRING,
   phone:DataTypes.STRING,
   city:DataTypes.STRING,
-  links:DataTypes.STRING,
+  linkedin: {
+    type: DataTypes.TEXT,
+  },
+  github: {
+    type: DataTypes.TEXT,
+  },
+  twitter: {
+    type: DataTypes.TEXT,
+  },
+  portfolio:{
+    type: DataTypes.TEXT,
+  },
+  facebook: {
+    type: DataTypes.TEXT,
+  },
   experience:DataTypes.STRING
 },{
     sequelize,
     tableName: "user"
   });
-module.exports=User
+
+  
+  module.exports=User
