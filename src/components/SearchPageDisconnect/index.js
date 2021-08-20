@@ -1,5 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import CardProject from 'src/components/CardProject';
 import Footer from 'src/components/Footer';
@@ -11,8 +12,12 @@ function SearchPageDisconnect({projects}) {
     <div className="searchDisconnect">
       <div className="searchDisconnect__header">
         <div className="header__logo">
-          <a href=""><img className="header__logo__devolution" src="https://cdn.discordapp.com/attachments/874925609267118140/877480623034478622/test_Logo_-_transparent_white.png" alt="Logo Devolution" /></a>
-          <a href=""><img className="header__logo__login" src="https://cdn.discordapp.com/attachments/874925609267118140/877480628810027028/test_login_-_transparent_white.png" alt="Logo login" /></a>
+          <Link to='/'>
+            <img className="header__logo__devolution" src="https://cdn.discordapp.com/attachments/874925609267118140/877480623034478622/test_Logo_-_transparent_white.png" alt="Logo Devolution" />
+          </Link>
+          <Link to='/login'>
+            <img className="header__logo__login" src="https://cdn.discordapp.com/attachments/874925609267118140/877480628810027028/test_login_-_transparent_white.png" alt="Logo login" />
+          </Link>
         </div>
         <input type="text" placeholder="Recherche..." className="header__input" />
       </div>

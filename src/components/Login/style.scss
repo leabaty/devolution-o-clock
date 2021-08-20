@@ -1,16 +1,19 @@
 body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.login {
     background-color: #1A3A58;
     background-image: linear-gradient(0deg,#1A3A58 0%, #12273b 100%);
     background-repeat: no-repeat;
     color:white;
     font-family: 'Nunito', sans-serif;
-}
-
-.login {
+    height: 100vh;
     &__forms {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+
     }
 
     &__logo {

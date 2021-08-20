@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 
 import Header from 'src/components/Header';
 import CardProject from 'src/components/CardProject';
@@ -21,7 +22,9 @@ function Home({projects}) {
           />
         ))}
       </div>
-      <button className="home__button">Voir plus de projets</button>
+      <Link to='/searchProjects'>
+        <button className="home__button">Voir plus de projets</button>
+      </Link>
       <Footer />
     </div>
   )
