@@ -20,15 +20,15 @@ const mainController = {
         console.log(inputSearchQuery)
         res.json({"message":"vous avez tapé "+ inputSearchParam})
 
-        // const search = await Project.findAll({
-        //   where : {
-        //     [Op.or]:{
-        //       value : {
-        //         [Op.iLike]: name
-        //       }
-        //     }
-        //   }
-        // })
+        const search = await Project.findAll({
+          where : {
+            [Op.or]:{
+              value : {
+                [Op.iLike]: inputSearchParam
+              }
+            }
+          }
+        })
       } catch (error) {
         console.log(error)
       }
