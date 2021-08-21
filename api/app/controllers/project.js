@@ -95,6 +95,20 @@ module.exports = {
         next()
       },
 
+      teamInProject: async (request, response) => {
+        try {
+          const user = request.params.id;
+          const participatedAt = await Project.findAll({
+            include:['participants'],
+            where : { id : user }
+          });
+            response.json({participatedAt})
+        } catch (error) {
+            console.log(error);
+            response.status(500).json({errorMessage:UNAUTHORIZED})
+        }
+    },
+
     deleteOne : async (request, response, next) => {
         try {
             const projectToDelete = await Project.findByPk(request.params.id);

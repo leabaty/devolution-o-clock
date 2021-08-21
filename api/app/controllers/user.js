@@ -1,7 +1,8 @@
-const { User} = require("../models")
+const { User, Project, Skill} = require("../models")
 const bcrypt = require('bcrypt');
 const { Op } = require("sequelize");
 const errorMessage = require('../constants/error');
+const { UNAUTHORIZED } = require("../constants/error");
 
 const userController={
 
@@ -157,22 +158,37 @@ const userController={
       
   },
 
-    getMyParticipatedProject: async (request, response, next) => {
-        try {
-            
-        } catch (error) {
-            
-        }
-    },
+
 
     getMyCreatedProject : async (request, response, next) => {
         try {
-            
+            const owner = request.params.id
+            const myProject = await Project.findAll({
+              where : { owner_id : owner}
+            });
+            response.json({"My Created Projects": myProject})
         } catch (error) {
-            
+          console.log(error);
+          response.status(500).json({errorMessage:UNAUTHORIZED})
         }
     },
 
+    getUserSkills : async (request,response)=>{
+      try {
+        //ici on récupere l'id du user dans l'url si on veut dans un input on passe par request.body
+        const user= request.params.id;
+        console.log(user)
+        const mySkills = await User.findOne({
+          include : ['users_skills'],
+          where : {id : user}
+        });
+
+        response.json({"user skills" : mySkills})
+
+      } catch (error) {
+        console.log(error)
+      }
+    },
 
 }
 

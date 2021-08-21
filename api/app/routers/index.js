@@ -15,6 +15,9 @@ router.put('/user/:id',userController.updateOne);
 router.post('/user/create' ,userController.signUp);
 router.get('/users' ,userController.getAll);
 router.get('/user/:id' ,userController.getOne);
+router.get('/user/:id/myprojects',userController.getMyCreatedProject);
+
+router.get('/user/:id/skills',userController.getUserSkills);
 router.delete('/user/:id' ,userController.deleteOne);
 
 //Projects
@@ -23,6 +26,7 @@ router.post('/project/create', projectController.create)
 router.get('/project/:id' ,projectController.getOne);
 router.put('/project/:id',projectController.updateOne);
 router.delete('/project/:id' ,projectController.deleteOne);
+router.get('/project/:id/participated',projectController.teamInProject);
 
 
 router.get('/search/:query',mainController.searchProject);
