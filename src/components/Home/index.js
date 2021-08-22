@@ -9,7 +9,10 @@ import Footer from 'src/components/Footer';
 
 import './style.scss'
 
-function Home({projects}) {
+function Home({projects, lastProjectsLoading}) {
+  // const onHomePageLoading = () => {
+  //   lastProjectsLoading();
+  // }
   return (
     <div className="home">
       <Header />
