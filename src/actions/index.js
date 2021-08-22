@@ -33,5 +33,5 @@ export const getLastProjects = () => ({
 
 export const saveLastProjects = (projects) => ({
   type: SAVE_LAST_PROJECTS,
-  projects
+  projects,
 });
