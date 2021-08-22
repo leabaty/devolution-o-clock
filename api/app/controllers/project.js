@@ -1,7 +1,7 @@
 const { Project} = require("../models");
 const { Op } = require("sequelize");
 const {errorMessage} = require('../constants/error');
-const { search } = require("../routers");
+
 
 module.exports = {
 
@@ -17,7 +17,9 @@ module.exports = {
     getOne: async (request, response) => {
       console.log('je suis avant le try')
         try {
-            const project = await Project.findByPk(request.params.id);
+            
+            const project = await Project.findByPk(request.params.id,
+              {include : ['participants']});
             console.log(project);
             if(!project){
               return response.status(404).json({
@@ -127,6 +129,28 @@ module.exports = {
           });
         }
         
+    },
+
+    addTeamUser: async (request, response) => {
+      try {
+        const { id, userId } = request.params;
+  
+        const user = await User.findByPk(userId);
+        const project = await Project.findByPk(id, {
+          include: ["participants"],
+        });
+  
+        await project.addParticipant(user);
+  
+        response.status(200).json({
+          message: errorMessage.SUBSCRIBE_SUCCESS,
+        });
+      } catch (error) {
+        console.error(error);
+        return response.status(500).json({
+          message: errorMessage.INTERNAL_ERROR,
+        });
+      }
     },
 
     deleteTeamUser : async (request, response, next) => {

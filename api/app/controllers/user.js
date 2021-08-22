@@ -1,6 +1,7 @@
 const { User, Project, Skill} = require("../models")
 const bcrypt = require('bcrypt');
 const { Op } = require("sequelize");
+const {jwt}=require('../utils')
 const errorMessage = require('../constants/error');
 const { UNAUTHORIZED } = require("../constants/error");
 
@@ -8,6 +9,7 @@ const userController={
 
     login : async (request, response) => {
         try {
+          //dans l'objet request.body je veux le login et le password stocker dans une const.
           const { login, password } = request.body;
 
           if (!login || !password) {
@@ -28,7 +30,7 @@ const userController={
                   },
                 });
                 if (!user) {
-                  return res.status(404).json({
+                  return response.status(404).json({
                     message: errorMessage.EMAIL_NOT_FOUND,
                   });
                 };
@@ -39,11 +41,25 @@ const userController={
                     login,
                   });
                 }
-                return response.json(user)
-      // si tout va bien, on met l'utilisateur en session...
-      // req.session.user = user;
-      // //... mais on supprime son mdp !
-      // delete req.session.user.password;
+              
+                const userData = user.toJSON();
+                const accessToken = jwt.generateAccessToken(userData);
+                const refreshToken = jwt.generateRefreshToken(userData);
+          
+
+                // const tokenToSave = new Token({
+                //   user_id: user.id,
+                //   token: refreshToken,
+                // });
+          
+                // await tokenToSave.save();
+          
+                return response.json({
+                  ...userData,
+                  accessToken,
+                  refreshToken,
+                });
+
         } catch (error) {
           console.log(error)
           response.status(500).json({"message" : "Veuillez tentez de vous reconnecter, créer un compte si vous n'en avez pas"})
