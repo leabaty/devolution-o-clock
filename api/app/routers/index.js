@@ -10,6 +10,8 @@ const {tokenMiddleware}= require('../middlewares')
 //User
 router.get('/',mainController.homePage);
 router.post('/login',userController.login);
+router.get('/logout',userController.logout);
+router.get('/me', tokenMiddleware.authenticate,userController.profil);
 router.put('/user/:id',tokenMiddleware.authenticate ,userController.updateOne);
 router.post('/user/create' ,userController.signUp);
 router.get('/users' ,tokenMiddleware.authenticate ,userController.getAll);
@@ -40,5 +42,3 @@ router.post('/projects/:search',tokenMiddleware.authenticate ,projectController.
 
 
 module.exports=router
-
-

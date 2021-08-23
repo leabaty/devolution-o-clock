@@ -67,33 +67,64 @@ const userController={
     },
 
     signUp : async (request, response) => {  
+      try {
+        const { email, password, pseudo, lastname, firstname} = request.body;
+        
+        const salt = await bcrypt.genSalt(10);
+        const encryptedPassword = await bcrypt.hash(password, salt);
 
-      const salt = await bcrypt.genSalt(10);
-      const encryptedPassword = await bcrypt.hash(request.body.password, salt);
-       try {
         const newUser = await User.create({ 
-        email:request.body.email,
-        password:encryptedPassword,
-        pseudo:request.body.pseudo,
-        lastname:request.body.lastname,
-        firstname:request.body.firstname,
+          email:email,
+          password:encryptedPassword,
+          pseudo:pseudo,
+          lastname:lastname,
+          firstname:firstname,
         });
         
-        console.log(newUser);
+        console.log(newUser.id);
         if (newUser) {
-          return response.json({"message": "Votre compte a été créer!"});
-        }
+
+          const userData = newUser.toJSON();
+          const accessToken = jwt.generateAccessToken(userData);
+          const refreshToken = jwt.generateRefreshToken(userData);
+        
+          // const tokenToSave = new Token({
+          //   user_id: user.id,
+          //   token: refreshToken,
+          // });
+          // await tokenToSave.save();
+          
+            return response.status(200).json({
+              ...userData,
+              accessToken,
+              refreshToken,
+              "message": "Votre compte a été créer!"
+            });
+          }
         } catch (error) {
             console.log(error) 
         }
     },
 
-    logout : async (request, response) => {
-       try {
-            
+    logout : (request, response) => {
+      return response.status(200).json({token:null});
+    },
+
+    profil: async (request, response) => {
+      const { user } = request;
+      user.password = null;
+      console.log(user)
+      try {
+
+        return response.status(200).json({
+          user,
+        });
+      
         } catch (error) {
-            
+          console.log(error)
+          response.status(500).json({"message" : "Veuillez tentez de vous reconnecter, créer un compte si vous n'en avez pas"})
         }
+      
     },
 
     getAll: async (request, response, next) => {
