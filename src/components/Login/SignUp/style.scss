@@ -1,6 +1,6 @@
 .signup {
     &__component{
-        width: 50%;
+        width: 25em;
         padding-left: 5%;
         border-left:solid white 2px;
     }
@@ -13,7 +13,6 @@
     &__form{
         display:flex;
         flex-direction: column;
-
     }
 
     &__input{

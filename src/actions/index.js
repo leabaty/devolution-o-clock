@@ -1,5 +1,7 @@
 // ACTION TYPES
-export const CHANGE_NAME_VALUE = 'CHANGE_NAME_VALUE';
+export const CHANGE_FIRSTNAME_VALUE = 'CHANGE_FIRSTNAME_VALUE';
+export const CHANGE_LASTNAME_VALUE = 'CHANGE_LASTNAME_VALUE';
+export const CHANGE_USERNAME_VALUE = 'CHANGE_USERNAME_VALUE';
 export const CHANGE_EMAIL_VALUE = 'CHANGE_EMAIL_VALUE';
 export const CHANGE_PASSWORD_VALUE = 'CHANGE_PASSWORD_VALUE';
 export const CHANGE_PASSWORD_CONFIRM_VALUE = 'CHANGE_PASSWORD_CONFIRM_VALUE';
@@ -7,8 +9,18 @@ export const GET_LAST_PROJECTS = 'GET_LAST_PROJECTS';
 export const SAVE_LAST_PROJECTS = 'SAVE_LAST_PROJECTS';
 
 // ACTION CREATORS
-export const changeNameValue = (value) => ({
-  type: CHANGE_NAME_VALUE,
+export const changeFirstameValue = (value) => ({
+  type: CHANGE_FIRSTNAME_VALUE,
+  value,
+});
+
+export const changeLastnameValue = (value) => ({
+  type: CHANGE_LASTNAME_VALUE,
+  value,
+});
+
+export const changeUsernameValue = (value) => ({
+  type: CHANGE_USERNAME_VALUE,
   value,
 });
 

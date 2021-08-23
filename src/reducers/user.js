@@ -1,5 +1,7 @@
 import {
-  CHANGE_NAME_VALUE,
+  CHANGE_FIRSTNAME_VALUE,
+  CHANGE_LASTNAME_VALUE,
+  CHANGE_USERNAME_VALUE,
   CHANGE_EMAIL_VALUE,
   CHANGE_PASSWORD_VALUE,
   CHANGE_PASSWORD_CONFIRM_VALUE,
@@ -7,10 +9,9 @@ import {
 
 // les valeurs par défaut sont stockées dans le state initial
 const initialState = {
-  messages: [],
+  firstname: '',
+  lastname: '',
   pseudo: '',
-  newMessage: '',
-  isOpen: true,
   email: '',
   password: '',
   loginError: false,
@@ -23,7 +24,23 @@ const reducer = (state = initialState, action = {}) => {
   // en fonction de la propriété type de l'action
   // on va retourner un state changer ou pas
   switch (action.type) {
-    case CHANGE_NAME_VALUE: {
+    case CHANGE_FIRSTNAME_VALUE: {
+      return {
+        ...state,
+        // ici on vient changer dynamiquement la propriété du state
+        // celle-ci sera fonction de la valeur stockée dans action.key
+        firstname: action.value,
+      };
+    }
+    case CHANGE_LASTNAME_VALUE: {
+      return {
+        ...state,
+        // ici on vient changer dynamiquement la propriété du state
+        // celle-ci sera fonction de la valeur stockée dans action.key
+        lastname: action.value,
+      };
+    }
+    case CHANGE_USERNAME_VALUE: {
       return {
         ...state,
         // ici on vient changer dynamiquement la propriété du state
