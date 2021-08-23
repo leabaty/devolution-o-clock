@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Login from 'src/components/Login';
-import { changeNameValue, changeEmailValue, changePasswordValue, changePasswordConfirmValue} from 'src/actions';
+import { changeFirstnameValue, changeLastnameValue, changeUsernameValue, changeEmailValue, changePasswordValue, changePasswordConfirmValue} from 'src/actions';
 
 // quand on a un container, à l'instanciation on peut lui passer des props (cf Settings)
 // ces props de configuration seront accessibles via le 2e paramètre de mSTP ou mDTP
@@ -8,15 +8,24 @@ const mapStateToProps = (state, ownProps) => ({
   // ici on récupère la valeur contenu dans la props "name"
   // et on la passe à noter accesseur de propriété
   //value: state[ownProps.name],
-  name: state.user.pseudo,
+  firstname: state.user.firstname,
+  lastname: state.user.lastname,
+  username: state.user.pseudo,
   email: state.user.email,
   password: state.user.password
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  changeInputNameValue: (value) => {
-    console.log(ownProps.name)
-    const action = changeNameValue(value);
+  changeInputFirstnameValue: (value) => {
+    const action = changeFirstnameValue(value);
+    dispatch(action);
+  },
+  changeInputLastnameValue: (value) => {
+    const action = changeLastnameValue(value);
+    dispatch(action);
+  },
+  changeInputUsernameValue: (value) => {
+    const action = changeUsernameValue(value);
     dispatch(action);
   },
   changeInputEmailValue: (value) => {
