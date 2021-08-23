@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import Header from 'src/components/Header';
@@ -9,7 +9,9 @@ import Footer from 'src/components/Footer';
 
 import './style.scss'
 
-function Home({projects}) {
+function Home({projects, lastProjectsLoading}) {
+  useEffect(lastProjectsLoading, []);
+
   return (
     <div className="home">
       <Header />

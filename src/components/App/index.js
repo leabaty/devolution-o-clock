@@ -3,7 +3,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 // == Import
-import Home from 'src/components/Home';
+import Home from 'src/containers/Home';
 import SearchPageDisconnect from 'src/components/SearchPageDisconnect'
 import Login from 'src/containers/Login';
 import ProfilePage from 'src/components/ProfilePage';
