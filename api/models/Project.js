@@ -8,7 +8,8 @@ Project.init({
     description:DataTypes.STRING,
     need_of_the_project:DataTypes.STRING,
     beginning_date:DataTypes.DATE,
-    icon:DataTypes.STRING
+    icon:DataTypes.STRING,
+    owner_id:DataTypes.INTEGER
 },{
     sequelize,
     tableName: "project"

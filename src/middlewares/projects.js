@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { GET_LAST_PROJECTS, saveLastProjects } from 'src/actions';
 
-const projects = (store) => (next) => (action) => {
+const projects= (store) => (next) => (action) => {
   switch (action.type) {
     case GET_LAST_PROJECTS: {
       const fetchData = async () => {
