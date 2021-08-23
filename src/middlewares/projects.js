@@ -6,7 +6,7 @@ const projects = (store) => (next) => (action) => {
     case GET_LAST_PROJECTS: {
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://localhost:4000/api/v1');
+          const response = await axios.get('https://devolution-api.herokuapp.com/api/v1/projects');
           // à partir de là on a notre réponse et on va pouvoir stocker les données
           // sinon on aura une erreur et on passera dans le "catch"
           // on va donc créer une action qui sera traiter dans le reducer
