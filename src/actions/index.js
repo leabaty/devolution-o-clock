@@ -7,9 +7,10 @@ export const CHANGE_PASSWORD_VALUE = 'CHANGE_PASSWORD_VALUE';
 export const CHANGE_PASSWORD_CONFIRM_VALUE = 'CHANGE_PASSWORD_CONFIRM_VALUE';
 export const GET_LAST_PROJECTS = 'GET_LAST_PROJECTS';
 export const SAVE_LAST_PROJECTS = 'SAVE_LAST_PROJECTS';
+export const SIGN_UP_SUBMIT = 'SIGN_UP_SUBMIT';
 
 // ACTION CREATORS
-export const changeFirstameValue = (value) => ({
+export const changeFirstnameValue = (value) => ({
   type: CHANGE_FIRSTNAME_VALUE,
   value,
 });
@@ -37,6 +38,10 @@ export const changePasswordValue = (value) => ({
 export const changePasswordConfirmValue = (value) => ({
   type: CHANGE_PASSWORD_CONFIRM_VALUE,
   value,
+});
+
+export const signUpSubmit = () => ({
+  type: SIGN_UP_SUBMIT,
 });
 
 export const getLastProjects = () => ({

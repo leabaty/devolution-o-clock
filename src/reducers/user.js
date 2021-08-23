@@ -9,13 +9,12 @@ import {
 
 // les valeurs par défaut sont stockées dans le state initial
 const initialState = {
-  firstname: '',
-  lastname: '',
-  pseudo: '',
-  email: '',
-  password: '',
-  loginError: false,
-  isConnected: false,
+  firstname: 'Toto',
+  lastname: 'Tata',
+  pseudo: 'Titi',
+  email: 'titi@gmail.com',
+  password: 'Titi',
+  confirmPassword:'Titi',
 };
 
 // fonction qui traduit une intention/action en changement de state
@@ -69,7 +68,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         // ici on vient changer dynamiquement la propriété du state
         // celle-ci sera fonction de la valeur stockée dans action.key
-        // pseudo: action.value,
+        confirmPassword: action.value,
       };
     }
 

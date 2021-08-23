@@ -19,11 +19,13 @@ function Login({
   changeInputEmailValue,
   changeInputPasswordValue,
   changeInputPasswordConfirmValue,
+  formSignUpSubmit,
   firstname,
   lastname,
   username,
   email,
   password,
+  confirmPassword
 }) {
   console.log(name);
   return (
@@ -44,11 +46,13 @@ function Login({
           onChangeInputEmailValue={changeInputEmailValue}
           onChangeInputPasswordValue={changeInputPasswordValue}
           onChangeInputPasswordConfirmValue={changeInputPasswordConfirmValue}
+          onFormSignUpSubmit={formSignUpSubmit}
           firstname={firstname}
           lastname={lastname}
           username={username}
           email={email}
           password={password}
+          confirmPassword={confirmPassword}
         />
       </div>
     </div>
