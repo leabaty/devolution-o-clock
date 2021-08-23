@@ -16,5 +16,5 @@ module.exports = {
   PROJECT_LIMIT_REACHED: "You have reached the maximum number of participants allowed",
   PASSWORD_TOO_SHORT: "The password must be at least 8 characters long",
   PASSWORD_UPDATED: "Password updated. Please login again",
-  USERNAME_UPDATED: "Username updated."
+  USERNAME_UPDATED: "Username updated.",
 }
