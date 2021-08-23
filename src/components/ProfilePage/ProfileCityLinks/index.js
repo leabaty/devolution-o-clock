@@ -10,7 +10,7 @@ import "./style.scss";
 function ProfileCityLinks() {
   return (
     <div className="profile__city-links element">
-      <p className="profile__city-name"> Paris</p>
+      <p className="profile__city-name">Paris</p>
       <a className="profile__dribbble" alt="Dribble Link">
         <img className="profile__dribble-icon" src="" alt="Dribbble icon" />
       </a>

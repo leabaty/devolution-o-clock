@@ -9,8 +9,12 @@ import "./style.scss";
 // == Composant
 function ProfileCompetencies() {
   return (
-    <div className="profile__competencies element">
+    <div className="profile__competencies">
       <h3 className="profile__category-title">Mes compétences</h3>
+      <ul className="profile__competencies-list">
+            <li>Compentency 1</li>
+            <li>Competency 2</li>
+      </ul>
     </div>
   );
 }
