@@ -1,7 +1,7 @@
 .signup {
     &__component{
         width: 25em;
-        padding-left: 5%;
+        padding-left: 5em;
         border-left:solid white 2px;
     }
 
@@ -18,7 +18,7 @@
     &__input{
         border-radius: 25px;
         padding: 10px;
-        width: 300px;
+        width: 24em;
         border:none;
         margin-bottom: 20px;
     }
@@ -30,7 +30,7 @@
     &__send{
         border-radius: 25px;
         padding: 10px;
-        width: 300px;
+        width: 24em;
         border:none;
         margin-bottom: 20px;
         background-color: #0D273F;
