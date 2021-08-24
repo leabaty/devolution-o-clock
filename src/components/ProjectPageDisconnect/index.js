@@ -13,6 +13,8 @@ function ProjectPageDisconnect(props) {
         </div>
         <h1 className="projectDisconnect__header__title">Titre du projet</h1>
         <span className="projectDisconnect__header__pseudo">Pseudo</span>
+        <Description />
+        <Functionalities />
       </div>
     </div>
   )
