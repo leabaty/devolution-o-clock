@@ -3,8 +3,8 @@
 .signin {
     &__component{
         width: 25em;
-        padding-right: 5%;
-        text-align: right;
+        padding-right: 5em;
+        text-align: left;
     }
 
     &__title{
@@ -20,7 +20,7 @@
     &__input{
         border-radius: 25px;
         padding: 10px;
-        width: 300px;
+        width: 24em;
         border:none;
         margin-bottom: 20px;
     }
@@ -32,7 +32,7 @@
     &__send{
         border-radius: 25px;
         padding: 10px;
-        width: 300px;
+        width: 24em;
         border:none;
         margin-bottom: 20px;
         background-color: #0D273F;

@@ -19,13 +19,19 @@ function Login({
   changeInputEmailValue,
   changeInputPasswordValue,
   changeInputPasswordConfirmValue,
+  changeSignInInputEmailValue,
+  changeSignInInputPasswordValue,
+  formSignUpSubmit,
+  formSignInSubmit,
   firstname,
   lastname,
   username,
   email,
   password,
+  confirmPassword,
+  signInEmail,
+  signInPassword
 }) {
-  console.log(name);
   return (
     <div className="login">
       <Link to="/">
@@ -36,7 +42,13 @@ function Login({
         />
       </Link>
       <div className="login__forms">
-        <SignIn />
+        <SignIn 
+          onFormSignInSubmit={formSignInSubmit}
+          onChangeSignInInputEmailValue={changeSignInInputEmailValue}
+          onChangeSignInInputPasswordValue={changeSignInInputPasswordValue}
+          signInEmail={signInEmail}
+          signInPassword={signInPassword}
+        />
         <SignUp
           onChangeInputFirstnameValue={changeInputFirstnameValue}
           onChangeInputLastnameValue={changeInputLastnameValue}
@@ -44,11 +56,13 @@ function Login({
           onChangeInputEmailValue={changeInputEmailValue}
           onChangeInputPasswordValue={changeInputPasswordValue}
           onChangeInputPasswordConfirmValue={changeInputPasswordConfirmValue}
+          onFormSignUpSubmit={formSignUpSubmit}
           firstname={firstname}
           lastname={lastname}
           username={username}
           email={email}
           password={password}
+          confirmPassword={confirmPassword}
         />
       </div>
     </div>

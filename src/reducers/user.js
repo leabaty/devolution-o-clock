@@ -5,17 +5,20 @@ import {
   CHANGE_EMAIL_VALUE,
   CHANGE_PASSWORD_VALUE,
   CHANGE_PASSWORD_CONFIRM_VALUE,
+  CHANGE_SIGN_IN_EMAIL_VALUE,
+  CHANGE_SIGN_IN_PASSWORD_VALUE
 } from 'src/actions';
 
 // les valeurs par défaut sont stockées dans le state initial
 const initialState = {
-  firstname: '',
-  lastname: '',
-  pseudo: '',
-  email: '',
-  password: '',
-  loginError: false,
-  isConnected: false,
+  firstname: 'Toto',
+  lastname: 'Tata',
+  pseudo: 'Titi',
+  email: 'titi@gmail.com',
+  password: 'Titi',
+  confirmPassword:'Titi',
+  signInEmail:'',
+  signInPassword:''
 };
 
 // fonction qui traduit une intention/action en changement de state
@@ -67,12 +70,21 @@ const reducer = (state = initialState, action = {}) => {
     case CHANGE_PASSWORD_CONFIRM_VALUE: {
       return {
         ...state,
-        // ici on vient changer dynamiquement la propriété du state
-        // celle-ci sera fonction de la valeur stockée dans action.key
-        // pseudo: action.value,
+        confirmPassword: action.value,
       };
     }
-
+    case CHANGE_SIGN_IN_EMAIL_VALUE: {
+      return {
+        ...state,
+        signInEmail:action.value
+      };
+    }
+    case CHANGE_SIGN_IN_PASSWORD_VALUE: {
+      return {
+        ...state,
+        signInPassword:action.value
+      };
+    }
     default:
       return state;
   }

@@ -10,16 +10,17 @@ function SignUp({
   onChangeInputEmailValue,
   onChangeInputPasswordValue,
   onChangeInputPasswordConfirmValue,
+  onFormSignUpSubmit,
   firstname,
   lastname,
   username,
   email,
   password,
+  confirmPassword
 }) {
   const onSignUpSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target);
-    // onFormSubmit();
+    onFormSignUpSubmit();
   };
 
   const onChangeFirstname = (event) => {
@@ -63,7 +64,7 @@ function SignUp({
           className="signup__input"
           value={username}
           onChange={onChangeUsername}
-          placeholder="Nom d'utilisateur"
+          placeholder="Pseudo ou nom d'association"
         />
         <input
           className="signup__input"
@@ -80,10 +81,10 @@ function SignUp({
         />
         <input
           className="signup__input"
-          // value={passwordConfirmValue}
+          value={confirmPassword}
           onChange={onChangePasswordConfirm}
           type="password"
-          placeholder="Répétez le mot de passe"
+          placeholder="Confirmer le mot de passe"
         />
 
         <button className="signup__send" type="submit">
