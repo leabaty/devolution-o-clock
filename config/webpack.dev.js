@@ -56,7 +56,7 @@ module.exports = merge(common, {
     contentBase: paths.build,
     clientLogLevel: 'warn',
     overlay: true,
-     stats: 'minimal',
+    stats: 'minimal',
     open: true,
     compress: true,
     hot: true,

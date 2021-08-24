@@ -41,13 +41,20 @@ const users= (store) => (next) => (action) => {
 
           try {
             const response = await axios.post('https://devolution-api.herokuapp.com/api/v1/login', signInUser);
-            console.log(response.data)
+            console.log(response.data.accessToken)
 
-            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('token', response.data.accessToken);
 
             // on en profite pour venir le stoker aussi dans l'instance d'axios
             // comme ça on l'aura à chaque requête !!
-            api.defaults.headers.common.authorization = `Bearer ${response.data.token}`;
+
+            const instance = axios.create({
+              baseURL : 'https://devolution-api.herokuapp.com/api/v1',
+            })
+
+            console.log(instance.defaults)
+
+            instance.defaults.headers.common.authorization = `Bearer ${response.data.accessToken}`;
 
             // ici on veut stocker dans le state les infos du user
             // donc on va faire un dispatch d'action

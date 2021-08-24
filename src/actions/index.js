@@ -8,6 +8,7 @@ export const CHANGE_PASSWORD_CONFIRM_VALUE = 'CHANGE_PASSWORD_CONFIRM_VALUE';
 export const SIGN_UP_SUBMIT = 'SIGN_UP_SUBMIT';
 
 export const SIGN_IN_SUBMIT = 'SIGN_IN_SUBMIT';
+export const SAVE_USER = 'SAVE_USER';
 export const CHANGE_SIGN_IN_EMAIL_VALUE = 'CHANGE_SIGN_IN_EMAIL_VALUE';
 export const CHANGE_SIGN_IN_PASSWORD_VALUE = 'CHANGE_SIGN_IN_PASSWORD_VALUE';
 
@@ -51,6 +52,7 @@ export const signUpSubmit = () => ({
   type: SIGN_UP_SUBMIT,
 });
 
+
 // --- Sign In
 export const changeSignInEmailValue = (value) => ({
   type: CHANGE_SIGN_IN_EMAIL_VALUE,
@@ -64,6 +66,11 @@ export const changeSignInPasswordValue = (value) => ({
 
 export const signInSubmit = () => ({
   type: SIGN_IN_SUBMIT,
+});
+
+export const saveUser = (payload) => ({
+  type: SAVE_USER,
+  payload,
 });
 
 // --- Projects
