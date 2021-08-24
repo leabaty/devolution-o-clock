@@ -3,15 +3,33 @@ const sequelize = require('../database')
 
 class User extends Model{}
 User.init({
-  email:DataTypes.STRING,
-  password: DataTypes.STRING,
-  pseudo:DataTypes.STRING,
-  image_url:DataTypes.STRING,
-  user_status:DataTypes.TEXT,
-  lastname:DataTypes.STRING,
-  firstname:DataTypes.STRING,
-  phone:DataTypes.STRING,
-  city:DataTypes.STRING,
+  email: {
+    type :DataTypes.STRING
+  },
+  password: {
+    type :DataTypes.STRING
+  },
+  pseudo: {
+    type :DataTypes.STRING
+  },
+  image_url: {
+    type :DataTypes.STRING
+  },
+  user_status: {
+    type :DataTypes.STRING
+  },
+  lastname: {
+    type :DataTypes.STRING
+  },
+  firstname: {
+    type :DataTypes.STRING
+  },
+  phone: {
+    type :DataTypes.STRING
+  },
+  city: {
+    type :DataTypes.STRING
+  },
   linkedin: {
     type: DataTypes.TEXT,
   },
