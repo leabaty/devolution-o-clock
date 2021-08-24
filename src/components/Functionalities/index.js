@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function Description(props) {
+function Functionalities(props) {
   return (
     <div className="functionalities">
       <h2 className="functionalities__title">
-        Description
+        Fonctionnalités et pages
       </h2>
       <p className="functionalities__text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum placeat quam eveniet culpa maiores deleniti eos dolorem natus non modi odit voluptatum nam nobis tenetur aperiam eius ipsum, voluptates explicabo!
@@ -14,9 +14,9 @@ function Description(props) {
   )
 }
 
-Description.propTypes = {
+Functionalities.propTypes = {
 
 }
 
-export default Description
+export default Functionalities
 
