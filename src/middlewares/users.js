@@ -1,8 +1,10 @@
 import axios from 'axios';
-import { SIGN_UP_SUBMIT } from 'src/actions';
+import { SIGN_UP_SUBMIT, SIGN_IN_SUBMIT } from 'src/actions';
+
 
 const users= (store) => (next) => (action) => {
   switch (action.type) {
+    
     case SIGN_UP_SUBMIT: {
       const {firstname, lastname, pseudo, email, password, confirmPassword} = store.getState().user
       const newUser = {
@@ -26,6 +28,44 @@ const users= (store) => (next) => (action) => {
       createUser();
       break;
     }
+
+    case SIGN_IN_SUBMIT: {
+      const {signInEmail, signInPassword} = store.getState().user
+
+        const signInUser = {
+            login: signInEmail,
+            password: signInPassword,
+        };
+
+        const fetchUserData = async () => {
+
+          try {
+            const response = await axios.post('https://devolution-api.herokuapp.com/api/v1/login', signInUser);
+            console.log(response.data)
+
+            localStorage.setItem('token', response.data.token);
+
+            // on en profite pour venir le stoker aussi dans l'instance d'axios
+            // comme ça on l'aura à chaque requête !!
+            api.defaults.headers.common.authorization = `Bearer ${response.data.token}`;
+
+            // ici on veut stocker dans le state les infos du user
+            // donc on va faire un dispatch d'action
+            const actionSaveUser = saveUser(response.data);
+
+            // on passe par la fonction disaptch du store
+            store.dispatch(actionSaveUser);
+
+          }
+          catch (error) {
+            console.log(error);
+          }
+        };
+  
+        fetchUserData();
+        break;
+      }
+    
     default:
       next(action);
   }

@@ -1,6 +1,16 @@
 import { connect } from 'react-redux';
 import Login from 'src/components/Login';
-import { changeFirstnameValue, changeLastnameValue, changeUsernameValue, changeEmailValue, changePasswordValue, changePasswordConfirmValue, signUpSubmit} from 'src/actions';
+import { changeFirstnameValue, 
+  changeLastnameValue, 
+  changeUsernameValue, 
+  changeEmailValue, 
+  changePasswordValue, 
+  changePasswordConfirmValue, 
+  signUpSubmit, 
+  signInSubmit,
+  changeSignInEmailValue,
+  changeSignInPasswordValue
+} from 'src/actions';
 
 // quand on a un container, à l'instanciation on peut lui passer des props (cf Settings)
 // ces props de configuration seront accessibles via le 2e paramètre de mSTP ou mDTP
@@ -13,7 +23,9 @@ const mapStateToProps = (state, ownProps) => ({
   username: state.user.pseudo,
   email: state.user.email,
   password: state.user.password,
-  confirmPassword: state.user.confirmPassword
+  confirmPassword: state.user.confirmPassword,
+  signInEmail: state.user.signInEmail,
+  signInPassword: state.user.signInPassword,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -43,6 +55,18 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   formSignUpSubmit: () => {
     const action = signUpSubmit()
+    dispatch(action)
+  },
+  formSignInSubmit: () => {
+    const action = signInSubmit()
+    dispatch(action)
+  },
+  changeSignInInputEmailValue: (value) => {
+    const action = changeSignInEmailValue(value)
+    dispatch(action)
+  },
+  changeSignInInputPasswordValue: (value) => {
+    const action = changeSignInPasswordValue(value)
     dispatch(action)
   }
 });
