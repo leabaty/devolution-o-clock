@@ -1,17 +1,15 @@
 import axios from 'axios';
 import instance from './utils/instance';
-<<<<<<< HEAD
-import { SIGN_UP_SUBMIT, SIGN_IN_SUBMIT } from 'src/actions';
-=======
-import { SIGN_UP_SUBMIT, SIGN_IN_SUBMIT, saveUser, CHECK_TOKEN } from 'src/actions';
->>>>>>> b58d083507ac818888a23db2f28b11bfdc042036
+
+
+import { SIGN_UP_SUBMIT, SIGN_IN_SUBMIT, saveUser, GET_PROFILE_DATA, LOAD_PROFILE_DATA, saveProfileData} from 'src/actions';
 
 
 const users= (store) => (next) => (action) => {
   switch (action.type) {
     
     case SIGN_UP_SUBMIT: {
-      const {firstname, lastname, pseudo, email, password, confirmPassword} = store.getState().user
+      const {firstname, lastname, pseudo, email, password, confirmPassword} = store.getState().login
       const newUser = {
         firstname: firstname,
         lastname: lastname,
@@ -36,8 +34,7 @@ const users= (store) => (next) => (action) => {
 
     case SIGN_IN_SUBMIT: {
 
-      const {signInEmail, signInPassword} = store.getState().user
-
+      const {signInEmail, signInPassword} = store.getState().login
       instance({
         method: 'POST',
         url: '/login',
@@ -47,53 +44,54 @@ const users= (store) => (next) => (action) => {
         },
       })
         .then((response) => {
-          // ici on vient stocker le token dans localStorage
-          localStorage.setItem('token', response.data.accessToken);
+            console.log(response)
+            if(response.data.accessToken) {
+              //si on a un token, on vient le stocker le token dans localStorage
+              localStorage.setItem('token', response.data.accessToken);
+              
+              // on en profite pour venir le stoker aussi dans l'instance d'axios
+              // comme ça on l'aura à chaque requête !!
+              instance.defaults.headers.common.authorization = `Bearer ${response.data.accessToken}`;
+              // ici on veut stocker dans le state les infos du user
+              // donc on va faire un dispatch d'action
+              console.log(response.data)
+              const actionSaveUser = saveUser(response.data);
+              
+              // on passe par la fonction disaptch du store
+              store.dispatch(actionSaveUser);
 
-          // on en profite pour venir le stoker aussi dans l'instance d'axios
-          // comme ça on l'aura à chaque requête !!
-          instance.defaults.headers.common.authorization = `Bearer ${response.data.accessToken}`;
-
-          // ici on veut stocker dans le state les infos du user
-          // donc on va faire un dispatch d'action
-          const actionSaveUser = saveUser(response.data);
-
-          // on passe par la fonction disaptch du store
-          store.dispatch(actionSaveUser);
-        })
+            }
+          })
         .catch((error) => console.log(error));
+
       break;
     }
 
-    case CHECK_TOKEN: {
-      // on récupère le token stocké dans le localStorage
-      const token = localStorage.getItem('token');
-
-      // s'il existe on fait notre requête API pour vérifier sa validité
-      if (token) {
-        instance.get('/users', {
-          // on oublie pas d'embarquer le token avec la requête
-          headers: {
-            authorization: `Bearer ${token}`,
-          },
-        })
+    case GET_PROFILE_DATA: {
+      const token = localStorage.getItem('token')
+      console.log(token)
+      instance({
+        method: 'GET',
+        url: '/me',
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
           .then((response) => {
-            // ici le token est bon, donc on peut le stocker dans l'insance
-            instance.defaults.headers.common.authorization = `Bearer ${token}`;
-
             // en cas de réponse on sauvegarde le user dans le state
             // avec la même action que pour le login
-            const payload = { ...response.data };
-            const actionSaveUser = saveUser(payload);
-            store.dispatch(actionSaveUser);
+            const dataProfile = response.data;
+            console.log('dataProfile', response.data)
+            const actionSaveProfileData = saveProfileData(dataProfile);
+            store.dispatch(actionSaveProfileData);
           })
           .catch((error) => console.log(error));
+        break;
       }
-      break;
-    }
+
     default:
       next(action);
   }
-};
+}
 
 export default users;

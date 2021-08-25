@@ -10,7 +10,6 @@ import { changeFirstnameValue,
   signInSubmit,
   changeSignInEmailValue,
   changeSignInPasswordValue, 
-  checkToken
 } from 'src/actions';
 
 // quand on a un container, à l'instanciation on peut lui passer des props (cf Settings)
@@ -19,14 +18,14 @@ const mapStateToProps = (state, ownProps) => ({
   // ici on récupère la valeur contenu dans la props "name"
   // et on la passe à noter accesseur de propriété
   //value: state[ownProps.name],
-  firstname: state.user.firstname,
-  lastname: state.user.lastname,
-  username: state.user.pseudo,
-  email: state.user.email,
-  password: state.user.password,
-  confirmPassword: state.user.confirmPassword,
-  signInEmail: state.user.signInEmail,
-  signInPassword: state.user.signInPassword,
+  firstname: state.login.firstname,
+  lastname: state.login.lastname,
+  username: state.login.pseudo,
+  email: state.login.email,
+  password: state.login.password,
+  confirmPassword: state.login.confirmPassword,
+  signInEmail: state.login.signInEmail,
+  signInPassword: state.login.signInPassword,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -59,6 +58,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(action);
   },
   formSignInSubmit: () => {
+    console.log('coucou')
     const action = signInSubmit();
     dispatch(action);
   },
@@ -68,10 +68,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   changeSignInInputPasswordValue: (value) => {
     const action = changeSignInPasswordValue(value);
-    dispatch(action);
-  },
-  checkIsLogged: () => {
-    const action = checkToken();
     dispatch(action);
   },
 });

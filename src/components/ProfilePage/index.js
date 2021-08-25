@@ -1,7 +1,7 @@
 /* eslint-disable arrow-body-style */
 // == Import : npm
-import React from 'react';
-// import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 // Composants
 import Menu from 'src/components/Menu';
@@ -11,12 +11,15 @@ import ProfileBio from './ProfileBio';
 import './style.scss';
 
 // == Composant
-function ProfilePage() {
+function ProfilePage({profileData, userData}) {
+  
+  useEffect(profileData, [])
+
   return (
     <div className="profile__page">
 
     <div className="profile__menu">
-        <Menu/>
+        {/* <Menu/> */}
     </div>
 
     <div className="profile__component">
@@ -34,7 +37,7 @@ function ProfilePage() {
       <div className="profile__status element">
         <p className="profile__status-indicator">Disponible</p>
       </div>
-      <ProfileStatus/>
+      {/* <ProfileStatus/> */}
 
       <div className="profile__contact-info element">
         <p className="profile__name"> Maxime Durand </p>
@@ -42,7 +45,7 @@ function ProfilePage() {
         <p className="profile__phone"> 07878677A0</p>
       </div>
 
-      <ProfileContact/>
+      {/* <ProfileContact/> */}
 
       <div className="profile__city-links element">
         <p className="profile__city-name"> Paris</p>
@@ -56,28 +59,30 @@ function ProfilePage() {
           <img className="profile__github-icon" src="" alt="GitHub icon"/>
         </a>
       </div>
-      <ProfileCityLinks/>
+      {/* <ProfileCityLinks/> */}
 
       <div className="profile__competencies element">
         <h3 className="profile__category-title">Mes compétences</h3>
       </div>
-      <ProfileCompetencies/>
+      {/* <ProfileCompetencies/> */}
 
       <div className="profile__bio element">
         <h3 className="profile__category-title">Ma bio</h3>
         <p className="profile__description">Nia nia nia</p>
       </div>
-      <ProfileBio/>
+      {/* <ProfileBio/> */}
 
       <div className="profile__portfolio element">
         <a className="profile__portfolio-link" alt="Portfolio Link">Nia nia nia</a>
       </div>
-      <ProfilePortfolio/>
+      {/* <ProfilePortfolio/> */}
 
     </div>
     </div>
   );
 }
+
+
 
 // == Export
 export default ProfilePage;

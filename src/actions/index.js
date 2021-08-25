@@ -7,15 +7,16 @@ export const CHANGE_PASSWORD_VALUE = 'CHANGE_PASSWORD_VALUE';
 export const CHANGE_PASSWORD_CONFIRM_VALUE = 'CHANGE_PASSWORD_CONFIRM_VALUE';
 export const SIGN_UP_SUBMIT = 'SIGN_UP_SUBMIT';
 
-export const SIGN_IN_SUBMIT = 'SIGN_IN_SUBMIT';
-export const SAVE_USER = 'SAVE_USER';
-export const CHECK_TOKEN = 'CHECK_TOKEN';
-
 export const CHANGE_SIGN_IN_EMAIL_VALUE = 'CHANGE_SIGN_IN_EMAIL_VALUE';
 export const CHANGE_SIGN_IN_PASSWORD_VALUE = 'CHANGE_SIGN_IN_PASSWORD_VALUE';
+export const SIGN_IN_SUBMIT = 'SIGN_IN_SUBMIT';
+export const SAVE_USER = 'SAVE_USER';
 
 export const GET_LAST_PROJECTS = 'GET_LAST_PROJECTS';
 export const SAVE_LAST_PROJECTS = 'SAVE_LAST_PROJECTS';
+
+export const GET_PROFILE_DATA = 'GET_PROFILE_DATA';
+export const SAVE_PROFILE_DATA = 'SAVE_PROFILE_DATA';
 
 
 // ACTION CREATORS
@@ -75,10 +76,6 @@ export const saveUser = (payload) => ({
   payload,
 });
 
-export const checkToken = () => ({
-  type: CHECK_TOKEN,
-});
-
 // --- Projects
 export const getLastProjects = () => ({
   type: GET_LAST_PROJECTS,
@@ -89,3 +86,12 @@ export const saveLastProjects = (projects) => ({
   projects,
 });
 
+// --- ProfilePage
+export const getProfileData = () => ({
+  type: GET_PROFILE_DATA,
+});
+
+export const saveProfileData = (dataProfile) => ({
+  type: SAVE_PROFILE_DATA,
+  dataProfile,
+});

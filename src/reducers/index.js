@@ -3,8 +3,9 @@ import { combineReducers } from 'redux';
 // sous-reducers
 
 import searchReducer from './search';
-import userReducer from './user';
+import loginReducer from './login';
 import projectReducer from './project';
+import userReducer from './user';
 
 // on passe en argument un objet qui viendra prendre les propriétés principales
 // de notre state global
@@ -13,8 +14,9 @@ import projectReducer from './project';
 // des sous-reducers
 const rootReducer = combineReducers({
   search: searchReducer,
-  user: userReducer,
+  login: loginReducer,
   project : projectReducer,
+  user: userReducer,
 });
 
 export default rootReducer;
