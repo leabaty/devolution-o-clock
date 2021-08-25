@@ -5,7 +5,6 @@ import reducer from 'src/reducers';
 import projects from 'src/middlewares/projects';
 import users from 'src/middlewares/users';
 
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const enhancers = composeEnhancers(

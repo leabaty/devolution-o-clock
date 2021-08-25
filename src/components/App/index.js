@@ -1,13 +1,14 @@
 // == Import npm
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
-// == Import
+// == Import components
 
 import Home from 'src/containers/Home';
 import SearchPageDisconnect from 'src/components/SearchPageDisconnect'
 import Login from 'src/containers/Login';
-import ProfilePage from 'src/components/ProfilePage';
+import ProfilePage from 'src/containers/ProfilePage';
 import ProjectPageDisconnect from 'src/components/ProjectPageDisconnect';
 
 import DataProjects from 'src/data/projects';
@@ -15,7 +16,10 @@ import './style.scss';
 
 // == Composant
 
-function App (props) {
+function App({
+  isLogged
+}) {
+  console.log(isLogged)
   return (
     <div className="app">
     <Switch>
@@ -28,14 +32,26 @@ function App (props) {
       <Route path="/login" exact>
         <Login/>
       </Route>
-      <Route path="/profile" exact>
-        < ProfilePage/>
-      </Route>
+      <Route path="/profile">
+          {/* {isLogged ? ( */}
+            <ProfilePage />
+          {/* ) : (
+             <Redirect to="/login" />
+          )} */}
+        </Route>
     </Switch>
 
   </div>
   )
-}
+};
+
+App.propTypes = {
+  isLogged: PropTypes.bool,
+};
+
+App.defaultProps = {
+  isLogged: false,
+};
 
 // == Export
 export default App;

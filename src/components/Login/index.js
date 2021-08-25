@@ -1,6 +1,6 @@
 /* eslint-disable arrow-body-style */
 // == Import : npm
-import React from "react";
+import React, { useEffect } from 'react';
 // import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
@@ -30,8 +30,9 @@ function Login({
   password,
   confirmPassword,
   signInEmail,
-  signInPassword
+  signInPassword, 
 }) {
+
   return (
     <div className="login">
       <Link to="/">
