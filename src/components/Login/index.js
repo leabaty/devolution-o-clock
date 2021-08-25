@@ -1,7 +1,7 @@
 /* eslint-disable arrow-body-style */
 // == Import : npm
-import React from "react";
-// import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 // Composants
@@ -30,8 +30,13 @@ function Login({
   password,
   confirmPassword,
   signInEmail,
-  signInPassword
+  signInPassword, 
+  checkIsLogged,
 }) {
+  useEffect(()=> {
+    checkIsLogged();
+  }, []);
+
   return (
     <div className="login">
       <Link to="/">
@@ -68,6 +73,10 @@ function Login({
     </div>
   );
 }
+
+Login.propTypes = {
+  checkIsLogged: PropTypes.func.isRequired,
+};
 
 // == Export
 export default Login;
