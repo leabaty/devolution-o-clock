@@ -3,4 +3,4 @@ node_modules
 api/node_modules
 api/.env
 api/sqitch.conf
-package-lock.jsongit status
+package-lock.json

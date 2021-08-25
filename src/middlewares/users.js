@@ -1,4 +1,5 @@
 import axios from 'axios';
+import instance from './utils/instance';
 import { SIGN_UP_SUBMIT, SIGN_IN_SUBMIT } from 'src/actions';
 
 
@@ -30,6 +31,7 @@ const users= (store) => (next) => (action) => {
     }
 
     case SIGN_IN_SUBMIT: {
+
       const {signInEmail, signInPassword} = store.getState().user
 
         const signInUser = {
