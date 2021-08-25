@@ -2,7 +2,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-// == Import
+// == Import components
 
 import Home from 'src/containers/Home';
 import SearchPageDisconnect from 'src/components/SearchPageDisconnect'
@@ -15,7 +15,7 @@ import './style.scss';
 
 // == Composant
 
-function App (props) {
+function App() {
   return (
     <div className="app">
     <Switch>

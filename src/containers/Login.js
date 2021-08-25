@@ -9,7 +9,8 @@ import { changeFirstnameValue,
   signUpSubmit, 
   signInSubmit,
   changeSignInEmailValue,
-  changeSignInPasswordValue
+  changeSignInPasswordValue, 
+  checkToken
 } from 'src/actions';
 
 // quand on a un container, à l'instanciation on peut lui passer des props (cf Settings)
@@ -54,21 +55,25 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(action);
   },
   formSignUpSubmit: () => {
-    const action = signUpSubmit()
-    dispatch(action)
+    const action = signUpSubmit();
+    dispatch(action);
   },
   formSignInSubmit: () => {
-    const action = signInSubmit()
-    dispatch(action)
+    const action = signInSubmit();
+    dispatch(action);
   },
   changeSignInInputEmailValue: (value) => {
-    const action = changeSignInEmailValue(value)
-    dispatch(action)
+    const action = changeSignInEmailValue(value);
+    dispatch(action);
   },
   changeSignInInputPasswordValue: (value) => {
-    const action = changeSignInPasswordValue(value)
-    dispatch(action)
-  }
+    const action = changeSignInPasswordValue(value);
+    dispatch(action);
+  },
+  checkIsLogged: () => {
+    const action = checkToken();
+    dispatch(action);
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

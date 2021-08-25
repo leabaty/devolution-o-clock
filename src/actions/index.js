@@ -9,6 +9,8 @@ export const SIGN_UP_SUBMIT = 'SIGN_UP_SUBMIT';
 
 export const SIGN_IN_SUBMIT = 'SIGN_IN_SUBMIT';
 export const SAVE_USER = 'SAVE_USER';
+export const CHECK_TOKEN = 'CHECK_TOKEN';
+
 export const CHANGE_SIGN_IN_EMAIL_VALUE = 'CHANGE_SIGN_IN_EMAIL_VALUE';
 export const CHANGE_SIGN_IN_PASSWORD_VALUE = 'CHANGE_SIGN_IN_PASSWORD_VALUE';
 
@@ -71,6 +73,10 @@ export const signInSubmit = () => ({
 export const saveUser = (payload) => ({
   type: SAVE_USER,
   payload,
+});
+
+export const checkToken = () => ({
+  type: CHECK_TOKEN,
 });
 
 // --- Projects
