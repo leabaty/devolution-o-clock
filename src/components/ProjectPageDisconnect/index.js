@@ -1,5 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
+import Description from 'src/components/Description';
+import Functionalities from 'src/components/Functionalities';
+import Footer from 'src/components/Footer';
 
 import './style.scss'
 
@@ -13,11 +18,27 @@ function ProjectPageDisconnect(props) {
         </div>
         <h1 className="projectDisconnect__header__title">Titre du projet</h1>
         <span className="projectDisconnect__header__pseudo">Pseudo</span>
-        <Description />
-        <Functionalities />
       </div>
-      <Description />
-      <Features />
+      <div className="projectDisconnect__main">
+        <Link to='/searchProjects'>
+          <div className="projectDisconnect__main__return">
+            <div className="projectDisconnect__main__return__arrow">
+              ➞
+            </div>
+            <div className="projectDisconnect__main__return__text">
+              Revenir à la recherche
+            </div>
+          </div>
+        </Link>
+        <div className="projectDisconnect__main__informations">
+          <Description />
+          <Functionalities />
+        </div>
+        <Link to='/login'>
+        <button className="projectDisconnect__main__button">Plus de détails</button>
+        </Link>
+        <Footer />
+      </div>
     </div>
   )
 }

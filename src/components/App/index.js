@@ -29,6 +29,9 @@ function App({
       <Route path="/searchProjects" exact>
         <SearchPageDisconnect projects={DataProjects}/>
       </Route>
+      <Route path="/searchProject" exact>
+        <ProjectPageDisconnect />
+      </Route>
       <Route path="/login" exact>
         <Login/>
       </Route>
@@ -36,12 +39,11 @@ function App({
           {/* {isLogged ? ( */}
             <ProfilePage />
           {/* ) : (
-             <Redirect to="/login" />
+            <Redirect to="/login" />
           )} */}
-        </Route>
+      </Route>
     </Switch>
-
-  </div>
+    </div>
   )
 };
 
