@@ -11,7 +11,7 @@ import './style.scss';
 // == Composant
 const Menu = ({}) => (
     <div className="menu__component">
-        {console.log(CodeIcon)}
+        {/* {console.log(CodeIcon)} */}
 
         <div className="menu__container">
         <div className="menu__logobutton">

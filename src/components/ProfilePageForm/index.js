@@ -10,19 +10,19 @@ import Menu from "src/components/Menu";
 import "./style.scss";
 
 // == Composant
-function ProfilePage({ profileData, userData }) {
-    useEffect(profileData, []);
-  
+function ProfilePage({ userData }) {
+console.log(userData);
+
     return (
-    <div className="profile-form__form">
-      <div className="profile-form__menu">
+    <div className="profile__page">
+      <div className="profile__menu">
         <Menu />
       </div>
 
-      <form className="profile-form__component">
-        <div className="profile-form__greeting">
+      <form className="profile__component">
+        <div className="profile__greeting">
           <div>
-            <h1 className="profile-form__title">Hello, {userData.firstname} !</h1>
+            <h1 className="profile__title">Hello, {userData.firstname} !</h1>
             <input
               className="profile-form__undertitle"
               placeholder="Développeur web, graphiste, UI/UX Designer..."
@@ -43,9 +43,7 @@ function ProfilePage({ profileData, userData }) {
         <div className="profile-form__contact-info element">
           <input className="profile-form__surname" placeholder="Prénom" />
           <input className="profile-form__name" placeholder="Nom" />
-
           <input className="profile-form__email" placeholder="Adresse email" />
-
           <input
             className="profile-form__phone"
             placeholder="Numéro de téléphone"
@@ -97,6 +95,7 @@ function ProfilePage({ profileData, userData }) {
         </div>
 
         <div className="profile-form__portfolio element">
+        <h3 className="profile-form__category-title">Mon portfolio</h3>
           <input
             className="profile-form__portfolio-link"
             placeholder="Lien vers site n°1"

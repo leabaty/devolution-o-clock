@@ -2,6 +2,7 @@
 // == Import : npm
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import { Link, useHistory } from 'react-router-dom';
 
 // Composants
 import Menu from "src/components/Menu";
@@ -29,59 +30,58 @@ function ProfilePage({ profileData, userData }) {
         <div className="profile__greeting">
           <div>
             <h1 className="profile__title">Hello, {userData.firstname} !</h1>
-            <h2 className="profile__undertitle">EN DUR Fonction (dév web, etc)</h2>
+            <h2 className="profile__undertitle">
+              EN DUR Fonction (dév web, etc)
+            </h2>
           </div>
 
           <img className="profile__picture" src="" alt="Profile picture" />
         </div>
 
-        <ProfileStatus userData={userData}/>
+        <ProfileStatus userData={userData} />
 
-        <ProfileContact userData={userData}/>
+        <ProfileContact userData={userData} />
 
-        <ProfileCityLinks userData={userData}/>
+        <ProfileCityLinks userData={userData} />
 
-        <ProfileCompetencies userData={userData}/>
+        <ProfileCompetencies userData={userData} />
 
-        <ProfileBio userData={userData}/>
+        <ProfileBio userData={userData} />
 
-        <ProfilePortfolio userData={userData}/>
+        <ProfilePortfolio userData={userData} />
 
-<div className="profile__buttons">
-
-<button
+        <div className="profile__buttons">
+            <button
               className="profile__modify"
               type="submit"
-              onClick={() => history.push('/profile')}
+              // onClick={() => history.push("/modifyprofile")}
             >
               Modifier mon profil
             </button>
-
+{/* 
             <button
               className="profile__delete"
               type="submit"
-              onClick={() => history.push('/profile')}
+              onClick={() => history.push("/deleteprofile")}
             >
               Supprimer mon profil
             </button>
 
+
             <button
               className="profile__logout"
               type="submit"
-              onClick={() => history.push('/profile')}
+              onClick={() => history.push("/logout")}
             >
               Déconnexion
             </button>
+          */}
 
-</div>
-
-
+        </div>
       </div>
     </div>
   );
 }
-
-
 
 // == Export
 export default ProfilePage;

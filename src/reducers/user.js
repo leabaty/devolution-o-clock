@@ -11,10 +11,6 @@ export const initialState = {
       case SAVE_USER: {
         return {
           ...state,
-          // firstname: firstname,
-          // lastname: lastname,
-          // email: email,
-          // pseudo: pseudo,
           logged : true,
         };
       }
@@ -22,8 +18,7 @@ export const initialState = {
         const { findUser, findProject } = action.dataProfile;
         return {
           dataUser: findUser,
-          projectUser: [findProject],
-          logged : true,
+          projectUser: findProject,
         };
       }
       default:
