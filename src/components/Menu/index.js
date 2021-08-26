@@ -1,10 +1,9 @@
-/* eslint-disable arrow-body-style */
 // == Import : npm
 import React from 'react';
 // import PropTypes from 'prop-types';
 
 // Images
-import CodeIcon from '../../assets/images/code-white.svg';
+import CodeIcon from './code-white.svg';
 
 // Style
 import './style.scss';
@@ -12,7 +11,9 @@ import './style.scss';
 // == Composant
 const Menu = ({}) => (
     <div className="menu__component">
+        {console.log(CodeIcon)}
 
+        <div className="menu__container">
         <div className="menu__logobutton">
             <img className="menu__logoicon" src="https://cdn.discordapp.com/attachments/874925609267118140/877480623034478622/test_Logo_-_transparent_white.png" alt="Logo Devolution" />
         </div>
@@ -32,8 +33,10 @@ const Menu = ({}) => (
 
             <div className="menu__participantbutton">
                 <img className="menu__participanticon" src={CodeIcon} alt="Participant Icon"/>
+                {/* <CodeIcon/> */}
             </div>
 
+        </div>
         </div>
     </div>
   );
