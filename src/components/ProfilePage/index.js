@@ -28,28 +28,60 @@ function ProfilePage({ profileData, userData }) {
       <div className="profile__component">
         <div className="profile__greeting">
           <div>
-            <h1 className="profile__title">Hello, Max!</h1>
-            <h2 className="profile__undertitle">Undertitle</h2>
+            <h1 className="profile__title">Hello, {userData.firstname} !</h1>
+            <h2 className="profile__undertitle">EN DUR Fonction (dév web, etc)</h2>
           </div>
 
           <img className="profile__picture" src="" alt="Profile picture" />
         </div>
 
-        <ProfileStatus />
+        <ProfileStatus userData={userData}/>
 
-        <ProfileContact />
+        <ProfileContact userData={userData}/>
 
-        <ProfileCityLinks />
+        <ProfileCityLinks userData={userData}/>
 
-        <ProfileCompetencies />
+        <ProfileCompetencies userData={userData}/>
 
-        <ProfileBio />
+        <ProfileBio userData={userData}/>
 
-        <ProfilePortfolio />
+        <ProfilePortfolio userData={userData}/>
+
+<div className="profile__buttons">
+
+<button
+              className="profile__modify"
+              type="submit"
+              onClick={() => history.push('/profile')}
+            >
+              Modifier mon profil
+            </button>
+
+            <button
+              className="profile__delete"
+              type="submit"
+              onClick={() => history.push('/profile')}
+            >
+              Supprimer mon profil
+            </button>
+
+            <button
+              className="profile__logout"
+              type="submit"
+              onClick={() => history.push('/profile')}
+            >
+              Déconnexion
+            </button>
+
+</div>
+
+
       </div>
     </div>
   );
 }
+
+
 
 // == Export
 export default ProfilePage;

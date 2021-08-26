@@ -10,7 +10,7 @@ import React from 'react';
 function ProfileStatus() {
   return (
       <div className="profile__status element">
-        <p className="profile__status-indicator">Disponible</p>
+        <p className="profile__status-indicator">EN DUR - Disponible</p>
       </div>
   );
 }

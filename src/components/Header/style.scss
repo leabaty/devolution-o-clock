@@ -1,5 +1,6 @@
 .header {
-  height: 60vh;
+  height: 50vh;
+  min-height: 420px;
   color: white;
   background: linear-gradient(0deg, #1A3A58 20%, #12273b 100%);
   padding: 35px;
@@ -33,7 +34,7 @@
   &__input{
     margin-top: 2%;
     width: 30%;
-    height: 7%;
+    height: 25px;
     border-radius: 30px;
     border: none;
     padding-left: 20px;
