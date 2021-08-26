@@ -31,7 +31,6 @@ function SearchPageDisconnect({projects}) {
           />
         ))}
       </div>
-      <Footer />
     </div>
   )
 }

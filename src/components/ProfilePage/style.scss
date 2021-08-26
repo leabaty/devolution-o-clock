@@ -1,3 +1,7 @@
+p,h3 {
+  padding: 6px;
+}
+
 .profile {
   &__page {
     display: flex;
@@ -30,42 +34,6 @@
     border-radius: 25%;
   }
 
-  &__status {
-  }
-
-  &__status-indicator {
-  }
-
-  &__contact-info {
-  }
-
-  &__name,
-  &__email,
-  &__phone {
-  }
-
-  &__city-links {
-  }
-
-  &__dribble,
-  &__linkedin,
-  &__github {
-  }
-
-  &__competencies {
-  }
-
-  &__category-title {
-  }
-
-  &__description {
-  }
-
-  &__portfolio {
-  }
-
-  &__portfolio-link {
-  }
 }
 
 .element {
@@ -74,3 +42,4 @@
   margin-bottom: 0.5em;
   padding: 0.5em;
 }
+
