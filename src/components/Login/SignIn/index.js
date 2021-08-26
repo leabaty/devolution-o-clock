@@ -49,7 +49,7 @@ function SignIn ({
             <button
               className="signin__send"
               type="submit"
-              onClick={() => history.push('/profile')}
+              // onClick={() => history.push('/profile')}
             >
               Se connecter
             </button>

@@ -15,7 +15,7 @@ import { FiSearch } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchPage() {
+function SearchProjectsResults() {
   return (
     <div className="search__page">
       <div className="search__menu">
@@ -55,4 +55,4 @@ function SearchPage() {
 }
 
 // == Export
-export default SearchPage;
+export default SearchProjectsResults;
