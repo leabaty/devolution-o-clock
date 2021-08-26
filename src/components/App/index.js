@@ -10,6 +10,7 @@ import SearchPageDisconnect from 'src/components/SearchPageDisconnect'
 import Login from 'src/containers/Login';
 import ProfilePage from 'src/containers/ProfilePage';
 import ProjectPageDisconnect from 'src/components/ProjectPageDisconnect';
+import SearchPage from 'src/components/SearchPage';
 
 import DataProjects from 'src/data/projects';
 import './style.scss';
@@ -42,6 +43,11 @@ function App({
             <Redirect to="/login" />
           )} */}
       </Route>
+
+      <Route path="/search">
+            <SearchPage />
+      </Route>
+
     </Switch>
     </div>
   )

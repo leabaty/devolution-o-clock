@@ -3,6 +3,9 @@
 import React from "react";
 // import PropTypes from 'prop-types';
 
+// Icons
+import { FiExternalLink } from 'react-icons/fi';
+
 // Style
 // import "./style.scss";
 
@@ -10,8 +13,9 @@ import React from "react";
 function ProfilePortfolio() {
   return (
     <div className="profile__portfolio element">
+      <h3 className="profile__category-title">Mon portfolio</h3>
       <a className="profile__portfolio-link" alt="Portfolio Link">
-        Nia nia nia
+        <p>Titre de la page <FiExternalLink/> </p>
       </a>
     </div>
   );
