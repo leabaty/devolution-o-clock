@@ -11,6 +11,7 @@ import Login from 'src/containers/Login';
 import ProfilePage from 'src/containers/ProfilePage';
 import ProjectPageDisconnect from 'src/components/ProjectPageDisconnect';
 import SearchPage from 'src/components/SearchPage';
+import SearchProjectsResults from 'src/components/SearchProjectsResults';
 
 import DataProjects from 'src/data/projects';
 import './style.scss';
@@ -36,7 +37,7 @@ function App({
       <Route path="/login" exact>
         <Login/>
       </Route>
-      <Route path="/profile">
+      <Route path="/profile" exact>
           {/* {isLogged ? ( */}
             <ProfilePage />
           {/* ) : (
@@ -44,8 +45,12 @@ function App({
           )} */}
       </Route>
 
-      <Route path="/search">
+      <Route path="/search" exact>
             <SearchPage />
+      </Route>
+
+      <Route path="/search/projects" exact>
+            <SearchProjectsResults />
       </Route>
 
     </Switch>
