@@ -5,21 +5,37 @@
         background-repeat: no-repeat;
         color:white;
         font-family: 'Nunito', sans-serif;
-        flex-direction: column;
-        justify-content: space-around;
         height: 100vh;
         width: 12vw;
     }
 
-    &__logoicon {
-        width: 80px;
-        margin: 20%;
+    &__container {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
 
+    &__logobutton {
+        height: 50%;
+        padding-top: 20%;
+    }
+
+    &__logoicon {
+        width: 5em;
+    }
+
+    &__buttons {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
     }
 
     &__searchicon, &__creatoricon, &__participanticon {
-        width: 25px;
-        margin: 5% 35%;
+        width: 2em;
     }
 
 
