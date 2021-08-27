@@ -11,21 +11,26 @@ import { BiMap } from 'react-icons/bi';
 import "./style.scss";
 
 // == Composant
-function ProfileCityLinks() {
+function ProfileCityLinks({ userData }) {
   return (
     <div className="profile__city-links element">
-      <p className="profile__city"> <BiMap/> Paris</p>
+
+      <p className="profile__city"> <BiMap/> {userData.city} </p>
 
       <div className="profile__links">
+        
       <a className="profile__dribbble" alt="Dribble Link">
-      <AiFillDribbbleCircle size="30px"/>
+      <AiFillDribbbleCircle size="30px"/> 
       </a>
+
       <a className="profile__linkedin" alt="LinkedIn Link">
       <AiFillLinkedin size="30px"/>
       </a>
+
       <a className="profile__github" alt="GitHub Link">
       <AiFillGithub size="30px"/>
       </a>
+
       </div>
 
     </div>

@@ -34,6 +34,45 @@ p,h3 {
     border-radius: 25%;
   }
 
+  &__buttons {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+  }
+
+  &__delete,
+  &__modify,
+  &__logout {
+    margin-top: 20px;
+    border-radius: 25px;
+    padding: 10px;
+    width: 15vw;
+    min-width: 170px;
+    border:none;
+    background-color: #0D273F;
+    color: white;
+    font-size: 15px;
+    font-family: 'Nunito';
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  &__delete:hover,
+  &__modify:hover,
+  &__logout:hover {
+    transform: translateY(-7px);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  &__delete, {
+    background-color: #BD2606 ;
+  }
+
+  &__logout {
+    border: #cacfd3 1px solid;
+    background-color: white;
+    color: #0D273F;
+  }
+
 }
 
 .element {

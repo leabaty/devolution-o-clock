@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import ReactLogo from './logo.svg';
 import './style.scss'
 
 function Header(props) {

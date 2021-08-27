@@ -37,8 +37,8 @@ function ProjectPageDisconnect(props) {
         <Link to='/login'>
         <button className="projectDisconnect__main__button">Plus de détails</button>
         </Link>
-        <Footer />
       </div>
+        <Footer />
     </div>
   )
 }

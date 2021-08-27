@@ -10,6 +10,7 @@ import SearchPageDisconnect from 'src/components/SearchPageDisconnect'
 import Login from 'src/containers/Login';
 import ProfilePage from 'src/containers/ProfilePage';
 import ProjectPageDisconnect from 'src/components/ProjectPageDisconnect';
+import ProfilePageForm from 'src/containers/ProfilePageForm';
 import SearchPage from 'src/components/SearchPage';
 import SearchProjectsResults from 'src/components/SearchProjectsResults';
 import SearchProjectsResult from 'src/components/SearchProjectsResult';
@@ -45,6 +46,11 @@ function App({
             <Redirect to="/login" />
           )} */}
       </Route>
+
+      <Route path="/modifyprofile" exact>
+        <ProfilePageForm/>
+      </Route>
+
 
       <Route path="/search" exact>
             <SearchPage />

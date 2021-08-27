@@ -11,12 +11,14 @@ import { FiMail, FiPhone } from 'react-icons/fi';
 
 
 // == Composant
-function ProfileContact() {
+function ProfileContact({ userData }) {
   return (
     <div className="profile__contact-info element">
-      <p className="profile__name"> <AiOutlineUser /> Maxime Durand </p>
-      <p className="profile__email"> <FiMail /> maxime@gmail.com </p>
-      <p className="profile__phone"> <FiPhone /> 07878677A0</p>
+
+      <p className="profile__name"> <AiOutlineUser /> {userData.firstname} {userData.lastname}  </p>
+      <p className="profile__email"> <FiMail /> {userData.email} </p>
+      <p className="profile__phone"> <FiPhone />{userData.phone}</p>
+
     </div>
   );
 }
