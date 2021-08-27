@@ -17,7 +17,14 @@ p,h3 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 1em;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+
+  &__picture{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
   }
 
   &__title {
@@ -28,10 +35,6 @@ p,h3 {
 
   &__undertitle {
     font-size: 1.5rem;
-  }
-
-  &__picture {
-    border-radius: 25%;
   }
 
   &__buttons {

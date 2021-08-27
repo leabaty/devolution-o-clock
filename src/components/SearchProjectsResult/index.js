@@ -22,7 +22,7 @@ function SearchProjectsResult() {
       </div>
 
       <div className="project__subpage">
-        <div className="header__user">
+        <div className="header__user-search">
           <p className="header__comeback">
             <FiArrowLeftCircle /> Revenir à la recherche
           </p>
