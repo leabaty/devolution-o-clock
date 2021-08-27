@@ -67,8 +67,9 @@ export const changeSignInPasswordValue = (value) => ({
   value,
 });
 
-export const signInSubmit = () => ({
+export const signInSubmit = (value) => ({
   type: SIGN_IN_SUBMIT,
+  value
 });
 
 export const saveUser = (payload) => ({
