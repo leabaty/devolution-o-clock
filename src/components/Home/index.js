@@ -27,7 +27,6 @@ function Home({projects, lastProjectsLoading}) {
       <Link to='/searchProjects'>
         <button className="home__button">Voir plus de projets</button>
       </Link>
-      <Footer />
     </div>
   )
 }

@@ -5,12 +5,12 @@
         background-repeat: no-repeat;
         color:white;
         font-family: 'Nunito', sans-serif;
-        height: 100vh;
+        height: 100%;
         width: 12vw;
     }
 
     &__container {
-        height: 50vh;
+        height: 40vh;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
