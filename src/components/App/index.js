@@ -11,6 +11,9 @@ import Login from 'src/containers/Login';
 import ProfilePage from 'src/containers/ProfilePage';
 import ProjectPageDisconnect from 'src/components/ProjectPageDisconnect';
 import ProfilePageForm from 'src/containers/ProfilePageForm';
+import SearchPage from 'src/components/SearchPage';
+import SearchProjectsResults from 'src/components/SearchProjectsResults';
+import SearchProjectsResult from 'src/components/SearchProjectsResult';
 
 import DataProjects from 'src/data/projects';
 import './style.scss';
@@ -36,16 +39,32 @@ function App({
       <Route path="/login" exact>
         <Login/>
       </Route>
-      <Route path="/profile">
+      <Route path="/profile" exact>
           {/* {isLogged ? ( */}
             <ProfilePage />
           {/* ) : (
             <Redirect to="/login" />
           )} */}
       </Route>
+
       <Route path="/modifyprofile" exact>
         <ProfilePageForm/>
       </Route>
+
+
+      <Route path="/search" exact>
+            <SearchPage />
+      </Route>
+
+      <Route path="/search/projects" exact>
+            <SearchProjectsResults />
+      </Route>
+
+      <Route path="/search/projects/id" exact>
+            <SearchProjectsResult />
+      </Route>
+
+
     </Switch>
     </div>
   )

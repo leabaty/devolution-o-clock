@@ -3,7 +3,8 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 // Images
-import CodeIcon from './code-white.svg';
+// import CodeIcon from './code-white.svg';
+
 
 // Style
 import './style.scss';
@@ -27,14 +28,14 @@ const Menu = ({}) => (
                 <img className="menu__creatoricon" src="https://cdn.discordapp.com/attachments/874922784298528786/877661552369614858/idea_-_transparent_white.png" alt="Idea Icon"/>
             </div>
 
-            {/* <div className="menu__participantbutton">
-                <img className="menu__participanticon" src="https://cdn.discordapp.com/attachments/874922784298528786/877661549194530856/code_-_transparent_white.png" alt="Participant Icon"/>
-            </div> */}
-
             <div className="menu__participantbutton">
-                <img className="menu__participanticon" src={CodeIcon} alt="Participant Icon"/>
-                {/* <CodeIcon/> */}
+                <img className="menu__participanticon" src="https://cdn.discordapp.com/attachments/874922784298528786/877661549194530856/code_-_transparent_white.png" alt="Participant Icon"/>
             </div>
+
+            {/* <div className="menu__participantbutton">
+                <img className="menu__participanticon" src={CodeIcon} alt="Participant Icon"/>
+                <CodeIcon/>
+            </div> */}
 
         </div>
         </div>
