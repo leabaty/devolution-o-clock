@@ -22,7 +22,7 @@ function SearchPage() {
       </div>
 
       <div className="search__subpage">
-        <div className="profile__user-icon">
+        <div className="header__user">
           <HeaderConnected />
         </div>
 

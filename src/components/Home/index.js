@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 import Header from 'src/components/Header';
 import CardProject from 'src/components/CardProject';
-import Footer from 'src/components/Footer';
 
 
 import './style.scss'

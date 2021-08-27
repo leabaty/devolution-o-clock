@@ -14,6 +14,9 @@ import ProfilePageForm from 'src/containers/ProfilePageForm';
 import SearchPage from 'src/components/SearchPage';
 import SearchProjectsResults from 'src/components/SearchProjectsResults';
 import SearchProjectsResult from 'src/components/SearchProjectsResult';
+import BoardPageParticipant from 'src/components/BoardPageParticipant';
+import BoardPageProjectBearer from 'src/components/BoardPageProjectBearer';
+import SearchUsersResults from 'src/components/SearchUsersResults';
 
 import DataProjects from 'src/data/projects';
 import './style.scss';
@@ -60,8 +63,20 @@ function App({
             <SearchProjectsResults />
       </Route>
 
+      <Route path="/search/users" exact>
+            <SearchUsersResults />
+      </Route>
+
       <Route path="/search/projects/id" exact>
             <SearchProjectsResult />
+      </Route>
+
+      <Route path="/myParticipations" exact>
+            <BoardPageParticipant />
+      </Route>
+
+      <Route path="/myProjects" exact>
+            <BoardPageProjectBearer />
       </Route>
 
 

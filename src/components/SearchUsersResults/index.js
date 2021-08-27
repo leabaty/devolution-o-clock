@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 // Composants
 import Menu from "src/components/Menu";
 import HeaderConnected from "src/components/HeaderConnected";
-import CardProject from "src/components/CardProject";
+import CardUser from "src/components/CardUser";
 
 // Icons
 import { FiSearch } from "react-icons/fi";
@@ -15,7 +15,7 @@ import { FiSearch } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchProjectsResults() {
+function SearchUsersResults() {
   return (
     <div className="search__page">
       <div className="search__menu">
@@ -42,12 +42,7 @@ function SearchProjectsResults() {
             <p className="search-details__number-results"> 5 résultats </p>
 
             <div className="search-details__results">
-            <CardProject />
-            <CardProject />
-            <CardProject />
-            <CardProject />
-            <CardProject />
-            <CardProject />
+            <CardUser />
             </div>
 
         </div>
@@ -57,4 +52,4 @@ function SearchProjectsResults() {
 }
 
 // == Export
-export default SearchProjectsResults;
+export default SearchUsersResults;

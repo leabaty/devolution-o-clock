@@ -35,7 +35,7 @@ function ProfilePage({ profileData, userData }) {
             </h2>
           </div>
 
-          <img className="profile__picture" src="" alt="Profile picture" />
+          <img className="profile__picture" src="https://cdn.discordapp.com/attachments/874925609267118140/880749515311820830/Capture_decran_2021-08-27_114356.png" alt="Profile picture" />
         </div>
 
         <ProfileStatus userData={userData} />

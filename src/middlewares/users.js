@@ -69,7 +69,7 @@ const users= (store) => (next) => (action) => {
 
     case GET_PROFILE_DATA: {
       const token = localStorage.getItem('token')
-      console.log("CONSOLE LOG TOKEN": token)
+      // console.log("CONSOLE LOG TOKEN": token)
       instance({
         method: 'GET',
         url: '/me',
