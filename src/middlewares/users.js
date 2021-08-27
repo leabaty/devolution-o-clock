@@ -16,7 +16,7 @@ const users= (store) => (next) => (action) => {
         pseudo: pseudo,
         email: email,
         password: password,
-        confirmPassword: confirmPassword,
+        repeat_password: confirmPassword,
     };
       const createUser = async () => {
         try {
@@ -44,7 +44,6 @@ const users= (store) => (next) => (action) => {
         },
       })
         .then((response) => {
-            console.log(response)
             if(response.data.accessToken) {
               //si on a un token, on vient le stocker le token dans localStorage
               localStorage.setItem('token', response.data.accessToken);
@@ -59,7 +58,7 @@ const users= (store) => (next) => (action) => {
               
               // on passe par la fonction disaptch du store
               store.dispatch(actionSaveUser);
-
+              action.value.push('/profile')
             }
           })
         .catch((error) => console.log(error));

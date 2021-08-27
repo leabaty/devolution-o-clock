@@ -15,8 +15,8 @@ const initialState = {
   lastname: 'Tata',
   pseudo: 'Titi',
   email: 'titi@gmail.com',
-  password: 'Titi',
-  confirmPassword:'Titi',
+  password: 'titi',
+  confirmPassword:'titi',
   signInEmail:'',
   signInPassword:''
 };

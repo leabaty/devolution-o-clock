@@ -43,7 +43,6 @@ p,h3 {
   &__delete,
   &__modify,
   &__logout {
-    margin-top: 20px;
     border-radius: 25px;
     padding: 10px;
     width: 15vw;
@@ -55,6 +54,7 @@ p,h3 {
     font-family: 'Nunito';
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   }
+
 
   &__delete:hover,
   &__modify:hover,
