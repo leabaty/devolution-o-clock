@@ -44,6 +44,7 @@ const users= (store) => (next) => (action) => {
         },
       })
         .then((response) => {
+          console.log(response)
             if(response.data.accessToken) {
               //si on a un token, on vient le stocker le token dans localStorage
               localStorage.setItem('token', response.data.accessToken);
@@ -62,7 +63,6 @@ const users= (store) => (next) => (action) => {
             }
           })
         .catch((error) => console.log(error));
-
       break;
     }
 

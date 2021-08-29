@@ -51,31 +51,32 @@ function ProfilePage({ profileData, userData }) {
         <ProfilePortfolio userData={userData} />
 
         <div className="profile__buttons">
-            <button
-              className="profile__modify"
-              type="submit"
-              // onClick={() => history.push("/modifyprofile")}
-            >
-              Modifier mon profil
-            </button>
-{/* 
-            <button
-              className="profile__delete"
-              type="submit"
-              onClick={() => history.push("/deleteprofile")}
-            >
-              Supprimer mon profil
-            </button>
+            <Link to='/modifyprofile'>
+              <button
+                className="profile__modify"
+                type="submit"
+              >
+                Modifier mon profil
+              </button>
+            </Link>
 
+            <Link to=''>
+              <button
+                className="profile__delete"
+                type="submit"
+              >
+                Supprimer mon profil
+              </button>
+            </Link>
 
-            <button
-              className="profile__logout"
-              type="submit"
-              onClick={() => history.push("/logout")}
-            >
-              Déconnexion
-            </button>
-          */}
+            <Link to=''>
+              <button
+                className="profile__logout"
+                type="submit"
+              >
+                Déconnexion
+              </button>
+            </Link>
 
         </div>
       </div>

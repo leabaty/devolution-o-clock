@@ -20,7 +20,6 @@ function SignIn ({
   };
   const onSignInSubmit = (event) => {
     event.preventDefault();
-    console.log(onFormSignInSubmit);
     onFormSignInSubmit(history);
   };
 

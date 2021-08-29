@@ -3,3 +3,30 @@
     flex-direction: column;
     justify-content: space-around;
 }
+
+.element-form {
+    border: solid lightgray 1px;
+    border-radius: 15px;
+    margin-bottom: 0.5em;
+    padding: 0.8em;
+    
+    display:flex;
+    flex-direction:column;
+  }
+
+.profile-form {
+    &__surname, &__name, &__phone, &__email, &__city, &__link-dribbble, &__link-linkedin, &__link-github, &__description, &__portfolio-link, &__password-input {
+        width:60%;
+        padding:5px;
+        margin-top:5px;
+        margin-left:5px;
+        border-radius:25px;
+        border: solid lightgray 1px;
+    } 
+
+    &__warning{
+        margin-top:5px;
+        margin-left:5px;
+        font-size:0.9em;
+    }
+}
