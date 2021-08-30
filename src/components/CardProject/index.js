@@ -23,5 +23,5 @@ CardProject.propTypes = {
   description: PropTypes.string.isRequired,
 }
 
-export default CardProject
+export default CardProject;
 

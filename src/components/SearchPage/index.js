@@ -2,6 +2,7 @@
 // == Import : npm
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
 
 // Composants
 import Menu from "src/components/Menu";
@@ -14,8 +15,14 @@ import { AiOutlineSearch } from "react-icons/ai";
 import "./style.scss";
 
 // == Composant
-function SearchPage({changeInputProjectValue, changeInputUserValue, searchProjectSubmit, searchUserSubmit, searchAllProjectsSubmit, searchAllUsersSubmit}) {
-
+function SearchPage({
+  changeInputProjectValue,
+  changeInputUserValue,
+  searchProjectSubmit,
+  searchUserSubmit,
+  searchAllProjectsSubmit,
+  searchAllUsersSubmit,
+}) {
   const onChangeInputProject = (event) => {
     changeInputProjectValue(event.target.value);
   };
@@ -23,7 +30,6 @@ function SearchPage({changeInputProjectValue, changeInputUserValue, searchProjec
     changeInputUserValue(event.target.value);
   };
   const onSearchProjectSubmit = (event) => {
-    console.log(event.target.value)
     event.preventDefault();
     searchProjectSubmit();
   };
@@ -52,10 +58,13 @@ function SearchPage({changeInputProjectValue, changeInputUserValue, searchProjec
         <p className="search__title">Recherche</p>
 
         <div className="search__component">
-
           <div className="search__project">
             <p className="search__subtitle">Je cherche un projet</p>
-            <img className="search__icon" src="https://cdn.discordapp.com/attachments/874922784298528786/880454230056534077/recherche_par_projets.png" alt="Recherche par projet" />
+            <img
+              className="search__icon"
+              src="https://cdn.discordapp.com/attachments/874922784298528786/880454230056534077/recherche_par_projets.png"
+              alt="Recherche par projet"
+            />
 
             <form className="search__form">
               <input
@@ -64,20 +73,34 @@ function SearchPage({changeInputProjectValue, changeInputUserValue, searchProjec
                 placeholder="nom de projet, d'association..."
                 onChange={onChangeInputProject}
               />
-              <button className="search__button" type="submit" onClick={onSearchProjectSubmit}>
-                Rechercher un projet
-              </button>
+              <Link to="">
+                <button
+                  className="search__button"
+                  type="submit"
+                  onClick={onSearchProjectSubmit}
+                >
+                  Rechercher un projet
+                </button>
+              </Link>
             </form>
 
-            <button className="search__button-all" onClick={onSearchAllProjectsSubmit}>
+            <Link to="/search/projects">
+              <button
+                className="search__button-all"
+                onClick={onSearchAllProjectsSubmit}
+              >
                 Voir tous les projets
               </button>
-
+            </Link>
           </div>
 
           <div className="search__user">
             <p className="search__subtitle">Je cherche un utilisateur</p>
-            <img className="search__icon" src="https://cdn.discordapp.com/attachments/874922784298528786/880454233613271080/recherche_par_users.png" alt="Recherche par utilisateur" />
+            <img
+              className="search__icon"
+              src="https://cdn.discordapp.com/attachments/874922784298528786/880454233613271080/recherche_par_users.png"
+              alt="Recherche par utilisateur"
+            />
 
             <form className="search__form">
               <input
@@ -90,11 +113,15 @@ function SearchPage({changeInputProjectValue, changeInputUserValue, searchProjec
               </button>
             </form>
 
-            <button className="search__button-all" onClick={onSearchAllUsersSubmit}>
+            <Link to="/search/users">
+              <button
+                className="search__button-all"
+                onClick={onSearchAllUsersSubmit}
+              >
                 Voir tous les utilisateurs
               </button>
+            </Link>
           </div>
-
         </div>
       </div>
     </div>

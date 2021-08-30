@@ -25,6 +25,7 @@ const projects= (store) => (next) => (action) => {
     }
     case GET_SEARCH_PROJECT: {
       const {inputSearchProject} = store.getState().search
+      console.log(inputSearchProject)
       const token = localStorage.getItem('token')
       instance({
         method: 'GET',
@@ -34,10 +35,10 @@ const projects= (store) => (next) => (action) => {
         },
       })
           .then((response) => {
-            const dataProject = response.data;
+            const Projects = response.data;
             console.log('dataProject', response.data)
-            // const actionSaveProjectData = saveProjectData(dataProfile);
-            // store.dispatch(actionSaveProjectData);
+            const actionSaveProjects = saveAllProjects(response.data);
+            store.dispatch(actionSaveProjects);
           })
           .catch((error) => console.log(error));
         break;

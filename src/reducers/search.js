@@ -1,7 +1,7 @@
-import { CHANGE_PROJECT_VALUE, CHANGE_USER_VALUE, SAVE_ALL_USERS } from '../actions';
+import { CHANGE_PROJECT_VALUE, CHANGE_USER_VALUE, SAVE_ALL_USERS, SAVE_ALL_PROJECTS            } from '../actions';
 
 export const initialState = {
-  inputSearchProjet: '',
+  inputSearchProject: '',
   inputSearchUser: '',
   users:[],
   projects:[]
@@ -12,7 +12,7 @@ const searchReducer = (state = initialState, action = {}) => {
     case CHANGE_PROJECT_VALUE: {
       return{
         ...state,
-        inputSearchProjet: action.value
+        inputSearchProject: action.value
       }
     }
     case CHANGE_USER_VALUE: {
@@ -27,6 +27,11 @@ const searchReducer = (state = initialState, action = {}) => {
         users: action.users,
       };
     }
+    case SAVE_ALL_PROJECTS:
+        return {
+          ...state,
+          projects: action.projects,
+        };
     default:
       return state;
   }

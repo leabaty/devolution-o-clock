@@ -12,11 +12,11 @@ import ProfilePage from 'src/containers/ProfilePage';
 import ProjectPageDisconnect from 'src/components/ProjectPageDisconnect';
 import ProfilePageForm from 'src/containers/ProfilePageForm';
 import SearchPage from 'src/containers/SearchPage';
-import SearchProjectsResults from 'src/components/SearchProjectsResults';
+import SearchProjectsResults from 'src/containers/SearchProjectsResults';
 import SearchProjectsResult from 'src/components/SearchProjectsResult';
 import BoardPageParticipant from 'src/components/BoardPageParticipant';
 import BoardPageProjectBearer from 'src/components/BoardPageProjectBearer';
-import SearchUsersResults from 'src/components/SearchUsersResults';
+import SearchUsersResults from 'src/containers/SearchUsersResults';
 import SearchUsersResult from 'src/components/SearchUsersResult';
 
 import DataProjects from 'src/data/projects';
