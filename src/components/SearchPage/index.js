@@ -14,7 +14,30 @@ import { AiOutlineSearch } from "react-icons/ai";
 import "./style.scss";
 
 // == Composant
-function SearchPage() {
+function SearchPage({changeInputProjectValue, changeInputUserValue, searchProjectSubmit, searchUserSubmit, searchAllProjectsSubmit, searchAllUsersSubmit}) {
+
+  const onChangeInputProject = (event) => {
+    changeInputProjectValue(event.target.value);
+  };
+  const onChangeInputUser = (event) => {
+    changeInputUserValue(event.target.value);
+  };
+  const onSearchProjectSubmit = (event) => {
+    console.log(event.target.value)
+    event.preventDefault();
+    searchProjectSubmit();
+  };
+  const onSearchUserSubmit = (event) => {
+    event.preventDefault();
+    searchUserSubmit();
+  };
+  const onSearchAllProjectsSubmit = () => {
+    searchAllProjectsSubmit();
+  };
+  const onSearchAllUsersSubmit = () => {
+    searchAllUsersSubmit();
+  };
+
   return (
     <div className="search__page">
       <div className="search__menu">
@@ -39,11 +62,17 @@ function SearchPage() {
                 className="search__input"
                 // placeholder={<AiOutlineSearch />}
                 placeholder="nom de projet, d'association..."
+                onChange={onChangeInputProject}
               />
-              <button className="search__button" type="submit">
+              <button className="search__button" type="submit" onClick={onSearchProjectSubmit}>
                 Rechercher un projet
               </button>
             </form>
+
+            <button className="search__button-all" onClick={onSearchAllProjectsSubmit}>
+                Voir tous les projets
+              </button>
+
           </div>
 
           <div className="search__user">
@@ -54,11 +83,16 @@ function SearchPage() {
               <input
                 className="search__input"
                 placeholder="nom d'utilisateur, technologies, rôle..."
+                onChange={onChangeInputUser}
               />
-              <button className="search__button" type="submit">
+              <button className="search__button" onClick={onSearchUserSubmit}>
                 Rechercher un utilisateur
               </button>
             </form>
+
+            <button className="search__button-all" onClick={onSearchAllUsersSubmit}>
+                Voir tous les utilisateurs
+              </button>
           </div>
 
         </div>

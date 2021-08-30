@@ -10,7 +10,7 @@ import './style.scss'
 
 function Home({projects, lastProjectsLoading}) {
   useEffect(lastProjectsLoading, []);
-
+  
   return (
     <div className="home">
       <Header />

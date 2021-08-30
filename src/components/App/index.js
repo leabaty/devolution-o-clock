@@ -11,7 +11,7 @@ import Login from 'src/containers/Login';
 import ProfilePage from 'src/containers/ProfilePage';
 import ProjectPageDisconnect from 'src/components/ProjectPageDisconnect';
 import ProfilePageForm from 'src/containers/ProfilePageForm';
-import SearchPage from 'src/components/SearchPage';
+import SearchPage from 'src/containers/SearchPage';
 import SearchProjectsResults from 'src/components/SearchProjectsResults';
 import SearchProjectsResult from 'src/components/SearchProjectsResult';
 import BoardPageParticipant from 'src/components/BoardPageParticipant';
@@ -26,7 +26,7 @@ import './style.scss';
 function App({
   isLogged
 }) {
-  console.log(isLogged)
+  // console.log(isLogged)
   return (
     <div className="app">
     <Switch>
