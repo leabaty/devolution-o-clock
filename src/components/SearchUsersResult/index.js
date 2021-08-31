@@ -40,7 +40,7 @@ function SearchUsersResult({ userData }) {
           <div className="profile__greeting">
             <div>
               <h1 className="profile__title">{userData.firstname}</h1>
-              <h2 className="profile__undertitle">
+              <h2 className="profile__undertitle">npm 
                 EN DUR Fonction (dév web, etc)
               </h2>
             </div>

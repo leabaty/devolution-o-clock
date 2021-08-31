@@ -105,12 +105,14 @@ function SearchPage({
             <form className="search__form">
               <input
                 className="search__input"
-                placeholder="nom d'utilisateur, technologies, rôle..."
+                placeholder="nom d'utilisateur, compétences, rôle..."
                 onChange={onChangeInputUser}
               />
-              <button className="search__button" onClick={onSearchUserSubmit}>
-                Rechercher un utilisateur
-              </button>
+              <Link to="">
+                <button className="search__button" onClick={onSearchUserSubmit}>
+                  Rechercher un utilisateur
+                </button>
+              </Link>
             </form>
 
             <Link to="/search/users">
