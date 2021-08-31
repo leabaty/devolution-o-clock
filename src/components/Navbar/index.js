@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
-import { FaHands, FaBars, FaSearch, FaRegLightbulb } from 'react-icons/fa';
+import { FaHands, FaBars, FaSearch, FaRegLightbulb, FaUserAlt } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import "./style.scss";
 
@@ -70,9 +70,10 @@ function Navbar( /*{ isLogged } */) {
                     unmountOnExit
                 >
                 <nav className="Header__nav--logged">
-                        <Link to="/searchProjects"><FaSearch className="Header__logo__icon--logged" /></Link>
-                        <Link to="/"><FaRegLightbulb className="Header__logo__icon--logged" /></Link>
-                        <Link to="/"><FaRegLightbulb className="Header__logo__icon--logged" /></Link>
+                    <Link to="/searchProjects"><FaSearch className="Header__logo__icon--logged" /></Link>
+                    <Link to="/"><FaRegLightbulb className="Header__logo__icon--logged" /></Link>
+                    <Link to="/"><FaRegLightbulb className="Header__logo__icon--logged" /></Link>
+                    <Link to="/"><FaUserAlt className="Header__logo__icon--logged" /></Link>
                     <div className="Header__logout--logged">
                         <button>logout</button>
                     </div>

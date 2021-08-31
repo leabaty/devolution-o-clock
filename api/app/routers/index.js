@@ -30,15 +30,7 @@ router.delete('/project/:id' ,tokenMiddleware.authenticate ,projectController.de
 //router.get('/project/:id/participated',tokenMiddleware.authenticate ,projectController.teamInProject);
 router.get('/project/:id/partipants',)
 
-
 router.get('/search/:query',tokenMiddleware.authenticate ,mainController.searchProject);
 router.post('/projects/:search',tokenMiddleware.authenticate ,projectController.search);
-
-
-
-
-
-
-
 
 module.exports=router
