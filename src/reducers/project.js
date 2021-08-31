@@ -1,5 +1,5 @@
 import {
-  SAVE_LAST_PROJECTS,
+  
 } from 'src/actions';
 
 export const initialState = {
@@ -9,12 +9,11 @@ export const initialState = {
   
   const projectReducer = (state = initialState, action = {}) => {
     switch (action.type) {
-      case SAVE_LAST_PROJECTS:
-        return {
-          ...state,
-          list: action.projects,
-          
-        };
+      // case SAVE_ALL_PROJECTS:
+      //   return {
+      //     ...state,
+      //     list: action.projects,
+      //   };
       default:
         return state;
     }

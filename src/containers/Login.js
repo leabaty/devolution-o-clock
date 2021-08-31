@@ -57,9 +57,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     const action = signUpSubmit();
     dispatch(action);
   },
-  formSignInSubmit: () => {
+  formSignInSubmit: (value) => {
     console.log('coucou')
-    const action = signInSubmit();
+    const action = signInSubmit(value);
     dispatch(action);
   },
   changeSignInInputEmailValue: (value) => {

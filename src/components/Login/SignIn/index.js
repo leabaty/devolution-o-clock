@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, Redirect } from 'react-router-dom';
 
 import './style.scss';
 
@@ -11,6 +11,7 @@ function SignIn ({
   onChangeSignInInputPasswordValue,
   onFormSignInSubmit,
 }) {
+  const history = useHistory();
   const onChangeSignInEmail = (event) => {
     onChangeSignInInputEmailValue(event.target.value);
   };
@@ -19,17 +20,15 @@ function SignIn ({
   };
   const onSignInSubmit = (event) => {
     event.preventDefault();
-    console.log('coucou1')
-    onFormSignInSubmit();
+    onFormSignInSubmit(history);
   };
-  const history = useHistory();
+
   
   return(
     <div className='signin__component'>
     <h1 className='signin__title'>J'ai déjà un compte</h1>
         <form
           className="signin__form"
-          onSubmit={onSignInSubmit}
         >
           <input
             className="signin__input"
@@ -45,15 +44,12 @@ function SignIn ({
             placeholder="Mot de passe"
           />
           {/* {isError && <p className="signin__error">Erreur de connexion</p>} */}
-          {/* <Link to='/profile'> */}
             <button
               className="signin__send"
-              type="submit"
-              onClick={() => history.push('/profile')}
+              onClick={onSignInSubmit}
             >
               Se connecter
             </button>
-          {/* </Link> */}
         </form>
     </div>
   )

@@ -10,6 +10,7 @@ import './style.scss'
 
 function Home({projects, lastProjectsLoading}) {
   useEffect(lastProjectsLoading, []);
+  console.log(projects)
 
   return (
     <div className="home">
@@ -40,7 +41,6 @@ function Home({projects, lastProjectsLoading}) {
       <Link to='/searchProjects'>
         <button className="home__button">Voir plus de projets</button>
       </Link>
-
     </div>
   )
 }

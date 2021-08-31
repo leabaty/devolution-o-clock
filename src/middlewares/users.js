@@ -2,7 +2,7 @@ import axios from 'axios';
 import instance from './utils/instance';
 
 
-import { SIGN_UP_SUBMIT, SIGN_IN_SUBMIT, saveUser, GET_PROFILE_DATA, LOAD_PROFILE_DATA, saveProfileData} from 'src/actions';
+import { SIGN_UP_SUBMIT, SIGN_IN_SUBMIT, saveUser, GET_PROFILE_DATA, LOAD_PROFILE_DATA, saveProfileData, GET_SEARCH_USER, GET_ALL_USERS, saveUsers } from 'src/actions';
 
 
 const users= (store) => (next) => (action) => {
@@ -16,7 +16,7 @@ const users= (store) => (next) => (action) => {
         pseudo: pseudo,
         email: email,
         password: password,
-        confirmPassword: confirmPassword,
+        repeat_password: confirmPassword,
     };
       const createUser = async () => {
         try {
@@ -44,7 +44,7 @@ const users= (store) => (next) => (action) => {
         },
       })
         .then((response) => {
-            console.log(response)
+          console.log(response)
             if(response.data.accessToken) {
               //si on a un token, on vient le stocker le token dans localStorage
               localStorage.setItem('token', response.data.accessToken);
@@ -59,17 +59,16 @@ const users= (store) => (next) => (action) => {
               
               // on passe par la fonction disaptch du store
               store.dispatch(actionSaveUser);
-
+              action.value.push('/profile')
             }
           })
         .catch((error) => console.log(error));
-
       break;
     }
 
     case GET_PROFILE_DATA: {
       const token = localStorage.getItem('token')
-      console.log(token)
+      // console.log("CONSOLE LOG TOKEN": token)
       instance({
         method: 'GET',
         url: '/me',
@@ -89,6 +88,48 @@ const users= (store) => (next) => (action) => {
         break;
       }
 
+        case GET_ALL_USERS: {
+          const token = localStorage.getItem('token')
+          instance({
+            method: 'GET',
+            url: '/users',
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          })
+              .then((response) => {
+                // en cas de réponse on sauvegarde le user dans le state
+                // avec la même action que pour le login
+                const Users = response.data;
+                console.log('dataUser', response.data)
+                const actionSaveUsers = saveUsers(Users);
+                store.dispatch(actionSaveUsers);
+              })
+              .catch((error) => console.log(error));
+            break;
+          }
+
+          case GET_SEARCH_USER: {
+            const {inputSearchUser} = store.getState().search
+            const token = localStorage.getItem('token')
+            instance({
+              method: 'GET',
+              url: `/users/${inputSearchUser}`,
+              headers: {
+                authorization: `Bearer ${token}`,
+              },
+            })
+                .then((response) => {
+                  // en cas de réponse on sauvegarde le user dans le state
+                  // avec la même action que pour le login
+                  const Users = response.data;
+                  console.log('dataUser', response.data)
+                  const actionSaveUserData = saveUsers(Users);
+                  store.dispatch(actionSaveUserData);
+                })
+                .catch((error) => console.log(error));
+              break;
+            }
     default:
       next(action);
   }

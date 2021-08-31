@@ -1,3 +1,7 @@
+p,h3 {
+  padding: 6px;
+}
+
 .profile {
   &__page {
     display: flex;
@@ -13,7 +17,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 1em;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+
+  &__picture{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
   }
 
   &__title {
@@ -26,46 +37,46 @@
     font-size: 1.5rem;
   }
 
-  &__picture {
-    border-radius: 25%;
+  &__buttons {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
   }
 
-  &__status {
+  &__delete,
+  &__modify,
+  &__logout {
+    margin: 20px;
+    border-radius: 25px;
+    padding: 10px;
+    width: 15vw;
+    min-width: 170px;
+    border:none;
+    background-color: #0D273F;
+    color: white;
+    font-size: 15px;
+    font-family: 'Nunito';
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   }
 
-  &__status-indicator {
+
+  &__delete:hover,
+  &__modify:hover,
+  &__logout:hover {
+    transform: translateY(-7px);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
   }
 
-  &__contact-info {
+  &__delete, {
+    background-color: #BD2606 ;
   }
 
-  &__name,
-  &__email,
-  &__phone {
+  &__logout {
+    border: #cacfd3 1px solid;
+    background-color: white;
+    color: #0D273F;
   }
 
-  &__city-links {
-  }
-
-  &__dribble,
-  &__linkedin,
-  &__github {
-  }
-
-  &__competencies {
-  }
-
-  &__category-title {
-  }
-
-  &__description {
-  }
-
-  &__portfolio {
-  }
-
-  &__portfolio-link {
-  }
 }
 
 .element {
@@ -73,4 +84,6 @@
   border-radius: 15px;
   margin-bottom: 0.5em;
   padding: 0.5em;
+  
 }
+

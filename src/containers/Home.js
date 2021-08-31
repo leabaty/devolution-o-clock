@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
 import Home from 'src/components/Home';
-import { getLastProjects } from 'src/actions';
+import { getAllProjects } from 'src/actions';
 
 // quand on a un container, à l'instanciation on peut lui passer des props (cf Settings)
 // ces props de configuration seront accessibles via le 2e paramètre de mSTP ou mDTP
 const mapStateToProps = (state, ownProps) => ({
-  projects:state.project.list
+  projects:state.search.projects
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   lastProjectsLoading: () => {
-    const action = getLastProjects();
+    const action = getAllProjects();
     dispatch(action)
   }
 
