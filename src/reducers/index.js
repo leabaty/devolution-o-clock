@@ -6,6 +6,7 @@ import searchReducer from './search';
 import loginReducer from './login';
 import projectReducer from './project';
 import userReducer from './user';
+import projectformReducer from './projectform';
 
 // on passe en argument un objet qui viendra prendre les propriétés principales
 // de notre state global
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   login: loginReducer,
   project : projectReducer,
   user: userReducer,
+  projectform : projectformReducer,
 });
 
 export default rootReducer;

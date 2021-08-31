@@ -1,6 +1,7 @@
 import axios from 'axios';
 import instance from './utils/instance';
-import { GET_ALL_PROJECTS, saveAllProjects, GET_SEARCH_PROJECT } from 'src/actions';
+
+import { GET_ALL_PROJECTS, saveAllProjects, GET_SEARCH_PROJECT, PROJECT_SUBMIT } from 'src/actions';
 
 const projects= (store) => (next) => (action) => {
   switch (action.type) {
@@ -44,6 +45,32 @@ const projects= (store) => (next) => (action) => {
           .catch((error) => console.log(error));
         break;
       }
+
+      case PROJECT_SUBMIT: {
+        const {projectTitle, projectStatus, projectStartDate, projectDescription, projectNeeds, projectSpecificities} = store.getState().projectform
+        const newProject = {
+          projectTitle: name,
+          projectStatus: project_status,
+          projectStartDate: beginning_date,
+          projectDescription: project_description,
+          projectNeeds: need_of_the_project,
+          // projectImage: icone,
+          // projectSpecificities:
+      };
+        const createProject = async () => {
+          try {
+            const response = await axios.post('https://devolution-api.herokuapp.com/api/v1/user/create', newProject);
+            console.log(response)
+          }
+          catch (error) {
+            console.log(error);
+          }
+        };
+  
+        createProject();
+        break;
+      }
+
     default:
       next(action);
   }
