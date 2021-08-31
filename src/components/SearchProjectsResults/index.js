@@ -61,12 +61,14 @@ function SearchProjectsResults({projects}) {
 
             <div className="search-details__results">
             {projects.map((project)=>(
-                // <Link to={`/search/projects/${project.id}`}>
-                  <CardProject
-                    key={project.id}
-                    {...project}
-                  />
-                // </Link>
+                <Link 
+                key={project.id}
+                to={`/search/projects/${project.id}`}>
+                    <CardProject
+                      key={project.id}
+                      {...project}
+                    />
+                </Link>
               ))}
             </div>
 
