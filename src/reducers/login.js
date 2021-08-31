@@ -17,8 +17,8 @@ const initialState = {
   email: 'titi@gmail.com',
   password: 'titi',
   confirmPassword:'titi',
-  signInEmail:'',
-  signInPassword:''
+  signInEmail:'micka@gmail.com',
+  signInPassword:'micka'
 };
 
 // fonction qui traduit une intention/action en changement de state
