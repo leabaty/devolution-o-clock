@@ -10,6 +10,7 @@ import './style.scss'
 
 function Home({projects, lastProjectsLoading}) {
   useEffect(lastProjectsLoading, []);
+  console.log(projects)
   
   return (
     <div className="home">
