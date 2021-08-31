@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import { FaHands, FaBars, FaSearch, FaRegLightbulb } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 import "./style.scss";
-import { Link } from "react-router-dom";
 
-export default function Header() {
+function Navbar( /*{ isLogged } */) {
     const [isNavVisible, setNavVisibility] = useState(false);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
-    const [isLogged, setIsLogged] = useState(true);
+    const [isLogged, setIsLogged] = useState(false);
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(max-width: 780px)");
@@ -32,7 +33,7 @@ export default function Header() {
         return (
             <header className="Header">
                 <div className="Header__logo">
-                    <Link href="/"><FaHands className="Header__logo__icon--logged" /></Link>
+                    <Link to="/"><FaHands className="Header__logo__icon--logged" /></Link>
                 </div>
                 <CSSTransition
                     in={!isSmallScreen || isNavVisible}
@@ -60,7 +61,7 @@ export default function Header() {
         return (
             <header className="Header--logged">
                 <div className="Header__logo--logged">
-                    <Link href="/"><FaHands className="Header__logo__icon--logged" /></Link>
+                    <Link to="/"><FaHands className="Header__logo__icon--logged" /></Link>
                 </div>
                 <CSSTransition
                     in={!isSmallScreen || isNavVisible}
@@ -69,7 +70,7 @@ export default function Header() {
                     unmountOnExit
                 >
                 <nav className="Header__nav--logged">
-                        <Link to="/"><FaSearch className="Header__logo__icon--logged" /></Link>
+                        <Link to="/searchProjects"><FaSearch className="Header__logo__icon--logged" /></Link>
                         <Link to="/"><FaRegLightbulb className="Header__logo__icon--logged" /></Link>
                         <Link to="/"><FaRegLightbulb className="Header__logo__icon--logged" /></Link>
                     <div className="Header__logout--logged">
@@ -84,3 +85,14 @@ export default function Header() {
         );
     }
 }
+
+
+Navbar.propTypes = {
+    isLogged: PropTypes.bool.isRequired,
+};
+
+Navbar.defaultProps = {
+    isLogged: false,
+};
+
+export default Navbar;
