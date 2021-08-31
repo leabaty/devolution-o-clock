@@ -25,6 +25,14 @@ export const GET_SEARCH_USER = 'GET_SEARCH_USER';
 export const GET_ALL_USERS = 'GET_ALL_USERS';
 export const SAVE_ALL_USERS = 'SAVE_ALL_USERS';
 
+export const PROJECT_SUBMIT = 'PROJECT_SUBMIT';
+export const CHANGE_PROJECT_TITLE = 'CHANGE_PROJECT_TITLE';
+export const CHANGE_PROJECT_STATUS = 'CHANGE_PROJECT_STATUS';
+export const CHANGE_PROJECT_START_DATE = 'CHANGE_PROJECT_START_DATE';
+export const CHANGE_PROJECT_DESCRIPTION = 'CHANGE_PROJECT_DESCRIPTION';
+export const CHANGE_PROJECT_NEEDS = 'CHANGE_PROJECT_NEEDS';
+export const CHANGE_PROJECT_SPECIFICITIES = 'CHANGE_PROJECT_SPECIFICITIES';
+export const CHANGE_PROJECT_IMAGE = 'CHANGE_PROJECT_IMAGE';
 
 // ACTION CREATORS
 // --- Sign Up
@@ -122,7 +130,7 @@ export const getSearchProject = (value) => ({
 
 export const getSearchUser = (value) => ({
   type: GET_SEARCH_USER,
-  value,
+  value
 });
 
 export const getAllUsers = () => ({
@@ -133,3 +141,45 @@ export const saveUsers = (users) => ({
   type : SAVE_ALL_USERS,
   users,
 });
+
+// --- Create a new project
+
+export const projectSubmitForm = (value) => ({
+  type: PROJECT_SUBMIT,
+  value,
+});
+
+export const changeProjectTitleValue = (value) => ({
+  type: CHANGE_PROJECT_TITLE,
+  value,
+});
+
+export const changeProjectStatusValue = (value) => ({
+  type: CHANGE_PROJECT_STATUS,
+  value,
+});
+
+export const changeProjectStartDateValue = (value) => ({
+  type: CHANGE_PROJECT_START_DATE,
+  value,
+});
+
+export const changeProjectDescriptionValue = (value) => ({
+  type: CHANGE_PROJECT_DESCRIPTION,
+  value,
+});
+
+export const changeProjectNeedsValue = (value) => ({
+  type: CHANGE_PROJECT_NEEDS,
+  value,
+});
+
+// export const changeProjectSpecificitiesValue = (value) => ({
+//   type: CHANGE_PROJECT_SPECIFICITIES,
+//   value,
+// });
+
+// export const changeProjectImageValue = (value) => ({
+//   type: CHANGE_PROJECT_IMAGE,
+//   value,
+// });

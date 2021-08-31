@@ -20,8 +20,8 @@ import { FiArrowLeftCircle } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchUsersResult({ userData }) {
-
+function SearchUsersResult({ user }) {
+console.log(user)
   return (
     <div className="user__page">
       <div className="user__menu">
@@ -33,36 +33,37 @@ function SearchUsersResult({ userData }) {
           <p className="header__comeback">
             <FiArrowLeftCircle /> Revenir à la recherche
           </p>
-          <HeaderConnected />
+          <div className="header__user-icon"><HeaderConnected /></div>
         </div>
 
-        <div className="profile__component">
-          <div className="profile__greeting">
+        <div className="profile-search__component">
+          <div className="profile-search__greeting">
             <div>
-              <h1 className="profile__title">{userData.firstname}</h1>
-              <h2 className="profile__undertitle">
-                EN DUR Fonction (dév web, etc)
-              </h2>
+              <h1 className="profile-search__title">{user.firstname}</h1>
+              <h2 className="profile-search__undertitle">{user.user_function}</h2>
             </div>
 
             <img
-              className="profile__picture"
-              src="https://cdn.discordapp.com/attachments/874925609267118140/880749515311820830/Capture_decran_2021-08-27_114356.png"
+              className="profile-search__picture"
+              src={user.image_url}
               alt="Profile picture"
             />
           </div>
 
-          <ProfileStatus userData={userData} />
+          <ProfileStatus status={user.user_status} />
 
-          <ProfileContact userData={userData} />
+          <ProfileContact firstname={user.firstname} 
+          lastname={user.lastname}
+          email={user.email}
+          phone={user.phone}/>
 
-          <ProfileCityLinks userData={userData} />
+          <ProfileCityLinks city={user.city} />
 
-          <ProfileCompetencies userData={userData} />
+          {/* <ProfileCompetencies user={user} /> */}
 
-          <ProfileBio userData={userData} />
+          <ProfileBio bio={user.description} />
 
-          <ProfilePortfolio userData={userData} />
+          <ProfilePortfolio portfolio={user.portfolio} />
 
         </div>
       </div>

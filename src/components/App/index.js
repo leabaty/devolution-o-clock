@@ -13,11 +13,12 @@ import ProjectPageDisconnect from 'src/components/ProjectPageDisconnect';
 import ProfilePageForm from 'src/containers/ProfilePageForm';
 import SearchPage from 'src/containers/SearchPage';
 import SearchProjectsResults from 'src/containers/SearchProjectsResults';
-import SearchProjectsResult from 'src/components/SearchProjectsResult';
+import SearchProjectsResult from 'src/containers/SearchProjectsResult';
 import BoardPageParticipant from 'src/components/BoardPageParticipant';
 import BoardPageProjectBearer from 'src/components/BoardPageProjectBearer';
 import SearchUsersResults from 'src/containers/SearchUsersResults';
-import SearchUsersResult from 'src/components/SearchUsersResult';
+import SearchUsersResult from 'src/containers/SearchUsersResult';
+import ProjectForm from 'src/components/ProjectForm';
 
 import DataProjects from 'src/data/projects';
 import './style.scss';
@@ -64,18 +65,13 @@ function App({
             <SearchProjectsResults />
       </Route>
 
-      <Route path="/search/projects/id" exact>
-            <SearchProjectsResult />
-      </Route>
+      <Route path="/search/projects/:id" component={SearchProjectsResult} />
 
       <Route path="/search/users" exact>
             <SearchUsersResults />
       </Route>
 
-      <Route path="/search/users/id" exact>
-            <SearchUsersResult />
-      </Route>
-
+      <Route path="/search/users/:id" component={SearchUsersResult} />
 
       <Route path="/myParticipations" exact>
             <BoardPageParticipant />
@@ -83,6 +79,10 @@ function App({
 
       <Route path="/myProjects" exact>
             <BoardPageProjectBearer />
+      </Route>
+
+      <Route path="/myProjects/new" exact>
+            <ProjectForm />
       </Route>
 
 

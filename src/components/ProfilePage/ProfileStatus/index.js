@@ -7,10 +7,10 @@ import React from 'react';
 // import './style.scss';
 
 // == Composant
-function ProfileStatus() {
+function ProfileStatus( {userData}) {
   return (
       <div className="profile__status element">
-        <p className="profile__status-indicator">EN DUR - Disponible</p>
+        <p className="profile__status-indicator">{userData.user_status}</p>
       </div>
   );
 }

@@ -7,12 +7,12 @@ import React from 'react';
 // import './style.scss';
 
 // == Composant
-function ProfileBio() {
+function ProfileBio({userData}) {
   return (
 
       <div className="profile__bio element">
         <h3 className="profile__category-title">Ma bio</h3>
-        <p className="profile__description">Nia nia nia</p>
+        <p className="profile__description">{userData.description}</p>
       </div>
 
   );

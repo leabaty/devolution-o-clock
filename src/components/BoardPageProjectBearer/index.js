@@ -30,14 +30,17 @@ function BoardPageProjectBearer() {
         <p className="board__title">Espace Porteur de projet</p>
 
         <div className="board__my-projects">
-          <div className="board__new-project">
-            <div className="board__new-project-card">
-              <p>
-                {" "}
-                <HiOutlineLightBulb size="1.2em"/> Déposer un nouveau projet
-              </p>
+
+          <Link to="/myProjects/new">
+            <div className="board__new-project">
+              <div className="board__new-project-card">
+                <p>
+                  {" "}
+                  <HiOutlineLightBulb size="1.2em"/> Déposer un nouveau projet
+                </p>
+              </div>
             </div>
-          </div>
+          </Link>
 
           <div className="board__component">
             <div className="board__running-projects">

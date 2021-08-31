@@ -2,7 +2,7 @@
 // == Import : npm
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 // Composants
 import Menu from "src/components/Menu";
@@ -16,8 +16,19 @@ import { FiSearch } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchProjectsResults({projects}) {
-  console.log(projects)
+function SearchProjectsResults({projects, submitSearchProjects, changeSearchProjects}) {
+
+  const history = useHistory();
+
+  const onChangeSearchProjects = (event) => {
+    event.preventDefault()
+    changeSearchProjects(event.target.value)
+  };
+
+  const onSubmitSearchProjects = (event) => {
+    event.preventDefault()
+    submitSearchProjects(history)
+  };
 
   // const Message = ({ projects }) => {
   //   let text = 'Aucun résultat, veuillez faire une nouvelle recherche';
@@ -50,8 +61,9 @@ function SearchProjectsResults({projects}) {
             <form className="search-details__form">
               <input
                 className="search-details__input"
+                onChange={onChangeSearchProjects}
               />
-              <button className="search-details__button" type="submit">
+              <button className="search-details__button" type="submit" onClick={onSubmitSearchProjects}>
                 <FiSearch size="25px"/>
               </button>
             </form>
@@ -61,6 +73,7 @@ function SearchProjectsResults({projects}) {
 
             <div className="search-details__results">
             {projects.map((project)=>(
+
                 <Link 
                 key={project.id}
                 to={`/search/projects/${project.id}`}>
