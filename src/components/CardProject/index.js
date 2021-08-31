@@ -17,10 +17,9 @@ function CardProject({name, author, icon, description}) {
 }
 
 CardProject.propTypes = {
-  name: PropTypes.string.isRequired,
-  // author: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  // name: PropTypes.string.isRequired,
+  // icon: PropTypes.string.isRequired,
+  // description: PropTypes.string.isRequired,
 }
 
 export default CardProject;

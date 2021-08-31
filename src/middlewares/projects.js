@@ -39,6 +39,7 @@ const projects= (store) => (next) => (action) => {
             console.log('dataProject', response.data)
             const actionSaveProjects = saveAllProjects(response.data);
             store.dispatch(actionSaveProjects);
+            action.value.push('/search/projects')
           })
           .catch((error) => console.log(error));
         break;
