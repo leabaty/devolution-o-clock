@@ -10,6 +10,8 @@ import SearchPageDisconnect from 'src/components/SearchPageDisconnect'
 import Login from 'src/containers/Login';
 import ProfilePage from 'src/containers/ProfilePage';
 import ProjectPageDisconnect from 'src/components/ProjectPageDisconnect';
+import Footer from 'src/components/Footer';
+import Navbar from 'src/components/Navbar';
 
 import DataProjects from 'src/data/projects';
 import './style.scss';
@@ -22,27 +24,29 @@ function App({
   console.log(isLogged)
   return (
     <div className="app">
-    <Switch>
-      <Route path="/" exact>
-        <Home projects={DataProjects}/>
-      </Route>
-      <Route path="/searchProjects" exact>
-        <SearchPageDisconnect projects={DataProjects}/>
-      </Route>
-      <Route path="/searchProject" exact>
-        <ProjectPageDisconnect />
-      </Route>
-      <Route path="/login" exact>
-        <Login/>
-      </Route>
-      <Route path="/profile">
-          {/* {isLogged ? ( */}
-            <ProfilePage />
-          {/* ) : (
-            <Redirect to="/login" />
-          )} */}
-      </Route>
-    </Switch>
+      <Navbar/>
+      <Switch>
+        <Route path="/" exact>
+          <Home projects={DataProjects}/>
+        </Route>
+        <Route path="/searchProjects" exact>
+          <SearchPageDisconnect projects={DataProjects}/>
+        </Route>
+        <Route path="/searchProject" exact>
+          <ProjectPageDisconnect />
+        </Route>
+        <Route path="/login" exact>
+          <Login/>
+        </Route>
+        <Route path="/profile">
+            {/* {isLogged ? ( */}
+              <ProfilePage />
+            {/* ) : (
+              <Redirect to="/login" />
+            )} */}
+        </Route>
+      </Switch>
+      <Footer />
     </div>
   )
 };

@@ -1,5 +1,24 @@
 .app {
-  width: 100vw;
-  height: 100vh;
+  //width: 100vw;
+  //height: 100vh;
   position: relative;
+  box-sizing: border-box;
+}
+
+$layout-breakpoint-small: 780px;
+
+@media (max-width: $layout-breakpoint-small) {
+  /*
+  .app .Header {
+    position: fixed;
+    top: 0;
+    max-height: 70px;
+    width: 100vw;
+    display: grid;
+    grid-template-areas: "header__logo header__nav";
+    background-color: #12273b;
+    -webkit-box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  }
+  */
 }
