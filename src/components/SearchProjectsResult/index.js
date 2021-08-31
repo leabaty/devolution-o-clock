@@ -30,11 +30,11 @@ function SearchProjectsResult({ project }) {
       </div>
 
       <div className="project__subpage">
-        <div className="header__user-search">
+      <div className="header__user-search">
           <p className="header__comeback">
             <FiArrowLeftCircle /> Revenir à la recherche
           </p>
-          <HeaderConnected />
+          <div className="header__user-icon"><HeaderConnected /></div>
         </div>
 
         <div className="project__component">

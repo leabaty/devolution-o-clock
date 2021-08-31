@@ -33,19 +33,19 @@ console.log(user)
           <p className="header__comeback">
             <FiArrowLeftCircle /> Revenir à la recherche
           </p>
-          <HeaderConnected />
+          <div className="header__user-icon"><HeaderConnected /></div>
         </div>
 
-        <div className="profile__component">
-          <div className="profile__greeting">
+        <div className="profile-search__component">
+          <div className="profile-search__greeting">
             <div>
-              <h1 className="profile__title">{user.firstname}</h1>
-              <h2 className="profile__undertitle">{user.user_function}</h2>
+              <h1 className="profile-search__title">{user.firstname}</h1>
+              <h2 className="profile-search__undertitle">{user.user_function}</h2>
             </div>
 
             <img
-              className="profile__picture"
-              src="https://cdn.discordapp.com/attachments/874925609267118140/880749515311820830/Capture_decran_2021-08-27_114356.png"
+              className="profile-search__picture"
+              src={user.image_url}
               alt="Profile picture"
             />
           </div>
