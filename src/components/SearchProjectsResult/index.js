@@ -31,9 +31,11 @@ function SearchProjectsResult({ project }) {
 
       <div className="project__subpage">
       <div className="header__user-search">
-          <p className="header__comeback">
-            <FiArrowLeftCircle /> Revenir à la recherche
-          </p>
+          <Link to="/search/projects">
+            <p className="header__comeback">
+              <FiArrowLeftCircle /> Revenir à la recherche
+            </p>
+          </Link>
           <div className="header__user-icon"><HeaderConnected /></div>
         </div>
 
