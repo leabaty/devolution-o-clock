@@ -11,11 +11,11 @@ import { BiMap } from 'react-icons/bi';
 import "./style.scss";
 
 // == Composant
-function ProfileCityLinks({ userData }) {
+function ProfileCityLinks({city}) {
   return (
     <div className="profile__city-links element">
 
-      <p className="profile__city"> <BiMap/> {userData.city} </p>
+      <p className="profile__city"> <BiMap/> {city} </p>
 
       <div className="profile__links">
         

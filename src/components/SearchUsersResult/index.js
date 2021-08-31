@@ -20,8 +20,8 @@ import { FiArrowLeftCircle } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchUsersResult({ userData }) {
-
+function SearchUsersResult({ user }) {
+console.log(user)
   return (
     <div className="user__page">
       <div className="user__menu">
@@ -39,10 +39,8 @@ function SearchUsersResult({ userData }) {
         <div className="profile__component">
           <div className="profile__greeting">
             <div>
-              <h1 className="profile__title">{userData.firstname}</h1>
-              <h2 className="profile__undertitle">npm 
-                EN DUR Fonction (dév web, etc)
-              </h2>
+              <h1 className="profile__title">{user.firstname}</h1>
+              <h2 className="profile__undertitle">{user.user_function}</h2>
             </div>
 
             <img
@@ -52,17 +50,20 @@ function SearchUsersResult({ userData }) {
             />
           </div>
 
-          <ProfileStatus userData={userData} />
+          <ProfileStatus status={user.user_status} />
 
-          <ProfileContact userData={userData} />
+          <ProfileContact firstname={user.firstname} 
+          lastname={user.lastname}
+          email={user.email}
+          phone={user.phone}/>
 
-          <ProfileCityLinks userData={userData} />
+          <ProfileCityLinks city={user.city} />
 
-          <ProfileCompetencies userData={userData} />
+          {/* <ProfileCompetencies user={user} /> */}
 
-          <ProfileBio userData={userData} />
+          <ProfileBio bio={user.description} />
 
-          <ProfilePortfolio userData={userData} />
+          <ProfilePortfolio portfolio={user.portfolio} />
 
         </div>
       </div>

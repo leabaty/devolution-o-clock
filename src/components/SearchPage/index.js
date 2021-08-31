@@ -2,7 +2,7 @@
 // == Import : npm
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 // Composants
 import Menu from "src/components/Menu";
@@ -23,6 +23,9 @@ function SearchPage({
   searchAllProjectsSubmit,
   searchAllUsersSubmit,
 }) {
+
+  const history = useHistory();
+
   const onChangeInputProject = (event) => {
     changeInputProjectValue(event.target.value);
   };
@@ -31,11 +34,11 @@ function SearchPage({
   };
   const onSearchProjectSubmit = (event) => {
     event.preventDefault();
-    searchProjectSubmit();
+    searchProjectSubmit(history);
   };
   const onSearchUserSubmit = (event) => {
     event.preventDefault();
-    searchUserSubmit();
+    searchUserSubmit(history);
   };
   const onSearchAllProjectsSubmit = () => {
     searchAllProjectsSubmit();

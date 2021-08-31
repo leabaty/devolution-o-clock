@@ -2,7 +2,7 @@
 // == Import : npm
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, Redirect, useParams } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 // Composants
 import Menu from "src/components/Menu";
@@ -12,7 +12,7 @@ import ProjectStatus from "./ProjectStatus";
 // import ProjectCompetencies from "./ProjectCompetencies";
 import ProjectDescription from "./ProjectDescription";
 import ProjectNeeds from "./ProjectNeeds";
-import ProjectSpecificities from "./ProjectSpecificities";
+// import ProjectSpecificities from "./ProjectSpecificities";
 
 // Icons
 import { FiArrowLeftCircle } from "react-icons/fi";

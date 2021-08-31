@@ -126,6 +126,7 @@ const users= (store) => (next) => (action) => {
                   console.log('dataUser', response.data)
                   const actionSaveUserData = saveUsers(Users);
                   store.dispatch(actionSaveUserData);
+                  action.value.push('/search/users')
                 })
                 .catch((error) => console.log(error));
               break;

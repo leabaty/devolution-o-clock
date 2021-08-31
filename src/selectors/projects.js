@@ -1,4 +1,3 @@
-
 /**
  *  on trouve la recette voulue dans la liste des recettes
  * @param {Array} projects - tous les projets
@@ -10,4 +9,4 @@
       return searchedProject.id === searchedId;
     });
     return project;
-  }
+}

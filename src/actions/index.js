@@ -122,7 +122,7 @@ export const getSearchProject = (value) => ({
 
 export const getSearchUser = (value) => ({
   type: GET_SEARCH_USER,
-  value,
+  value
 });
 
 export const getAllUsers = () => ({

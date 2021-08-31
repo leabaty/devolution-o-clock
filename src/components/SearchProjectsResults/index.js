@@ -2,7 +2,7 @@
 // == Import : npm
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 // Composants
 import Menu from "src/components/Menu";
@@ -17,7 +17,14 @@ import "./style.scss";
 
 // == Composant
 function SearchProjectsResults({projects}) {
-  console.log(projects)
+
+  const history = useHistory();
+
+  const onSubmitSearchProjects = (event) => {
+    event.preventDefault()
+    console.log('searchProject');
+    submitSearchProjects(histoty)
+  };
 
   // const Message = ({ projects }) => {
   //   let text = 'Aucun résultat, veuillez faire une nouvelle recherche';
@@ -51,7 +58,7 @@ function SearchProjectsResults({projects}) {
               <input
                 className="search-details__input"
               />
-              <button className="search-details__button" type="submit">
+              <button className="search-details__button" type="submit" onClick={onSubmitSearchProjects}>
                 <FiSearch size="25px"/>
               </button>
             </form>

@@ -45,10 +45,12 @@ function SearchUsersResults({ users }) {
 
             <div className="search-details__results">
               {users.map((user)=>(
+                <Link key={user.id} to={`/search/users/${user.id}`}>
                 <CardUser 
                   key={user.id}
                   {...user}
                 />
+                </Link>
               ))}
             </div>
         </div>

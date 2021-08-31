@@ -8,10 +8,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
 
-//   changeInputUserValue: (value) => {
-//     const action = changeUserValue(value);
-//     dispatch(action);
-//   },
+    submitSearchProjects: (value) => {
+    const action = getSearchProject(value);
+    dispatch(action);
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchProjectsResults);
