@@ -2,6 +2,7 @@
 // == Import : npm
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
 
 // Composants
 import Menu from "src/components/Menu";
@@ -15,7 +16,8 @@ import { FiSearch } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchUsersResults() {
+function SearchUsersResults({ users }) {
+  console.log(users)
   return (
     <div className="search__page">
       <div className="search__menu">
@@ -39,12 +41,16 @@ function SearchUsersResults() {
               </button>
             </form>
 
-            <p className="search-details__number-results"> 5 résultats </p>
+            <p className="search-details__number-results"> {users.length} résultats </p>
 
             <div className="search-details__results">
-            <CardUser />
+              {users.map((user)=>(
+                <CardUser 
+                  key={user.id}
+                  {...user}
+                />
+              ))}
             </div>
-
         </div>
       </div>
     </div>

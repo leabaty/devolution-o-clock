@@ -2,6 +2,7 @@
 // == Import : npm
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
 
 // Composants
 import Menu from "src/components/Menu";
@@ -15,7 +16,23 @@ import { FiSearch } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchProjectsResults() {
+function SearchProjectsResults({projects}) {
+  console.log(projects)
+
+  // const Message = ({ projects }) => {
+  //   let text = 'Aucun résultat, veuillez faire une nouvelle recherche';
+  //   if (projects.length === 1) {
+  //     text = 'Un résultat correspond à votre recherche';
+  //   } 
+  //   else if (projects.length > 1) {
+  //     text = `${projects.length} résultats correspondent à votre recherche`;
+  //   }
+  //   return (
+  //       {text}
+  //   );
+  // };
+
+  
   return (
     <div className="search__page">
       <div className="search__menu">
@@ -39,15 +56,18 @@ function SearchProjectsResults() {
               </button>
             </form>
 
-            <p className="search-details__number-results"> 5 résultats </p>
+
+            <p className="search-details__number-results"> {projects.length} résultat(s) </p>
 
             <div className="search-details__results">
-            <CardProject />
-            <CardProject />
-            <CardProject />
-            <CardProject />
-            <CardProject />
-            <CardProject />
+            {projects.map((project)=>(
+                // <Link to={`/search/projects/${project.id}`}>
+                  <CardProject
+                    key={project.id}
+                    {...project}
+                  />
+                // </Link>
+              ))}
             </div>
 
         </div>
