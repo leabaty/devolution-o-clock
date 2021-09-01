@@ -14,11 +14,11 @@ import ProfilePageForm from 'src/containers/ProfilePageForm';
 import SearchPage from 'src/containers/SearchPage';
 import SearchProjectsResults from 'src/containers/SearchProjectsResults';
 import SearchProjectsResult from 'src/containers/SearchProjectsResult';
-import BoardPageParticipant from 'src/components/BoardPageParticipant';
-import BoardPageProjectBearer from 'src/components/BoardPageProjectBearer';
+import BoardPageParticipant from 'src/containers/BoardPageParticipant';
+import BoardPageProjectBearer from 'src/containers/BoardPageProjectBearer';
 import SearchUsersResults from 'src/containers/SearchUsersResults';
 import SearchUsersResult from 'src/containers/SearchUsersResult';
-import ProjectForm from 'src/components/ProjectForm';
+import ProjectForm from 'src/containers/ProjectForm';
 
 import DataProjects from 'src/data/projects';
 import './style.scss';
@@ -28,7 +28,6 @@ import './style.scss';
 function App({
   isLogged
 }) {
-  // console.log(isLogged)
   return (
     <div className="app">
     <Switch>

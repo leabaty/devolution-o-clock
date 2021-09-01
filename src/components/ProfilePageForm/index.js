@@ -17,7 +17,6 @@ import "./style.scss";
 
 // == Composant
 function ProfilePage({ userData }) {
-console.log(userData);
 
     return (
     <div className="profile__page">

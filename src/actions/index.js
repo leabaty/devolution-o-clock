@@ -144,42 +144,42 @@ export const saveUsers = (users) => ({
 
 // --- Create a new project
 
-export const projectSubmitForm = (value) => ({
+export const projectSubmit = (value) => ({
   type: PROJECT_SUBMIT,
   value,
 });
 
-export const changeProjectTitleValue = (value) => ({
+export const changeProjectTitle = (value) => ({
   type: CHANGE_PROJECT_TITLE,
   value,
 });
 
-export const changeProjectStatusValue = (value) => ({
+export const changeProjectStatus = (value) => ({
   type: CHANGE_PROJECT_STATUS,
   value,
 });
 
-export const changeProjectStartDateValue = (value) => ({
+export const changeProjectStartDate = (value) => ({
   type: CHANGE_PROJECT_START_DATE,
   value,
 });
 
-export const changeProjectDescriptionValue = (value) => ({
+export const changeProjectDescription = (value) => ({
   type: CHANGE_PROJECT_DESCRIPTION,
   value,
 });
 
-export const changeProjectNeedsValue = (value) => ({
+export const changeProjectNeeds = (value) => ({
   type: CHANGE_PROJECT_NEEDS,
   value,
 });
 
-// export const changeProjectSpecificitiesValue = (value) => ({
+// export const changeProjectSpecificities = (value) => ({
 //   type: CHANGE_PROJECT_SPECIFICITIES,
 //   value,
 // });
 
-// export const changeProjectImageValue = (value) => ({
+// export const changeProjectImage = (value) => ({
 //   type: CHANGE_PROJECT_IMAGE,
 //   value,
 // });

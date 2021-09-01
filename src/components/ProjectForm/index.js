@@ -2,6 +2,7 @@
 // == Import : npm
 import React from "react";
 import PropTypes from "prop-types";
+import { useHistory } from 'react-router-dom';
 
 // Composants
 import Menu from "src/components/Menu";
@@ -15,14 +16,14 @@ import "./style.scss";
 
 // == Composant
 function SearchProjectsResult({
-  onProjectSubmitForm,
-  onChangeProjectTitleValue,
-  onChangeProjectStatusValue,
-  onChangeProjectStartDateValue,
-  onChangeProjectDescriptionValue,
-  onChangeProjectNeedsValue,
-  // onChangeProjectSpecificitiesValue,
-  // onChangeProjectImageValue,
+  projectSubmitForm,
+  changeProjectTitleValue,
+  changeProjectStatusValue,
+  changeProjectStartDateValue,
+  changeProjectDescriptionValue,
+  changeProjectNeedsValue,
+  // changeProjectSpecificitiesValue,
+  // changeProjectImageValue,
   projectTitle,
   projectStatus,
   projectStartDate,
@@ -31,37 +32,40 @@ function SearchProjectsResult({
   // projectSpecificities,
   // projectImage,
 }) {
+
+  const history = useHistory();
+
   const onProjectSubmit = (event) => {
     event.preventDefault();
-    onProjectSubmitForm();
+    projectSubmitForm(history);
   };
 
   const onChangeProjectTitle = (event) => {
-    onChangeProjectTitleValue(event.target.value);
+    changeProjectTitleValue(event.target.value);
   };
 
   const onChangeProjectStatus = (event) => {
-    onChangeProjectStatusValue(event.target.value);
+    changeProjectStatusValue(event.target.value);
   };
 
   const onChangeProjectStartDate = (event) => {
-    onChangeProjectStartDateValue(event.target.value);
+    changeProjectStartDateValue(event.target.value);
   };
 
   const onChangeProjectDescription = (event) => {
-    onChangeProjectDescriptionValue(event.target.value);
+    changeProjectDescriptionValue(event.target.value);
   };
 
   const onChangeProjectNeeds = (event) => {
-    onChangeProjectNeedsValue(event.target.value);
+    changeProjectNeedsValue(event.target.value);
   };
 
   // const onChangeProjectSpecificities = (event) => {
-  //   onChangeProjectSpecificitiesValue(event.target.value);
+  //   changeProjectSpecificitiesValue(event.target.value);
   // };
 
   // const onChangeProjectImage = (event) => {
-  //   onChangeProjectImageValue(event.target.value);
+  //   changeProjectImageValue(event.target.value);
   // };
 
   return (
@@ -98,8 +102,8 @@ function SearchProjectsResult({
               onChange={onChangeProjectStatus}
               id="status"
             >
-              <option value="Ouvert">Ouvert aux participants</option>
-              <option value="Fermé">Fermé aux participants</option>
+              <option value={true} >Ouvert aux participants</option>
+              <option value={false}>Fermé aux participants</option>
             </select>
 
             <div className="project__start-date element">
@@ -117,11 +121,12 @@ function SearchProjectsResult({
             <div className="project__information element">
               <div className="project__description">
                 <h3 className="project__subtitle">Description</h3>
+                <p className="project-form__guidelines">La description de votre projet : Qui êtes-vous ? Quel est votre vision ? Quel est le but de votre projet, à quels besoins répond-il ? ...</p>
                 <textarea
                   className="project-form__description"
                   value={projectDescription}
                   onChange={onChangeProjectDescription}
-                  placeholder="La description de votre projet : Qui êtes-vous ? Quel est votre vision ? Quel est le but de votre projet, à quels besoins répond-il ? ... "
+                  placeholder="Entrez votre description ici... "
                 />
               </div>
 
@@ -129,11 +134,12 @@ function SearchProjectsResult({
                 <h3 className="project__subtitle">
                   Fonctionnalités et besoins
                 </h3>
+                <p className="project-form__guidelines">Quelles sont les pages web dont vous avez besoin ? Savez-vous déjà quelles technologies vous souhaitez utiliser ? Quelles sont les fonctionnalités attendues ? Avez-vous déjà des participants au projet, et si oui, qui sont-ils ? Recherchez-vous un profil en particulier ?</p>
                 <textarea
                   className="project-form__needs"
                   value={projectNeeds}
                   onChange={onChangeProjectNeeds}
-                  placeholder="Quelles sont les pages web dont vous avez besoin ? Savez-vous déjà quelles technologies vous souhaitez utiliser ? Quelles sont les fonctionnalités attendues ? Avez-vous déjà des participants au projet, et si oui, qui sont-ils ? Recherchez-vous un profil en particulier ? "
+                  placeholder="Entrez vos besoins et fonctionnalités souhaitées ici..."
                 />
               </div>
 

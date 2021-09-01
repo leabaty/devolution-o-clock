@@ -2,14 +2,14 @@ import { connect } from 'react-redux';
 import ProjectForm from 'src/components/ProjectForm';
 
 import { 
-  projectSubmitForm, 
-  changeProjectTitleValue, 
-  changeProjectStatusValue, 
-  changeProjectStartDateValue, 
-  changeProjectDescriptionValue, 
-  changeProjectNeedsValue 
-  // changeProjectSpecificitiesValue, 
-  // changeProjectImageValue,
+  projectSubmit, 
+  changeProjectTitle, 
+  changeProjectStatus, 
+  changeProjectStartDate, 
+  changeProjectDescription, 
+  changeProjectNeeds 
+  // changeProjectSpecificities, 
+  // changeProjectImage,
 } from 'src/actions';
 
 
@@ -24,36 +24,36 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  validateprojectSubmitForm: (value) => {
-    const action = projectSubmitForm(value);
+  projectSubmitForm: (value) => {
+    const action = projectSubmit(value);
     dispatch(action);
   },
-  changeInputProjectTitleValue: (value) => {
-    const action = changeProjectTitleValue(value);
+  changeProjectTitleValue: (value) => {
+    const action = changeProjectTitle(value);
     dispatch(action);
   },
-  changeSelectProjectStatusValue: (value) => {
-    const action = changeProjectStatusValue(value);
+  changeProjectStatusValue: (value) => {
+    const action = changeProjectStatus(value);
     dispatch(action);
   },
-  changeDateProjectStartDateValue: (value) => {
-    const action = changeProjectStartDateValue(value);
+  changeProjectStartDateValue: (value) => {
+    const action = changeProjectStartDate(value);
     dispatch(action);
   },
-  changeInputProjectDescriptionValue: (value) => {
-    const action = changeProjectDescriptionValue(value);
+  changeProjectDescriptionValue: (value) => {
+    const action = changeProjectDescription(value);
     dispatch(action);
   },
-  changeInputProjectNeedsValue: (value) => {
-    const action = changeProjectNeedsValue(value);
+  changeProjectNeedsValue: (value) => {
+    const action = changeProjectNeeds(value);
     dispatch(action);
   },
-  // changeInputProjectSpecificitiesValue: () => {
-  //   const action = changeProjectSpecificitiesValue();
+  // changeProjectSpecificitiesValue: () => {
+  //   const action = changeProjectSpecificities();
   //   dispatch(action);
   // },
-  // changeInputProjectImageValue: () => {
-  //   const action = changeProjectImageValue();
+  // changeProjectImageValue: () => {
+  //   const action = changeProjectImage();
   //   dispatch(action);
   // },
 });

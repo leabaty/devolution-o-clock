@@ -10,13 +10,15 @@ import './style.scss'
 
 function Home({projects, lastProjectsLoading}) {
   useEffect(lastProjectsLoading, []);
-  console.log(projects)
   
   return (
     <div className="home">
       <Header />
       <h2 className="home__title">Les derniers projets</h2>
       <div className="home__cards">
+        {/* for (let index = 0 ; index < 2; index++) {
+
+        } */}
         {projects.map((project) => (
           <CardProject
             key={project.id}
