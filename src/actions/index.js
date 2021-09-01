@@ -34,6 +34,23 @@ export const CHANGE_PROJECT_NEEDS = 'CHANGE_PROJECT_NEEDS';
 export const CHANGE_PROJECT_SPECIFICITIES = 'CHANGE_PROJECT_SPECIFICITIES';
 export const CHANGE_PROJECT_IMAGE = 'CHANGE_PROJECT_IMAGE';
 
+export const MODIFY_PROFILE_SUBMIT = 'MODIFY_PROFILE_SUBMIT';
+export const CHANGE_PROFILE_SUBTITLE = 'CHANGE_PROFILE_SUBTITLE';
+export const CHANGE_PROFILE_STATUS = 'CHANGE_PROFILE_STATUS';
+export const CHANGE_PROFILE_FIRSTNAME = 'CHANGE_PROFILE_FIRSTNAME';
+export const CHANGE_PROFILE_LASTNAME = 'CHANGE_PROFILE_LASTNAME';
+export const CHANGE_PROFILE_PHONE = 'CHANGE_PROFILE_PHONE';
+export const CHANGE_PROFILE_EMAIL = 'CHANGE_PROFILE_EMAIL';
+export const CHANGE_PROFILE_CITY = 'CHANGE_PROFILE_CITY';
+export const CHANGE_PROFILE_DRIBBBLE = 'CHANGE_PROFILE_DRIBBBLE';
+export const CHANGE_PROFILE_LINKEDIN = 'CHANGE_PROFILE_LINKEDIN';
+export const CHANGE_PROFILE_GITHUB = 'CHANGE_PROFILE_GITHUB';
+export const CHANGE_PROFILE_BIO = 'CHANGE_PROFILE_BIO';
+export const CHANGE_PROFILE_PORTFOLIO = 'CHANGE_PROFILE_PORTFOLIO';
+export const CHANGE_PROFILE_PASSWORD = 'CHANGE_PROFILE_PASSWORD';
+export const CHANGE_PROFILE_NEW_PASSWORD = 'CHANGE_PROFILE_NEW_PASSWORD';
+export const CHANGE_PROFILE_NEW_PASSWORD_CONFIRM = 'CHANGE_PROFILE_NEW_PASSWORD_CONFIRM';
+
 // ACTION CREATORS
 // --- Sign Up
 export const changeFirstnameValue = (value) => ({
@@ -183,3 +200,71 @@ export const changeProjectNeeds = (value) => ({
 //   type: CHANGE_PROJECT_IMAGE,
 //   value,
 // });
+
+// --- Modify an existing User
+
+export const modifyProfileSubmit = (value) => ({
+  type: MODIFY_PROFILE_SUBMIT,
+  value,
+});
+export const changeProfileSubtitle = (value) => ({
+  type: CHANGE_PROFILE_SUBTITLE,
+  value,
+});
+export const changeProfileStatus = (value) => ({
+  type: CHANGE_PROFILE_STATUS,
+  value,
+});
+export const changeProfileFirstname = (value) => ({
+  type: CHANGE_PROFILE_FIRSTNAME,
+  value,
+});
+export const changeProfileLastname = (value) => ({
+  type: CHANGE_PROFILE_LASTNAME,
+  value,
+});
+export const changeProfilePhone = (value) => ({
+  type: CHANGE_PROFILE_PHONE,
+  value,
+});
+export const changeProfileEmail = (value) => ({
+  type: CHANGE_PROFILE_EMAIL,
+  value,
+});
+export const changeProfileCity = (value) => ({
+  type: CHANGE_PROFILE_CITY,
+  value,
+});
+export const changeProfileDribbble = (value) => ({
+  type: CHANGE_PROFILE_DRIBBBLE,
+  value,
+});
+export const changeProfileLinkedIn = (value) => ({
+  type: CHANGE_PROFILE_LINKEDIN,
+  value,
+});
+export const changeProfileGitHub = (value) => ({
+  type: CHANGE_PROFILE_GITHUB,
+  value,
+});
+export const changeProfileBio = (value) => ({
+  type: CHANGE_PROFILE_BIO,
+  value,
+});
+export const changeProfilePortfolio = (value) => ({
+  type: CHANGE_PROFILE_PORTFOLIO,
+  value,
+});
+export const changeProfilePassword = (value) => ({
+  type: CHANGE_PROFILE_PASSWORD,
+  value,
+});
+export const changeProfileNewPassword = (value) => ({
+  type: CHANGE_PROFILE_NEW_PASSWORD,
+  value,
+});
+export const changeProfileNewPasswordConfirm = (value) => ({
+  type: CHANGE_PROFILE_NEW_PASSWORD_CONFIRM,
+  value,
+});
+
