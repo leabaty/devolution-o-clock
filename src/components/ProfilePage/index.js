@@ -19,7 +19,7 @@ import "./style.scss";
 // == Composant
 function ProfilePage({ profileData, userData }) {
   useEffect(profileData, []);
-
+  const { firstname, user_function } = userData;
   return (
     <div className="profile__page">
       <div className="profile__menu">
@@ -29,10 +29,8 @@ function ProfilePage({ profileData, userData }) {
       <div className="profile__component">
         <div className="profile__greeting">
           <div>
-            <h1 className="profile__title">Hello, {userData.firstname} !</h1>
-            <h2 className="profile__undertitle">
-              EN DUR Fonction (dév web, etc)
-            </h2>
+            <h1 className="profile__title">Hello, { firstname } !</h1>
+            <h2 className="profile__undertitle">{ user_function }</h2>
           </div>
 
           <img className="profile__picture" src="https://cdn.discordapp.com/attachments/874925609267118140/880749515311820830/Capture_decran_2021-08-27_114356.png" alt="Profile picture" />

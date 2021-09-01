@@ -1,11 +1,20 @@
 .profile{
-    &__city-links {
+
+    &__city {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-      }
-
-    &__city {
         margin: auto 0;
+
+        // dans la class enfant .profile__city--icon
+        &--icon {
+            // color: blue;
+        }
+        // dans la class enfant de .profile__city
+        & .profile__links .profile__link--off {
+            color: lightgray;
+            cursor: default;
+            pointer-events: none;
+        }
     }
 }

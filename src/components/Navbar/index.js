@@ -47,7 +47,7 @@ function Navbar( /*{ isLogged } */) {
                         <Link to="/">Oclock</Link>
                         <Link to="/">About</Link>
                         <div className="Header__login">
-                            <button>login</button>
+                            <Link to="/login"><button>login</button></Link>
                         </div>
                     </nav>
                 </>

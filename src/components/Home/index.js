@@ -18,24 +18,14 @@ function Home({projects, lastProjectsLoading}) {
       <h2 className="home__title">Les derniers projets</h2>
       <div className="home__cards--container">
         <div className="home__cards">
-        {projects.map((project) => (
-          <CardProject
-            key={project.id}
-            {...project}
-          />
-        ))}
-          {projects.map((project) => (
+        {
+          projects.map((project) => (
             <CardProject
               key={project.id}
               {...project}
             />
-          ))}
-          {projects.map((project) => (
-            <CardProject
-              key={project.id}
-              {...project}
-            />
-          ))}
+          ))
+        }
       </div>
       </div>
       <Link to='/searchProjects'>
