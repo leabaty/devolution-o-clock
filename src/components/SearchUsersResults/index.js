@@ -2,7 +2,7 @@
 // == Import : npm
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 // Composants
 import Menu from "src/components/Menu";
@@ -16,8 +16,20 @@ import { FiSearch } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchUsersResults({ users }) {
-  console.log(users)
+function SearchUsersResults({ users, changeSearchUsers, submitSearchUsers }) {
+
+  const history = useHistory();
+
+  const onChangeSearchUsers = (event) => {
+    event.preventDefault()
+    changeSearchUsers(event.target.value)
+  };
+
+  const onSubmitSearchUsers = (event) => {
+    event.preventDefault()
+    submitSearchUsers(history)
+  };
+
   return (
     <div className="search__page">
       <div className="search__menu">
@@ -35,8 +47,9 @@ function SearchUsersResults({ users }) {
             <form className="search-details__form">
               <input
                 className="search-details__input"
+                onChange={onChangeSearchUsers}
               />
-              <button className="search-details__button" type="submit">
+              <button className="search-details__button" type="submit" onClick={onSubmitSearchUsers}>
                 <FiSearch size="25px"/>
               </button>
             </form>

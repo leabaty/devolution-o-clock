@@ -6,7 +6,7 @@ import React from "react";
 function ProjectStatus({ status }) {
   return (
     <div className="project__status element">
-      <p className="project__status-indicator">{status}</p>
+      {status === true ? <p className="project__status-indicator"> Projet ouvert aux participations</p> : <p className="project__status-indicator">Projet fermé aux participations</p> }
     </div>
   );
 }

@@ -33,15 +33,12 @@ function SignUp({
     onChangeInputUsernameValue(event.target.value);
   };
   const onChangeEmail = (event) => {
-    console.log("email");
     onChangeInputEmailValue(event.target.value);
   };
   const onChangePassword = (event) => {
-    console.log("mdp");
     onChangeInputPasswordValue(event.target.value);
   };
   const onChangePasswordConfirm = (event) => {
-    console.log("mdp confirm");
     onChangeInputPasswordConfirmValue(event.target.value);
   };
   return (

@@ -1,8 +1,8 @@
-p,
-h3 {
+p, h3 {
   padding: 6px;
-  margin-top:0.2em;
+  margin-top : 0.2em;
 }
+
 
 .element {
   border: solid lightgray 1px;
@@ -124,6 +124,11 @@ h3 {
     margin-left: 5px;
     border-radius: 10px;
     border: solid lightgray 1px;
+  }
+
+  &__guidelines{
+    font-size: 0.8em;
+    margin-top: 0;
   }
 
 }

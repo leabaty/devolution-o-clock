@@ -22,7 +22,6 @@ import "./style.scss";
 
 // == Composant
 function SearchProjectsResult({ project }) {
-  console.log(project);
   return (
     <div className="project__page">
       <div className="project__menu">
@@ -31,9 +30,11 @@ function SearchProjectsResult({ project }) {
 
       <div className="project__subpage">
       <div className="header__user-search">
-          <p className="header__comeback">
-            <FiArrowLeftCircle /> Revenir à la recherche
-          </p>
+          <Link to="/search/projects">
+            <p className="header__comeback">
+              <FiArrowLeftCircle /> Revenir à la recherche
+            </p>
+          </Link>
           <div className="header__user-icon"><HeaderConnected /></div>
         </div>
 
@@ -42,7 +43,7 @@ function SearchProjectsResult({ project }) {
           name={project.name} 
           pseudo={project.pseudo} />
 
-          <ProjectStatus status={project.project_status} />
+          <ProjectStatus status={project.is_available} />
           {/* <ProjectCompetencies/> */}
 
           <div className="project__information element">
@@ -51,7 +52,10 @@ function SearchProjectsResult({ project }) {
             {/* <ProjectSpecificities /> */}
           </div>
 
-          <button className="project__button">Je me propose !</button>
+
+      {project.is_available === true ? <button className="project__button">Je me propose !</button> : "" }
+
+          
         </div>
       </div>
     </div>

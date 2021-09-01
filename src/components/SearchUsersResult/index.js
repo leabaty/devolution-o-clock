@@ -2,6 +2,7 @@
 // == Import : npm
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
 
 // Composants
 import Menu from "src/components/Menu";
@@ -21,7 +22,6 @@ import "./style.scss";
 
 // == Composant
 function SearchUsersResult({ user }) {
-console.log(user)
   return (
     <div className="user__page">
       <div className="user__menu">
@@ -30,9 +30,11 @@ console.log(user)
 
       <div className="user__subpage">
         <div className="header__user-search">
-          <p className="header__comeback">
-            <FiArrowLeftCircle /> Revenir à la recherche
-          </p>
+          <Link to="/search/users">
+            <p className="header__comeback">
+              <FiArrowLeftCircle /> Revenir à la recherche
+            </p>
+          </Link>
           <div className="header__user-icon"><HeaderConnected /></div>
         </div>
 

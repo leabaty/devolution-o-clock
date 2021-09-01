@@ -16,14 +16,18 @@ import { FiSearch } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchProjectsResults({projects}) {
+function SearchProjectsResults({projects, submitSearchProjects, changeSearchProjects}) {
 
   const history = useHistory();
 
+  const onChangeSearchProjects = (event) => {
+    event.preventDefault()
+    changeSearchProjects(event.target.value)
+  };
+
   const onSubmitSearchProjects = (event) => {
     event.preventDefault()
-    console.log('searchProject');
-    submitSearchProjects(histoty)
+    submitSearchProjects(history)
   };
 
   // const Message = ({ projects }) => {
@@ -57,6 +61,7 @@ function SearchProjectsResults({projects}) {
             <form className="search-details__form">
               <input
                 className="search-details__input"
+                onChange={onChangeSearchProjects}
               />
               <button className="search-details__button" type="submit" onClick={onSubmitSearchProjects}>
                 <FiSearch size="25px"/>
@@ -68,11 +73,14 @@ function SearchProjectsResults({projects}) {
 
             <div className="search-details__results">
             {projects.map((project)=>(
-                <Link key={project.id} to={`/search/projects/${project.id}`}>
-                  <CardProject
-                    key={project.id}
-                    {...project}
-                  />
+
+                <Link 
+                key={project.id}
+                to={`/search/projects/${project.id}`}>
+                    <CardProject
+                      key={project.id}
+                      {...project}
+                    />
                 </Link>
               ))}
             </div>
