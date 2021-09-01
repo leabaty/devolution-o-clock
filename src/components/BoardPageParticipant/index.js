@@ -17,7 +17,8 @@ function BoardPageParticipant({ fetchProfileData }) {
   useEffect(fetchProfileData, []);
 
   var infoProfile = JSON.parse(localStorage.getItem("dataProfile"));
-  const projects = infoProfile.findProject;
+  const projects = infoProfile.findUser.participated_projects;
+  console.log(projects);
 
   return (
     <div className="board__page">
@@ -35,9 +36,11 @@ function BoardPageParticipant({ fetchProfileData }) {
         <div className="board__component">
           <div className="board__running-projects">
             <p className="board__subtitle">Mes projets en cours</p>
-            {projects.map((project) => (
-              <CardProject key={project.id} {...project} />
-            ))}
+            {projects.length === 0
+              ? "Aucun projet en cours"
+              : projects.map((project) => (
+                  <CardProject key={project.id} {...project} />
+                ))}
           </div>
 
           <div className="board__finalized-projects">

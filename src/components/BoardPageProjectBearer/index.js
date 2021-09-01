@@ -16,12 +16,11 @@ import { HiOutlineLightBulb } from "react-icons/hi";
 import "./style.scss";
 
 // == Composant
-function BoardPageProjectBearer( {fetchProfileData}) {
+function BoardPageProjectBearer({ fetchProfileData }) {
   useEffect(fetchProfileData, []);
 
   var infoProfile = JSON.parse(localStorage.getItem("dataProfile"));
   const myProjects = infoProfile.findProject;
-  
 
   return (
     <div className="board__page">
@@ -51,9 +50,11 @@ function BoardPageProjectBearer( {fetchProfileData}) {
           <div className="board__component">
             <div className="board__running-projects">
               <p className="board__subtitle">Mes projets en cours</p>
-              {myProjects.map((project) => (
-                <CardProject key={project.id} {...project} />
-              ))}
+              {myProjects.length === 0
+                ? "Aucun projet en cours"
+                : myProjects.map((project) => (
+                    <CardProject key={project.id} {...project} />
+                  ))}
             </div>
 
             <div className="board__finalized-projects">
