@@ -17,7 +17,6 @@ import "./style.scss";
 
 // == Composant
 function ProfilePage({ userData }) {
-console.log(userData);
 
     return (
     <div className="profile__page">
@@ -27,7 +26,7 @@ console.log(userData);
 
       <form className="profile__component">
         <div className="profile__greeting">
-          <div>
+          <div className="profile__titles">
             <h1 className="profile__title">Hello, {userData.firstname} !</h1>
             <input
               className="profile-form__undertitle"
@@ -35,7 +34,7 @@ console.log(userData);
             />
           </div>
 
-          <img className="profile-form__picture" src="" alt="Profile picture" />
+          <img className="profile-form__picture" src={userData.image_url} alt="Profile picture" />
         </div>
 
         <div className="profile-form__status element-form">
@@ -98,7 +97,7 @@ console.log(userData);
 
         <div className="profile-form__bio element-form">
           <h3 className="profile-form__category-title">Ma bio</h3>
-          <div className="element-form-child"><BsPen /><input
+          <div className="element-form-child"><BsPen /><textarea
             className="profile-form__description"
             placeholder="Une petite bio : Votre parcours, ce qui vous motive, vos centres d'intérêt, ce que vous souhaitez apprendre..."
           /></div>
@@ -108,7 +107,7 @@ console.log(userData);
         <h3 className="profile-form__category-title">Mon portfolio</h3>
         <div className="element-form-child"><FiExternalLink /><input
             className="profile-form__portfolio-link"
-            placeholder="Lien vers site n°1"
+            placeholder="Lien vers votre portfolio personnel"
           /></div>
         </div>
 

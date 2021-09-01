@@ -23,7 +23,7 @@
         margin-bottom: 20px;
     }
 
-    &__input::placeholder {
+    &__input:read-write {
         font-family: 'Nunito';
       }
 

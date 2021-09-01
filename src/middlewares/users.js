@@ -21,7 +21,6 @@ const users= (store) => (next) => (action) => {
       const createUser = async () => {
         try {
           const response = await axios.post('https://devolution-api.herokuapp.com/api/v1/user/create', newUser);
-          console.log(response)
         }
         catch (error) {
           console.log(error);
@@ -44,20 +43,13 @@ const users= (store) => (next) => (action) => {
         },
       })
         .then((response) => {
-          console.log(response)
             if(response.data.accessToken) {
-              //si on a un token, on vient le stocker le token dans localStorage
               localStorage.setItem('token', response.data.accessToken);
               
-              // on en profite pour venir le stoker aussi dans l'instance d'axios
-              // comme ça on l'aura à chaque requête !!
               instance.defaults.headers.common.authorization = `Bearer ${response.data.accessToken}`;
-              // ici on veut stocker dans le state les infos du user
-              // donc on va faire un dispatch d'action
-              console.log(response.data)
+
               const actionSaveUser = saveUser(response.data);
               
-              // on passe par la fonction disaptch du store
               store.dispatch(actionSaveUser);
               action.value.push('/profile')
             }
@@ -68,7 +60,6 @@ const users= (store) => (next) => (action) => {
 
     case GET_PROFILE_DATA: {
       const token = localStorage.getItem('token')
-      // console.log("CONSOLE LOG TOKEN": token)
       instance({
         method: 'GET',
         url: '/me',
@@ -77,10 +68,8 @@ const users= (store) => (next) => (action) => {
         },
       })
           .then((response) => {
-            // en cas de réponse on sauvegarde le user dans le state
-            // avec la même action que pour le login
             const dataProfile = response.data;
-            console.log('dataProfile', response.data)
+            localStorage.setItem('dataProfile', JSON.stringify(response.data));
             const actionSaveProfileData = saveProfileData(dataProfile);
             store.dispatch(actionSaveProfileData);
           })
@@ -98,10 +87,7 @@ const users= (store) => (next) => (action) => {
             },
           })
               .then((response) => {
-                // en cas de réponse on sauvegarde le user dans le state
-                // avec la même action que pour le login
                 const Users = response.data;
-                console.log('dataUser', response.data)
                 const actionSaveUsers = saveUsers(Users);
                 store.dispatch(actionSaveUsers);
               })
@@ -120,12 +106,10 @@ const users= (store) => (next) => (action) => {
               },
             })
                 .then((response) => {
-                  // en cas de réponse on sauvegarde le user dans le state
-                  // avec la même action que pour le login
                   const Users = response.data;
-                  console.log('dataUser', response.data)
                   const actionSaveUserData = saveUsers(Users);
                   store.dispatch(actionSaveUserData);
+                  action.value.push('/search/users')
                 })
                 .catch((error) => console.log(error));
               break;
