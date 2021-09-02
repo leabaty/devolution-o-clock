@@ -7,7 +7,8 @@ import { findProject } from 'src/selectors/projects';
 const mapStateToProps = (state, ownProps) => {
   return{
     project: findProject(state.search.projects, Number(ownProps.match.params.id)),
-    idProject: Number(ownProps.match.params.id)
+    idProject: Number(ownProps.match.params.id),
+    myProjects: state.user.dataUser.participated_projects,
   }
 };
 

@@ -13,14 +13,9 @@ import CardProject from "src/components/CardProject";
 import "./style.scss";
 
 // == Composant
-function BoardPageParticipant({ fetchProfileData, searchAllProjects }) {
+function BoardPageParticipant({ fetchProfileData, projects }) {
   useEffect(fetchProfileData, []);
-  useEffect(searchAllProjects, [])
 
-
-  var infoProfile = JSON.parse(localStorage.getItem("dataProfile"));
-  const projects = infoProfile.findUser.participated_projects;
-  console.log(projects);
 
   return (
     <div className="board__page">

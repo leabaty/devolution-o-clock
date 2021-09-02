@@ -21,20 +21,15 @@ import { FiArrowLeftCircle } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchProjectsResult({ clickParticipationButton, clickUnparticipationButton, project, idProject }) {
+function SearchProjectsResult({ clickParticipationButton, clickUnparticipationButton, project, idProject, myProjects }) {
 
-  var infoProfile = JSON.parse(localStorage.getItem("dataProfile"));
-  const myParticipations = infoProfile.findUser.participated_projects;
-
-  const currentProject = myParticipations.find((searchedParticipation) => {
+  const currentProject = myProjects.find((searchedParticipation) => {
     return searchedParticipation.id === idProject;
   });
-  console.log(currentProject)
 
   const history = useHistory();
 
   const onClickParticipationButton = () => {
-    console.log('je passe bien ici')
     clickParticipationButton(idProject, history);
   };
 
