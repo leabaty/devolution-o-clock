@@ -1,7 +1,7 @@
 import axios from 'axios';
 import instance from './utils/instance';
 
-import { GET_ALL_PROJECTS, saveAllProjects, GET_SEARCH_PROJECT, PROJECT_SUBMIT, ADD_PROJECT_TO_PARTICIPATIONS, DELETE_PROJECT_FROM_PARTICIPATIONS } from 'src/actions';
+import { GET_ALL_PROJECTS, GET_ALL_PROJECTS_SEARCH, saveAllProjects, saveAllProjectsSearch, GET_SEARCH_PROJECT, PROJECT_SUBMIT, ADD_PROJECT_TO_PARTICIPATIONS, DELETE_PROJECT_FROM_PARTICIPATIONS } from 'src/actions';
 
 const projects= (store) => (next) => (action) => {
   switch (action.type) {
@@ -19,6 +19,21 @@ const projects= (store) => (next) => (action) => {
       fetchData();
       break;
     }
+    case GET_ALL_PROJECTS_SEARCH: {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get('https://devolution-api.herokuapp.com/api/v1/projects');
+          const actionSaveProjectsSearch = saveAllProjectsSearch(response.data);
+          store.dispatch(actionSaveProjectsSearch);
+        }
+        catch (error) {
+          console.log(error);
+        }
+      };
+      fetchData();
+      break;
+    }
+    
     case GET_SEARCH_PROJECT: {
       const {inputSearchProject} = store.getState().search
       const token = localStorage.getItem('token')
@@ -30,8 +45,7 @@ const projects= (store) => (next) => (action) => {
         },
       })
           .then((response) => {
-            const Projects = response.data;
-            const actionSaveProjects = saveAllProjects(response.data);
+            const actionSaveProjects = saveProjects(Projects.data);
             store.dispatch(actionSaveProjects);
             action.value.push('/search/projects')
           })

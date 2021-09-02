@@ -13,8 +13,15 @@ import CardProject from "src/components/CardProject";
 import "./style.scss";
 
 // == Composant
-function BoardPageParticipant({ fetchProfileData, projects }) {
+function BoardPageParticipant({ fetchProfileData, getProjects, projects }) {
+  
+  const getProjectsAll = () => {
+    getProjects();
+  };
+
   useEffect(fetchProfileData, []);
+  useEffect(getProjectsAll, []) ;
+
 
 
   return (

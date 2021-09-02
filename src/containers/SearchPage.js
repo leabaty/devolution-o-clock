@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SearchPage from 'src/components/SearchPage';
-import { changeProjectValue, changeUserValue, getSearchProject, getSearchUser, getAllProjects, getAllUsers } from 'src/actions';
+import { changeProjectValue, changeUserValue, getSearchProject, getSearchUser, getAllProjectsSearch, getAllUsers } from 'src/actions';
 
 const mapStateToProps = (state) => ({
 
@@ -24,7 +24,8 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(action);
     },
     searchAllProjectsSubmit: () => {
-        dispatch(getAllProjects());
+        const action = getAllProjectsSearch();
+        dispatch(action);
     },
     searchAllUsersSubmit: () => {
         const action = getAllUsers();

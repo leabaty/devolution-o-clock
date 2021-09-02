@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
-import SearchProjectsResult from 'src/components/SearchProjectsResult';
+import ProjectInformation from 'src/components/ProjectInformation';
 
 import { addProjectToParticipations, deleteProjectFromParticipations } from "src/actions";
 import { findProject } from 'src/selectors/projects';
 
 const mapStateToProps = (state, ownProps) => {
   return{
-    project: findProject(state.project.list, Number(ownProps.match.params.id)),
+    project: findProject(state.search.projects, Number(ownProps.match.params.id)),
     idProject: Number(ownProps.match.params.id),
     myProjects: state.user.dataUser.participated_projects,
   }
@@ -20,8 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
   clickUnparticipationButton: (id, history) => {
     const action = deleteProjectFromParticipations(id, history);
     dispatch(action);
-  }
-  
+  },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchProjectsResult);
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectInformation);

@@ -69,7 +69,6 @@ const users= (store) => (next) => (action) => {
       })
           .then((response) => {
             const dataProfile = response.data;
-            console.log(dataProfile)
             const actionSaveProfileData = saveProfileData(dataProfile);
             store.dispatch(actionSaveProfileData);
           })

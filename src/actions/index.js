@@ -13,7 +13,10 @@ export const SIGN_IN_SUBMIT = 'SIGN_IN_SUBMIT';
 export const SAVE_USER = 'SAVE_USER';
 
 export const GET_ALL_PROJECTS = 'GET_ALL_PROJECTS';
+export const GET_ALL_PROJECTS_SEARCH = 'GET_ALL_PROJECTS_SEARCH';
 export const SAVE_ALL_PROJECTS = 'SAVE_ALL_PROJECTS';
+export const SAVE_ALL_PROJECTS_SEARCH = 'SAVE_ALL_PROJECTS_SEARCH';
+export const SAVE_PROJECTS = 'SAVE_PROJECTS';
 export const ADD_PROJECT_TO_PARTICIPATIONS = 'ADD_PROJECT_TO_PARTICIPATIONS';
 export const DELETE_PROJECT_FROM_PARTICIPATIONS = 'DELETE_PROJECT_FROM_PARTICIPATIONS';
 
@@ -99,8 +102,23 @@ export const getAllProjects = () => ({
   type: GET_ALL_PROJECTS,
 });
 
+export const getAllProjectsSearch = () => ({
+  type: GET_ALL_PROJECTS_SEARCH,
+});
+
+
 export const saveAllProjects = (projects) => ({
   type: SAVE_ALL_PROJECTS,
+  projects
+});
+
+export const saveAllProjectsSearch = (projects) => ({
+  type: SAVE_ALL_PROJECTS_SEARCH,
+  projects
+});
+
+export const saveProjects = (projects) => ({
+  type: SAVE_PROJECTS,
   projects
 });
 

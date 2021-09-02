@@ -21,7 +21,7 @@ import { FiArrowLeftCircle } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchProjectsResult({ clickParticipationButton, clickUnparticipationButton, getProjects, project, idProject, myProjects }) {
+function SearchProjectsResult({ clickParticipationButton, clickUnparticipationButton, project, idProject, myProjects }) {
 
   const currentProject = myProjects.find((searchedParticipation) => {
     return searchedParticipation.id === idProject;
