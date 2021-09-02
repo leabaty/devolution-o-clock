@@ -6,7 +6,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 // == Import components
 
 import Home from 'src/containers/Home';
-import SearchPageDisconnect from 'src/components/SearchPageDisconnect'
+import SearchPageDisconnect from 'src/containers/SearchPageDisconnect'
 import Login from 'src/containers/Login';
 import ProfilePage from 'src/containers/ProfilePage';
 import ProjectPageDisconnect from 'src/components/ProjectPageDisconnect';
