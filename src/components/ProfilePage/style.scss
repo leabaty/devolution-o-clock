@@ -38,9 +38,10 @@ p,h3 {
   }
 
   &__buttons {
-    display:flex;
-    flex-direction:row;
-    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   &__delete,

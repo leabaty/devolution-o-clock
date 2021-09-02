@@ -1,36 +1,35 @@
 /* eslint-disable arrow-body-style */
 // == Import : npm
-import React, { useState } from "react";
-import skilldata from "./skilldata";
+import React, { useState, useEffect } from "react";
 // import PropTypes from 'prop-types';
-import skills from './skilldata';
+import skillsdata from './fakedata';
 // Style
 import "./style.scss";
 
 // == Composant
-function ProfileCompetencies() {
-  const [bool, setBool] = useState(skills);
-  console.log(bool);
+function ProfileCompetencies({ userData }) {
+
+  const [skills, setskills] = useState();
+
+  useEffect(() => {
+    setskills(skillsdata);
+    return () => {
+    }
+  }, [userData.users_skills])
+
+  console.log(skills);
+
   return (
     <div className="profile__skills element">
       <h3 className="profile__skills__title">Mes compétences</h3>
       <ul className="profile__skills__checkbox ks-cboxtags">
-        { skills.map( ({id, label}) =>
-
+        { skills?.map( ({id, label}) =>
+          // ?. check si c'est pas null et si oui; fait le reste après le map
           <li key={id}>
-            <input type="checkbox" id={`c${id}`} value="false"/>
+            <input type="checkbox" id={label} checked={id === 1 ? null : 'checked' } readOnly/>
             <label htmlFor={label}>{label}</label>
           </li>
-          ,{/*
-            <li key={id}>
-            <input id={`s${id}`}
-                  type="checkbox" className="switch"
-                  //checked={ id%2 === 0 ? 'checked' : ''}
-                  onChange={e => { console.log(e.target.checked)}}
-            />
-              <label htmlFor={`s${id}`}>{label}</label>
-            </li>
-            */}
+
           )
         }
       </ul>

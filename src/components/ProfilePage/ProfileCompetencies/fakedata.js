@@ -8,14 +8,6 @@ export default [
         "label": "NodeJs"
     },
     {
-        "id": 3,
-        "label": "Angular"
-    },
-    {
-        "id": 4,
-        "label": "ThreeJS"
-    },
-    {
         "id": 5,
         "label": "PostgreSQL"
     },
@@ -28,14 +20,6 @@ export default [
         "label": "EJS"
     },
     {
-        "id": 8,
-        "label": "Python"
-    },
-    {
-        "id": 9,
-        "label": "Symfony"
-    },
-    {
         "id": 10,
         "label": "CSS"
     },
@@ -46,10 +30,6 @@ export default [
     {
         "id": 12,
         "label": "Strapi"
-    },
-    {
-        "id": 13,
-        "label": "Ruby"
     },
     {
         "id": 14,
