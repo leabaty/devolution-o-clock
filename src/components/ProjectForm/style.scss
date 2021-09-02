@@ -1,8 +1,8 @@
-p, h3 {
+p,
+h3 {
   padding: 6px;
-  margin-top : 0.2em;
+  margin-top: 0.2em;
 }
-
 
 .element {
   border: solid lightgray 1px;
@@ -66,12 +66,22 @@ p, h3 {
     font-family: "Nunito";
     font-size: 20px;
   }
-
 }
 
 .project-form {
+  &__small-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a3a58d7;
+  }
 
-  &__status-indicator{
+  &__guidelines {
+    font-size: 0.8em;
+    margin-bottom: 0.8em;
+    line-height: 1.5em;
+  }
+
+  &__status-indicator {
     font-size: 13px;
     padding: 10px 8px 10px 14px;
     border: 1px solid lightgray;
@@ -117,7 +127,7 @@ p, h3 {
     height: 100px;
   }
 
-  &__start-date:read-write{
+  &__start-date:read-write {
     font-family: "Nunito";
     height: 30px;
     padding: 5px;
@@ -126,9 +136,32 @@ p, h3 {
     border: solid lightgray 1px;
   }
 
-  &__guidelines{
-    font-size: 0.8em;
-    margin-top: 0;
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
+  &__icon-container {
+    width: 200px;
+    height: 150px;
+  }
+
+  &__icon {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__icon-legend {
+    text-align: center;
+    margin-bottom: 0;
+    vertical-align: bottom;
+  }
+
+  &__icon-card {
+    border-radius: 10px;
+    border: solid lightgray 1px;
+    margin: 5px;
+    padding: 5px;
+  }
 }

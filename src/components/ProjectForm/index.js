@@ -2,7 +2,7 @@
 // == Import : npm
 import React from "react";
 import PropTypes from "prop-types";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 // Composants
 import Menu from "src/components/Menu";
@@ -23,16 +23,15 @@ function SearchProjectsResult({
   changeProjectDescriptionValue,
   changeProjectNeedsValue,
   // changeProjectSpecificitiesValue,
-  // changeProjectImageValue,
+  changeProjectImageValue,
   projectTitle,
   projectStatus,
   projectStartDate,
   projectDescription,
   projectNeeds,
   // projectSpecificities,
-  // projectImage,
+  projectImage,
 }) {
-
   const history = useHistory();
 
   const onProjectSubmit = (event) => {
@@ -64,9 +63,9 @@ function SearchProjectsResult({
   //   changeProjectSpecificitiesValue(event.target.value);
   // };
 
-  // const onChangeProjectImage = (event) => {
-  //   changeProjectImageValue(event.target.value);
-  // };
+  const onChangeProjectImage = (event) => {
+    changeProjectImageValue(event.target.value);
+  };
 
   return (
     <div className="project__page">
@@ -102,12 +101,12 @@ function SearchProjectsResult({
               onChange={onChangeProjectStatus}
               id="status"
             >
-              <option value={true} >Ouvert aux participants</option>
+              <option value={true}>Ouvert aux participants</option>
               <option value={false}>Fermé aux participants</option>
             </select>
 
             <div className="project__start-date element">
-              <h3 className="project__subtitle">Date de début souhaitée</h3>
+              <h3 className="project-form__small-title">Date de début souhaitée</h3>
               <input
                 className="project-form__start-date"
                 type="date"
@@ -118,10 +117,194 @@ function SearchProjectsResult({
               />
             </div>
 
+            <div className="project-form__theme element">
+              <h3 className="project-form__small-title">Thématique</h3>
+
+              <div className="project-form__icons">
+
+              <div className="project-form__icon-card">
+                <input
+                  type="radio"
+                  id="intergeneration"
+                  name="drone"
+                  value="https://i.ibb.co/23gbnt6/Happy-senior-people-dancing-at-party-Cartoon-grey-haired-old-men-and-women-enjoying-music-in-club-ha.jpg"
+                />
+                <label for="intergeneration">
+                  {" "}
+                  Intergénérationnel
+                  <div className="project-form__icon-container">
+                    <img
+                      className="project-form__icon"
+                      src="https://i.ibb.co/23gbnt6/Happy-senior-people-dancing-at-party-Cartoon-grey-haired-old-men-and-women-enjoying-music-in-club-ha.jpg"
+                    />
+                  </div>
+                </label>
+              </div>
+
+              <div className="project-form__icon-card">
+                <input
+                  type="radio"
+                  id="animals"
+                  name="drone"
+                  value="https://i.ibb.co/23gbnt6/Happy-senior-people-dancing-at-party-Cartoon-grey-haired-old-men-and-women-enjoying-music-in-club-ha.jpg"
+                />
+                <label for="animals">
+                  {" "}
+                  Animaux
+                  <div className="project-form__icon-container">
+                    <img
+                      className="project-form__icon"
+                      src="https://i.ibb.co/GpVMrCb/Friend-walking-with-pets-meeting-and-waving-hello-Women-with-dog-and-cat-outside-flat-vector-illustr.jpg"
+                    />
+                  </div>
+                </label>
+              </div>
+
+              <div className="project-form__icon-card">
+                <input
+                  type="radio"
+                  id="hobbies"
+                  name="drone"
+                  value="https://i.ibb.co/vkHMF8G/Happy-tiny-people-listening-spiritual-music-near-huge-headphones-flat-vector-illustration-Young-guy.jpg"
+                />
+                <label for="hobbies">
+                  {" "}
+                  Loisirs
+                  <div className="project-form__icon-container">
+                    <img
+                      className="project-form__icon"
+                      src="https://i.ibb.co/vkHMF8G/Happy-tiny-people-listening-spiritual-music-near-huge-headphones-flat-vector-illustration-Young-guy.jpg"
+                    />
+                  </div>
+                </label>
+              </div>
+
+              <div className="project-form__icon-card">
+                <input
+                  type="radio"
+                  id="nature"
+                  name="drone"
+                  value="https://i.ibb.co/DRXBPhH/Kids-planting-tree-in-city-park-Children-with-gardening-tools-working-with-green-plants-outdoors-Vec.jpg"
+                />
+                <label for="nature">
+                  {" "}
+                  Nature
+                  <div className="project-form__icon-container">
+                    <img
+                      className="project-form__icon"
+                      src="https://i.ibb.co/DRXBPhH/Kids-planting-tree-in-city-park-Children-with-gardening-tools-working-with-green-plants-outdoors-Vec.jpg"
+                    />
+                  </div>
+                </label>
+              </div>
+
+              <div className="project-form__icon-card">
+                <input
+                  type="radio"
+                  id="associative"
+                  name="drone"
+                  value="https://i.ibb.co/Zgr8Mg4/4293766.jpg"
+                />
+                <label for="associative">
+                  {" "}
+                  Associatif
+                  <div className="project-form__icon-container">
+                    <img
+                      className="project-form__icon"
+                      src="https://i.ibb.co/Zgr8Mg4/4293766.jpg"
+                    />
+                  </div>
+                </label>
+              </div>
+
+              <div className="project-form__icon-card">
+                <input
+                  type="radio"
+                  id="groceries"
+                  name="drone"
+                  value="https://i.ibb.co/Z6j3HX7/Net-paper-and-cotton-shopping-bags-with-grocery-isolated-on-white-background-Vector-cartoon-set-of-r.jpg"
+                />
+                <label for="groceries">
+                  {" "}
+                  Epiceries solidaires
+                  <div className="project-form__icon-container">
+                    <img
+                      className="project-form__icon"
+                      src="https://i.ibb.co/Z6j3HX7/Net-paper-and-cotton-shopping-bags-with-grocery-isolated-on-white-background-Vector-cartoon-set-of-r.jpg"
+                    />
+                  </div>
+                </label>
+              </div>
+
+              <div className="project-form__icon-card">
+                <input
+                  type="radio"
+                  id="education"
+                  name="drone"
+                  value="https://i.ibb.co/KLKWfGd/Young-teacher-with-joyful-kids-isolated-flat-vector-illustration-Cartoon-happy-children-in-kindergar.jpg"
+                />
+                <label for="education">
+                  {" "}
+                  Education
+                  <div className="project-form__icon-container">
+                    <img
+                      className="project-form__icon"
+                      src="https://i.ibb.co/KLKWfGd/Young-teacher-with-joyful-kids-isolated-flat-vector-illustration-Cartoon-happy-children-in-kindergar.jpg"
+                    />
+                  </div>
+                </label>
+              </div>
+
+              <div className="project-form__icon-card">
+                <input
+                  type="radio"
+                  id="environnement"
+                  name="drone"
+                  value="https://i.ibb.co/894PVRV/59870.jpg"
+                />
+                <label for="environnement">
+                  {" "}
+                  Environnement
+                  <div className="project-form__icon-container">
+                    <img
+                      className="project-form__icon"
+                      src="https://i.ibb.co/894PVRV/59870.jpg"
+                    />
+                  </div>
+                </label>
+              </div>
+
+              <div className="project-form__icon-card">
+                <input
+                  type="radio"
+                  id="sports"
+                  name="drone"
+                  value="https://i.ibb.co/SRgJpCQ/School-sports-team-abstract-concept-vector-illustration-School-children-club-competitive-team-sports.jpg"
+                />
+                <label for="sports">
+                  {" "}
+                  Sport
+                  <div className="project-form__icon-container">
+                    <img
+                      className="project-form__icon"
+                      src="https://i.ibb.co/SRgJpCQ/School-sports-team-abstract-concept-vector-illustration-School-children-club-competitive-team-sports.jpg"
+                    />
+                  </div>
+                </label>
+              </div>
+
+              </div>
+
+            </div>
+
             <div className="project__information element">
               <div className="project__description">
-                <h3 className="project__subtitle">Description</h3>
-                <p className="project-form__guidelines">La description de votre projet : Qui êtes-vous ? Quel est votre vision ? Quel est le but de votre projet, à quels besoins répond-il ? ...</p>
+                <h3 className="project-form__small-title">Description</h3>
+                <p className="project-form__guidelines">
+                  La description de votre projet : Qui êtes-vous ? Quel est
+                  votre vision ? Quel est le but de votre projet, à quels
+                  besoins répond-il ? ...
+                </p>
                 <textarea
                   className="project-form__description"
                   value={projectDescription}
@@ -131,10 +314,16 @@ function SearchProjectsResult({
               </div>
 
               <div className="project__needs">
-                <h3 className="project__subtitle">
+                <h3 className="project-form__small-title">
                   Fonctionnalités et besoins
                 </h3>
-                <p className="project-form__guidelines">Quelles sont les pages web dont vous avez besoin ? Savez-vous déjà quelles technologies vous souhaitez utiliser ? Quelles sont les fonctionnalités attendues ? Avez-vous déjà des participants au projet, et si oui, qui sont-ils ? Recherchez-vous un profil en particulier ?</p>
+                <p className="project-form__guidelines">
+                  Quelles sont les pages web dont vous avez besoin ? Savez-vous
+                  déjà quelles technologies vous souhaitez utiliser ? Quelles
+                  sont les fonctionnalités attendues ? Avez-vous déjà des
+                  participants au projet, et si oui, qui sont-ils ?
+                  Recherchez-vous un profil en particulier ?
+                </p>
                 <textarea
                   className="project-form__needs"
                   value={projectNeeds}
@@ -144,7 +333,7 @@ function SearchProjectsResult({
               </div>
 
               {/* <div className="project__specificities">
-            <h3 className="project__subtitle">Spécificités du projet</h3>
+            <h3 className="project-form__small-title">Spécificités du projet</h3>
             <textarea
             className="project-form__specificities"
             value={projectSpecificities}
