@@ -1,4 +1,4 @@
-import { CHANGE_PROJECT_VALUE, CHANGE_USER_VALUE, SAVE_ALL_USERS, SAVE_ALL_PROJECTS            } from '../actions';
+import { CHANGE_PROJECT_VALUE, CHANGE_USER_VALUE, SAVE_ALL_USERS, SAVE_ALL_PROJECTS} from '../actions';
 
 export const initialState = {
   inputSearchProject: '',

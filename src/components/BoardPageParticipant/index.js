@@ -1,7 +1,8 @@
 /* eslint-disable arrow-body-style */
 // == Import : npm
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 // Composants
 import Menu from "src/components/Menu";
@@ -12,7 +13,13 @@ import CardProject from "src/components/CardProject";
 import "./style.scss";
 
 // == Composant
-function BoardPageParticipant() {
+function BoardPageParticipant({ fetchProfileData }) {
+  useEffect(fetchProfileData, []);
+
+  var infoProfile = JSON.parse(localStorage.getItem("dataProfile"));
+  const projects = infoProfile.findUser.participated_projects;
+  console.log(projects);
+
   return (
     <div className="board__page">
       <div className="board__menu">
@@ -29,7 +36,11 @@ function BoardPageParticipant() {
         <div className="board__component">
           <div className="board__running-projects">
             <p className="board__subtitle">Mes projets en cours</p>
-            <CardProject />
+            {projects.length === 0
+              ? "Aucun projet en cours"
+              : projects.map((project) => (
+                  <CardProject key={project.id} {...project} />
+                ))}
           </div>
 
           <div className="board__finalized-projects">
