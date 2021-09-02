@@ -16,8 +16,9 @@ import { HiOutlineLightBulb } from "react-icons/hi";
 import "./style.scss";
 
 // == Composant
-function BoardPageProjectBearer({ fetchProfileData }) {
+function BoardPageProjectBearer({ fetchProfileData, searchAllProjects }) {
   useEffect(fetchProfileData, []);
+  useEffect(searchAllProjects, [])
 
   var infoProfile = JSON.parse(localStorage.getItem("dataProfile"));
   const myProjects = infoProfile.findProject;
@@ -53,8 +54,10 @@ function BoardPageProjectBearer({ fetchProfileData }) {
               {myProjects.length === 0
                 ? "Aucun projet en cours"
                 : myProjects.map((project) => (
+                  <Link key={project.id} to={`/search/projects/${project.id}`}>
                     <CardProject key={project.id} {...project} />
-                  ))}
+                  </Link>
+                ))}
             </div>
 
             <div className="board__finalized-projects">

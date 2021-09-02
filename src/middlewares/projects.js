@@ -1,7 +1,7 @@
 import axios from 'axios';
 import instance from './utils/instance';
 
-import { GET_ALL_PROJECTS, saveAllProjects, GET_SEARCH_PROJECT, PROJECT_SUBMIT } from 'src/actions';
+import { GET_ALL_PROJECTS, saveAllProjects, GET_SEARCH_PROJECT, PROJECT_SUBMIT, ADD_PROJECT_TO_PARTICIPATIONS, DELETE_PROJECT_FROM_PARTICIPATIONS } from 'src/actions';
 
 const projects= (store) => (next) => (action) => {
   switch (action.type) {
@@ -70,6 +70,40 @@ const projects= (store) => (next) => (action) => {
             .catch((error) => console.log(error));
           break;
         }
+
+        case ADD_PROJECT_TO_PARTICIPATIONS: {
+          const token = localStorage.getItem('token')
+          instance({
+            method: 'GET',
+            url: `/project/${action.id}/addparticipant`,
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          })
+              .then((response) => {
+                console.log(response)
+                action.history.push('/myParticipations')
+              })
+              .catch((error) => console.log(error));
+            break;
+          }
+
+          case DELETE_PROJECT_FROM_PARTICIPATIONS: {
+            const token = localStorage.getItem('token')
+            instance({
+              method: 'DELETE',
+              url: `/project/${action.id}/deleteparticipant`,
+              headers: {
+                authorization: `Bearer ${token}`,
+              },
+            })
+                .then((response) => {
+                  console.log(response)
+                  action.history.push('/myParticipations')
+                })
+                .catch((error) => console.log(error));
+              break;
+            }
 
     default:
       next(action);
