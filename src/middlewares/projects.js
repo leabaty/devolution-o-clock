@@ -40,7 +40,7 @@ const projects= (store) => (next) => (action) => {
       }
 
       case PROJECT_SUBMIT: {
-        const {projectTitle, projectStatus, projectStartDate, projectDescription, projectNeeds, /*projectImage, projectSpecificities*/} = store.getState().projectform
+        const {projectTitle, projectStatus, projectStartDate, projectDescription, projectNeeds, projectImage, /*projectSpecificities*/} = store.getState().projectform
 
         const token = localStorage.getItem('token')
 
@@ -52,8 +52,8 @@ const projects= (store) => (next) => (action) => {
             is_available: projectStatus,
             beginning_date: projectStartDate,
             description: projectDescription,
-            need_of_the_project: projectNeeds
-            // icon: projectImage,
+            need_of_the_project: projectNeeds,
+            icon: projectImage
             // projectSpecificities
           },
           headers: {

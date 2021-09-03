@@ -30,7 +30,6 @@ function SearchProjectsResult({
   projectDescription,
   projectNeeds,
   // projectSpecificities,
-  projectImage,
 }) {
   const history = useHistory();
 
@@ -63,7 +62,7 @@ function SearchProjectsResult({
   //   changeProjectSpecificitiesValue(event.target.value);
   // };
 
-  const onChangeProjectImage = (event) => {
+  const onClickProjectImage = (event) => {
     changeProjectImageValue(event.target.value);
   };
 
@@ -106,7 +105,9 @@ function SearchProjectsResult({
             </select>
 
             <div className="project__start-date element">
-              <h3 className="project-form__small-title">Date de début souhaitée</h3>
+              <h3 className="project-form__small-title">
+                Date de début souhaitée
+              </h3>
               <input
                 className="project-form__start-date"
                 type="date"
@@ -121,180 +122,187 @@ function SearchProjectsResult({
               <h3 className="project-form__small-title">Thématique</h3>
 
               <div className="project-form__icons">
+                <div className="project-form__icon-card">
+                  <input
+                    type="radio"
+                    id="intergeneration"
+                    name="drone"
+                    value="https://i.ibb.co/23gbnt6/Happy-senior-people-dancing-at-party-Cartoon-grey-haired-old-men-and-women-enjoying-music-in-club-ha.jpg"
+                    onClick={onClickProjectImage}
+                  />
+                  <label for="intergeneration">
+                    {" "}
+                    Intergénérationnel
+                    <div className="project-form__icon-container">
+                      <img
+                        className="project-form__icon"
+                        src="https://i.ibb.co/23gbnt6/Happy-senior-people-dancing-at-party-Cartoon-grey-haired-old-men-and-women-enjoying-music-in-club-ha.jpg"
+                      />
+                    </div>
+                  </label>
+                </div>
 
-              <div className="project-form__icon-card">
-                <input
-                  type="radio"
-                  id="intergeneration"
-                  name="drone"
-                  value="https://i.ibb.co/23gbnt6/Happy-senior-people-dancing-at-party-Cartoon-grey-haired-old-men-and-women-enjoying-music-in-club-ha.jpg"
-                />
-                <label for="intergeneration">
-                  {" "}
-                  Intergénérationnel
-                  <div className="project-form__icon-container">
-                    <img
-                      className="project-form__icon"
-                      src="https://i.ibb.co/23gbnt6/Happy-senior-people-dancing-at-party-Cartoon-grey-haired-old-men-and-women-enjoying-music-in-club-ha.jpg"
-                    />
-                  </div>
-                </label>
+                <div className="project-form__icon-card">
+                  <input
+                    type="radio"
+                    id="animals"
+                    name="drone"
+                    value="https://i.ibb.co/GpVMrCb/Friend-walking-with-pets-meeting-and-waving-hello-Women-with-dog-and-cat-outside-flat-vector-illustr.jpg"
+                    onClick={onClickProjectImage}
+                  />
+                  <label for="animals">
+                    {" "}
+                    Animaux
+                    <div className="project-form__icon-container">
+                      <img
+                        className="project-form__icon"
+                        src="https://i.ibb.co/GpVMrCb/Friend-walking-with-pets-meeting-and-waving-hello-Women-with-dog-and-cat-outside-flat-vector-illustr.jpg"
+                      />
+                    </div>
+                  </label>
+                </div>
+
+                <div className="project-form__icon-card">
+                  <input
+                    type="radio"
+                    id="hobbies"
+                    name="drone"
+                    value="https://i.ibb.co/vkHMF8G/Happy-tiny-people-listening-spiritual-music-near-huge-headphones-flat-vector-illustration-Young-guy.jpg"
+                    onClick={onClickProjectImage}
+                  />
+                  <label for="hobbies">
+                    {" "}
+                    Loisirs
+                    <div className="project-form__icon-container">
+                      <img
+                        className="project-form__icon"
+                        src="https://i.ibb.co/vkHMF8G/Happy-tiny-people-listening-spiritual-music-near-huge-headphones-flat-vector-illustration-Young-guy.jpg"
+                        onClick={onClickProjectImage}
+                      />
+                    </div>
+                  </label>
+                </div>
+
+                <div className="project-form__icon-card">
+                  <input
+                    type="radio"
+                    id="nature"
+                    name="drone"
+                    value="https://i.ibb.co/DRXBPhH/Kids-planting-tree-in-city-park-Children-with-gardening-tools-working-with-green-plants-outdoors-Vec.jpg"
+                    onClick={onClickProjectImage}
+                  />
+                  <label for="nature">
+                    {" "}
+                    Nature
+                    <div className="project-form__icon-container">
+                      <img
+                        className="project-form__icon"
+                        src="https://i.ibb.co/DRXBPhH/Kids-planting-tree-in-city-park-Children-with-gardening-tools-working-with-green-plants-outdoors-Vec.jpg"
+                      />
+                    </div>
+                  </label>
+                </div>
+
+                <div className="project-form__icon-card">
+                  <input
+                    type="radio"
+                    id="associative"
+                    name="drone"
+                    value="https://i.ibb.co/Zgr8Mg4/4293766.jpg"
+                    onClick={onClickProjectImage}
+                  />
+                  <label for="associative">
+                    {" "}
+                    Associatif
+                    <div className="project-form__icon-container">
+                      <img
+                        className="project-form__icon"
+                        src="https://i.ibb.co/Zgr8Mg4/4293766.jpg"
+                      />
+                    </div>
+                  </label>
+                </div>
+
+                <div className="project-form__icon-card">
+                  <input
+                    type="radio"
+                    id="groceries"
+                    name="drone"
+                    value="https://i.ibb.co/Z6j3HX7/Net-paper-and-cotton-shopping-bags-with-grocery-isolated-on-white-background-Vector-cartoon-set-of-r.jpg"
+                    onClick={onClickProjectImage}
+                  />
+                  <label for="groceries">
+                    {" "}
+                    Epiceries solidaires
+                    <div className="project-form__icon-container">
+                      <img
+                        className="project-form__icon"
+                        src="https://i.ibb.co/Z6j3HX7/Net-paper-and-cotton-shopping-bags-with-grocery-isolated-on-white-background-Vector-cartoon-set-of-r.jpg"
+                      />
+                    </div>
+                  </label>
+                </div>
+
+                <div className="project-form__icon-card">
+                  <input
+                    type="radio"
+                    id="education"
+                    name="drone"
+                    value="https://i.ibb.co/KLKWfGd/Young-teacher-with-joyful-kids-isolated-flat-vector-illustration-Cartoon-happy-children-in-kindergar.jpg"
+                    onClick={onClickProjectImage}
+                  />
+                  <label for="education">
+                    {" "}
+                    Education
+                    <div className="project-form__icon-container">
+                      <img
+                        className="project-form__icon"
+                        src="https://i.ibb.co/KLKWfGd/Young-teacher-with-joyful-kids-isolated-flat-vector-illustration-Cartoon-happy-children-in-kindergar.jpg"
+                      />
+                    </div>
+                  </label>
+                </div>
+
+                <div className="project-form__icon-card">
+                  <input
+                    type="radio"
+                    id="environnement"
+                    name="drone"
+                    value="https://i.ibb.co/894PVRV/59870.jpg"
+                    onClick={onClickProjectImage}
+                  />
+                  <label for="environnement">
+                    {" "}
+                    Environnement
+                    <div className="project-form__icon-container">
+                      <img
+                        className="project-form__icon"
+                        src="https://i.ibb.co/894PVRV/59870.jpg"
+                      />
+                    </div>
+                  </label>
+                </div>
+
+                <div className="project-form__icon-card">
+                  <input
+                    type="radio"
+                    id="sports"
+                    name="drone"
+                    value="https://i.ibb.co/SRgJpCQ/School-sports-team-abstract-concept-vector-illustration-School-children-club-competitive-team-sports.jpg"
+                    onClick={onClickProjectImage}
+                  />
+                  <label for="sports">
+                    {" "}
+                    Sport
+                    <div className="project-form__icon-container">
+                      <img
+                        className="project-form__icon"
+                        src="https://i.ibb.co/SRgJpCQ/School-sports-team-abstract-concept-vector-illustration-School-children-club-competitive-team-sports.jpg"
+                      />
+                    </div>
+                  </label>
+                </div>
               </div>
-
-              <div className="project-form__icon-card">
-                <input
-                  type="radio"
-                  id="animals"
-                  name="drone"
-                  value="https://i.ibb.co/23gbnt6/Happy-senior-people-dancing-at-party-Cartoon-grey-haired-old-men-and-women-enjoying-music-in-club-ha.jpg"
-                />
-                <label for="animals">
-                  {" "}
-                  Animaux
-                  <div className="project-form__icon-container">
-                    <img
-                      className="project-form__icon"
-                      src="https://i.ibb.co/GpVMrCb/Friend-walking-with-pets-meeting-and-waving-hello-Women-with-dog-and-cat-outside-flat-vector-illustr.jpg"
-                    />
-                  </div>
-                </label>
-              </div>
-
-              <div className="project-form__icon-card">
-                <input
-                  type="radio"
-                  id="hobbies"
-                  name="drone"
-                  value="https://i.ibb.co/vkHMF8G/Happy-tiny-people-listening-spiritual-music-near-huge-headphones-flat-vector-illustration-Young-guy.jpg"
-                />
-                <label for="hobbies">
-                  {" "}
-                  Loisirs
-                  <div className="project-form__icon-container">
-                    <img
-                      className="project-form__icon"
-                      src="https://i.ibb.co/vkHMF8G/Happy-tiny-people-listening-spiritual-music-near-huge-headphones-flat-vector-illustration-Young-guy.jpg"
-                    />
-                  </div>
-                </label>
-              </div>
-
-              <div className="project-form__icon-card">
-                <input
-                  type="radio"
-                  id="nature"
-                  name="drone"
-                  value="https://i.ibb.co/DRXBPhH/Kids-planting-tree-in-city-park-Children-with-gardening-tools-working-with-green-plants-outdoors-Vec.jpg"
-                />
-                <label for="nature">
-                  {" "}
-                  Nature
-                  <div className="project-form__icon-container">
-                    <img
-                      className="project-form__icon"
-                      src="https://i.ibb.co/DRXBPhH/Kids-planting-tree-in-city-park-Children-with-gardening-tools-working-with-green-plants-outdoors-Vec.jpg"
-                    />
-                  </div>
-                </label>
-              </div>
-
-              <div className="project-form__icon-card">
-                <input
-                  type="radio"
-                  id="associative"
-                  name="drone"
-                  value="https://i.ibb.co/Zgr8Mg4/4293766.jpg"
-                />
-                <label for="associative">
-                  {" "}
-                  Associatif
-                  <div className="project-form__icon-container">
-                    <img
-                      className="project-form__icon"
-                      src="https://i.ibb.co/Zgr8Mg4/4293766.jpg"
-                    />
-                  </div>
-                </label>
-              </div>
-
-              <div className="project-form__icon-card">
-                <input
-                  type="radio"
-                  id="groceries"
-                  name="drone"
-                  value="https://i.ibb.co/Z6j3HX7/Net-paper-and-cotton-shopping-bags-with-grocery-isolated-on-white-background-Vector-cartoon-set-of-r.jpg"
-                />
-                <label for="groceries">
-                  {" "}
-                  Epiceries solidaires
-                  <div className="project-form__icon-container">
-                    <img
-                      className="project-form__icon"
-                      src="https://i.ibb.co/Z6j3HX7/Net-paper-and-cotton-shopping-bags-with-grocery-isolated-on-white-background-Vector-cartoon-set-of-r.jpg"
-                    />
-                  </div>
-                </label>
-              </div>
-
-              <div className="project-form__icon-card">
-                <input
-                  type="radio"
-                  id="education"
-                  name="drone"
-                  value="https://i.ibb.co/KLKWfGd/Young-teacher-with-joyful-kids-isolated-flat-vector-illustration-Cartoon-happy-children-in-kindergar.jpg"
-                />
-                <label for="education">
-                  {" "}
-                  Education
-                  <div className="project-form__icon-container">
-                    <img
-                      className="project-form__icon"
-                      src="https://i.ibb.co/KLKWfGd/Young-teacher-with-joyful-kids-isolated-flat-vector-illustration-Cartoon-happy-children-in-kindergar.jpg"
-                    />
-                  </div>
-                </label>
-              </div>
-
-              <div className="project-form__icon-card">
-                <input
-                  type="radio"
-                  id="environnement"
-                  name="drone"
-                  value="https://i.ibb.co/894PVRV/59870.jpg"
-                />
-                <label for="environnement">
-                  {" "}
-                  Environnement
-                  <div className="project-form__icon-container">
-                    <img
-                      className="project-form__icon"
-                      src="https://i.ibb.co/894PVRV/59870.jpg"
-                    />
-                  </div>
-                </label>
-              </div>
-
-              <div className="project-form__icon-card">
-                <input
-                  type="radio"
-                  id="sports"
-                  name="drone"
-                  value="https://i.ibb.co/SRgJpCQ/School-sports-team-abstract-concept-vector-illustration-School-children-club-competitive-team-sports.jpg"
-                />
-                <label for="sports">
-                  {" "}
-                  Sport
-                  <div className="project-form__icon-container">
-                    <img
-                      className="project-form__icon"
-                      src="https://i.ibb.co/SRgJpCQ/School-sports-team-abstract-concept-vector-illustration-School-children-club-competitive-team-sports.jpg"
-                    />
-                  </div>
-                </label>
-              </div>
-
-              </div>
-
             </div>
 
             <div className="project__information element">

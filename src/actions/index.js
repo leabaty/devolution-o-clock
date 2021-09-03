@@ -196,10 +196,10 @@ export const changeProjectNeeds = (value) => ({
 //   value,
 // });
 
-// export const changeProjectImage = (value) => ({
-//   type: CHANGE_PROJECT_IMAGE,
-//   value,
-// });
+export const changeProjectImage = (value) => ({
+  type: CHANGE_PROJECT_IMAGE,
+  value,
+});
 
 // --- Modify an existing User
 

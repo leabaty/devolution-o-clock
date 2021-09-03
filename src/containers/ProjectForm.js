@@ -7,9 +7,9 @@ import {
   changeProjectStatus, 
   changeProjectStartDate, 
   changeProjectDescription, 
-  changeProjectNeeds 
+  changeProjectNeeds,
   // changeProjectSpecificities, 
-  // changeProjectImage,
+  changeProjectImage
 } from 'src/actions';
 
 
@@ -20,7 +20,7 @@ const mapStateToProps = (state, ownProps) => ({
   projectDescription: state.projectform.projectDescription,
   projectNeeds: state.projectform.projectNeeds,
   // projectSpecificities: state.projectform.projectSpecificities,
-  // projectImage: state.projectform.projectImage,
+  projectImage: state.projectform.projectImage,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -52,10 +52,11 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   //   const action = changeProjectSpecificities();
   //   dispatch(action);
   // },
-  // changeProjectImageValue: () => {
-  //   const action = changeProjectImage();
-  //   dispatch(action);
-  // },
+
+  changeProjectImageValue: (value) => {
+    const action = changeProjectImage(value);
+    dispatch(action);
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectForm);
