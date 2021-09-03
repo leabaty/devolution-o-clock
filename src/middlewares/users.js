@@ -69,7 +69,6 @@ const users= (store) => (next) => (action) => {
       })
           .then((response) => {
             const dataProfile = response.data;
-            localStorage.setItem('dataProfile', JSON.stringify(response.data));
             const actionSaveProfileData = saveProfileData(dataProfile);
             store.dispatch(actionSaveProfileData);
           })

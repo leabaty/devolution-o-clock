@@ -4,7 +4,16 @@ import { Link } from 'react-router-dom';
 
 import './style.scss'
 
-function Header(props) {
+function HeaderHome({ changeInputHome, submitHomeInput }) {
+  const onChangeInputHome = (event) => {
+    changeInputHome(event.target.value);
+  };
+
+  const onSubmitHomeInput = (event) => {
+    event.preventDefault()
+    submitHomeInput();
+  };
+
   return (
     <div className="header">
       <div className="header__logo">
@@ -15,15 +24,14 @@ function Header(props) {
       </div>
       <h1 className="header__title">Devolution</h1>
       <p className="header__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat sit illo expedita labore omnis aliquam sequi enim magni ratione laboriosam ab ullam est, quaerat eius, aut corporis incidunt blanditiis dignissimos.</p>
-      <input type="text" placeholder="Recherche..." className="header__input" />
     </div>
   )
 }
 
-Header.propTypes = {
+HeaderHome.propTypes = {
 
 }
 
 
-export default Header
+export default HeaderHome
 

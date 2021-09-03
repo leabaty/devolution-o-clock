@@ -1,8 +1,8 @@
 /* eslint-disable arrow-body-style */
 // == Import : npm
-import React from "react";
+import React, { useEffect }from "react";
 import PropTypes from "prop-types";
-import { Link, Redirect } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 // Composants
 import Menu from "src/components/Menu";
@@ -21,7 +21,26 @@ import { FiArrowLeftCircle } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchProjectsResult({ project }) {
+function SearchProjectsResult({ clickParticipationButton, clickUnparticipationButton, project, idProject, myParticipatedProjects, fetchProfileData, getProjects }) {
+
+  useEffect(getProjects, []);
+  useEffect(fetchProfileData, []);
+  
+
+  const currentProject = myParticipatedProjects.find((searchedParticipation) => {
+    return searchedParticipation.id === idProject;
+  });
+
+  const history = useHistory();
+
+  const onClickParticipationButton = () => {
+    clickParticipationButton(idProject, history);
+  };
+
+  const onClickUnparticipationButton = () => {
+    clickUnparticipationButton(idProject, history);
+  };
+
   return (
     <div className="project__page">
       <div className="project__menu">
@@ -29,33 +48,40 @@ function SearchProjectsResult({ project }) {
       </div>
 
       <div className="project__subpage">
-      <div className="header__user-search">
-          <Link to="/search/projects">
-            <p className="header__comeback">
-              <FiArrowLeftCircle /> Revenir à la recherche
-            </p>
-          </Link>
-          <div className="header__user-icon"><HeaderConnected /></div>
+        <div className="header__user-search">
+          {/* <Link to="/search/projects"> */}
+          <p className="header__comeback">
+            <FiArrowLeftCircle /> Revenir à la recherche
+          </p>
+          {/* </Link> */}
+          <div className="header__user-icon">
+            <HeaderConnected />
+          </div>
         </div>
 
         <div className="project__component">
-          <ProjectHeader 
-          name={project.name} 
-          pseudo={project.pseudo} />
+          <ProjectHeader name={project.name} pseudo={project.pseudo} />
 
           <ProjectStatus status={project.is_available} />
           {/* <ProjectCompetencies/> */}
 
           <div className="project__information element">
-            <ProjectDescription description={project.description}/>
-            <ProjectNeeds needs={project.need_of_the_project}/>
+            <ProjectDescription description={project.description} />
+            <ProjectNeeds needs={project.need_of_the_project} />
             {/* <ProjectSpecificities /> */}
           </div>
-
-
-      {project.is_available === true ? <button className="project__button">Je me propose !</button> : "" }
-
           
+            {currentProject && (
+              <button className="project__button-unparticipate" onClick={onClickUnparticipationButton}>Je me retire du projet</button>
+            )}
+
+            {!currentProject && project.is_available ? (
+              <button className="project__button-participate" onClick={onClickParticipationButton}>Je participe !</button>
+
+            ) : (
+              null
+            )}
+
         </div>
       </div>
     </div>

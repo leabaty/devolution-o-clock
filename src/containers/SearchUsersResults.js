@@ -19,6 +19,7 @@ const mapDispatchToProps = (dispatch) => ({
     const action = getSearchUser(value);
     dispatch(action);
   },
+  
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchUsersResults);
