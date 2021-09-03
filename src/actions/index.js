@@ -13,7 +13,12 @@ export const SIGN_IN_SUBMIT = 'SIGN_IN_SUBMIT';
 export const SAVE_USER = 'SAVE_USER';
 
 export const GET_ALL_PROJECTS = 'GET_ALL_PROJECTS';
+export const GET_ALL_PROJECTS_SEARCH = 'GET_ALL_PROJECTS_SEARCH';
 export const SAVE_ALL_PROJECTS = 'SAVE_ALL_PROJECTS';
+export const SAVE_ALL_PROJECTS_SEARCH = 'SAVE_ALL_PROJECTS_SEARCH';
+export const SAVE_PROJECTS = 'SAVE_PROJECTS';
+export const ADD_PROJECT_TO_PARTICIPATIONS = 'ADD_PROJECT_TO_PARTICIPATIONS';
+export const DELETE_PROJECT_FROM_PARTICIPATIONS = 'DELETE_PROJECT_FROM_PARTICIPATIONS';
 
 export const GET_PROFILE_DATA = 'GET_PROFILE_DATA';
 export const SAVE_PROFILE_DATA = 'SAVE_PROFILE_DATA';
@@ -53,17 +58,17 @@ export const changeUsernameValue = (value) => ({
 
 export const changeEmailValue = (value) => ({
   type: CHANGE_EMAIL_VALUE,
-  value,
+  value
 });
 
 export const changePasswordValue = (value) => ({
   type: CHANGE_PASSWORD_VALUE,
-  value,
+  value
 });
 
 export const changePasswordConfirmValue = (value) => ({
   type: CHANGE_PASSWORD_CONFIRM_VALUE,
-  value,
+  value
 });
 
 export const signUpSubmit = () => ({
@@ -74,12 +79,12 @@ export const signUpSubmit = () => ({
 // --- Sign In
 export const changeSignInEmailValue = (value) => ({
   type: CHANGE_SIGN_IN_EMAIL_VALUE,
-  value,
+  value
 });
 
 export const changeSignInPasswordValue = (value) => ({
   type: CHANGE_SIGN_IN_PASSWORD_VALUE,
-  value,
+  value
 });
 
 export const signInSubmit = (value) => ({
@@ -89,7 +94,7 @@ export const signInSubmit = (value) => ({
 
 export const saveUser = (payload) => ({
   type: SAVE_USER,
-  payload,
+  payload
 });
 
 // --- Projects
@@ -97,10 +102,38 @@ export const getAllProjects = () => ({
   type: GET_ALL_PROJECTS,
 });
 
+export const getAllProjectsSearch = () => ({
+  type: GET_ALL_PROJECTS_SEARCH,
+});
+
+
 export const saveAllProjects = (projects) => ({
   type: SAVE_ALL_PROJECTS,
-  projects,
+  projects
 });
+
+export const saveAllProjectsSearch = (projects) => ({
+  type: SAVE_ALL_PROJECTS_SEARCH,
+  projects
+});
+
+export const saveProjects = (projects) => ({
+  type: SAVE_PROJECTS,
+  projects
+});
+
+export const addProjectToParticipations = (id, history) => ({
+  type: ADD_PROJECT_TO_PARTICIPATIONS,
+  id, 
+  history
+});
+
+export const deleteProjectFromParticipations = (id, history) => ({
+  type: DELETE_PROJECT_FROM_PARTICIPATIONS,
+  id, 
+  history
+});
+
 
 // --- ProfilePage
 export const getProfileData = () => ({
@@ -111,6 +144,7 @@ export const saveProfileData = (dataProfile) => ({
   type: SAVE_PROFILE_DATA,
   dataProfile,
 });
+
 
 // --- SearchPage
 export const changeProjectValue = (value) => ({
