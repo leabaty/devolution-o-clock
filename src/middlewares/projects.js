@@ -1,7 +1,7 @@
 import axios from 'axios';
 import instance from './utils/instance';
 
-import { GET_ALL_PROJECTS, GET_ALL_PROJECTS_SEARCH, saveAllProjects, saveAllProjectsSearch, GET_SEARCH_PROJECT, PROJECT_SUBMIT, ADD_PROJECT_TO_PARTICIPATIONS, DELETE_PROJECT_FROM_PARTICIPATIONS } from 'src/actions';
+import { GET_ALL_PROJECTS, GET_ALL_PROJECTS_SEARCH, saveAllProjects, saveProjects, saveAllProjectsSearch, GET_SEARCH_PROJECT, PROJECT_SUBMIT, ADD_PROJECT_TO_PARTICIPATIONS, DELETE_PROJECT_FROM_PARTICIPATIONS } from 'src/actions';
 
 const projects= (store) => (next) => (action) => {
   switch (action.type) {
@@ -45,7 +45,7 @@ const projects= (store) => (next) => (action) => {
         },
       })
           .then((response) => {
-            const actionSaveProjects = saveProjects(Projects.data);
+            const actionSaveProjects = saveProjects(response.data);
             store.dispatch(actionSaveProjects);
             action.value.push('/search/projects')
           })

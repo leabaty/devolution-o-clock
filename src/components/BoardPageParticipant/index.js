@@ -14,15 +14,9 @@ import "./style.scss";
 
 // == Composant
 function BoardPageParticipant({ fetchProfileData, getProjects, projects }) {
-  
-  const getProjectsAll = () => {
-    getProjects();
-  };
 
   useEffect(fetchProfileData, []);
-  useEffect(getProjectsAll, []) ;
-
-
+  useEffect(getProjects, []) ;
 
   return (
     <div className="board__page">

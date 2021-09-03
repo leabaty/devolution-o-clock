@@ -3,14 +3,20 @@ import BoardPageProjectBearer from 'src/components/BoardPageProjectBearer';
 import { getProfileData, getAllProjects } from 'src/actions';
 
 const mapStateToProps = (state) => ({
-  myProjects: state.user.dataUser.projects
-});
+  myProjects: state.user.dataUser.projects,
+  });
 
 const mapDispatchToProps = (dispatch) => ({
   fetchProfileData: () => {
     const action = getProfileData();
     dispatch(action)
   },
+
+  getProjects: () => {
+    const action = getAllProjects();
+    dispatch(action);
+  },
+
 
 });
 

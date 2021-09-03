@@ -19,7 +19,7 @@ function Home({ projects, lastProjectsLoading }) {
 
         } */}
         {projects.map((project) => (
-          <Link key={project.id} to={`/search/projects/${project.id}`}>
+          <Link key={project.id} to={`/searchProject/${project.id}`}>
             <CardProject key={project.id} {...project} />
           </Link>
         ))}

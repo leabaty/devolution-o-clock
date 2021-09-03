@@ -8,8 +8,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchProfileData: () => {
-    const action = getProfileData()
-    dispatch(action)
+    // const action = getProfileData()
+    dispatch(getProfileData())
   },
 
   getProjects: () => {

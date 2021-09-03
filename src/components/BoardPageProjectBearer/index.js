@@ -16,8 +16,9 @@ import { HiOutlineLightBulb } from "react-icons/hi";
 import "./style.scss";
 
 // == Composant
-function BoardPageProjectBearer({ fetchProfileData, myProjects }) {
+function BoardPageProjectBearer({ fetchProfileData, getProjects, myProjects }) {
   useEffect(fetchProfileData, []);
+  useEffect(getProjects, []);
 
   return (
     <div className="board__page">

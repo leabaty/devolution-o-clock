@@ -1,6 +1,6 @@
 /* eslint-disable arrow-body-style */
 // == Import : npm
-import React from "react";
+import React, { useEffect }from "react";
 import PropTypes from "prop-types";
 import { useHistory } from 'react-router-dom';
 
@@ -21,9 +21,13 @@ import { FiArrowLeftCircle } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchProjectsResult({ clickParticipationButton, clickUnparticipationButton, getProjects, project, idProject, myProjects }) {
+function SearchProjectsResult({ clickParticipationButton, clickUnparticipationButton, project, idProject, myParticipatedProjects, fetchProfileData, getProjects }) {
 
-  const currentProject = myProjects.find((searchedParticipation) => {
+  useEffect(getProjects, []);
+  useEffect(fetchProfileData, []);
+  
+
+  const currentProject = myParticipatedProjects.find((searchedParticipation) => {
     return searchedParticipation.id === idProject;
   });
 
@@ -36,7 +40,6 @@ function SearchProjectsResult({ clickParticipationButton, clickUnparticipationBu
   const onClickUnparticipationButton = () => {
     clickUnparticipationButton(idProject, history);
   };
-
 
   return (
     <div className="project__page">
@@ -67,14 +70,16 @@ function SearchProjectsResult({ clickParticipationButton, clickUnparticipationBu
             <ProjectNeeds needs={project.need_of_the_project} />
             {/* <ProjectSpecificities /> */}
           </div>
+          
+            {currentProject && (
+              <button className="project__button-unparticipate" onClick={onClickUnparticipationButton}>Je me retire du projet</button>
+            )}
 
-            {project.is_available === true ? (
-              currentProject? (
-                <button className="project__button-unparticipate" onClick={onClickUnparticipationButton}>Je me retire du projet</button>
-              ) : (
-                <button className="project__button-participate" onClick={onClickParticipationButton}>Je participe !</button>
-              )) : (
-              ""
+            {!currentProject && project.is_available ? (
+              <button className="project__button-participate" onClick={onClickParticipationButton}>Je participe !</button>
+
+            ) : (
+              null
             )}
 
         </div>

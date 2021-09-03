@@ -1,6 +1,6 @@
 /* eslint-disable arrow-body-style */
 // == Import : npm
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link, useHistory } from "react-router-dom";
 
@@ -20,7 +20,9 @@ function SearchProjectsResults({
   projects,
   submitSearchProjects,
   changeSearchProjects,
+  getProjects,
 }) {
+  useEffect(getProjects, []);
   const history = useHistory();
 
   const onChangeSearchProjects = (event) => {

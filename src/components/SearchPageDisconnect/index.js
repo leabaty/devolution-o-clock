@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from 'react-router-dom';
 
 import CardProject from "src/components/CardProject";
 import Footer from "src/components/Footer";
@@ -8,18 +8,12 @@ import Footer from "src/components/Footer";
 import "./style.scss";
 
 function SearchPageDisconnect({
-  changeInputSearch,
-  submitSearchInput,
+  getProjects,
   projects,
 }) {
-  const onChangeInputSearch = (event) => {
-    changeInputSearch(event.target.value);
-  };
 
-  const onSubmitSearchInput = (event) => {
-    event.preventDefault();
-    submitSearchInput();
-  };
+  useEffect(getProjects, []);
+
   return (
     <div className="searchDisconnect">
       <div className="searchDisconnect__header">
@@ -39,20 +33,13 @@ function SearchPageDisconnect({
             />
           </Link>
         </div>
-        <form onSubmit={onSubmitSearchInput}>
-          <input
-            type="text"
-            placeholder="Recherche..."
-            className="header__input"
-            onChange={onChangeInputSearch}
-          />
-        </form>
+
       </div>
       <h1 className="searchDisconnect__title">Résultats de la recherche</h1>
       <span className="searchDisconnect__resultNumber">{projects.length} résultat(s)</span>
       <div className="home__cards">
-        {projects.map((project) => (
-          <Link key={project.id} to={`/search/projects/${project.id}`}>
+      {projects.map((project) => (
+          <Link key={project.id} to={`/searchProject/${project.id}`}>
             <CardProject key={project.id} {...project} />
           </Link>
         ))}
