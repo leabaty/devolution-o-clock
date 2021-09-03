@@ -9,7 +9,7 @@ import SearchPageDisconnect from 'src/components/SearchPageDisconnect'
 import Login from 'src/containers/Login';
 import ProfilePage from 'src/containers/ProfilePage';
 import ProjectPageDisconnect from 'src/components/ProjectPageDisconnect';
-
+import Error404 from 'src/components/Error404'
 import Footer from 'src/components/Footer';
 import Navbar from 'src/components/Navbar';
 import ProfilePageForm from 'src/containers/ProfilePageForm';
@@ -88,6 +88,9 @@ function App({
               <BoardPageProjectBearer />
         </Route>
 
+        <Route path="*">
+          <Error404 />
+        </Route>
       </Switch>
       <Footer />
     </div>

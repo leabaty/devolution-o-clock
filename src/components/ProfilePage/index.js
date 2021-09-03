@@ -22,9 +22,11 @@ function ProfilePage({ profileData, userData }) {
   const { firstname, user_function } = userData;
   return (
     <div className="profile__page">
+    {/* Plus besoin de menu avec la nouvelle navbar placer a la racine de App
       <div className="profile__menu">
         <Menu />
       </div>
+    */}
 
       <div className="profile__component">
         <div className="profile__greeting">

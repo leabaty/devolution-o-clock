@@ -2,7 +2,7 @@
 // == Import : npm
 import React, { useState, useEffect } from "react";
 // import PropTypes from 'prop-types';
-import skillsdata from './fakedata';
+// import skillsdata from './fakedata';
 // Style
 import "./style.scss";
 
@@ -12,12 +12,10 @@ function ProfileCompetencies({ userData }) {
   const [skills, setskills] = useState();
 
   useEffect(() => {
-    setskills(skillsdata);
+    setskills(userData.users_skills);
     return () => {
     }
-  }, [userData.users_skills])
-
-  console.log(skills);
+  }, [userData.users_skills]);
 
   return (
     <div className="profile__skills element">
@@ -26,7 +24,7 @@ function ProfileCompetencies({ userData }) {
         { skills?.map( ({id, label}) =>
           // ?. check si c'est pas null et si oui; fait le reste après le map
           <li key={id}>
-            <input type="checkbox" id={label} checked={id === 1 ? null : 'checked' } readOnly/>
+            <input type="checkbox" id={label} checked readOnly />
             <label htmlFor={label}>{label}</label>
           </li>
 
