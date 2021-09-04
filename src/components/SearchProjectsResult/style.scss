@@ -1,5 +1,5 @@
 p,
-h3{
+h3 {
   padding: 6px;
 }
 
@@ -10,22 +10,22 @@ h3{
   padding: 0.5em;
 }
 
-.header{
+.header {
   &__user-search {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
   &__comeback {
-    color:#1a3a58d7; 
+    color: #1a3a58d7;
     margin: 4% 4% 2% 4%;
     font-size: 1.2em;
     width: 60%;
-}
+  }
 
-&__user-icon{
-  margin: 3%
-}
+  &__user-icon {
+    margin: 3%;
+  }
 }
 
 .project {
@@ -43,7 +43,7 @@ h3{
     width: 90%;
     margin: 0 auto;
 
-    color:#1a3a58d7;
+    color: #1a3a58d7;
 
     // border: solid lightgray 1px;
     border-radius: 15px;
@@ -52,7 +52,6 @@ h3{
 
     display: flex;
     flex-direction: column;
-
   }
 
   &__title {
@@ -62,7 +61,7 @@ h3{
     margin-bottom: 10px;
   }
 
-  &__bearer{
+  &__bearer {
     font-size: 1.5em;
   }
 
@@ -73,36 +72,48 @@ h3{
     margin-bottom: 10px;
   }
 
-  &__text{
+  &__text {
     margin-bottom: 10px;
   }
 
-  &__button-participate, &__button-unparticipate {
+  &__buttons {
+display: flex;
+justify-content: space-around;
+  }
+
+  &__button-participate,
+  &__button-unparticipate, 
+  &__button-delete,
+  &__button-finalize {
     margin: 20px auto;
     border-radius: 25px;
-    padding: 10px;
-    width: 30%;
+    padding: 7px;
+    width: 15%;
     min-width: 300px;
-    border:none;
+    border: none;
     color: white;
-    font-family: 'Nunito';
+    font-family: "Nunito";
     font-size: 20px;
   }
 
   &__button-participate {
-    background-color: #1A3A58;
+    background-color: #1a3a58;
   }
 
-  &__button-unparticipate {
-    background-color: #BD2606 ;
+  &__button-unparticipate,
+  &__button-delete {
+    background-color: #bd2606;
   }
 
-  &__competencies-list{
+  &__button-finalize {
+    background-color: #018137;
+  }
+
+  &__competencies-list {
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
     line-height: 20px;
     padding: 6px;
   }
-
 }

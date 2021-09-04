@@ -9,6 +9,8 @@ const mapStateToProps = (state, ownProps) => {
     project: findProject(state.project.list, Number(ownProps.match.params.id)),
     idProject: Number(ownProps.match.params.id),
     myParticipatedProjects: state.user.dataUser.participated_projects,
+    projectOwners: state.search.users,
+    myUserId: state.user.dataUser.id,
   }
 };
 

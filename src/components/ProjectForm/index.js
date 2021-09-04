@@ -30,6 +30,8 @@ function SearchProjectsResult({
   projectDescription,
   projectNeeds,
   // projectSpecificities,
+
+  userData,
 }) {
   const history = useHistory();
 
@@ -82,7 +84,7 @@ function SearchProjectsResult({
 
         <div className="project__component">
           <form className="signup_form" onSubmit={onProjectSubmit}>
-            <div className="project__header">
+            <div className="project-form__header">
               <input
                 className="project-form__title"
                 value={projectTitle}
@@ -90,7 +92,7 @@ function SearchProjectsResult({
                 placeholder="Titre du projet"
               />
               <p>
-                par <a className="project__bearer">Pseudo</a>
+                par <a className="project__bearer">{userData.pseudo}</a>
               </p>
             </div>
 
@@ -213,7 +215,7 @@ function SearchProjectsResult({
                   />
                   <label for="associative">
                     {" "}
-                    Associatif
+                    Social
                     <div className="project-form__icon-container">
                       <img
                         className="project-form__icon"
