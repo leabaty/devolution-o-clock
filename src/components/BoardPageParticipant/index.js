@@ -13,12 +13,10 @@ import CardProject from "src/components/CardProject";
 import "./style.scss";
 
 // == Composant
-function BoardPageParticipant({ fetchProfileData }) {
-  useEffect(fetchProfileData, []);
+function BoardPageParticipant({ fetchProfileData, getProjects, projects }) {
 
-  var infoProfile = JSON.parse(localStorage.getItem("dataProfile"));
-  const projects = infoProfile.findUser.participated_projects;
-  console.log(projects);
+  useEffect(fetchProfileData, []);
+  useEffect(getProjects, []) ;
 
   return (
     <div className="board__page">
@@ -39,8 +37,10 @@ function BoardPageParticipant({ fetchProfileData }) {
             {projects.length === 0
               ? "Aucun projet en cours"
               : projects.map((project) => (
+                <Link key={project.id} to={`/search/projects/${project.id}`}>
                   <CardProject key={project.id} {...project} />
-                ))}
+                </Link>
+              ))}
           </div>
 
           <div className="board__finalized-projects">

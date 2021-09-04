@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { getSearchProject, changeProjectValue } from "src/actions";
+import { getSearchProject, changeProjectValue, getAllProjects } from "src/actions";
 
 import SearchProjectsResults from "src/components/SearchProjectsResults";
 
@@ -16,6 +16,11 @@ const mapDispatchToProps = (dispatch) => ({
     const action = getSearchProject(value);
     dispatch(action);
   },
+  getProjects: () => {
+    const action = getAllProjects();
+    dispatch(action);
+  },
+
 });
 
 export default connect(

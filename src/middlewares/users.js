@@ -76,33 +76,32 @@ const users = (store) => (next) => (action) => {
           authorization: `Bearer ${token}`,
         },
       })
-        .then((response) => {
-          const dataProfile = response.data;
-          localStorage.setItem("dataProfile", JSON.stringify(response.data));
-          const actionSaveProfileData = saveProfileData(dataProfile);
-          store.dispatch(actionSaveProfileData);
-        })
-        .catch((error) => console.log(error));
-      break;
-    }
+          .then((response) => {
+            const dataProfile = response.data;
+            const actionSaveProfileData = saveProfileData(dataProfile);
+            store.dispatch(actionSaveProfileData);
+          })
+          .catch((error) => console.log(error));
+        break;
+      }
 
-    case GET_ALL_USERS: {
-      const token = localStorage.getItem("token");
-      instance({
-        method: "GET",
-        url: "/users",
-        headers: {
-          authorization: `Bearer ${token}`,
-        },
-      })
-        .then((response) => {
-          const Users = response.data;
-          const actionSaveUsers = saveUsers(Users);
-          store.dispatch(actionSaveUsers);
-        })
-        .catch((error) => console.log(error));
-      break;
-    }
+        case GET_ALL_USERS: {
+          const token = localStorage.getItem('token')
+          instance({
+            method: 'GET',
+            url: '/users',
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          })
+              .then((response) => {
+                const Users = response.data;
+                const actionSaveUsers = saveUsers(Users);
+                store.dispatch(actionSaveUsers);
+              })
+              .catch((error) => console.log(error));
+            break;
+          }
 
     case GET_SEARCH_USER: {
       const { inputSearchUser } = store.getState().search;
