@@ -3,7 +3,8 @@ import BoardPageParticipant from 'src/components/BoardPageParticipant';
 import { getProfileData, getAllProjects } from 'src/actions';
 
 const mapStateToProps = (state) => ({
-  projects: state.user.dataUser.participated_projects
+  projects: state.user.dataUser.participated_projects,
+  loading: state.user.loading,
 });
 
 const mapDispatchToProps = (dispatch) => ({

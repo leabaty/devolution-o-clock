@@ -20,13 +20,20 @@ import SearchUsersResults from 'src/containers/SearchUsersResults';
 import SearchUsersResult from 'src/containers/SearchUsersResult';
 import ProjectForm from 'src/containers/ProjectForm';
 
+import Loading from './Loading';
+
 import './style.scss';
 
 // == Composant
 
 function App({
-
+  loading,
 }) {
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="app">
     <Switch>
@@ -82,6 +89,10 @@ function App({
       <Route path="/myProjects/new" exact>
             <ProjectForm />
       </Route>
+{/* 
+      <Route path="/loading" exact>
+            <Loading />
+      </Route> */}
 
 
     </Switch>
@@ -90,10 +101,12 @@ function App({
 };
 
 App.propTypes = {
+  loading: PropTypes.bool,
   isLogged: PropTypes.bool,
 };
 
 App.defaultProps = {
+  // loading: true,
   isLogged: false,
 };
 
