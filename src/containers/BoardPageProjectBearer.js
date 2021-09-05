@@ -4,6 +4,7 @@ import { getProfileData, getAllProjects } from 'src/actions';
 
 const mapStateToProps = (state) => ({
   myProjects: state.user.dataUser.projects,
+  loading: state.user.loading,
   });
 
 const mapDispatchToProps = (dispatch) => ({

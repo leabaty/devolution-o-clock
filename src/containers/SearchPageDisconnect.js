@@ -2,10 +2,9 @@ import { connect } from "react-redux";
 import SearchPageDisconnect from "src/components/SearchPageDisconnect";
 import { getAllProjects } from "src/actions";
 
-// quand on a un container, à l'instanciation on peut lui passer des props (cf Settings)
-// ces props de configuration seront accessibles via le 2e paramètre de mSTP ou mDTP
 const mapStateToProps = (state) => ({
-    projects:state.project.list
+    projects: state.project.list,
+    loading: state.project.loading,
 });
 
 const mapDispatchToProps = (dispatch) => ({
