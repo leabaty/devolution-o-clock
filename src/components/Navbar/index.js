@@ -2,21 +2,33 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import { FaHands, FaBars, FaSearch, FaRegLightbulb, FaUserAlt } from 'react-icons/fa';
+import { MdWeb } from 'react-icons/md';
+
 import PropTypes from 'prop-types';
 import "./style.scss";
 
-function Navbar({ /*isLogged*/ }) {
+function Navbar({ logged, setLogout, cleanLs }) {
+
     const [isNavVisible, setNavVisibility] = useState(false);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [isLogged, setIsLogged] = useState(false);
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia("(max-width: 780px)");
-        mediaQuery.addEventListener("change", () => handleMediaQueryChange(mediaQuery));
+        if(logged) setIsLogged(logged)
+        const mediaQuery = window.matchMedia("(max-width: 780px)")
+        mediaQuery.addEventListener("change", () => handleMediaQueryChange(mediaQuery))
+
         return () => {
-            mediaQuery.removeAddEventListener(handleMediaQueryChange);
+            console.log('toto');
+            //mediaQuery.removeAddEventListener(handleMediaQueryChange);
         };
-    }, []);
+    }, [logged]);
+
+    const onClickLogout = (e) => {
+        setLogout()
+        cleanLs()
+        setIsLogged(false);
+    }
 
     const handleMediaQueryChange = mediaQuery => {
         if (mediaQuery.matches) {
@@ -76,11 +88,11 @@ function Navbar({ /*isLogged*/ }) {
                 >
                 <nav className="Header__nav--logged">
                     <Link to="/searchProjects"><FaSearch className="Header__logo__icon--logged" /></Link>
-                    <Link to="/"><FaRegLightbulb className="Header__logo__icon--logged" /></Link>
-                    <Link to="/"><FaRegLightbulb className="Header__logo__icon--logged" /></Link>
-                    <Link to="/"><FaUserAlt className="Header__logo__icon--logged" /></Link>
+                        <Link to="/myProjects"><FaRegLightbulb className="Header__logo__icon--logged" /></Link>
+                        <Link to="/myParticipations"><MdWeb className="Header__logo__icon--logged" /></Link>
+                    <Link to="/profile"><FaUserAlt className="Header__logo__icon--logged" /></Link>
                     <div className="Header__logout--logged">
-                        <button>logout</button>
+                        <Link to="/"><button onClick={onClickLogout}>logout</button></Link>
                     </div>
                 </nav>
                 </CSSTransition>

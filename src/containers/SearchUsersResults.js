@@ -8,6 +8,7 @@ import { changeUserValue, getSearchUser } from "src/actions";
 // ces props de configuration seront accessibles via le 2e paramètre de mSTP ou mDTP
 const mapStateToProps = (state) => ({
   users: state.search.users,
+  logged: state.user.logged,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -19,7 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
     const action = getSearchUser(value);
     dispatch(action);
   },
-  
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchUsersResults);

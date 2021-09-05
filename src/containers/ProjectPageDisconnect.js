@@ -7,6 +7,7 @@ import { findProject } from 'src/selectors/projects';
 const mapStateToProps = (state, ownProps) => ({
     project: findProject(state.project.list, Number(ownProps.match.params.id)),
     loading: state.project.loading,
+    logged: state.user.logged,
 });
 
 const mapDispatchToProps = (dispatch) => ({

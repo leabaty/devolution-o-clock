@@ -7,11 +7,10 @@ import CardProject from "src/components/CardProject";
 
 import "./style.scss";
 
-function Home({ projects, lastProjectsLoading }) {
+function Home({ projects, lastProjectsLoading, logged }) {
   useEffect(lastProjectsLoading, []);
-
   return (
-    <div className="home">
+    <div className={`home ${ logged ? 'islog' : '' }`}>
       <HeaderHome />
       <h2 className="home__title">Les derniers projets</h2>
 

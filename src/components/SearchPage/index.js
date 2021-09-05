@@ -9,7 +9,6 @@ import Menu from "src/components/Menu";
 import HeaderConnected from "src/components/HeaderConnected";
 
 // Icons
-import { AiOutlineSearch } from "react-icons/ai";
 
 // Style
 import "./style.scss";
@@ -22,6 +21,7 @@ function SearchPage({
   searchUserSubmit,
   searchAllProjectsSubmit,
   searchAllUsersSubmit,
+  logged
 }) {
 
   const history = useHistory();
@@ -48,15 +48,8 @@ function SearchPage({
   };
 
   return (
-    <div className="search__page">
-      <div className="search__menu">
-        <Menu />
-      </div>
-
+    <div className={`search__page ${logged ? 'islog' : ''}`}>
       <div className="search__subpage">
-        <div className="header__user">
-          <HeaderConnected />
-        </div>
 
         <p className="search__title">Recherche</p>
 
