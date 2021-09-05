@@ -49,7 +49,6 @@ function App({
       </Route>
       <Route path="/searchProject/:id" exact component={ProjectPageDisconnect} />
 
-
       <Route path="/login" exact>
         <Login/>
       </Route>
@@ -64,7 +63,6 @@ function App({
       <Route path="/modifyprofile" exact>
         <ProfilePageForm/>
       </Route>
-
 
       <Route path="/search" exact>
             <SearchPage />
@@ -93,19 +91,18 @@ function App({
       <Route path="/myProjects/new" exact>
             <ProjectForm />
       </Route>
-{/*
+      {/*
       <Route path="/loading" exact>
             <Loading />
-      </Route> */}
-
+      </Route>
+      */}
 
       <Route path="*">
           <Error404 />
         </Route>
       </Switch>
       <Footer />
-
-    </div>
+  </div>
   )
 };
 
