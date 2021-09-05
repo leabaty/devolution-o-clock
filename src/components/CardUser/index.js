@@ -4,13 +4,26 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 function CardUser({pseudo, user_function, image_url, user_status}) {
+
+function UserStatus (user_status) {
+  if (user_status === "Disponible") {
+    return <span className="cardUser__status-available">●</span>;
+  }
+  else if (user_status === "Bientôt disponible") {
+    return <span className="cardUser__status-soonavailable">●</span>;
+  }
+  else {
+    return <span className="cardUser__status-notavailable">●</span>;
+  }
+}
+
   return (
     <div className="cardUser">
       <p className="cardUser__name">{pseudo}</p>
       <p className="cardUser__undertitle">{user_function}</p>
       <img className="cardUser__picture" src={image_url} alt="Profile picture" />
       <div className="cardUser__status">
-        <p>{user_status}</p>
+      <p>{UserStatus(user_status)} {user_status}</p>
       </div>
     </div>
   )

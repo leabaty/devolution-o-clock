@@ -8,9 +8,22 @@ import React from 'react';
 
 // == Composant
 function ProfileStatus({status}) {
+
+  function UserStatus (status) {
+    if (status === "Disponible") {
+      return <span className="cardUser__status-available">●</span>;
+    }
+    else if (status === "Bientôt disponible") {
+      return <span className="cardUser__status-soonavailable">●</span>;
+    }
+    else {
+      return <span className="cardUser__status-notavailable">●</span>;
+    }
+  }
+
   return (
       <div className="profile__status element">
-        <p className="profile__status-indicator">{status}</p>
+        <p className="profile__status-indicator">{UserStatus(status)} {status}</p>
       </div>
   );
 }

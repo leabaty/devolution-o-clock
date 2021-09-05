@@ -19,6 +19,7 @@ import BoardPageProjectBearer from 'src/containers/BoardPageProjectBearer';
 import SearchUsersResults from 'src/containers/SearchUsersResults';
 import SearchUsersResult from 'src/containers/SearchUsersResult';
 import ProjectForm from 'src/containers/ProjectForm';
+import ProjectModify from 'src/containers/ProjectModify';
 
 import './style.scss';
 
@@ -82,6 +83,8 @@ function App({
       <Route path="/myProjects/new" exact>
             <ProjectForm />
       </Route>
+
+      <Route path="/myProjects/modify/:id" exact component={ProjectModify} />
 
 
     </Switch>

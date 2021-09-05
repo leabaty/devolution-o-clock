@@ -76,32 +76,32 @@ const users = (store) => (next) => (action) => {
           authorization: `Bearer ${token}`,
         },
       })
-          .then((response) => {
-            const dataProfile = response.data;
-            const actionSaveProfileData = saveProfileData(dataProfile);
-            store.dispatch(actionSaveProfileData);
-          })
-          .catch((error) => console.log(error));
-        break;
-      }
+        .then((response) => {
+          const dataProfile = response.data;
+          const actionSaveProfileData = saveProfileData(dataProfile);
+          store.dispatch(actionSaveProfileData);
+        })
+        .catch((error) => console.log(error));
+      break;
+    }
 
-        case GET_ALL_USERS: {
-          const token = localStorage.getItem('token')
-          instance({
-            method: 'GET',
-            url: '/users',
-            headers: {
-              authorization: `Bearer ${token}`,
-            },
-          })
-              .then((response) => {
-                const Users = response.data;
-                const actionSaveUsers = saveUsers(Users);
-                store.dispatch(actionSaveUsers);
-              })
-              .catch((error) => console.log(error));
-            break;
-          }
+    case GET_ALL_USERS: {
+      const token = localStorage.getItem("token");
+      instance({
+        method: "GET",
+        url: "/users",
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          const Users = response.data;
+          const actionSaveUsers = saveUsers(Users);
+          store.dispatch(actionSaveUsers);
+        })
+        .catch((error) => console.log(error));
+      break;
+    }
 
     case GET_SEARCH_USER: {
       const { inputSearchUser } = store.getState().search;
@@ -148,21 +148,21 @@ const users = (store) => (next) => (action) => {
         method: "PUT",
         url: "/user/:id",
         data: {
-          email : profileEmail,
-          password : profileNewPassword,
+          email: profileEmail,
+          password: profileNewPassword,
           // image_url :
-          description : profileBio,
-          user_status : profileStatus,
-          user_function : profileSubtitle,
+          description: profileBio,
+          user_status: profileStatus,
+          user_function: profileSubtitle,
           lastname: profileLastname,
-          firstname : profileFirstname,
-          phone : profilePhone,
-          city : profileCity,
-          linkedin : profileLinkedIn,
-          portfolio : profilePortfolio,
+          firstname: profileFirstname,
+          phone: profilePhone,
+          city: profileCity,
+          linkedin: profileLinkedIn,
+          portfolio: profilePortfolio,
           // twitter :
-          github : profileGitHub,
-          facebook : profileDribble,
+          github: profileGitHub,
+          facebook: profileDribble,
           // experience :
         },
 
@@ -171,7 +171,6 @@ const users = (store) => (next) => (action) => {
         },
       })
         .then((response) => {
-
           action.value.push("/profile");
         })
         .catch((error) => console.log(error));

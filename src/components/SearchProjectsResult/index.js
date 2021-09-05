@@ -1,8 +1,7 @@
-/* eslint-disable arrow-body-style */
 // == Import : npm
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 // Composants
 import Menu from "src/components/Menu";
@@ -25,15 +24,18 @@ import "./style.scss";
 function SearchProjectsResult({
   clickParticipationButton,
   clickUnparticipationButton,
+  clickDeleteButton,
   project,
   idProject,
   myParticipatedProjects,
   fetchProfileData,
   getProjects,
+  getUsers,
   projectOwners,
   myUserId,
 }) {
   useEffect(getProjects, []);
+  useEffect(getUsers, []);
   useEffect(fetchProfileData, []);
 
   const projectOwner = projectOwners.find((searchedUser) => {
@@ -56,14 +58,9 @@ function SearchProjectsResult({
     clickUnparticipationButton(idProject, history);
   };
 
-  // const onClickDeleteButton = () => {
-  //   clickDeleteButton(idProject, history);
-  // };
-
-    // const onClickFinalizeButton = () => {
-  //   onClickFinalizeButton(idProject, history);
-  // };
-
+  const onClickDeleteButton = () => {
+    clickDeleteButton(idProject, history);
+  };
 
   return (
     <div className="project__page">
@@ -110,6 +107,7 @@ function SearchProjectsResult({
           </div>
 
           <div className="project__buttons">
+            {/*Je participe au projet*/}
             {participateToCurrentProject && (
               <button
                 className="project__button-unparticipate"
@@ -119,7 +117,9 @@ function SearchProjectsResult({
               </button>
             )}
 
-            {!participateToCurrentProject && project.is_available ? (
+            {/*Je ne participe pas au projet, et il est disponible, et je n'en suis pas le propriétaire*/}
+            {!participateToCurrentProject &&
+            project.is_available /*&& !projectOwner.id === myUserId*/ ? (
               <button
                 className="project__button-participate"
                 onClick={onClickParticipationButton}
@@ -128,21 +128,22 @@ function SearchProjectsResult({
               </button>
             ) : null}
 
-            {projectOwner.id === myUserId? (
-              <button
-                className="project__button-delete"
-                // onClick={onClickDeleteButton}
-              >
-                Supprimer ce projet
-              </button>
+            {/*Je suis le créateur de ce projet et il est ouvert aux participations*/}
+            {projectOwner.id === myUserId ? (
+              <Link className="project__button-modify" key={project.id} to={`/myProjects/modify/${project.id}`}>
+                <button className="project__button-modify-inside">
+                  Modifier ce projet
+                </button>
+              </Link>
             ) : null}
 
-            {projectOwner.id === myUserId && project.is_available ? (
+            {/*Je suis le créateur de ce projet*/}
+            {projectOwner.id === myUserId ? (
               <button
-                className="project__button-finalize"
-                // onClick={onClickFinalizeButton}
+                className="project__button-delete"
+                onClick={onClickDeleteButton}
               >
-                Clôturer ce projet
+                Supprimer ce projet
               </button>
             ) : null}
           </div>

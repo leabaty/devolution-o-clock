@@ -16,7 +16,7 @@ import "./style.scss";
 
 // == Composant
 function SearchProjectsResult({
-  projectSubmitForm,
+  modifyProjectForm,
   changeProjectTitleValue,
   changeProjectStatusValue,
   changeProjectStartDateValue,
@@ -35,9 +35,9 @@ function SearchProjectsResult({
 }) {
   const history = useHistory();
 
-  const onProjectSubmit = (event) => {
+  const onProjectModifySubmit = (event) => {
     event.preventDefault();
-    projectSubmitForm(history);
+    modifyProjectForm(history);
   };
 
   const onChangeProjectTitle = (event) => {
@@ -83,7 +83,7 @@ function SearchProjectsResult({
         </div>
 
         <div className="project__component">
-          <form className="signup_form" onSubmit={onProjectSubmit}>
+          <form className="signup_form" onSubmit={onProjectModifySubmit}>
             <div className="project-form__header">
               <input
                 className="project-form__title"

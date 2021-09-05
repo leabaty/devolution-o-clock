@@ -36,6 +36,7 @@ h3 {
 
   &__subpage {
     width: 100%;
+    background-color: #F9F9F9;
   }
 
   &__component {
@@ -43,9 +44,10 @@ h3 {
     width: 90%;
     margin: 0 auto;
 
+    background-color: white;
     color: #1a3a58d7;
 
-    // border: solid lightgray 1px;
+    border: solid lightgray 1px;
     border-radius: 15px;
     margin-bottom: 0.5em;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.035);
@@ -84,19 +86,20 @@ justify-content: space-around;
   &__button-participate,
   &__button-unparticipate, 
   &__button-delete,
-  &__button-finalize {
+  &__button-modify {
+    text-align: center;
     margin: 20px auto;
     border-radius: 25px;
     padding: 7px;
-    width: 15%;
-    min-width: 300px;
+    width: 25%;
     border: none;
     color: white;
     font-family: "Nunito";
-    font-size: 20px;
+    font-size: 1.2rem;
   }
 
-  &__button-participate {
+  &__button-participate, 
+  &__button-modify {
     background-color: #1a3a58;
   }
 
@@ -105,8 +108,12 @@ justify-content: space-around;
     background-color: #bd2606;
   }
 
-  &__button-finalize {
-    background-color: #018137;
+  &__button-modify-inside {
+    background-color: #1a3a58;
+    color: white;
+    font-family: "Nunito";
+    font-size: 1.2rem;
+    border: none;
   }
 
   &__competencies-list {

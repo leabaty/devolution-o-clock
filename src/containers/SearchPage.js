@@ -4,7 +4,6 @@ import { changeProjectValue, changeUserValue, getSearchProject, getSearchUser, g
 
 const mapStateToProps = (state) => ({
     
-
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -1,10 +1,10 @@
 import {
-  SAVE_ALL_PROJECTS
+  SAVE_ALL_PROJECTS, SAVE_ALL_USERS
 } from 'src/actions';
 
 export const initialState = {
     list: [],
-// ça crée un tableau vide pour le stockage des projets lors de la requête
+    owners: []
   };
   
   const projectReducer = (state = initialState, action = {}) => {
@@ -14,6 +14,14 @@ export const initialState = {
           ...state,
           list: action.projects,
         };
+
+        case SAVE_ALL_USERS: {
+          return {
+            ...state,
+            owners: action.users,
+          };
+        };
+        
       default:
         return state;
     }

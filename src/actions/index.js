@@ -19,6 +19,8 @@ export const SAVE_ALL_PROJECTS_SEARCH = 'SAVE_ALL_PROJECTS_SEARCH';
 export const SAVE_PROJECTS = 'SAVE_PROJECTS';
 export const ADD_PROJECT_TO_PARTICIPATIONS = 'ADD_PROJECT_TO_PARTICIPATIONS';
 export const DELETE_PROJECT_FROM_PARTICIPATIONS = 'DELETE_PROJECT_FROM_PARTICIPATIONS';
+export const DELETE_PROJECT_FROM_CREATIONS = 'DELETE_PROJECT_FROM_CREATIONS';
+export const MODIFY_PROJECT = 'MODIFY_PROJECT';
 
 export const GET_PROFILE_DATA = 'GET_PROFILE_DATA';
 export const SAVE_PROFILE_DATA = 'SAVE_PROFILE_DATA';
@@ -147,6 +149,18 @@ export const addProjectToParticipations = (id, history) => ({
 
 export const deleteProjectFromParticipations = (id, history) => ({
   type: DELETE_PROJECT_FROM_PARTICIPATIONS,
+  id, 
+  history
+});
+
+export const deleteProjectFromCreations = (id, history) => ({
+  type: DELETE_PROJECT_FROM_CREATIONS,
+  id, 
+  history
+});
+
+export const modifyProject = (id, history) => ({
+  type: MODIFY_PROJECT,
   id, 
   history
 });
