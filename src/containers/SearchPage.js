@@ -3,8 +3,7 @@ import SearchPage from 'src/components/SearchPage';
 import { changeProjectValue, changeUserValue, getSearchProject, getSearchUser, getAllProjectsSearch, getAllUsers } from 'src/actions';
 
 const mapStateToProps = (state) => ({
-    
-
+    loading: state.project.loading,
 });
 
 const mapDispatchToProps = (dispatch) => ({
