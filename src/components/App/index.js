@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 // == Import components
-
 import Home from 'src/containers/Home';
 import SearchPageDisconnect from 'src/containers/SearchPageDisconnect'
 import Login from 'src/containers/Login';
 import ProfilePage from 'src/containers/ProfilePage';
+import Error404 from 'src/components/Error404'
+import Footer from 'src/components/Footer';
+import Navbar from 'src/components/Navbar';
 import ProjectPageDisconnect from 'src/containers/ProjectPageDisconnect';
 import ProfilePageForm from 'src/containers/ProfilePageForm';
 import SearchPage from 'src/containers/SearchPage';
@@ -36,6 +38,8 @@ function App({
 
   return (
     <div className="app">
+
+      <Navbar/>
     <Switch>
       <Route path="/" exact>
         <Home/>
@@ -89,13 +93,18 @@ function App({
       <Route path="/myProjects/new" exact>
             <ProjectForm />
       </Route>
-{/* 
+{/*
       <Route path="/loading" exact>
             <Loading />
       </Route> */}
 
 
-    </Switch>
+      <Route path="*">
+          <Error404 />
+        </Route>
+      </Switch>
+      <Footer />
+
     </div>
   )
 };

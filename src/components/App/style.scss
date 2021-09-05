@@ -1,6 +1,18 @@
 .app {
-  width: 100vw;
-  height: 100vh;
+  //width: 100vw;
+  //height: 100vh;
   position: relative;
   box-sizing: border-box;
+}
+
+@media (min-width: 780px) {
+  // le margin du menu quand on est logged
+  // ajouter toutes les pages qui sont uniquement logged
+  .app .profile__page,
+  .app .home,
+  .app .projectDisconnect {
+    //margin-left: 120px;
+  }
+
+
 }

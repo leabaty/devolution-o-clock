@@ -7,10 +7,11 @@ import React from 'react';
 // import './style.scss';
 
 // == Composant
-function ProfileStatus( {userData}) {
+function ProfileStatus({ userData }) {
+  const { user_status } = userData;
   return (
       <div className="profile__status element">
-        <p className="profile__status-indicator">{userData.user_status}</p>
+        <p className="profile__status-indicator">{user_status}</p>
       </div>
   );
 }
