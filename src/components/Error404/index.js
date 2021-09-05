@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import Header from 'src/components/Header';
+import HeaderHome from 'src/components/HeaderHome';
 
 import './style.scss'
 

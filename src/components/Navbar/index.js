@@ -5,10 +5,10 @@ import { FaHands, FaBars, FaSearch, FaRegLightbulb, FaUserAlt } from 'react-icon
 import PropTypes from 'prop-types';
 import "./style.scss";
 
-function Navbar({ isLogged }) {
+function Navbar({ /*isLogged*/ }) {
     const [isNavVisible, setNavVisibility] = useState(false);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
-    //const [isLogged, setIsLogged] = useState(false);
+    const [isLogged, setIsLogged] = useState(false);
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(max-width: 780px)");

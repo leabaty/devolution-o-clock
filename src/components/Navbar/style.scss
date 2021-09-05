@@ -19,7 +19,7 @@
   top: 0;
   /* Stick it to the top */
   height: 100%;
-
+  width: 120px;
   max-width: 100%;
 
   display: grid;
@@ -40,12 +40,14 @@
   grid-column: 1;
   display: flex;
   justify-content: flex-start;
+  max-height: 70px;
 }
 .Header__logo--logged {
   grid-area: header__logo__logged;
   grid-row: 1;
   display: flex;
   justify-content: center;
+  //max-height: none;
 }
 
 .Header__logo__icon,
