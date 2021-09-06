@@ -7,6 +7,7 @@ import { getAllProjects } from 'src/actions';
 const mapStateToProps = (state) => ({
   loading: state.project.loading,
   projects:state.project.list,
+  logged: state.user.logged
 });
 
 const mapDispatchToProps = (dispatch) => ({

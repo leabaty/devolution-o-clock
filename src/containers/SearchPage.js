@@ -4,6 +4,7 @@ import { changeProjectValue, changeUserValue, getSearchProject, getSearchUser, g
 
 const mapStateToProps = (state) => ({
     loading: state.project.loading,
+    logged: state.user.logged,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -31,7 +32,7 @@ const mapDispatchToProps = (dispatch) => ({
         const action = getAllUsers();
         dispatch(action);
     },
-    
+
 
 });
 

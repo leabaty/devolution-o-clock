@@ -25,7 +25,7 @@ function SearchProjectsResult({ clickParticipationButton, clickUnparticipationBu
 
   useEffect(getProjects, []);
   useEffect(fetchProfileData, []);
-  
+
 
   const currentProject = myParticipatedProjects.find((searchedParticipation) => {
     return searchedParticipation.id === idProject;
@@ -43,10 +43,6 @@ function SearchProjectsResult({ clickParticipationButton, clickUnparticipationBu
 
   return (
     <div className="project__page">
-      <div className="project__menu">
-        <Menu />
-      </div>
-
       <div className="project__subpage">
         <div className="header__user-search">
           {/* <Link to="/search/projects"> */}
@@ -70,7 +66,7 @@ function SearchProjectsResult({ clickParticipationButton, clickUnparticipationBu
             <ProjectNeeds needs={project.need_of_the_project} />
             {/* <ProjectSpecificities /> */}
           </div>
-          
+
             {currentProject && (
               <button className="project__button-unparticipate" onClick={onClickUnparticipationButton}>Je me retire du projet</button>
             )}

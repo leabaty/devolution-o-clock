@@ -10,7 +10,7 @@ import Login from 'src/containers/Login';
 import ProfilePage from 'src/containers/ProfilePage';
 import Error404 from 'src/components/Error404'
 import Footer from 'src/components/Footer';
-import Navbar from 'src/components/Navbar';
+import Navbar from 'src/containers/Navbar';
 import ProjectPageDisconnect from 'src/containers/ProjectPageDisconnect';
 import ProfilePageForm from 'src/containers/ProfilePageForm';
 import SearchPage from 'src/containers/SearchPage';
@@ -39,16 +39,15 @@ function App({
   return (
     <div className="app">
 
-      <Navbar/>
+      <Navbar />
     <Switch>
       <Route path="/" exact>
         <Home/>
       </Route>
       <Route path="/searchProjects" exact >
-        <SearchPageDisconnect />
+        <SearchPage />
       </Route>
       <Route path="/searchProject/:id" exact component={ProjectPageDisconnect} />
-
 
       <Route path="/login" exact>
         <Login/>
@@ -64,7 +63,6 @@ function App({
       <Route path="/modifyprofile" exact>
         <ProfilePageForm/>
       </Route>
-
 
       <Route path="/search" exact>
             <SearchPage />
@@ -93,19 +91,18 @@ function App({
       <Route path="/myProjects/new" exact>
             <ProjectForm />
       </Route>
-{/*
+      {/*
       <Route path="/loading" exact>
             <Loading />
-      </Route> */}
-
+      </Route>
+      */}
 
       <Route path="*">
           <Error404 />
         </Route>
       </Switch>
       <Footer />
-
-    </div>
+  </div>
   )
 };
 

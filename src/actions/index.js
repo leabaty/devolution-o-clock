@@ -13,9 +13,11 @@ export const CHANGE_SIGN_IN_EMAIL_VALUE = 'CHANGE_SIGN_IN_EMAIL_VALUE';
 export const CHANGE_SIGN_IN_PASSWORD_VALUE = 'CHANGE_SIGN_IN_PASSWORD_VALUE';
 export const SIGN_IN_SUBMIT = 'SIGN_IN_SUBMIT';
 export const SAVE_USER = 'SAVE_USER';
+export const LOGOUT = 'LOGOUT';
+export const CLEAN_LOCAL_STORAGE = 'CLEAN_LOCAL_STORAGE';
 
 // --- Projects
-export const GET_ALL_PROJECTS = 'GET_ALL_PROJECTS'; //- middleware projects 
+export const GET_ALL_PROJECTS = 'GET_ALL_PROJECTS'; //- middleware projects
 export const GET_ALL_PROJECTS_SEARCH = 'GET_ALL_PROJECTS_SEARCH'; //- middleware projects
 export const SAVE_ALL_PROJECTS = 'SAVE_ALL_PROJECTS'; //- reducer project
 export const SAVE_ALL_PROJECTS_SEARCH = 'SAVE_ALL_PROJECTS_SEARCH'; //- reducer search
@@ -103,6 +105,14 @@ export const saveUser = (payload) => ({
   payload
 });
 
+export const logout = () => ({
+  type: LOGOUT,
+});
+
+export const cleanLocalStorage = () => ({
+  type: CLEAN_LOCAL_STORAGE,
+});
+
 // --- Projects
 export const getAllProjects = () => ({
   type: GET_ALL_PROJECTS,
@@ -130,13 +140,13 @@ export const saveProjects = (projects) => ({
 
 export const addProjectToParticipations = (id, history) => ({
   type: ADD_PROJECT_TO_PARTICIPATIONS,
-  id, 
+  id,
   history
 });
 
 export const deleteProjectFromParticipations = (id, history) => ({
   type: DELETE_PROJECT_FROM_PARTICIPATIONS,
-  id, 
+  id,
   history
 });
 
@@ -175,7 +185,7 @@ export const getSearchUser = (value) => ({
 
 export const getAllUsers = () => ({
   type : GET_ALL_USERS,
-}); 
+});
 
 export const saveUsers = (users) => ({
   type : SAVE_ALL_USERS,

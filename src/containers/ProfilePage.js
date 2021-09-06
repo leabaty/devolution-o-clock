@@ -3,8 +3,9 @@ import ProfilePage from 'src/components/ProfilePage';
 import { getProfileData } from 'src/actions';
 
 const mapStateToProps = (state) => ({
-  userData : state.user.dataUser, 
+  userData : state.user.dataUser,
   loading: state.user.loading,
+  logged: state.user.logged,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -15,5 +16,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage);
-
-

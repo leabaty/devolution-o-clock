@@ -2,12 +2,22 @@ import axios from 'axios';
 import instance from './utils/instance';
 
 
-import { SIGN_UP_SUBMIT, SIGN_IN_SUBMIT, saveUser, GET_PROFILE_DATA, LOAD_PROFILE_DATA, saveProfileData, GET_SEARCH_USER, GET_ALL_USERS, saveUsers } from 'src/actions';
+import { SIGN_UP_SUBMIT,
+  SIGN_IN_SUBMIT,
+  saveUser,
+  GET_PROFILE_DATA,
+  LOAD_PROFILE_DATA,
+  saveProfileData,
+  GET_SEARCH_USER,
+  GET_ALL_USERS,
+  saveUsers,
+  CLEAN_LOCAL_STORAGE,
+} from 'src/actions';
 
 
 const users= (store) => (next) => (action) => {
   switch (action.type) {
-    
+
     case SIGN_UP_SUBMIT: {
       const {firstname, lastname, pseudo, email, password, confirmPassword} = store.getState().login
       const newUser = {
@@ -45,17 +55,22 @@ const users= (store) => (next) => (action) => {
         .then((response) => {
             if(response.data.accessToken) {
               localStorage.setItem('token', response.data.accessToken);
-              
+
               instance.defaults.headers.common.authorization = `Bearer ${response.data.accessToken}`;
 
               const actionSaveUser = saveUser(response.data);
-              
+
               store.dispatch(actionSaveUser);
               action.value.push('/profile')
             }
           })
         .catch((error) => console.log(error));
       break;
+    }
+
+    case CLEAN_LOCAL_STORAGE: {
+      localStorage.setItem('token', "");
+      break
     }
 
     case GET_PROFILE_DATA: {
@@ -113,6 +128,7 @@ const users= (store) => (next) => (action) => {
                 .catch((error) => console.log(error));
               break;
             }
+
     default:
       next(action);
   }

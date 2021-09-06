@@ -5,6 +5,7 @@ import SearchProjectsResults from "src/components/SearchProjectsResults";
 
 const mapStateToProps = (state) => ({
   projects: state.search.projects,
+  logged: state.user.logged,
 });
 
 const mapDispatchToProps = (dispatch) => ({

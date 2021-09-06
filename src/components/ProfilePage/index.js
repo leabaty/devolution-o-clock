@@ -17,11 +17,11 @@ import ProfilePortfolio from "./ProfilePortfolio";
 import "./style.scss";
 
 // == Composant
-function ProfilePage({ profileData, userData }) {
+function ProfilePage({ profileData, userData, logged }) {
   useEffect(profileData, []);
   const { firstname, user_function } = userData;
   return (
-    <div className="profile__page">
+    <div className={`profile__page ${ logged ? 'islog' : '' }`}>
     {/* Plus besoin de menu avec la nouvelle navbar placer a la racine de App
       <div className="profile__menu">
         <Menu />
@@ -68,16 +68,6 @@ function ProfilePage({ profileData, userData }) {
                 Supprimer mon profil
               </button>
             </Link>
-
-            <Link to=''>
-              <button
-                className="profile__logout"
-                type="submit"
-              >
-                Déconnexion
-              </button>
-            </Link>
-
         </div>
       </div>
     </div>

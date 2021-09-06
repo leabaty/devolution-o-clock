@@ -1,4 +1,4 @@
-import { SAVE_USER, SAVE_PROFILE_DATA } from "../actions";
+import { SAVE_USER, SAVE_PROFILE_DATA, LOGOUT } from "../actions";
 
 export const initialState = {
   loading: true,
@@ -15,9 +15,16 @@ const userReducer = (state = initialState, action = {}) => {
         logged: true,
       };
     }
+    case LOGOUT: {
+      return {
+        ...state,
+        logged: false,
+      };
+    }
     case SAVE_PROFILE_DATA: {
       const { findUser, findProject } = action.dataProfile;
       return {
+        ...state,
         dataUser: findUser,
         projectUser: findProject,
         loading: false,
