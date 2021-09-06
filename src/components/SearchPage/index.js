@@ -4,11 +4,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, useHistory } from 'react-router-dom';
 
-// Composants
-import Menu from "src/components/Menu";
-import HeaderConnected from "src/components/HeaderConnected";
-
-// Icons
 
 // Style
 import "./style.scss";

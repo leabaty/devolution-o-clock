@@ -11,6 +11,8 @@ function ProfileCompetencies() {
   return (
     <div className="profile__competencies element">
       <h3 className="profile__category-title">Mes compétences</h3>
+
+      
     </div>
   );
 }

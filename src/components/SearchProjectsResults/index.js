@@ -6,7 +6,6 @@ import { Link, useHistory } from "react-router-dom";
 
 // Composants
 import Menu from "src/components/Menu";
-import HeaderConnected from "src/components/HeaderConnected";
 import CardProject from "src/components/CardProject";
 
 // Icons
@@ -59,9 +58,6 @@ function SearchProjectsResults({
       </div>
 
       <div className="search__subpage">
-        <div className="header__user">
-          <HeaderConnected />
-        </div>
 
         <div className="search-details__container">
           <form className="search-details__form">

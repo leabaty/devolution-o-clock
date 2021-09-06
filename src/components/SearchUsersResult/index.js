@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 // Composants
 import Menu from "src/components/Menu";
-import HeaderConnected from "src/components/HeaderConnected";
 import ProfileStatus from "./ProfileStatus";
 import ProfileContact from "./ProfileContact";
 import ProfileCityLinks from "./ProfileCityLinks";
@@ -30,14 +29,6 @@ function SearchUsersResult({ user }) {
       </div>
 
       <div className="user__subpage">
-        <div className="header__user-search">
-          <Link to="/search/users">
-            <p className="header__comeback">
-              <FiArrowLeftCircle /> Revenir à la recherche
-            </p>
-          </Link>
-          <div className="header__user-icon"><HeaderConnected /></div>
-        </div>
 
         <div className="profile-search__component">
           <div className="profile-search__greeting">
@@ -62,7 +53,7 @@ function SearchUsersResult({ user }) {
 
           <ProfileCityLinks city={user.city} />
 
-          {/* <ProfileCompetencies user={user} /> */}
+          <ProfileCompetencies user={user} />
 
           <ProfileBio bio={user.description} />
 

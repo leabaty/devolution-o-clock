@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import HeaderHome from "src/components/HeaderHome";
+import HomeDevolution from "src/components/HomeDevolution";
 import { changeProjectValue, getSearchProject } from 'src/actions';
 
 // quand on a un container, à l'instanciation on peut lui passer des props (cf Settings)
@@ -19,4 +19,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderHome);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeDevolution);

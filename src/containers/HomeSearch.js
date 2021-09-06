@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import SearchPageDisconnect from "src/components/SearchPageDisconnect";
+import HomeSearch from "src/components/HomeSearch";
 import { getAllProjects } from "src/actions";
 
 const mapStateToProps = (state) => ({
@@ -19,4 +19,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchPageDisconnect);
+)(HomeSearch);

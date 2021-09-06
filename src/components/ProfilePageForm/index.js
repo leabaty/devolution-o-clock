@@ -2,18 +2,19 @@
 // == Import : npm
 
 import React, { useEffect } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 // import PropTypes from 'prop-types';
 
 // Composants
 import ProfileCompetencies from "./ProfileCompetencies";
+
 // Icons
 import {
   AiOutlineUser,
   AiFillGithub,
   AiFillLinkedin,
-  AiFillDribbbleCircle,
+  AiOutlineBehance,
   AiFillWarning,
 } from "react-icons/ai";
 import { FiMail, FiPhone, FiExternalLink } from "react-icons/fi";
@@ -24,7 +25,7 @@ import { BsPen } from "react-icons/bs";
 import "./style.scss";
 
 // == Composant
-function ProfilePage({
+function ProfilePageForm({
   userData,
   modifyProfileSubmitForm,
   changeProfileSubtitleValue,
@@ -34,7 +35,7 @@ function ProfilePage({
   changeProfilePhoneValue,
   changeProfileEmailValue,
   changeProfileCityValue,
-  changeProfileDribbbleValue,
+  changeProfileBehanceValue,
   changeProfileLinkedInValue,
   changeProfileGitHubValue,
   changeProfileBioValue,
@@ -49,15 +50,19 @@ function ProfilePage({
   profilePhone,
   profileEmail,
   profileCity,
-  profileDribble,
+  profileBehance,
   profileLinkedIn,
   profileGitHub,
   profileBio,
   profilePortfolio,
-  profilePassword,
-  profileNewPassword,
-  profileNewPasswordConfirm,
-  logged, allSkills, skills, handleDeleteSkill, handleAddSkill
+  // profilePassword,
+  // profileNewPassword,
+  // profileNewPasswordConfirm,
+  logged,
+  allSkills,
+  skills,
+  handleDeleteSkill,
+  handleAddSkill,
 }) {
   const history = useHistory();
 
@@ -94,8 +99,8 @@ function ProfilePage({
     changeProfileCityValue(event.target.value);
   };
 
-  const onChangeProfileDribbbleValue = (event) => {
-    changeProfileDribbbleValue(event.target.value);
+  const onChangeProfileBehanceValue = (event) => {
+    changeProfileBehanceValue(event.target.value);
   };
 
   const onChangeProfileLinkedInValue = (event) => {
@@ -127,14 +132,13 @@ function ProfilePage({
   };
 
   useEffect(allSkills, []);
-    return (
-      <div className={`profile__page ${logged ? 'islog' : ''}`}>
-     
-//   return (
+  return (
+    <div className={`profile__page ${logged ? "islog" : ""}`}>
+      {/* //   return (
 //     <div className="profile__page">
 //       <div className="profile__menu">
 //         <Menu />
-//       </div>
+//       </div> */}
 
       <form className="profile__component" onSubmit={onModifyProfileSubmitForm}>
         <div className="profile__greeting">
@@ -167,7 +171,6 @@ function ProfilePage({
             <option value="Non disponible">Non disponible</option>
           </select>
         </div>
-
 
         <div className="profile-form__contact-info element-profile-form">
           <div className="element-profile-form-child">
@@ -219,7 +222,6 @@ function ProfilePage({
           </div>
         </div>
 
-
         <div className="profile-form__city-links element-profile-form">
           <div className="element-profile-form-child">
             <BiMap />
@@ -232,32 +234,16 @@ function ProfilePage({
           </div>
 
           <div className="element-profile-form-child">
-            <AiFillDribbbleCircle />
+            <AiOutlineBehance />
             <input
-              className="profile-form__link-dribbble"
-              value={profileDribble}
-              onChange={onChangeProfileDribbbleValue}
-              placeholder="Lien vers votre page Dribbble"
+              className="profile-form__link-behance"
+              value={profileBehance}
+              onChange={onChangeProfileBehanceValue}
+              placeholder="Lien vers votre page Behance"
             />
           </div>
 
-          <div className="element-form-child"><AiFillLinkedin />
-            <input
-              className="profile-form__link-linkedin"
-              placeholder="Lien vers votre profil LinkedIn"
-            />
-          </div>
-
-          <div className="element-form-child"><AiFillGithub />
-            <input
-              className="profile-form__link-github"
-              placeholder="Lien vers votre page GitHub"
-            />
-          </div>
-        </div>
-
-        <div className="profile-form__bio element-form">
-          <div className="element-profile-form-child">
+          <div className="element-form-child">
             <AiFillLinkedin />
             <input
               className="profile-form__link-linkedin"
@@ -277,8 +263,9 @@ function ProfilePage({
             />
           </div>
         </div>
-        <div className="profile-form__competencies element-profile-form">
-          <h3 className="profile-form__category-title">Mes compétences</h3>
+
+
+        
 
           <ProfileCompetencies
             userData={userData}
@@ -286,11 +273,8 @@ function ProfilePage({
             handleDeleteSkill={handleDeleteSkill}
             handleAddSkill={handleAddSkill}
           />
-          
-        </div>
 
         <div className="profile-form__bio element-profile-form">
-
           <h3 className="profile-form__category-title">Ma bio</h3>
           <div className="element-profile-form-child">
             <BsPen />
@@ -316,7 +300,7 @@ function ProfilePage({
           </div>
         </div>
 
-        <div className="profile-form__password element-profile-form">
+        {/* <div className="profile-form__password element-profile-form">
           <h3 className="profile-form__category-title">
             Modifier mon mot de passe
           </h3>
@@ -350,7 +334,7 @@ function ProfilePage({
               placeholder="Confirmez le nouveau mot de passe"
             />
           </div>
-        </div>
+        </div> */}
 
         <div>
           <button className="profile-form__send" type="submit">

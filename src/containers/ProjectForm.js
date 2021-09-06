@@ -57,7 +57,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   //   const action = changeProjectSpecificities();
   //   dispatch(action);
   // },
-
   changeProjectImageValue: (value) => {
     const action = changeProjectImage(value);
     dispatch(action);

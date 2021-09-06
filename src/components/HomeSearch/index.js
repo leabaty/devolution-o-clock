@@ -7,7 +7,7 @@ import Footer from "src/components/Footer";
 
 import "./style.scss";
 
-function SearchPageDisconnect({
+function HomeSearch({
   getProjects,
   projects,
 }) {
@@ -16,9 +16,7 @@ function SearchPageDisconnect({
 
   return (
     <div className="searchDisconnect">
-      <div className="searchDisconnect__header">
-      </div>
-      <h1 className="searchDisconnect__title">Résultats de la recherche</h1>
+      <h1 className="searchDisconnect__title">Les projets sur Devolution</h1>
       <span className="searchDisconnect__resultNumber">{projects.length} résultat(s)</span>
       <div className="home__cards">
       {projects.map((project) => (
@@ -31,6 +29,6 @@ function SearchPageDisconnect({
   );
 }
 
-SearchPageDisconnect.propTypes = {};
+HomeSearch.propTypes = {};
 
-export default SearchPageDisconnect;
+export default HomeSearch;

@@ -29,7 +29,7 @@ function SearchProjectsResult({
   fetchProfileData,
   getProjects,
 
-  logged }) {
+  logged,
   getUsers,
   projectOwners,
   myUserId,

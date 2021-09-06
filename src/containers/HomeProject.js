@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ProjectPageDisconnect from 'src/components/ProjectPageDisconnect';
+import HomeProject from 'src/components/HomeProject';
 import { getAllProjects } from 'src/actions';
 
 import { findProject } from 'src/selectors/projects';
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectPageDisconnect);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeProject);
