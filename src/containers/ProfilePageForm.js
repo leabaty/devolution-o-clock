@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import ProfilePageForm from "src/components/ProfilePageForm";
 
+
 import {
   modifyProfileSubmit,
   changeProfileSubtitle,
@@ -19,6 +20,13 @@ import {
   changeProfileNewPassword,
   changeProfileNewPasswordConfirm,
 } from "src/actions";
+
+const mapStateToProps = (state) => ({
+    userData : state.user.dataUser,
+    loading: state.user.loading,
+  logged: state.user.logged,
+});
+
 
 const mapStateToProps = (state, ownProps) => ({  
   userData: state.user.dataUser,
@@ -40,6 +48,7 @@ const mapStateToProps = (state, ownProps) => ({
   profileNewPasswordConfirm: state.user.profileNewPasswordConfirm,
 
 });
+
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   modifyProfileSubmitForm: (value) => {
@@ -108,5 +117,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 
 });
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfilePageForm);

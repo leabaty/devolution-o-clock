@@ -38,6 +38,7 @@ function SearchProjectsResult({
   useEffect(getUsers, []);
   useEffect(fetchProfileData, []);
 
+
   const projectOwner = projectOwners.find((searchedUser) => {
     return searchedUser.id === project.owner_id;
   });
@@ -64,10 +65,6 @@ function SearchProjectsResult({
 
   return (
     <div className="project__page">
-      <div className="project__menu">
-        <Menu />
-      </div>
-
       <div className="project__subpage">
         <div className="header__user-search">
           {/* <Link to="/search/projects"> */}
@@ -105,6 +102,7 @@ function SearchProjectsResult({
             <ProjectNeeds needs={project.need_of_the_project} />
             {/* <ProjectSpecificities /> */}
           </div>
+
 
           <div className="project__buttons">
             {/*Je participe au projet*/}

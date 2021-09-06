@@ -17,21 +17,22 @@ import ProfilePortfolio from "./ProfilePortfolio";
 import "./style.scss";
 
 // == Composant
-function ProfilePage({ profileData, userData }) {
+function ProfilePage({ profileData, userData, logged }) {
   useEffect(profileData, []);
-
+  const { firstname, user_function } = userData;
   return (
-    <div className="profile__page">
+    <div className={`profile__page ${ logged ? 'islog' : '' }`}>
+    {/* Plus besoin de menu avec la nouvelle navbar placer a la racine de App
       <div className="profile__menu">
         <Menu />
       </div>
+    */}
 
       <div className="profile__component">
         <div className="profile__greeting">
           <div>
-            <h1 className="profile__title">Hello, {userData.firstname} !</h1>
-            <h2 className="profile__undertitle">{userData.user_function}
-            </h2>
+            <h1 className="profile__title">Hello, { firstname } !</h1>
+            <h2 className="profile__undertitle">{ user_function }</h2>
           </div>
 
           <img className="profile__picture" src={userData.image_url} alt="Profile picture" />
@@ -67,16 +68,6 @@ function ProfilePage({ profileData, userData }) {
                 Supprimer mon profil
               </button>
             </Link>
-
-            <Link to=''>
-              <button
-                className="profile__logout"
-                type="submit"
-              >
-                Déconnexion
-              </button>
-            </Link>
-
         </div>
       </div>
     </div>

@@ -1,28 +1,21 @@
 .header {
-  height: 40vh;
-  min-height: 420px;
+  //height: 60vh;
+  width: 100%;
+
+  //height: 40vh;
+  // min-height: 420px;
   color: white;
   background: linear-gradient(0deg, #1A3A58 20%, #12273b 100%);
+  background-color: #12273b;
   padding: 35px;
   text-align: center;
 
-  &__logo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    &__devolution{
-      width: 5em;
-    }
-    &__login{
-      width: 2.5em;
-    }
-  }
   &__title{
     font-size: 4em;
     font-weight: 600;
     letter-spacing: .05rem;
-    margin-top: 3%;
+    margin: 3%;
+    margin-top: 2em;
   }
   &__description{
     font-size: 1.2em;
@@ -30,17 +23,36 @@
     font-weight: 200;
     margin: 2% auto;
     width: 50%;
+    height: 150px;
+    overflow: hidden;
   }
   &__input{
-    margin-top: 2%;
+    margin: 1em;
     width: 30%;
-    height: 30px;
+    min-width: 200px;
+    height: 3em;
     border-radius: 30px;
     border: none;
     padding-left: 20px;
   }
-  
+
   &__input::placeholder {
     font-family: 'Nunito';
+  }
+}
+
+$layout-breakpoint-small: 780px;
+
+@media (max-width: $layout-breakpoint-small) {
+  .header {
+    &__title {
+      display: none;
+    }
+    &__description {
+      display: none;
+    }
+    &__input {
+      margin-top: 80px;
+    }
   }
 }

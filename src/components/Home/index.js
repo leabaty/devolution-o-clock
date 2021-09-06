@@ -7,23 +7,26 @@ import CardProject from "src/components/CardProject";
 
 import "./style.scss";
 
-function Home({ projects, lastProjectsLoading }) {
+function Home({ projects, lastProjectsLoading, logged }) {
   useEffect(lastProjectsLoading, []);
-
   return (
-    <div className="home">
+    <div className={`home ${ logged ? 'islog' : '' }`}>
       <HeaderHome />
       <h2 className="home__title">Les derniers projets</h2>
-      <div className="home__cards">
-        {/* for (let index = 0 ; index < 2; index++) {
 
-        } */}
-        {projects.map((project) => (
-          <Link key={project.id} to={`/searchProject/${project.id}`}>
-            <CardProject key={project.id} {...project} />
-          </Link>
-        ))}
-      </div>
+      <div className="home__cards--container">
+        <div className="home__cards">
+          {/* for (let index = 0 ; index < 2; index++) {
+
+          } */}
+          {projects.map((project) => (
+            <Link key={project.id} to={`/searchProject/${project.id}`}>
+              <CardProject key={project.id} {...project} />
+            </Link>
+          ))}
+          </div>
+        </div>
+
       <Link to="/searchProjects">
         <button className="home__button">Voir plus de projets</button>
       </Link>

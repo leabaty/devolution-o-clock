@@ -1,20 +1,24 @@
 import axios from "axios";
 import instance from "./utils/instance";
 
-import {
-  SIGN_UP_SUBMIT,
+import { SIGN_UP_SUBMIT,
   SIGN_IN_SUBMIT,
   saveUser,
   GET_PROFILE_DATA,
+  LOAD_PROFILE_DATA,
   saveProfileData,
   GET_SEARCH_USER,
   GET_ALL_USERS,
   saveUsers,
+  CLEAN_LOCAL_STORAGE,
   MODIFY_PROFILE_SUBMIT,
-} from "src/actions";
+} from 'src/actions';
 
-const users = (store) => (next) => (action) => {
+
+const users= (store) => (next) => (action) => {
   switch (action.type) {
+
+
     case SIGN_UP_SUBMIT: {
       const { firstname, lastname, pseudo, email, password, confirmPassword } =
         store.getState().login;
@@ -52,6 +56,7 @@ const users = (store) => (next) => (action) => {
         },
       })
         .then((response) => {
+
           if (response.data.accessToken) {
             localStorage.setItem("token", response.data.accessToken);
 
@@ -63,8 +68,14 @@ const users = (store) => (next) => (action) => {
             action.value.push("/profile");
           }
         })
+
         .catch((error) => console.log(error));
       break;
+    }
+
+    case CLEAN_LOCAL_STORAGE: {
+      localStorage.setItem('token', "");
+      break
     }
 
     case GET_PROFILE_DATA: {
@@ -103,25 +114,6 @@ const users = (store) => (next) => (action) => {
       break;
     }
 
-    case GET_SEARCH_USER: {
-      const { inputSearchUser } = store.getState().search;
-      const token = localStorage.getItem("token");
-      instance({
-        method: "GET",
-        url: `/users/${inputSearchUser}`,
-        headers: {
-          authorization: `Bearer ${token}`,
-        },
-      })
-        .then((response) => {
-          const Users = response.data;
-          const actionSaveUserData = saveUsers(Users);
-          store.dispatch(actionSaveUserData);
-          action.value.push("/search/users");
-        })
-        .catch((error) => console.log(error));
-      break;
-    }
 
     case MODIFY_PROFILE_SUBMIT: {
       const {} = store.getState(
@@ -176,6 +168,28 @@ const users = (store) => (next) => (action) => {
         .catch((error) => console.log(error));
       break;
     }
+
+          case GET_SEARCH_USER: {
+            const {inputSearchUser} = store.getState().search
+            const token = localStorage.getItem('token')
+            instance({
+              method: 'GET',
+              url: `/users/${inputSearchUser}`,
+              headers: {
+                authorization: `Bearer ${token}`,
+              },
+            })
+                .then((response) => {
+                  const Users = response.data;
+                  const actionSaveUserData = saveUsers(Users);
+                  store.dispatch(actionSaveUserData);
+                  action.value.push('/search/users')
+                })
+                .catch((error) => console.log(error));
+              break;
+            }
+
+
     default:
       next(action);
   }

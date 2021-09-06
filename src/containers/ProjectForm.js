@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ProjectForm from 'src/components/ProjectForm';
 
+
 import { 
   projectSubmit, 
   changeProjectTitle, 
@@ -10,6 +11,7 @@ import {
   changeProjectNeeds,
   // changeProjectSpecificities, 
   changeProjectImage
+
 } from 'src/actions';
 
 
@@ -19,6 +21,7 @@ const mapStateToProps = (state, ownProps) => ({
   projectStartDate: state.projectform.projectStartDate,
   projectDescription: state.projectform.projectDescription,
   projectNeeds: state.projectform.projectNeeds,
+  logged: state.user.logged,
   // projectSpecificities: state.projectform.projectSpecificities,
   projectImage: state.projectform.projectImage,
   userData : state.user.dataUser

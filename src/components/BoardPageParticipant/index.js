@@ -13,24 +13,15 @@ import CardProject from "src/components/CardProject";
 import "./style.scss";
 
 // == Composant
-function BoardPageParticipant({ fetchProfileData, getProjects, projects }) {
+function BoardPageParticipant({ fetchProfileData, getProjects, projects, logged }) {
 
   useEffect(fetchProfileData, []);
   useEffect(getProjects, []) ;
 
   return (
-    <div className="board__page">
-      <div className="board__menu">
-        <Menu />
-      </div>
-
+    <div className={`board__page ${logged ? 'islog' : ''}`}>
       <div className="board__subpage">
-        <div className="header__user">
-          <HeaderConnected />
-        </div>
-
         <p className="board__title">Espace Participant</p>
-
         <div className="board__component">
           {/* <div className="board__running-projects"> */}
             {/* <p className="board__subtitle">Mes projets en cours</p> */}

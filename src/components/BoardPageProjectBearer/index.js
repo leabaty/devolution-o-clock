@@ -16,20 +16,14 @@ import { HiOutlineLightBulb } from "react-icons/hi";
 import "./style.scss";
 
 // == Composant
-function BoardPageProjectBearer({ fetchProfileData, getProjects, myProjects }) {
+function BoardPageProjectBearer({ fetchProfileData, getProjects, myProjects, logged }) {
   useEffect(fetchProfileData, []);
   useEffect(getProjects, []);
 
   return (
-    <div className="board__page">
-      <div className="board__menu">
-        <Menu />
-      </div>
+    <div className={`board__page ${logged ? 'islog' : ''}`}>
 
       <div className="board__subpage">
-        <div className="header__user">
-          <HeaderConnected />
-        </div>
 
         <p className="board__title">Espace Porteur de projet</p>
 

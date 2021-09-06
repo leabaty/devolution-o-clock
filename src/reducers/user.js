@@ -1,6 +1,7 @@
 import {
   SAVE_USER,
   SAVE_PROFILE_DATA,
+  LOGOUT,
   CHANGE_PROFILE_SUBTITLE,
   CHANGE_PROFILE_STATUS,
   CHANGE_PROFILE_FIRSTNAME,
@@ -19,6 +20,7 @@ import {
 } from "src/actions";
 
 export const initialState = {
+  loading: true,
   logged: false,
   dataUser: [],
   projectUser: [],
@@ -39,6 +41,7 @@ export const initialState = {
   profileNewPasswordConfirm: "",
 };
 
+
 const userReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_USER: {
@@ -47,14 +50,22 @@ const userReducer = (state = initialState, action = {}) => {
         logged: true,
       };
     }
+    case LOGOUT: {
+      return {
+        ...state,
+        logged: false,
+      };
+    }
     case SAVE_PROFILE_DATA: {
       const { findUser, findProject } = action.dataProfile;
       return {
+        ...state,
         dataUser: findUser,
         projectUser: findProject,
+        loading: false,
       };
     }
-    case CHANGE_PROFILE_SUBTITLE: {
+          case CHANGE_PROFILE_SUBTITLE: {
       return {
         ...state,
         profileSubtitle: action.value,
@@ -153,7 +164,7 @@ const userReducer = (state = initialState, action = {}) => {
         profileNewPasswordConfirm: action.value,
       };
     }
-
+      
     default:
       return state;
   }

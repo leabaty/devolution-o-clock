@@ -17,9 +17,14 @@ const mapStateToProps = (state, ownProps) => {
     project: findProject(state.project.list, Number(ownProps.match.params.id)),
     idProject: Number(ownProps.match.params.id),
     myParticipatedProjects: state.user.dataUser.participated_projects,
+
     myUserId: state.user.dataUser.id,
     projectOwners: state.project.owners,
   };
+
+    logged: state.user.logged,
+  }
+
 };
 
 const mapDispatchToProps = (dispatch) => ({
