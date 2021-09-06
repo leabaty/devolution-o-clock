@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
 import Login from 'src/components/Login';
-import { changeFirstnameValue, 
-  changeLastnameValue, 
-  changeUsernameValue, 
-  changeEmailValue, 
-  changePasswordValue, 
-  changePasswordConfirmValue, 
-  signUpSubmit, 
+import { changeFirstnameValue,
+  changeLastnameValue,
+  changeUsernameValue,
+  changeEmailValue,
+  changePasswordValue,
+  changePasswordConfirmValue,
+  signUpSubmit,
   signInSubmit,
   changeSignInEmailValue,
-  changeSignInPasswordValue, 
+  changeSignInPasswordValue,
 } from 'src/actions';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -21,6 +21,7 @@ const mapStateToProps = (state, ownProps) => ({
   confirmPassword: state.login.confirmPassword,
   signInEmail: state.login.signInEmail,
   signInPassword: state.login.signInPassword,
+  logged: state.user.logged,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

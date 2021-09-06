@@ -18,9 +18,13 @@ import {
   changeProfilePassword,
   changeProfileNewPassword,
   changeProfileNewPasswordConfirm,
+  getAllSkills,
+  deleteSkill,
+  addSkill,
 } from "src/actions";
 
 const mapStateToProps = (state, ownProps) => ({
+  skills: state.skills,
   userData: state.user.dataUser,
   loading: state.user.loading,
   logged: state.user.logged,
@@ -105,6 +109,21 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   changeProfileNewPasswordConfirmValue: (value) => {
     const action = changeProfileNewPasswordConfirm(value);
+    dispatch(action);
+  },
+
+  allSkills: () => {
+    const action = getAllSkills();
+    dispatch(action);
+  },
+
+  handleDeleteSkill: (id) => {
+    const action = deleteSkill(id);
+    dispatch(action);
+  },
+
+  handleAddSkill: (id) => {
+    const action = addSkill(id);
     dispatch(action);
   },
 });

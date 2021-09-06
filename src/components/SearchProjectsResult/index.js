@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 import { Link, useHistory } from "react-router-dom";
 
 // Composants
-import Menu from "src/components/Menu";
-import HeaderConnected from "src/components/HeaderConnected";
 import ProjectHeader from "./ProjectHeader";
 import ProjectStatus from "./ProjectStatus";
 // import ProjectCompetencies from "./ProjectCompetencies";
@@ -15,7 +13,6 @@ import ProjectNeeds from "./ProjectNeeds";
 import ProjectContact from "./ProjectContact";
 
 // Icons
-import { FiArrowLeftCircle } from "react-icons/fi";
 
 // Style
 import "./style.scss";
@@ -24,12 +21,15 @@ import "./style.scss";
 function SearchProjectsResult({
   clickParticipationButton,
   clickUnparticipationButton,
+
   clickDeleteButton,
   project,
   idProject,
   myParticipatedProjects,
   fetchProfileData,
   getProjects,
+
+  logged,
   getUsers,
   projectOwners,
   myUserId,
@@ -64,18 +64,8 @@ function SearchProjectsResult({
   };
 
   return (
-    <div className="project__page">
+    <div className={`project__page ${logged ? 'islog' : ''}`}>
       <div className="project__subpage">
-        <div className="header__user-search">
-          {/* <Link to="/search/projects"> */}
-          <p className="header__comeback">
-            <FiArrowLeftCircle /> Revenir à la recherche
-          </p>
-          {/* </Link> */}
-          <div className="header__user-icon">
-            <HeaderConnected />
-          </div>
-        </div>
 
         <div className="project__component">
           <ProjectHeader
