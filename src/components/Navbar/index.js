@@ -8,6 +8,9 @@ import {
   FaRegLightbulb,
   FaUserAlt,
 } from "react-icons/fa";
+
+import { AiOutlineUser } from "react-icons/ai";
+
 import { MdWeb } from "react-icons/md";
 
 import PropTypes from "prop-types";
@@ -74,7 +77,7 @@ function Navbar({ logged, setLogout, cleanLs }) {
         >
           <>
             <nav className="Header__nav">
-              {/* <Link to="/">Home</Link>
+              {/* <Link to="/">HomeProjects</Link>
                         <Link to="/">Oclock</Link>
                         <Link to="/">About</Link> */}
               <div className="Header__login">
@@ -123,11 +126,11 @@ function Navbar({ logged, setLogout, cleanLs }) {
               <img className="menu__participanticon" src="https://cdn.discordapp.com/attachments/874922784298528786/877661549194530856/code_-_transparent_white.png" alt="Participant Icon"/>
             </Link>
             <Link to="/profile">
-              <FaUserAlt className="Header__logo__icon--logged" />
+              <AiOutlineUser size="40px" className="Header__logo__icon--logged" />
             </Link>
             <div className="Header__logout--logged">
               <Link to="/">
-                <button onClick={onClickLogout}>logout</button>
+                <button onClick={onClickLogout}>Déconnexion</button>
               </Link>
             </div>
           </nav>

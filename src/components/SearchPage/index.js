@@ -6,7 +6,6 @@ import { Link, useHistory } from 'react-router-dom';
 
 // Composants
 import Menu from "src/components/Menu";
-import HeaderConnected from "src/components/HeaderConnected";
 
 // Icons
 

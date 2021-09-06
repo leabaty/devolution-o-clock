@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import HeaderHome from 'src/components/HeaderHome';
+import HomeDevolution from 'src/components/HomeDevolution';
 
 import './style.scss'
 

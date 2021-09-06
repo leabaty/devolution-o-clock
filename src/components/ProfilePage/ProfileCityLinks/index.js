@@ -4,8 +4,14 @@ import React from "react";
 // import PropTypes from 'prop-types';
 
 // Icons
-import { AiFillGithub, AiFillLinkedin, AiFillFacebook, AiFillTwitterCircle } from 'react-icons/ai';
-import { BiMap } from 'react-icons/bi';
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiFillFacebook,
+  AiFillTwitterCircle,
+  AiOutlineBehance,
+} from "react-icons/ai";
+import { BiMap } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 // Style
@@ -18,26 +24,42 @@ function ProfileCityLinks({ userData }) {
   const { city, facebook, github, linkedin, twitter } = userData;
   return (
     <div className="profile__city element">
-
       <p className="profile__city--icon">
-        <BiMap/> {city}
+        <BiMap /> {city}
       </p>
 
       <div className="profile__links">
-        <Link className={`profile__link${ facebook == null ? '--off' : ''}`} to={facebook} target="_blank" alt="Facebook logo">
+        {/* <Link className={`profile__link${ facebook == null ? '--off' : ''}`} to={facebook} target="_blank" alt="Facebook logo">
           <AiFillFacebook size="30px"/>
-        </Link>
-        <Link className={`profile__link${ linkedin == null ? '--off' : ''}`} to={linkedin} target="_blank" alt="Linkedin logo">
-          <AiFillLinkedin size="30px"/>
-        </Link>
-        <Link className={`profile__link${ github == null ? '--off' : ''}`} to={github} target="_blank" alt="Github logo">
-          <AiFillGithub size="30px" />
         </Link>
         <Link className={`profile__link${ twitter == null ? '--off' : ''}`} to="/profile" target="_blank" alt="Twitter logo">
           <AiFillTwitterCircle size="30px" />
+        </Link> */}
+        <Link
+          className={`profile__link${github == null ? "--off" : ""}`}
+          to={github}
+          target="_blank"
+          alt="Github logo"
+        >
+          <AiFillGithub size="30px" />
+        </Link>
+        <Link
+          className={`profile__link${twitter == null ? "--off" : ""}`}
+          to={twitter}
+          target="_blank"
+          alt="Behance logo"
+        >
+          <AiOutlineBehance size="30px" />
+        </Link>
+        <Link
+          className={`profile__link${linkedin == null ? "--off" : ""}`}
+          to={linkedin}
+          target="_blank"
+          alt="Linkedin logo"
+        >
+          <AiFillLinkedin size="30px" />
         </Link>
       </div>
-
     </div>
   );
 }

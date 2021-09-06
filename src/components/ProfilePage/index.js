@@ -20,13 +20,9 @@ import "./style.scss";
 function ProfilePage({ profileData, userData, logged }) {
   useEffect(profileData, []);
   const { firstname, user_function } = userData;
+
   return (
     <div className={`profile__page ${ logged ? 'islog' : '' }`}>
-    {/* Plus besoin de menu avec la nouvelle navbar placer a la racine de App
-      <div className="profile__menu">
-        <Menu />
-      </div>
-    */}
 
       <div className="profile__component">
         <div className="profile__greeting">

@@ -124,14 +124,15 @@ const users = (store) => (next) => (action) => {
         profilePhone,
         profileEmail,
         profileCity,
-        profileDribble,
+        profileBehance,
         profileLinkedIn,
         profileGitHub,
         profileBio,
         profilePortfolio,
-        profilePassword,
-        profileNewPassword,
-        profileNewPasswordConfirm,
+        profileImage,
+        // profilePassword,
+        // profileNewPassword,
+        // profileNewPasswordConfirm,
         dataUser,
       } = store.getState().user;
 
@@ -142,8 +143,8 @@ const users = (store) => (next) => (action) => {
         url: `/user/${dataUser.id}`,
         data: {
           email: profileEmail,
-          password: profileNewPassword,
-          // image_url :
+          // password: profileNewPassword,
+          image_url : profileImage,
           description: profileBio,
           user_status: profileStatus,
           user_function: profileSubtitle,
@@ -153,9 +154,9 @@ const users = (store) => (next) => (action) => {
           city: profileCity,
           linkedin: profileLinkedIn,
           portfolio: profilePortfolio,
-          // twitter :
           github: profileGitHub,
-          facebook: profileDribble,
+          twitter: profileBehance,
+          // facebook :
           // experience :
         },
 

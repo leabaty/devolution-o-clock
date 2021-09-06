@@ -14,7 +14,7 @@ import {
   AiOutlineUser,
   AiFillGithub,
   AiFillLinkedin,
-  AiFillDribbbleCircle,
+  AiOutlineBehance,
   AiFillWarning,
 } from "react-icons/ai";
 import { FiMail, FiPhone, FiExternalLink } from "react-icons/fi";
@@ -35,7 +35,7 @@ function ProfilePageForm({
   changeProfilePhoneValue,
   changeProfileEmailValue,
   changeProfileCityValue,
-  changeProfileDribbbleValue,
+  changeProfileBehanceValue,
   changeProfileLinkedInValue,
   changeProfileGitHubValue,
   changeProfileBioValue,
@@ -50,14 +50,14 @@ function ProfilePageForm({
   profilePhone,
   profileEmail,
   profileCity,
-  profileDribble,
+  profileBehance,
   profileLinkedIn,
   profileGitHub,
   profileBio,
   profilePortfolio,
-  profilePassword,
-  profileNewPassword,
-  profileNewPasswordConfirm,
+  // profilePassword,
+  // profileNewPassword,
+  // profileNewPasswordConfirm,
   logged,
   allSkills,
   skills,
@@ -99,8 +99,8 @@ function ProfilePageForm({
     changeProfileCityValue(event.target.value);
   };
 
-  const onChangeProfileDribbbleValue = (event) => {
-    changeProfileDribbbleValue(event.target.value);
+  const onChangeProfileBehanceValue = (event) => {
+    changeProfileBehanceValue(event.target.value);
   };
 
   const onChangeProfileLinkedInValue = (event) => {
@@ -234,34 +234,16 @@ function ProfilePageForm({
           </div>
 
           <div className="element-profile-form-child">
-            <AiFillDribbbleCircle />
+            <AiOutlineBehance />
             <input
-              className="profile-form__link-dribbble"
-              value={profileDribble}
-              onChange={onChangeProfileDribbbleValue}
-              placeholder="Lien vers votre page Dribbble"
+              className="profile-form__link-behance"
+              value={profileBehance}
+              onChange={onChangeProfileBehanceValue}
+              placeholder="Lien vers votre page Behance"
             />
           </div>
 
           <div className="element-form-child">
-            <AiFillLinkedin />
-            <input
-              className="profile-form__link-linkedin"
-              placeholder="Lien vers votre profil LinkedIn"
-            />
-          </div>
-
-          <div className="element-form-child">
-            <AiFillGithub />
-            <input
-              className="profile-form__link-github"
-              placeholder="Lien vers votre page GitHub"
-            />
-          </div>
-        </div>
-
-        <div className="profile-form__bio element-form">
-          <div className="element-profile-form-child">
             <AiFillLinkedin />
             <input
               className="profile-form__link-linkedin"
@@ -281,6 +263,7 @@ function ProfilePageForm({
             />
           </div>
         </div>
+
 
         <div className="profile-form__competencies element-profile-form">
 

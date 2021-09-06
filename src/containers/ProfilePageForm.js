@@ -11,7 +11,7 @@ import {
   changeProfilePhone,
   changeProfileEmail,
   changeProfileCity,
-  changeProfileDribbble,
+  changeProfileBehance,
   changeProfileLinkedIn,
   changeProfileGitHub,
   changeProfileBio,
@@ -37,14 +37,15 @@ const mapStateToProps = (state) => ({
   profilePhone: state.user.profilePhone,
   profileEmail: state.user.profileEmail,
   profileCity: state.user.profileCity,
-  profileDribbble: state.user.profileDribbble,
+  profileBehance: state.user.profileBehance,
   profileLinkedIn: state.user.profileLinkedIn,
   profileGitHub: state.user.profileGitHub,
   profileBio: state.user.profileBio,
   profilePortfolio: state.user.profilePortfolio,
-  profilePassword: state.user.profilePassword,
-  profileNewPassword: state.user.profileNewPassword,
-  profileNewPasswordConfirm: state.user.profileNewPasswordConfirm,
+  profileImage: state.user.profileImage,
+  // profilePassword: state.user.profilePassword,
+  // profileNewPassword: state.user.profileNewPassword,
+  // profileNewPasswordConfirm: state.user.profileNewPasswordConfirm,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -80,8 +81,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     const action = changeProfileCity(value);
     dispatch(action);
   },
-  changeProfileDribbbleValue: (value) => {
-    const action = changeProfileDribbble(value);
+  changeProfileBehanceValue: (value) => {
+    const action = changeProfileBehance(value);
     dispatch(action);
   },
   changeProfileLinkedInValue: (value) => {

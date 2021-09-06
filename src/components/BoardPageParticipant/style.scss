@@ -12,6 +12,7 @@ h3 {
   &__subpage {
     width: 100%;
     background-color: #F9F9F9;
+    padding: 5%;
   }
 
   &__component,
@@ -53,44 +54,10 @@ h3 {
     align-items: center;
   }
 
-  &__icon{
-    width: 80px;
-    margin-bottom: 20px;
-  }
-
-  &__form {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__input, &__button {
-    margin-bottom: 20px;
-    border-radius: 25px;
-    padding: 10px;
-    width: 70%;
-    min-width: 300px;
-    border:none;
-  }
-
-  &__input{
-    border: #1A3A58 1px solid;
-  }
-
-  &__input::placeholder {
-    font-family: 'Nunito';
-  }
-
-  &__button{
-    background-color: #1A3A58;
-    color: white;
-    font-family: 'Nunito';
-  }
-
   &__finalized-projects {
     border-left: lightgrey 1px solid;
   }
+
 }
 
 

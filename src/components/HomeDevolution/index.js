@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./style.scss";
 
-function HeaderHome({}) {
+function HomeDevolution({}) {
   return (
     <header className="header">
       <h1 className="header__title">Devolution</h1>
@@ -25,6 +25,6 @@ function HeaderHome({}) {
   );
 }
 
-HeaderHome.propTypes = {};
+HomeDevolution.propTypes = {};
 
-export default HeaderHome;
+export default HomeDevolution;

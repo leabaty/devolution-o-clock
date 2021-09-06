@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 
 // Composants
 import Menu from "src/components/Menu";
-import HeaderConnected from "src/components/HeaderConnected";
 
 // Icons
 import { FiArrowLeftCircle } from "react-icons/fi";
@@ -75,12 +74,6 @@ function SearchProjectsResult({
       </div>
 
       <div className="project__subpage">
-        <div className="header__user-search">
-          <p className="header__comeback">
-            <FiArrowLeftCircle /> Revenir à la recherche
-          </p>
-          <HeaderConnected />
-        </div>
 
         <div className="project__component">
           <form className="signup_form" onSubmit={onProjectSubmit}>

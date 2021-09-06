@@ -31,14 +31,15 @@ export const initialState = {
   profilePhone: "",
   profileEmail: "",
   profileCity: "",
-  profileDribbble: "",
+  profileBehance: "",
   profileLinkedIn: "",
   profileGitHub: "",
   profileBio: "",
   profilePortfolio: "",
-  profilePassword: "",
-  profileNewPassword: "",
-  profileNewPasswordConfirm: "",
+  profileImage:"https://i.ibb.co/vwbw2TF/User-Icon-Flat-Isolated-on-White-Background-User-Symbol-Vector-Illustration.jpg",
+  // profilePassword: "",
+  // profileNewPassword: "",
+  // profileNewPasswordConfirm: "",
 };
 
 
@@ -71,7 +72,7 @@ const userReducer = (state = initialState, action = {}) => {
         profilePhone: findUser.phone,
         profileEmail: findUser.email,
         profileCity: findUser.city,
-        profileDribbble: findUser.twitter,
+        profileBehance: findUser.twitter,
         profileLinkedIn: findUser.linkedin,
         profileGitHub: findUser.github,
         profileBio: findUser.description,
@@ -130,7 +131,7 @@ const userReducer = (state = initialState, action = {}) => {
     case CHANGE_PROFILE_DRIBBBLE: {
       return {
         ...state,
-        profileDribbble: action.value,
+        profileBehance: action.value,
       };
     }
 
@@ -159,24 +160,24 @@ const userReducer = (state = initialState, action = {}) => {
         profilePortfolio: action.value,
       };
     }
-    case CHANGE_PROFILE_PASSWORD: {
-      return {
-        ...state,
-        profilePassword: action.value,
-      };
-    }
-    case CHANGE_PROFILE_NEW_PASSWORD: {
-      return {
-        ...state,
-        profileNewPassword: action.value,
-      };
-    }
-    case CHANGE_PROFILE_NEW_PASSWORD_CONFIRM: {
-      return {
-        ...state,
-        profileNewPasswordConfirm: action.value,
-      };
-    }
+    // case CHANGE_PROFILE_PASSWORD: {
+    //   return {
+    //     ...state,
+    //     profilePassword: action.value,
+    //   };
+    // }
+    // case CHANGE_PROFILE_NEW_PASSWORD: {
+    //   return {
+    //     ...state,
+    //     profileNewPassword: action.value,
+    //   };
+    // }
+    // case CHANGE_PROFILE_NEW_PASSWORD_CONFIRM: {
+    //   return {
+    //     ...state,
+    //     profileNewPasswordConfirm: action.value,
+    //   };
+    // }
       
     default:
       return state;
