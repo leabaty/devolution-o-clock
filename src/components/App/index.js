@@ -104,11 +104,11 @@ function App({
 
       <Route path="/myProjects/modify/:id" exact component={ProjectModify} />
 
-      {/*
-      <Route path="/loading" exact>
+      
+      {/* <Route path="/loading" exact>
             <Loading />
-      </Route>
-      */}
+      </Route> */}
+     
 
       <Route path="*">
           <Error404 />

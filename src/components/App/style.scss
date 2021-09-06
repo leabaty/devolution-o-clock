@@ -3,14 +3,17 @@
   //height: 100vh;
   position: relative;
   box-sizing: border-box;
+  background-color: #F9F9F9;
 }
 
 @media (min-width: 780px) {
   // le margin du menu quand on est logged
   // ajouter toutes les pages qui sont uniquement logged
   .app .islog {
-    margin-left: 120px;
+    margin-left: 170px;
     min-height: 100vh;
+    background-color: #F9F9F9;
+
   }
 
 

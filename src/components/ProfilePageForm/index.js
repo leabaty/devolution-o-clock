@@ -265,7 +265,7 @@ function ProfilePageForm({
         </div>
 
 
-        <div className="profile-form__competencies element-profile-form">
+        
 
           <ProfileCompetencies
             userData={userData}
@@ -273,7 +273,6 @@ function ProfilePageForm({
             handleDeleteSkill={handleDeleteSkill}
             handleAddSkill={handleAddSkill}
           />
-        </div>
 
         <div className="profile-form__bio element-profile-form">
           <h3 className="profile-form__category-title">Ma bio</h3>

@@ -28,11 +28,13 @@ h3 {
   &__page {
     display: flex;
     flex-direction: row;
+    background-color: #F9F9F9;
   }
 
   &__subpage {
     width: 100%;
     background-color: #F9F9F9;
+    padding: 5%;
   }
 
   &__component {

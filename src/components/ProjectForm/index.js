@@ -4,9 +4,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 
-// Composants
-import Menu from "src/components/Menu";
-
 // Icons
 import { FiArrowLeftCircle } from "react-icons/fi";
 
@@ -14,7 +11,7 @@ import { FiArrowLeftCircle } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchProjectsResult({
+function ProjectForm({
   projectSubmitForm,
   changeProjectTitleValue,
   changeProjectStatusValue,
@@ -31,6 +28,7 @@ function SearchProjectsResult({
   // projectSpecificities,
 
   userData,
+  logged
 }) {
   const history = useHistory();
 
@@ -68,13 +66,11 @@ function SearchProjectsResult({
   };
 
   return (
+    <div className={`search__page ${logged ? 'islog' : ''}`}>
     <div className="project__page">
-      <div className="project__menu">
-        <Menu />
-      </div>
 
       <div className="project__subpage">
-
+        
         <div className="project__component">
           <form className="signup_form" onSubmit={onProjectSubmit}>
             <div className="project-form__header">
@@ -347,17 +343,18 @@ function SearchProjectsResult({
             </div>
 
             <button className="project__button" type="submit">
-              Enregistrer les modifications
+              Je propose mon projet !
             </button>
 
           </form>
         </div>
       </div>
     </div>
+    </div>
   );
 }
 
-SearchProjectsResult.propTypes = {};
+ProjectForm.propTypes = {};
 
 // == Export
-export default SearchProjectsResult;
+export default ProjectForm;

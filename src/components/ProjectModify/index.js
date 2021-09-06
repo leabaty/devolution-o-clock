@@ -32,6 +32,7 @@ function SearchProjectsResult({
 
   userData,
   projectData,
+  logged
 }) {
   const history = useHistory();
 
@@ -71,10 +72,8 @@ function SearchProjectsResult({
   console.log(projectData.name)
   
   return (
+    <div className={`search__page ${logged ? 'islog' : ''}`}>
     <div className="project__page">
-      <div className="project__menu">
-        <Menu />
-      </div>
 
       <div className="project__subpage">
 
@@ -356,6 +355,7 @@ function SearchProjectsResult({
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 }
