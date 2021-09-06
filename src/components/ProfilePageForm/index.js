@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom';
 
 // Composants
 import ProfileCompetencies from "./ProfileCompetencies";
+
 // Icons
 import {
   AiOutlineUser,
@@ -24,7 +25,7 @@ import { BsPen } from "react-icons/bs";
 import "./style.scss";
 
 // == Composant
-function ProfilePage({
+function ProfilePageForm({
   userData,
   modifyProfileSubmitForm,
   changeProfileSubtitleValue,
@@ -130,11 +131,11 @@ function ProfilePage({
     return (
       <div className={`profile__page ${logged ? 'islog' : ''}`}>
      
-//   return (
+{/* //   return (
 //     <div className="profile__page">
 //       <div className="profile__menu">
 //         <Menu />
-//       </div>
+//       </div> */}
 
       <form className="profile__component" onSubmit={onModifyProfileSubmitForm}>
         <div className="profile__greeting">

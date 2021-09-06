@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+
 import ProfilePageForm from "src/components/ProfilePageForm";
 
 import {
@@ -20,10 +21,10 @@ import {
   changeProfileNewPasswordConfirm,
   getAllSkills,
   deleteSkill,
-  addSkill,
+  addSkill
 } from "src/actions";
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   skills: state.skills,
   userData: state.user.dataUser,
   loading: state.user.loading,
@@ -111,21 +112,19 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     const action = changeProfileNewPasswordConfirm(value);
     dispatch(action);
   },
-
   allSkills: () => {
     const action = getAllSkills();
     dispatch(action);
   },
-
   handleDeleteSkill: (id) => {
     const action = deleteSkill(id);
     dispatch(action);
   },
-
   handleAddSkill: (id) => {
     const action = addSkill(id);
     dispatch(action);
   },
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfilePageForm);
