@@ -30,6 +30,10 @@ export const MODIFY_PROJECT = 'MODIFY_PROJECT';
 // --- ProfilePage
 export const GET_PROFILE_DATA = 'GET_PROFILE_DATA';
 export const SAVE_PROFILE_DATA = 'SAVE_PROFILE_DATA';
+export const GET_ALL_SKILLS = 'GET_ALL_SKILLS';
+export const SET_SKILLS = 'SET_SKILLS';
+export const DELETE_SKILL = 'DELETE_SKILL';
+export const ADD_SKILL = 'ADD_SKILL';
 
 // --- SearchPage
 export const CHANGE_PROJECT_VALUE = 'CHANGE_PROJECT_VALUE';
@@ -186,12 +190,26 @@ export const modifyProject = (id, history) => ({
 export const getProfileData = () => ({
   type: GET_PROFILE_DATA,
 });
-
 export const saveProfileData = (dataProfile) => ({
   type: SAVE_PROFILE_DATA,
   dataProfile,
 });
 
+export const getAllSkills = () => ({
+  type: GET_ALL_SKILLS,
+});
+export const setSkills = (value) => ({
+  type: SET_SKILLS,
+  value,
+});
+export const deleteSkill = (id) => ({
+  type: DELETE_SKILL,
+  id,
+});
+export const addSkill = (id) => ({
+  type: ADD_SKILL,
+  id,
+});
 
 // --- SearchPage
 export const changeProjectValue = (value) => ({

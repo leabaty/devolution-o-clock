@@ -1,12 +1,13 @@
 /* eslint-disable arrow-body-style */
 // == Import : npm
-import React from "react";
+
+import React, { useEffect } from "react";
 import { useHistory } from 'react-router-dom';
+
 // import PropTypes from 'prop-types';
 
 // Composants
-import Menu from "src/components/Menu";
-
+import ProfileCompetencies from "./ProfileCompetencies";
 // Icons
 import {
   AiOutlineUser,
@@ -56,6 +57,7 @@ function ProfilePage({
   profilePassword,
   profileNewPassword,
   profileNewPasswordConfirm,
+  logged, allSkills, skills, handleDeleteSkill, handleAddSkill
 }) {
   const history = useHistory();
 
@@ -124,11 +126,15 @@ function ProfilePage({
     changeProfileNewPasswordConfirmValue(event.target.value);
   };
 
-  return (
-    <div className="profile__page">
-      <div className="profile__menu">
-        <Menu />
-      </div>
+  useEffect(allSkills, []);
+    return (
+      <div className={`profile__page ${logged ? 'islog' : ''}`}>
+     
+//   return (
+//     <div className="profile__page">
+//       <div className="profile__menu">
+//         <Menu />
+//       </div>
 
       <form className="profile__component" onSubmit={onModifyProfileSubmitForm}>
         <div className="profile__greeting">
@@ -161,6 +167,7 @@ function ProfilePage({
             <option value="Non disponible">Non disponible</option>
           </select>
         </div>
+
 
         <div className="profile-form__contact-info element-profile-form">
           <div className="element-profile-form-child">
@@ -212,6 +219,7 @@ function ProfilePage({
           </div>
         </div>
 
+
         <div className="profile-form__city-links element-profile-form">
           <div className="element-profile-form-child">
             <BiMap />
@@ -233,6 +241,22 @@ function ProfilePage({
             />
           </div>
 
+          <div className="element-form-child"><AiFillLinkedin />
+            <input
+              className="profile-form__link-linkedin"
+              placeholder="Lien vers votre profil LinkedIn"
+            />
+          </div>
+
+          <div className="element-form-child"><AiFillGithub />
+            <input
+              className="profile-form__link-github"
+              placeholder="Lien vers votre page GitHub"
+            />
+          </div>
+        </div>
+
+        <div className="profile-form__bio element-form">
           <div className="element-profile-form-child">
             <AiFillLinkedin />
             <input
@@ -256,15 +280,17 @@ function ProfilePage({
         <div className="profile-form__competencies element-profile-form">
           <h3 className="profile-form__category-title">Mes compétences</h3>
 
-          <div>
-            <label>
-              <input type="checkbox" />
-              Super-compétence
-            </label>
-          </div>
+          <ProfileCompetencies
+            userData={userData}
+            skills={skills}
+            handleDeleteSkill={handleDeleteSkill}
+            handleAddSkill={handleAddSkill}
+          />
+          
         </div>
 
         <div className="profile-form__bio element-profile-form">
+
           <h3 className="profile-form__category-title">Ma bio</h3>
           <div className="element-profile-form-child">
             <BsPen />
@@ -337,4 +363,4 @@ function ProfilePage({
 }
 
 // == Export
-export default ProfilePage;
+export default ProfilePageForm;
