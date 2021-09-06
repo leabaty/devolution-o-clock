@@ -128,9 +128,14 @@ function SearchProjectsResult({
               </button>
             ) : null}
 
-            {/*Je suis le créateur de ce projet et il est ouvert aux participations*/}
+
+            {/*Je suis le créateur de ce projet*/}
             {projectOwner.id === myUserId ? (
-              <Link className="project__button-modify" key={project.id} to={`/myProjects/modify/${project.id}`}>
+              <Link
+                className="project__button-modify"
+                key={project.id}
+                to={`/myProjects/modify/${project.id}`}
+              >
                 <button className="project__button-modify-inside">
                   Modifier ce projet
                 </button>

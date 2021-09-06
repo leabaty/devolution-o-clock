@@ -21,7 +21,8 @@ const mapStateToProps = (state, ownProps) => ({
   projectNeeds: state.projectform.projectNeeds,
   // projectSpecificities: state.projectform.projectSpecificities,
   projectImage: state.projectform.projectImage,
-  userData : state.user.dataUser
+  userData : state.user.dataUser,
+  projectData : state.user.projectUser,
 
 });
 

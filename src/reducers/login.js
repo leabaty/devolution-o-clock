@@ -11,14 +11,14 @@ import {
 
 // les valeurs par défaut sont stockées dans le state initial
 const initialState = {
-  firstname: 'Toto',
-  lastname: 'Tata',
-  pseudo: 'Titi',
-  email: 'titi@gmail.com',
-  password: 'titi',
-  confirmPassword:'titi',
-  signInEmail:'micka@gmail.com',
-  signInPassword:'micka'
+  firstname: '',
+  lastname: '',
+  pseudo: '',
+  email: '',
+  password: '',
+  confirmPassword:'',
+  signInEmail:'',
+  signInPassword:''
 };
 
 // fonction qui traduit une intention/action en changement de state

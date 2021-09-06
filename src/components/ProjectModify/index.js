@@ -32,6 +32,7 @@ function SearchProjectsResult({
   // projectSpecificities,
 
   userData,
+  projectData,
 }) {
   const history = useHistory();
 
@@ -68,6 +69,8 @@ function SearchProjectsResult({
     changeProjectImageValue(event.target.value);
   };
 
+  console.log(projectData.name)
+  
   return (
     <div className="project__page">
       <div className="project__menu">
@@ -89,7 +92,7 @@ function SearchProjectsResult({
                 className="project-form__title"
                 value={projectTitle}
                 onChange={onChangeProjectTitle}
-                placeholder="Titre du projet"
+                placeholder={projectData.name}
               />
               <p>
                 par <a className="project__bearer">{userData.pseudo}</a>

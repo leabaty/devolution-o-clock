@@ -149,7 +149,7 @@ function ProfilePage({
           />
         </div>
 
-        <div className="profile-form__status element-form">
+        <div className="profile-form__status element-profile-form">
           <select
             className="profile-form__status-indicator"
             value={profileStatus}
@@ -162,8 +162,8 @@ function ProfilePage({
           </select>
         </div>
 
-        <div className="profile-form__contact-info element-form">
-          <div className="element-form-child">
+        <div className="profile-form__contact-info element-profile-form">
+          <div className="element-profile-form-child">
             <AiOutlineUser />
             <input
               className="profile-form__surname"
@@ -173,7 +173,7 @@ function ProfilePage({
             />
           </div>
 
-          <div className="element-form-child">
+          <div className="element-profile-form-child">
             <AiOutlineUser />
             <input
               className="profile-form__name"
@@ -182,7 +182,7 @@ function ProfilePage({
               placeholder="Nom"
             />
           </div>
-          <div className="element-form-child">
+          <div className="element-profile-form-child">
             <FiPhone />
             <input
               className="profile-form__phone"
@@ -191,18 +191,17 @@ function ProfilePage({
               placeholder="Numéro de téléphone"
             />
           </div>
-          <div className="element-form-child">
+          <div className="element-profile-form-child">
             <FiMail />
             <input
               className="profile-form__email"
               value={profileEmail}
               onChange={onChangeProfileEmailValue}
               placeholder="Adresse email"
-              value={userData.email}
             />
           </div>
 
-          <div className="element-form-child">
+          <div className="element-profile-form-child">
             <p className="profile-form__warning">
               <AiFillWarning /> Un moyen de contact est nécessaire afin de vous
               permettre de participer aux projets. Attention, ces données sont
@@ -213,8 +212,8 @@ function ProfilePage({
           </div>
         </div>
 
-        <div className="profile-form__city-links element-form">
-          <div className="element-form-child">
+        <div className="profile-form__city-links element-profile-form">
+          <div className="element-profile-form-child">
             <BiMap />
             <input
               className="profile-form__city"
@@ -224,7 +223,7 @@ function ProfilePage({
             />
           </div>
 
-          <div className="element-form-child">
+          <div className="element-profile-form-child">
             <AiFillDribbbleCircle />
             <input
               className="profile-form__link-dribbble"
@@ -234,7 +233,7 @@ function ProfilePage({
             />
           </div>
 
-          <div className="element-form-child">
+          <div className="element-profile-form-child">
             <AiFillLinkedin />
             <input
               className="profile-form__link-linkedin"
@@ -244,7 +243,7 @@ function ProfilePage({
             />
           </div>
 
-          <div className="element-form-child">
+          <div className="element-profile-form-child">
             <AiFillGithub />
             <input
               className="profile-form__link-github"
@@ -254,7 +253,7 @@ function ProfilePage({
             />
           </div>
         </div>
-        <div className="profile-form__competencies element-form">
+        <div className="profile-form__competencies element-profile-form">
           <h3 className="profile-form__category-title">Mes compétences</h3>
 
           <div>
@@ -265,9 +264,9 @@ function ProfilePage({
           </div>
         </div>
 
-        <div className="profile-form__bio element-form">
+        <div className="profile-form__bio element-profile-form">
           <h3 className="profile-form__category-title">Ma bio</h3>
-          <div className="element-form-child">
+          <div className="element-profile-form-child">
             <BsPen />
             <textarea
               className="profile-form__description"
@@ -278,9 +277,9 @@ function ProfilePage({
           </div>
         </div>
 
-        <div className="profile-form__portfolio element-form">
+        <div className="profile-form__portfolio element-profile-form">
           <h3 className="profile-form__category-title">Mon portfolio</h3>
-          <div className="element-form-child">
+          <div className="element-profile-form-child">
             <FiExternalLink />
             <input
               className="profile-form__portfolio-link"
@@ -291,11 +290,11 @@ function ProfilePage({
           </div>
         </div>
 
-        <div className="profile-form__password element-form">
+        <div className="profile-form__password element-profile-form">
           <h3 className="profile-form__category-title">
             Modifier mon mot de passe
           </h3>
-          <div className="element-form-child">
+          <div className="element-profile-form-child">
             <BiLockAlt />
             <input
               className="profile-form__password-input"
@@ -305,7 +304,7 @@ function ProfilePage({
               placeholder="Mot de passe"
             />
           </div>
-          <div className="element-form-child">
+          <div className="element-profile-form-child">
             <BiLockAlt />
             <input
               className="profile-form__password-input"
@@ -315,7 +314,7 @@ function ProfilePage({
               placeholder="Nouveau mot de passe"
             />
           </div>
-          <div className="element-form-child">
+          <div className="element-profile-form-child">
             <BiLockAlt />
             <input
               className="profile-form__password-input"
