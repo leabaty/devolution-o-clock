@@ -123,7 +123,7 @@ function Navbar({ logged, setLogout, cleanLs }) {
               <img className="menu__participanticon" src="https://cdn.discordapp.com/attachments/874922784298528786/877661549194530856/code_-_transparent_white.png" alt="Participant Icon"/>
             </Link>
             <Link to="/profile">
-              {/*<FaUserAlt className="Header__logo__icon--logged" />*/}
+              <FaUserAlt className="Header__logo__icon--logged" />
             </Link>
             <div className="Header__logout--logged">
               <Link to="/">
