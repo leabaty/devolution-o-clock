@@ -2,7 +2,7 @@
 // == Import : npm
 
 import React, { useEffect } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 // import PropTypes from 'prop-types';
 
@@ -58,7 +58,11 @@ function ProfilePageForm({
   profilePassword,
   profileNewPassword,
   profileNewPasswordConfirm,
-  logged, allSkills, skills, handleDeleteSkill, handleAddSkill
+  logged,
+  allSkills,
+  skills,
+  handleDeleteSkill,
+  handleAddSkill,
 }) {
   const history = useHistory();
 
@@ -128,10 +132,9 @@ function ProfilePageForm({
   };
 
   useEffect(allSkills, []);
-    return (
-      <div className={`profile__page ${logged ? 'islog' : ''}`}>
-     
-{/* //   return (
+  return (
+    <div className={`profile__page ${logged ? "islog" : ""}`}>
+      {/* //   return (
 //     <div className="profile__page">
 //       <div className="profile__menu">
 //         <Menu />
@@ -168,7 +171,6 @@ function ProfilePageForm({
             <option value="Non disponible">Non disponible</option>
           </select>
         </div>
-
 
         <div className="profile-form__contact-info element-profile-form">
           <div className="element-profile-form-child">
@@ -220,7 +222,6 @@ function ProfilePageForm({
           </div>
         </div>
 
-
         <div className="profile-form__city-links element-profile-form">
           <div className="element-profile-form-child">
             <BiMap />
@@ -242,14 +243,16 @@ function ProfilePageForm({
             />
           </div>
 
-          <div className="element-form-child"><AiFillLinkedin />
+          <div className="element-form-child">
+            <AiFillLinkedin />
             <input
               className="profile-form__link-linkedin"
               placeholder="Lien vers votre profil LinkedIn"
             />
           </div>
 
-          <div className="element-form-child"><AiFillGithub />
+          <div className="element-form-child">
+            <AiFillGithub />
             <input
               className="profile-form__link-github"
               placeholder="Lien vers votre page GitHub"
@@ -278,8 +281,8 @@ function ProfilePageForm({
             />
           </div>
         </div>
+        
         <div className="profile-form__competencies element-profile-form">
-          <h3 className="profile-form__category-title">Mes compétences</h3>
 
           <ProfileCompetencies
             userData={userData}
@@ -287,11 +290,9 @@ function ProfilePageForm({
             handleDeleteSkill={handleDeleteSkill}
             handleAddSkill={handleAddSkill}
           />
-          
         </div>
 
         <div className="profile-form__bio element-profile-form">
-
           <h3 className="profile-form__category-title">Ma bio</h3>
           <div className="element-profile-form-child">
             <BsPen />
