@@ -21,8 +21,11 @@ function SearchProjectsResults({
   submitSearchProjects,
   changeSearchProjects,
   getProjects,
+  getUsers,
 }) {
   useEffect(getProjects, []);
+  useEffect(getUsers, []);
+  
   const history = useHistory();
 
   const onChangeSearchProjects = (event) => {
@@ -35,18 +38,19 @@ function SearchProjectsResults({
     submitSearchProjects(history);
   };
 
-  // const Message = ({ projects }) => {
-  //   let text = 'Aucun résultat, veuillez faire une nouvelle recherche';
-  //   if (projects.length === 1) {
-  //     text = 'Un résultat correspond à votre recherche';
-  //   }
-  //   else if (projects.length > 1) {
-  //     text = `${projects.length} résultats correspondent à votre recherche`;
-  //   }
-  //   return (
-  //       {text}
-  //   );
-  // };
+  const Message = ({ projects }) => {
+    let text = 'Aucun résultat, veuillez faire une nouvelle recherche';
+
+    if (projects.length === 1) {
+      text = 'Un résultat correspond à votre recherche';
+    }
+    else if (projects.length > 1) {
+      text = `${projects.length} résultats correspondent à votre recherche`;
+    }
+    return (
+        {text}
+    );
+  };
 
   return (
     <div className="search__page">
@@ -75,6 +79,7 @@ function SearchProjectsResults({
           </form>
 
           <p className="search-details__number-results">
+            {/* {Message(projects)} */}
             {" "}
             {projects.length} résultat(s){" "}
           </p>

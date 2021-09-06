@@ -23,8 +23,8 @@ function BoardPageParticipant({ fetchProfileData, getProjects, projects, logged 
       <div className="board__subpage">
         <p className="board__title">Espace Participant</p>
         <div className="board__component">
-          <div className="board__running-projects">
-            <p className="board__subtitle">Mes projets en cours</p>
+          {/* <div className="board__running-projects"> */}
+            {/* <p className="board__subtitle">Mes projets en cours</p> */}
             {projects.length === 0
               ? "Aucun projet en cours"
               : projects.map((project) => (
@@ -32,11 +32,11 @@ function BoardPageParticipant({ fetchProfileData, getProjects, projects, logged 
                   <CardProject key={project.id} {...project} />
                 </Link>
               ))}
-          </div>
+          {/* </div> */}
 
-          <div className="board__finalized-projects">
+          {/* <div className="board__finalized-projects">
             <p className="board__subtitle">Mes projets clôturés</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

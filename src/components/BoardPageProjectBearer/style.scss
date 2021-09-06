@@ -11,11 +11,13 @@ h3 {
 
   &__subpage {
     width: 100%;
+    background-color: #F9F9F9;
   }
 
   &__my-projects{
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    background-color: #F9F9F9;
   }
 
   &__new-project{

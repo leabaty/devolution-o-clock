@@ -40,8 +40,8 @@ function BoardPageProjectBearer({ fetchProfileData, getProjects, myProjects, log
           </Link>
 
           <div className="board__component">
-            <div className="board__running-projects">
-              <p className="board__subtitle">Mes projets en cours</p>
+            {/* <div className="board__running-projects">
+              <p className="board__subtitle">Mes projets en cours</p> */}
               {myProjects.length === 0
                 ? "Aucun projet en cours"
                 : myProjects.map((project) => (
@@ -49,11 +49,11 @@ function BoardPageProjectBearer({ fetchProfileData, getProjects, myProjects, log
                     <CardProject key={project.id} {...project} />
                   </Link>
                 ))}
-            </div>
+            {/* </div>
 
             <div className="board__finalized-projects">
               <p className="board__subtitle">Mes projets clôturés</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
