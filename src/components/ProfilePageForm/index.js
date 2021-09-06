@@ -1,11 +1,10 @@
 /* eslint-disable arrow-body-style */
 // == Import : npm
-import React from "react";
+import React, { useEffect } from "react";
 // import PropTypes from 'prop-types';
 
 // Composants
-import Menu from "src/components/Menu";
-
+import ProfileCompetencies from "./ProfileCompetencies";
 // Icons
 import { AiOutlineUser, AiFillGithub, AiFillLinkedin, AiFillDribbbleCircle, AiFillWarning } from 'react-icons/ai';
 import { FiMail, FiPhone,FiExternalLink } from 'react-icons/fi';
@@ -16,14 +15,10 @@ import {BsPen} from 'react-icons/bs';
 import "./style.scss";
 
 // == Composant
-function ProfilePage({ userData }) {
-
+function ProfilePageForm({ userData, logged, allSkills, skills, handleDeleteSkill, handleAddSkill }) {
+  useEffect(allSkills, []);
     return (
-    <div className="profile__page">
-      <div className="profile__menu">
-        <Menu />
-      </div>
-
+      <div className={`profile__page ${logged ? 'islog' : ''}`}>
       <form className="profile__component">
         <div className="profile__greeting">
           <div className="profile__titles">
@@ -47,7 +42,7 @@ function ProfilePage({ userData }) {
 
         <div className="profile-form__contact-info element-form">
           <div className="element-form-child"><AiOutlineUser /><input className="profile-form__surname" placeholder="Prénom" value={userData.firstname} /></div>
-          
+
           <div className="element-form-child"><AiOutlineUser /><input className="profile-form__name" placeholder="Nom" value={userData.lastname}/></div>
           <div className="element-form-child"><FiPhone /><input
             className="profile-form__phone"
@@ -66,34 +61,38 @@ function ProfilePage({ userData }) {
 
         <div className="profile-form__city-links element-form">
 
-        <div className="element-form-child"><BiMap /><input className="profile-form__city" placeholder="Ville" /></div>
-        
-        <div className="element-form-child"><AiFillDribbbleCircle /><input
-            className="profile-form__link-dribbble"
-            placeholder="Lien vers votre page Dribbble"
-          /></div>
-
-<div className="element-form-child"><AiFillLinkedin /><input
-            className="profile-form__link-linkedin"
-            placeholder="Lien vers votre profil LinkedIn"
-          /></div>
-
-<div className="element-form-child"><AiFillGithub /><input
-            className="profile-form__link-github"
-            placeholder="Lien vers votre page GitHub"
-          /></div>
-</div>
-        <div className="profile-form__competencies element-form">
-          <h3 className="profile-form__category-title">Mes compétences</h3>
-
-          <div>
-            <label>
-              <input type="checkbox" />
-              Super-compétence
-            </label>
+          <div className="element-form-child"><BiMap /><input className="profile-form__city" placeholder="Ville" />
           </div>
 
+          <div className="element-form-child"><AiFillDribbbleCircle />
+            <input
+              className="profile-form__link-dribbble"
+              placeholder="Lien vers votre page Dribbble"
+            />
+          </div>
+
+          <div className="element-form-child"><AiFillLinkedin />
+            <input
+              className="profile-form__link-linkedin"
+              placeholder="Lien vers votre profil LinkedIn"
+            />
+          </div>
+
+          <div className="element-form-child"><AiFillGithub />
+            <input
+              className="profile-form__link-github"
+              placeholder="Lien vers votre page GitHub"
+            />
+          </div>
         </div>
+
+
+          <ProfileCompetencies
+            userData={userData}
+            skills={skills}
+            handleDeleteSkill={handleDeleteSkill}
+            handleAddSkill={handleAddSkill}
+          />
 
         <div className="profile-form__bio element-form">
           <h3 className="profile-form__category-title">Ma bio</h3>
@@ -130,4 +129,4 @@ function ProfilePage({ userData }) {
 }
 
 // == Export
-export default ProfilePage;
+export default ProfilePageForm;

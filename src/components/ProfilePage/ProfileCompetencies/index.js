@@ -24,8 +24,8 @@ function ProfileCompetencies({ userData }) {
         { skills?.map( ({id, label}) =>
           // ?. check si c'est pas null et si oui; fait le reste après le map
           <li key={id}>
-            <input type="checkbox" id={label} checked readOnly />
-            <label htmlFor={label}>{label}</label>
+            <input type="checkbox" id={id} checked readOnly />
+            <label htmlFor={id}>{label}</label>
           </li>
 
           )

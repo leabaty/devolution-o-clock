@@ -12,6 +12,10 @@ import { SIGN_UP_SUBMIT,
   GET_ALL_USERS,
   saveUsers,
   CLEAN_LOCAL_STORAGE,
+  GET_ALL_SKILLS,
+  setSkills,
+  DELETE_SKILL,
+  ADD_SKILL,
 } from 'src/actions';
 
 
@@ -128,6 +132,60 @@ const users= (store) => (next) => (action) => {
                 .catch((error) => console.log(error));
               break;
             }
+
+
+          case GET_ALL_SKILLS: {
+            const token = localStorage.getItem('token')
+            instance({
+              method: 'GET',
+              url: `/skills`,
+              headers: {
+                authorization: `Bearer ${token}`,
+              },
+            })
+              .then((response) => {
+                const allSkills = response.data;
+                console.log('allSkills : ', allSkills);
+                const actionGetSkills = setSkills(allSkills);
+                store.dispatch(actionGetSkills);
+              })
+              .catch((error) => console.log(error));
+            break;
+          }
+
+        case DELETE_SKILL: {
+                const token = localStorage.getItem('token')
+                instance({
+                  method: 'DELETE',
+                  url: `/skill/${action.id}`,
+                  headers: {
+                    authorization: `Bearer ${token}`,
+                  },
+                })
+                  .then((response) => {
+                    const res = response.data;
+                    console.log('response : ', res);
+                  })
+                  .catch((error) => console.log(error));
+                break;
+              }
+
+        case ADD_SKILL: {
+          const token = localStorage.getItem('token')
+          instance({
+            method: 'POST',
+            url: `/skill/${action.id}`,
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          })
+            .then((response) => {
+              const res = response.data;
+              console.log('response : ', res);
+            })
+            .catch((error) => console.log(error));
+          break;
+        }
 
     default:
       next(action);
