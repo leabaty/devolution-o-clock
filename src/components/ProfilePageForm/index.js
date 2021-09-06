@@ -281,7 +281,7 @@ function ProfilePageForm({
             />
           </div>
         </div>
-        
+
         <div className="profile-form__competencies element-profile-form">
 
           <ProfileCompetencies
@@ -318,7 +318,7 @@ function ProfilePageForm({
           </div>
         </div>
 
-        <div className="profile-form__password element-profile-form">
+        {/* <div className="profile-form__password element-profile-form">
           <h3 className="profile-form__category-title">
             Modifier mon mot de passe
           </h3>
@@ -352,7 +352,7 @@ function ProfilePageForm({
               placeholder="Confirmez le nouveau mot de passe"
             />
           </div>
-        </div>
+        </div> */}
 
         <div>
           <button className="profile-form__send" type="submit">

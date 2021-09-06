@@ -24,16 +24,16 @@ function ProfileCityLinks({ userData }) {
       </p>
 
       <div className="profile__links">
-        <Link className={`profile__link${ facebook == null ? '--off' : ''}`} to="/profile" alt="Facebook logo">
+        <Link className={`profile__link${ facebook == null ? '--off' : ''}`} to={facebook} target="_blank" alt="Facebook logo">
           <AiFillFacebook size="30px"/>
         </Link>
-        <Link className={`profile__link${ linkedin == null ? '--off' : ''}`} to="/profile" alt="Linkedin logo">
+        <Link className={`profile__link${ linkedin == null ? '--off' : ''}`} to={linkedin} target="_blank" alt="Linkedin logo">
           <AiFillLinkedin size="30px"/>
         </Link>
-        <Link className={`profile__link${ github == null ? '--off' : ''}`} to="/profile" alt="Github logo">
+        <Link className={`profile__link${ github == null ? '--off' : ''}`} to={github} target="_blank" alt="Github logo">
           <AiFillGithub size="30px" />
         </Link>
-        <Link className={`profile__link${ twitter == null ? '--off' : ''}`} to="/profile" alt="Twitter logo">
+        <Link className={`profile__link${ twitter == null ? '--off' : ''}`} to="/profile" target="_blank" alt="Twitter logo">
           <AiFillTwitterCircle size="30px" />
         </Link>
       </div>

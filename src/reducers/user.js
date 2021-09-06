@@ -63,6 +63,19 @@ const userReducer = (state = initialState, action = {}) => {
         dataUser: findUser,
         projectUser: findProject,
         loading: false,
+        
+        profileSubtitle: findUser.user_function,
+        profileStatus: findUser.user_status,
+        profileFirstname: findUser.firstname,
+        profileLastname: findUser.lastname,
+        profilePhone: findUser.phone,
+        profileEmail: findUser.email,
+        profileCity: findUser.city,
+        profileDribbble: findUser.twitter,
+        profileLinkedIn: findUser.linkedin,
+        profileGitHub: findUser.github,
+        profileBio: findUser.description,
+        profilePortfolio: findUser.portfolio,
       };
     }
           case CHANGE_PROFILE_SUBTITLE: {

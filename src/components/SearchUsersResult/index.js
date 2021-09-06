@@ -62,7 +62,7 @@ function SearchUsersResult({ user }) {
 
           <ProfileCityLinks city={user.city} />
 
-          {/* <ProfileCompetencies user={user} /> */}
+          <ProfileCompetencies user={user} />
 
           <ProfileBio bio={user.description} />
 
