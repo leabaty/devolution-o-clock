@@ -1,21 +1,33 @@
-import { SAVE_ALL_PROJECTS } from "src/actions";
+
+import {
+  SAVE_ALL_PROJECTS, SAVE_ALL_USERS
+} from 'src/actions';
 
 export const initialState = {
-  loading: true,
-  list: [],
-};
+    list: [],
+    owners: []
+  };
+  
+  const projectReducer = (state = initialState, action = {}) => {
+    switch (action.type) {
+      case SAVE_ALL_PROJECTS:
+        return {
+          ...state,
+          list: action.projects,
+        };
 
-const projectReducer = (state = initialState, action = {}) => {
-  switch (action.type) {
-    case SAVE_ALL_PROJECTS:
-      return {
-        ...state,
-        list: action.projects,
-        loading: false,
-      };
-    default:
-      return state;
-  }
-};
+        case SAVE_ALL_USERS: {
+          return {
+            ...state,
+            owners: action.users,
+          };
+        };
+        
+      default:
+        return state;
+    }
+  };
+  
+  export default projectReducer;
+  
 
-export default projectReducer;

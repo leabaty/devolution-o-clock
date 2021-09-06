@@ -21,6 +21,7 @@ import BoardPageProjectBearer from 'src/containers/BoardPageProjectBearer';
 import SearchUsersResults from 'src/containers/SearchUsersResults';
 import SearchUsersResult from 'src/containers/SearchUsersResult';
 import ProjectForm from 'src/containers/ProjectForm';
+import ProjectModify from 'src/containers/ProjectModify';
 
 import Loading from './Loading';
 
@@ -91,6 +92,10 @@ function App({
       <Route path="/myProjects/new" exact>
             <ProjectForm />
       </Route>
+
+
+      <Route path="/myProjects/modify/:id" exact component={ProjectModify} />
+
       {/*
       <Route path="/loading" exact>
             <Loading />

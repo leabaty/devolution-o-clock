@@ -16,7 +16,7 @@ import "./style.scss";
 
 // == Composant
 function SearchProjectsResult({
-  projectSubmitForm,
+  modifyProjectForm,
   changeProjectTitleValue,
   changeProjectStatusValue,
   changeProjectStartDateValue,
@@ -32,12 +32,13 @@ function SearchProjectsResult({
   // projectSpecificities,
 
   userData,
+  projectData,
 }) {
   const history = useHistory();
 
-  const onProjectSubmit = (event) => {
+  const onProjectModifySubmit = (event) => {
     event.preventDefault();
-    projectSubmitForm(history);
+    modifyProjectForm(history);
   };
 
   const onChangeProjectTitle = (event) => {
@@ -68,6 +69,8 @@ function SearchProjectsResult({
     changeProjectImageValue(event.target.value);
   };
 
+  console.log(projectData.name)
+  
   return (
     <div className="project__page">
       <div className="project__menu">
@@ -83,13 +86,13 @@ function SearchProjectsResult({
         </div>
 
         <div className="project__component">
-          <form className="signup_form" onSubmit={onProjectSubmit}>
+          <form className="signup_form" onSubmit={onProjectModifySubmit}>
             <div className="project-form__header">
               <input
                 className="project-form__title"
                 value={projectTitle}
                 onChange={onChangeProjectTitle}
-                placeholder="Titre du projet"
+                placeholder={projectData.name}
               />
               <p>
                 par <a className="project__bearer">{userData.pseudo}</a>

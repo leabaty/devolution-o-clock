@@ -1,5 +1,5 @@
 p,
-h3{
+h3 {
   padding: 6px;
 }
 
@@ -10,22 +10,23 @@ h3{
   padding: 0.5em;
 }
 
-.header{
+.header {
   &__user-search {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
+  
   &__comeback {
-    color:#1a3a58d7;
+    color: #1a3a58d7;
     margin: 4% 4% 2% 4%;
     font-size: 1.2em;
     width: 60%;
-}
+  }
 
-&__user-icon{
-  margin: 3%
-}
+  &__user-icon {
+    margin: 3%;
+  }
 }
 
 .project {
@@ -40,12 +41,16 @@ h3{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    background-color: #F9F9F9;
   }
 
   &__component {
     padding: 30px;
     width: 90%;
     color:#1a3a58d7;
+    margin: 0 auto;
+    background-color: white;
+
     border: solid lightgray 1px;
     border-radius: 15px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.035);
@@ -60,7 +65,7 @@ h3{
     margin-bottom: 10px;
   }
 
-  &__bearer{
+  &__bearer {
     font-size: 1.5em;
   }
 
@@ -71,36 +76,53 @@ h3{
     margin-bottom: 10px;
   }
 
-  &__text{
+  &__text {
     margin-bottom: 10px;
   }
 
-  &__button-participate, &__button-unparticipate {
+  &__buttons {
+display: flex;
+justify-content: space-around;
+  }
+
+  &__button-participate,
+  &__button-unparticipate, 
+  &__button-delete,
+  &__button-modify {
+    text-align: center;
     margin: 20px auto;
     border-radius: 25px;
-    padding: 10px;
-    width: 30%;
-    min-width: 300px;
-    border:none;
+    padding: 7px;
+    width: 25%;
+    border: none;
     color: white;
-    font-family: 'Nunito';
-    font-size: 20px;
+    font-family: "Nunito";
+    font-size: 1.2rem;
   }
 
-  &__button-participate {
-    background-color: #1A3A58;
+  &__button-participate, 
+  &__button-modify {
+    background-color: #1a3a58;
   }
 
-  &__button-unparticipate {
-    background-color: #BD2606 ;
+  &__button-unparticipate,
+  &__button-delete {
+    background-color: #bd2606;
   }
 
-  &__competencies-list{
+  &__button-modify-inside {
+    background-color: #1a3a58;
+    color: white;
+    font-family: "Nunito";
+    font-size: 1.2rem;
+    border: none;
+  }
+
+  &__competencies-list {
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
     line-height: 20px;
     padding: 6px;
   }
-
 }

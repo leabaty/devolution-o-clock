@@ -22,6 +22,7 @@ import "./style.scss";
 
 // == Composant
 function SearchUsersResult({ user }) {
+
   return (
     <div className="user__page">
       <div className="user__menu">

@@ -27,6 +27,3 @@ export default () => {
   let persistor = persistStore(store)
   return { store, persistor }
 }
-
-// export default store;
-// npm install redux-persist

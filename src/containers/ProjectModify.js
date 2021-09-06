@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
-import ProjectForm from 'src/components/ProjectForm';
-
+import ProjectModify from 'src/components/ProjectModify';
 
 import { 
-  projectSubmit, 
+  modifyProject, 
   changeProjectTitle, 
   changeProjectStatus, 
   changeProjectStartDate, 
@@ -11,7 +10,6 @@ import {
   changeProjectNeeds,
   // changeProjectSpecificities, 
   changeProjectImage
-
 } from 'src/actions';
 
 
@@ -21,16 +19,17 @@ const mapStateToProps = (state, ownProps) => ({
   projectStartDate: state.projectform.projectStartDate,
   projectDescription: state.projectform.projectDescription,
   projectNeeds: state.projectform.projectNeeds,
-  logged: state.user.logged,
   // projectSpecificities: state.projectform.projectSpecificities,
   projectImage: state.projectform.projectImage,
-  userData : state.user.dataUser
+  userData : state.user.dataUser,
+  projectData : state.user.projectUser,
 
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  projectSubmitForm: (value) => {
-    const action = projectSubmit(value);
+  
+  modifyProjectForm: (value) => {
+    const action = modifyProject(value);
     dispatch(action);
   },
   changeProjectTitleValue: (value) => {
@@ -64,4 +63,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectModify);

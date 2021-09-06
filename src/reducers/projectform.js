@@ -5,7 +5,7 @@ import {
   CHANGE_PROJECT_DESCRIPTION,
   CHANGE_PROJECT_NEEDS,
   // CHANGE_PROJECT_SPECIFICITIES,
-  // CHANGE_PROJECT_IMAGE,
+  CHANGE_PROJECT_IMAGE,
 } from 'src/actions';
 
 const initialState = {
@@ -15,7 +15,7 @@ const initialState = {
   projectDescription: '',
   projectNeeds: '',
   // projectSpecificities:'',
-  // projectImage:''
+  projectImage:''
 };
 
 
@@ -58,12 +58,12 @@ const reducer = (state = initialState, action = {}) => {
     //     projectSpecificities: action.value,
     //   };
     // }
-    // case CHANGE_PROJECT_IMAGE: {
-    //   return {
-    //     ...state,
-    //     projectImage: action.value,
-    //   };
-    // }
+    case CHANGE_PROJECT_IMAGE: {
+      return {
+        ...state,
+        projectImage: action.value,
+      };
+    }
     default:
       return state;
   }

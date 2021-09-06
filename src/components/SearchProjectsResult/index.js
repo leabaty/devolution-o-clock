@@ -1,8 +1,7 @@
-/* eslint-disable arrow-body-style */
 // == Import : npm
-import React, { useEffect }from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from "react-router-dom";
 
 // Composants
 import ProjectHeader from "./ProjectHeader";
@@ -11,6 +10,7 @@ import ProjectStatus from "./ProjectStatus";
 import ProjectDescription from "./ProjectDescription";
 import ProjectNeeds from "./ProjectNeeds";
 // import ProjectSpecificities from "./ProjectSpecificities";
+import ProjectContact from "./ProjectContact";
 
 // Icons
 
@@ -21,20 +21,33 @@ import "./style.scss";
 function SearchProjectsResult({
   clickParticipationButton,
   clickUnparticipationButton,
+
+  clickDeleteButton,
   project,
   idProject,
   myParticipatedProjects,
   fetchProfileData,
   getProjects,
-  logged }) {
 
+  logged }) {
+  getUsers,
+  projectOwners,
+  myUserId,
+}) {
   useEffect(getProjects, []);
+  useEffect(getUsers, []);
   useEffect(fetchProfileData, []);
 
 
-  const currentProject = myParticipatedProjects.find((searchedParticipation) => {
-    return searchedParticipation.id === idProject;
+  const projectOwner = projectOwners.find((searchedUser) => {
+    return searchedUser.id === project.owner_id;
   });
+
+  const participateToCurrentProject = myParticipatedProjects.find(
+    (searchedParticipation) => {
+      return searchedParticipation.id === idProject;
+    }
+  );
 
   const history = useHistory();
 
@@ -46,14 +59,32 @@ function SearchProjectsResult({
     clickUnparticipationButton(idProject, history);
   };
 
+  const onClickDeleteButton = () => {
+    clickDeleteButton(idProject, history);
+  };
+
   return (
     <div className={`project__page ${logged ? 'islog' : ''}`}>
       <div className="project__subpage">
 
-        <div className="project__component toto">
-          <ProjectHeader name={project.name} pseudo={project.pseudo} />
+        <div className="project__component">
+          <ProjectHeader
+            name={project.name}
+            pseudo={projectOwner.pseudo}
+            icon={project.icon}
+          />
 
           <ProjectStatus status={project.is_available} />
+
+          {participateToCurrentProject ? (
+            <ProjectContact
+              firstname={projectOwner.firstname}
+              lastname={projectOwner.lastname}
+              email={projectOwner.email}
+              phone={projectOwner.phone}
+            />
+          ) : null}
+
           {/* <ProjectCompetencies/> */}
 
           <div className="project__information element">
@@ -62,17 +93,53 @@ function SearchProjectsResult({
             {/* <ProjectSpecificities /> */}
           </div>
 
-            {currentProject && (
-              <button className="project__button-unparticipate" onClick={onClickUnparticipationButton}>Je me retire du projet</button>
+
+          <div className="project__buttons">
+            {/*Je participe au projet*/}
+            {participateToCurrentProject && (
+              <button
+                className="project__button-unparticipate"
+                onClick={onClickUnparticipationButton}
+              >
+                Je me retire du projet
+              </button>
             )}
 
-            {!currentProject && project.is_available ? (
-              <button className="project__button-participate" onClick={onClickParticipationButton}>Je participe !</button>
+            {/*Je ne participe pas au projet, et il est disponible, et je n'en suis pas le propriétaire*/}
+            {!participateToCurrentProject &&
+            project.is_available /*&& !projectOwner.id === myUserId*/ ? (
+              <button
+                className="project__button-participate"
+                onClick={onClickParticipationButton}
+              >
+                Je participe !
+              </button>
+            ) : null}
 
-            ) : (
-              null
-            )}
 
+            {/*Je suis le créateur de ce projet*/}
+            {projectOwner.id === myUserId ? (
+              <Link
+                className="project__button-modify"
+                key={project.id}
+                to={`/myProjects/modify/${project.id}`}
+              >
+                <button className="project__button-modify-inside">
+                  Modifier ce projet
+                </button>
+              </Link>
+            ) : null}
+
+            {/*Je suis le créateur de ce projet*/}
+            {projectOwner.id === myUserId ? (
+              <button
+                className="project__button-delete"
+                onClick={onClickDeleteButton}
+              >
+                Supprimer ce projet
+              </button>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>
