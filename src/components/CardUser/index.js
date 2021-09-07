@@ -12,8 +12,11 @@ function UserStatus (user_status) {
   else if (user_status === "Bientôt disponible") {
     return <span className="cardUser__status-soonavailable">●</span>;
   }
-  else {
+  else if (user_status === "Non disponible") {
     return <span className="cardUser__status-notavailable">●</span>;
+  }
+  else  {
+    return null;
   }
 }
 

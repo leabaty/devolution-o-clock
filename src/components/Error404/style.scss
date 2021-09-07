@@ -12,14 +12,16 @@
     font-weight: 600;
     letter-spacing: .05rem;
     margin: 3%;
-    margin-top: 2em;
+    margin-top: 10vh;
   }
   &__description{
-    font-size: 1.2em;
-    line-height: 1.5em;
+    font-size: 1.3em;
     font-weight: 200;
     margin: 2% auto;
     width: 50%;
-    height: 150px;
+  }
+  &__image{
+    margin: 3% auto;
+    width: 20%;
   }
 }

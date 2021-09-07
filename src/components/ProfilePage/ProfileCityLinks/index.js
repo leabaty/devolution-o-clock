@@ -35,30 +35,30 @@ function ProfileCityLinks({ userData }) {
         <Link className={`profile__link${ twitter == null ? '--off' : ''}`} to="/profile" target="_blank" alt="Twitter logo">
           <AiFillTwitterCircle size="30px" />
         </Link> */}
-        <Link
+        <a
           className={`profile__link${github == null ? "--off" : ""}`}
-          to={github}
+          href={github}
           target="_blank"
           alt="Github logo"
         >
           <AiFillGithub size="30px" />
-        </Link>
-        <Link
+        </a>
+        <a
           className={`profile__link${twitter == null ? "--off" : ""}`}
-          to={twitter}
+          href={twitter}
           target="_blank"
           alt="Behance logo"
         >
           <AiOutlineBehance size="30px" />
-        </Link>
-        <Link
+        </a>
+        <a
           className={`profile__link${linkedin == null ? "--off" : ""}`}
-          to={linkedin}
+          href={linkedin}
           target="_blank"
           alt="Linkedin logo"
         >
           <AiFillLinkedin size="30px" />
-        </Link>
+        </a>
       </div>
     </div>
   );
