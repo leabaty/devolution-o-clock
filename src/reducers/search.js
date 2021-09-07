@@ -4,7 +4,6 @@ import {
   SAVE_ALL_USERS,
   SAVE_PROJECTS,
   SAVE_ALL_PROJECTS_SEARCH, 
-  SAVE_USERS, 
 } from "../actions";
 
 export const initialState = {
@@ -29,12 +28,6 @@ const searchReducer = (state = initialState, action = {}) => {
       };
     }
     case SAVE_ALL_USERS: {
-      return {
-        ...state,
-        users: action.users,
-      };
-    }
-    case SAVE_USERS: {
       return {
         ...state,
         users: action.users,
