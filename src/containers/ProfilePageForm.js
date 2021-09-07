@@ -22,17 +22,11 @@ import {
   changeProfileNewPasswordConfirm,
 } from "src/actions";
 
-const mapStateToProps = (state) => ({
-    userData : state.user.dataUser,
-    loading: state.user.loading,
-    logged: state.user.logged,
-    skills:  state.skills
-});
-
-
 const mapStateToProps = (state, ownProps) => ({
   userData: state.user.dataUser,
-
+  loading: state.user.loading,
+  logged: state.user.logged,
+  skills: state.skills,
   profileSubtitle: state.user.profileSubtitle,
   profileStatus: state.user.profileStatus,
   profileFirstname: state.user.profileFirstname,
