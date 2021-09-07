@@ -14,14 +14,11 @@ function ProfileCompetencies({ userData, skills, handleDeleteSkill, handleAddSki
   const [checked, setChecked] = React.useState(false);
 
   useEffect(() => {
-
-    console.log('ProfileCompetencies ', userSkills);
     return () => {
     }
   }, [userData.users_skills]);
 
   const handleCheckbox = (e) => {
-    console.log('checkbox value : ', e.target.checked);
     const isChecked = e.target.checked;
     if (isChecked) {
       // AJOUTER UNE COMPETENCE

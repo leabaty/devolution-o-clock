@@ -1,20 +1,26 @@
 .login {
-    padding: 35px;
-    background-color: #1A3A58;
-    background-image: linear-gradient(0deg,#1A3A58 0%, #12273b 100%);
-    background-repeat: no-repeat;
-    color:white;
-    font-family: 'Nunito', sans-serif;
-    height: 100vh;
+  padding: 35px;
+  background-color: #1a3a58;
+  background-image: linear-gradient(0deg, #1a3a58 0%, #12273b 100%);
+  background-repeat: no-repeat;
+  color: white;
+  font-family: "Nunito", sans-serif;
+  height: 100vh;
+
+  &__forms {
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media (max-width: 780px) {
+    height: 100%;
+
     &__forms {
-        margin-top: 15vh;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-
-    &__logo {
-        width: 80px;
-    }
+  }
 }

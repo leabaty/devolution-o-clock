@@ -4,6 +4,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, useHistory } from 'react-router-dom';
 
+// Navbar
+import Navbar from "src/components/Navbar";
 
 // Style
 import "./style.scss";
@@ -44,6 +46,7 @@ function SearchPage({
 
   return (
     <div className={`search__page ${logged ? 'islog' : ''}`}>
+
       <div className="search__subpage">
 
         <p className="search__title">Recherche</p>

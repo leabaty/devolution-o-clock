@@ -17,6 +17,7 @@ import {
   DELETE_SKILL,
   ADD_SKILL,
   MODIFY_PROFILE_SUBMIT,
+  signUpMessage,
 } from "src/actions";
 
 const users = (store) => (next) => (action) => {
@@ -38,6 +39,8 @@ const users = (store) => (next) => (action) => {
             "https://devolution-api.herokuapp.com/api/v1/user/create",
             newUser
           );
+          const actionMessage = signUpMessage(response.data.message);
+          store.dispatch(actionMessage)
         } catch (error) {
           console.log(error);
         }

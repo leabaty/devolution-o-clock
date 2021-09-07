@@ -1,40 +1,52 @@
 .signup {
-    &__component{
-        width: 25em;
-        padding-left: 5em;
-        border-left:solid white 2px;
+  &__component {
+    width: 25em;
+    padding-left: 5em;
+    border-left: solid white 2px;
+  }
+
+  &__title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    border-radius: 25px;
+    padding: 10px;
+    width: 24em;
+    border: none;
+    margin-bottom: 20px;
+  }
+
+  &__input:read-write {
+    font-family: "Nunito";
+  }
+
+  &__send {
+    border-radius: 25px;
+    padding: 10px;
+    width: 24em;
+    border: none;
+    margin-bottom: 20px;
+    background-color: #0d273f;
+    color: white;
+    font-family: "Nunito";
+  }
+
+  @media (max-width: 780px) {
+    &__component {
+      border-left: none;
+      padding: 0;
+      border-top: solid white 2px;
     }
 
-    &__title{
-        font-size: 30px;
-        margin-bottom: 20px;
+    &__title {
+      margin-top: 5vh;
     }
-
-    &__form{
-        display:flex;
-        flex-direction: column;
-    }
-
-    &__input{
-        border-radius: 25px;
-        padding: 10px;
-        width: 24em;
-        border:none;
-        margin-bottom: 20px;
-    }
-
-    &__input:read-write {
-        font-family: 'Nunito';
-      }
-
-    &__send{
-        border-radius: 25px;
-        padding: 10px;
-        width: 24em;
-        border:none;
-        margin-bottom: 20px;
-        background-color: #0D273F;
-        color: white;
-        font-family: 'Nunito';
-    }
+  }
 }

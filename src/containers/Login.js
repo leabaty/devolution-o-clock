@@ -22,6 +22,7 @@ const mapStateToProps = (state, ownProps) => ({
   signInEmail: state.login.signInEmail,
   signInPassword: state.login.signInPassword,
   logged: state.user.logged,
+  message: state.login.signUpMessage,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

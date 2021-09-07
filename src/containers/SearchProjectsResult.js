@@ -9,6 +9,7 @@ import {
   getProfileData,
   getAllProjects,
   getAllUsers,
+  saveOneProject,
 } from "src/actions";
 import { findProject } from "src/selectors/projects";
 
@@ -58,6 +59,14 @@ const mapDispatchToProps = (dispatch) => ({
     const action = getAllUsers();
     dispatch(action);
   },
+
+  saveProjectData: (project) => {
+    const action = saveOneProject(project);
+    // console.log("project dans le container:", project)
+    dispatch(action);
+  },
+
+
 });
 
 export default connect(

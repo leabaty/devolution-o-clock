@@ -6,12 +6,11 @@ p,h3 {
   &__page {
     display: flex;
     flex-direction: row;
-    padding: 5%;
   }
 
   &__component {
     width: 100%;
-    padding: 5%;
+    padding: 0 5%;
   }
 
   &__greeting {

@@ -6,7 +6,9 @@ import {
   CHANGE_PASSWORD_VALUE,
   CHANGE_PASSWORD_CONFIRM_VALUE,
   CHANGE_SIGN_IN_EMAIL_VALUE,
-  CHANGE_SIGN_IN_PASSWORD_VALUE
+  CHANGE_SIGN_IN_PASSWORD_VALUE, 
+  SIGN_UP_MESSAGE,
+  CLEAN_LOGIN_FORM,
 } from 'src/actions';
 
 // les valeurs par défaut sont stockées dans le state initial
@@ -18,7 +20,8 @@ const initialState = {
   password: '',
   confirmPassword:'',
   signInEmail:'',
-  signInPassword:''
+  signInPassword:'',
+  signUpMessage:''
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -71,6 +74,29 @@ const reducer = (state = initialState, action = {}) => {
         signInPassword:action.value
       };
     }
+
+    case SIGN_UP_MESSAGE: {
+      return {
+        ...state,
+        signUpMessage:action.value
+      };
+    }
+
+    case CLEAN_LOGIN_FORM: {
+      return {
+        ...state,
+        firstname: '',
+        lastname: '',
+        pseudo: '',
+        email: '',
+        password: '',
+        confirmPassword:'',
+        signInEmail:'',
+        signInPassword:'',
+        signUpMessage:''
+      };
+    }
+
     default:
       return state;
   }

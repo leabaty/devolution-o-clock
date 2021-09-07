@@ -126,8 +126,6 @@ const projects = (store) => (next) => (action) => {
     case DELETE_PROJECT_FROM_PARTICIPATIONS: {
       const token = localStorage.getItem("token");
 
-      console.log("delete participated project :",action.id)
-
       instance({
         method: "DELETE",
         url: `/project/${action.id}/deleteparticipant`,
@@ -172,8 +170,6 @@ const projects = (store) => (next) => (action) => {
       } = store.getState().projectform;
 
       const token = localStorage.getItem("token");
-
-      console.log("modify project :",action.id)
 
       instance({
         method: "PUT",
