@@ -20,13 +20,9 @@ import "./style.scss";
 function ProfilePage({ profileData, userData, logged }) {
   useEffect(profileData, []);
   const { firstname, user_function } = userData;
+
   return (
     <div className={`profile__page ${ logged ? 'islog' : '' }`}>
-    {/* Plus besoin de menu avec la nouvelle navbar placer a la racine de App
-      <div className="profile__menu">
-        <Menu />
-      </div>
-    */}
 
       <div className="profile__component">
         <div className="profile__greeting">
@@ -35,7 +31,7 @@ function ProfilePage({ profileData, userData, logged }) {
             <h2 className="profile__undertitle">{ user_function }</h2>
           </div>
 
-          <img className="profile__picture" src={userData.image_url} alt="Profile picture" />
+          <img className="profile__picture" src="https://i.ibb.co/vwbw2TF/User-Icon-Flat-Isolated-on-White-Background-User-Symbol-Vector-Illustration.jpg" alt="Profile picture" />
         </div>
 
         <ProfileStatus userData={userData} />

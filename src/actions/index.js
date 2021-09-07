@@ -317,7 +317,7 @@ export const changeProfileCity = (value) => ({
   type: CHANGE_PROFILE_CITY,
   value,
 });
-export const changeProfileDribbble = (value) => ({
+export const changeProfileBehance = (value) => ({
   type: CHANGE_PROFILE_DRIBBBLE,
   value,
 });

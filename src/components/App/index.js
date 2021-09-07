@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 // == Import components
-import Home from 'src/containers/Home';
-import SearchPageDisconnect from 'src/containers/SearchPageDisconnect'
+import HomeProjects from 'src/containers/HomeProjects';
+import HomeSearch from 'src/containers/HomeSearch'
 import Login from 'src/containers/Login';
 import ProfilePage from 'src/containers/ProfilePage';
 import Error404 from 'src/components/Error404'
 import Footer from 'src/components/Footer';
 import Navbar from 'src/containers/Navbar';
-import ProjectPageDisconnect from 'src/containers/ProjectPageDisconnect';
+import HomeProject from 'src/containers/HomeProject';
 import ProfilePageForm from 'src/containers/ProfilePageForm';
 import SearchPage from 'src/containers/SearchPage';
 import SearchProjectsResults from 'src/containers/SearchProjectsResults';
@@ -42,17 +42,21 @@ function App({
 
       <Navbar />
     <Switch>
+
       <Route path="/" exact>
-        <Home/>
+        <HomeProjects/>
       </Route>
+
       <Route path="/searchProjects" exact >
         <SearchPage />
       </Route>
-      <Route path="/searchProject/:id" exact component={ProjectPageDisconnect} />
+
+      <Route path="/more/:id" exact component={HomeProject} />
 
       <Route path="/login" exact>
         <Login/>
       </Route>
+
       <Route path="/profile" exact>
           {/* {isLogged ? ( */}
             <ProfilePage />
@@ -63,6 +67,10 @@ function App({
 
       <Route path="/modifyprofile" exact>
         <ProfilePageForm/>
+      </Route>
+
+      <Route path="/more" exact>
+        <HomeSearch/>
       </Route>
 
       <Route path="/search" exact>
@@ -96,11 +104,11 @@ function App({
 
       <Route path="/myProjects/modify/:id" exact component={ProjectModify} />
 
-      {/*
-      <Route path="/loading" exact>
+      
+      {/* <Route path="/loading" exact>
             <Loading />
-      </Route>
-      */}
+      </Route> */}
+     
 
       <Route path="*">
           <Error404 />

@@ -2,16 +2,16 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-import HeaderHome from "src/containers/HeaderHome";
+import HomeDevolution from "src/containers/HomeDevolution";
 import CardProject from "src/components/CardProject";
 
 import "./style.scss";
 
-function Home({ projects, lastProjectsLoading, logged }) {
+function HomeProjects({ projects, lastProjectsLoading, logged }) {
   useEffect(lastProjectsLoading, []);
   return (
     <div className={`home ${ logged ? 'islog' : '' }`}>
-      <HeaderHome />
+      <HomeDevolution />
       <h2 className="home__title">Les derniers projets</h2>
 
       <div className="home__cards--container">
@@ -20,20 +20,20 @@ function Home({ projects, lastProjectsLoading, logged }) {
 
           } */}
           {projects.map((project) => (
-            <Link key={project.id} to={`/searchProject/${project.id}`}>
+            <Link key={project.id} to={`/more/${project.id}`}>
               <CardProject key={project.id} {...project} />
             </Link>
           ))}
           </div>
         </div>
 
-      <Link to="/searchProjects">
+      <Link to="/more">
         <button className="home__button">Voir plus de projets</button>
       </Link>
     </div>
   );
 }
 
-Home.propTypes = {};
+HomeProjects.propTypes = {};
 
-export default Home;
+export default HomeProjects;

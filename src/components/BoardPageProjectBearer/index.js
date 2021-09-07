@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 // Composants
 import Menu from "src/components/Menu";
-import HeaderConnected from "src/components/HeaderConnected";
 import CardProject from "src/components/CardProject";
 
 // Icons

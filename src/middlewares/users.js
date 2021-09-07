@@ -1,7 +1,8 @@
 import axios from "axios";
 import instance from "./utils/instance";
 
-import { SIGN_UP_SUBMIT,
+import {
+  SIGN_UP_SUBMIT,
   SIGN_IN_SUBMIT,
   saveUser,
   GET_PROFILE_DATA,
@@ -16,13 +17,10 @@ import { SIGN_UP_SUBMIT,
   DELETE_SKILL,
   ADD_SKILL,
   MODIFY_PROFILE_SUBMIT,
-} from 'src/actions';
+} from "src/actions";
 
-
-const users= (store) => (next) => (action) => {
+const users = (store) => (next) => (action) => {
   switch (action.type) {
-
-
     case SIGN_UP_SUBMIT: {
       const { firstname, lastname, pseudo, email, password, confirmPassword } =
         store.getState().login;
@@ -60,7 +58,6 @@ const users= (store) => (next) => (action) => {
         },
       })
         .then((response) => {
-
           if (response.data.accessToken) {
             localStorage.setItem("token", response.data.accessToken);
 
@@ -78,8 +75,8 @@ const users= (store) => (next) => (action) => {
     }
 
     case CLEAN_LOCAL_STORAGE: {
-      localStorage.setItem('token', "");
-      break
+      localStorage.setItem("token", "");
+      break;
     }
 
     case GET_PROFILE_DATA: {
@@ -118,9 +115,8 @@ const users= (store) => (next) => (action) => {
       break;
     }
 
-
     case MODIFY_PROFILE_SUBMIT: {
-      const {} = store.getState(
+      const {
         profileSubtitle,
         profileStatus,
         profileFirstname,
@@ -128,25 +124,27 @@ const users= (store) => (next) => (action) => {
         profilePhone,
         profileEmail,
         profileCity,
-        profileDribble,
+        profileBehance,
         profileLinkedIn,
         profileGitHub,
         profileBio,
         profilePortfolio,
-        profilePassword,
-        profileNewPassword,
-        profileNewPasswordConfirm
-      ).user;
+        profileImage,
+        // profilePassword,
+        // profileNewPassword,
+        // profileNewPasswordConfirm,
+        dataUser,
+      } = store.getState().user;
 
       const token = localStorage.getItem("token");
 
       instance({
         method: "PUT",
-        url: "/user/:id",
+        url: `/user/${dataUser.id}`,
         data: {
           email: profileEmail,
-          password: profileNewPassword,
-          // image_url :
+          // password: profileNewPassword,
+          image_url : profileImage,
           description: profileBio,
           user_status: profileStatus,
           user_function: profileSubtitle,
@@ -156,9 +154,9 @@ const users= (store) => (next) => (action) => {
           city: profileCity,
           linkedin: profileLinkedIn,
           portfolio: profilePortfolio,
-          // twitter :
           github: profileGitHub,
-          facebook: profileDribble,
+          twitter: profileBehance,
+          // facebook :
           // experience :
         },
 
@@ -173,79 +171,78 @@ const users= (store) => (next) => (action) => {
       break;
     }
 
-          case GET_SEARCH_USER: {
-            const {inputSearchUser} = store.getState().search
-            const token = localStorage.getItem('token')
-            instance({
-              method: 'GET',
-              url: `/users/${inputSearchUser}`,
-              headers: {
-                authorization: `Bearer ${token}`,
-              },
-            })
-                .then((response) => {
-                  const Users = response.data;
-                  const actionSaveUserData = saveUsers(Users);
-                  store.dispatch(actionSaveUserData);
-                  action.value.push('/search/users')
-                })
-                .catch((error) => console.log(error));
-              break;
-            }
+    case GET_SEARCH_USER: {
+      const { inputSearchUser } = store.getState().search;
+      const token = localStorage.getItem("token");
+      instance({
+        method: "GET",
+        url: `/users/${inputSearchUser}`,
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          const Users = response.data;
+          const actionSaveUserData = saveUsers(Users);
+          store.dispatch(actionSaveUserData);
+          action.value.push("/search/users");
+        })
+        .catch((error) => console.log(error));
+      break;
+    }
 
+    case GET_ALL_SKILLS: {
+      const token = localStorage.getItem("token");
+      instance({
+        method: "GET",
+        url: `/skills`,
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          const allSkills = response.data;
+          console.log("allSkills : ", allSkills);
+          const actionGetSkills = setSkills(allSkills);
+          store.dispatch(actionGetSkills);
+        })
+        .catch((error) => console.log(error));
+      break;
+    }
 
-          case GET_ALL_SKILLS: {
-            const token = localStorage.getItem('token')
-            instance({
-              method: 'GET',
-              url: `/skills`,
-              headers: {
-                authorization: `Bearer ${token}`,
-              },
-            })
-              .then((response) => {
-                const allSkills = response.data;
-                console.log('allSkills : ', allSkills);
-                const actionGetSkills = setSkills(allSkills);
-                store.dispatch(actionGetSkills);
-              })
-              .catch((error) => console.log(error));
-            break;
-          }
+    case DELETE_SKILL: {
+      const token = localStorage.getItem("token");
+      instance({
+        method: "DELETE",
+        url: `/skill/${action.id}`,
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          const res = response.data;
+          console.log("response : ", res);
+        })
+        .catch((error) => console.log(error));
+      break;
+    }
 
-        case DELETE_SKILL: {
-                const token = localStorage.getItem('token')
-                instance({
-                  method: 'DELETE',
-                  url: `/skill/${action.id}`,
-                  headers: {
-                    authorization: `Bearer ${token}`,
-                  },
-                })
-                  .then((response) => {
-                    const res = response.data;
-                    console.log('response : ', res);
-                  })
-                  .catch((error) => console.log(error));
-                break;
-              }
-
-        case ADD_SKILL: {
-          const token = localStorage.getItem('token')
-          instance({
-            method: 'POST',
-            url: `/skill/${action.id}`,
-            headers: {
-              authorization: `Bearer ${token}`,
-            },
-          })
-            .then((response) => {
-              const res = response.data;
-              console.log('response : ', res);
-            })
-            .catch((error) => console.log(error));
-          break;
-        }
+    case ADD_SKILL: {
+      const token = localStorage.getItem("token");
+      instance({
+        method: "POST",
+        url: `/skill/${action.id}`,
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          const res = response.data;
+          console.log("response : ", res);
+        })
+        .catch((error) => console.log(error));
+      break;
+    }
 
     default:
       next(action);

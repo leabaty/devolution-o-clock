@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 
 // Composants
 import Menu from "src/components/Menu";
-import HeaderConnected from "src/components/HeaderConnected";
 
 // Icons
 import { FiArrowLeftCircle } from "react-icons/fi";
@@ -33,6 +32,7 @@ function SearchProjectsResult({
 
   userData,
   projectData,
+  logged
 }) {
   const history = useHistory();
 
@@ -72,18 +72,10 @@ function SearchProjectsResult({
   console.log(projectData.name)
   
   return (
+    <div className={`search__page ${logged ? 'islog' : ''}`}>
     <div className="project__page">
-      <div className="project__menu">
-        <Menu />
-      </div>
 
       <div className="project__subpage">
-        <div className="header__user-search">
-          <p className="header__comeback">
-            <FiArrowLeftCircle /> Revenir à la recherche
-          </p>
-          <HeaderConnected />
-        </div>
 
         <div className="project__component">
           <form className="signup_form" onSubmit={onProjectModifySubmit}>
@@ -363,6 +355,7 @@ function SearchProjectsResult({
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import React from "react";
 // import PropTypes from 'prop-types';
 
 // Icons
-import { AiFillGithub, AiFillLinkedin, AiFillDribbbleCircle } from 'react-icons/ai';
+import { AiFillGithub, AiFillLinkedin, AiFillBehanceCircle } from 'react-icons/ai';
 import { BiMap } from 'react-icons/bi';
 
 // Style
@@ -19,8 +19,8 @@ function ProfileCityLinks({city}) {
 
       <div className="profile__links">
         
-      <a className="profile__dribbble" alt="Dribble Link">
-      <AiFillDribbbleCircle size="30px"/> 
+      <a className="profile__behance" alt="Behance Link">
+      <AiFillBehanceCircle size="30px"/> 
       </a>
 
       <a className="profile__linkedin" alt="LinkedIn Link">

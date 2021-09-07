@@ -14,9 +14,9 @@ import {
   CHANGE_PROFILE_GITHUB,
   CHANGE_PROFILE_BIO,
   CHANGE_PROFILE_PORTFOLIO,
-  CHANGE_PROFILE_PASSWORD,
-  CHANGE_PROFILE_NEW_PASSWORD,
-  CHANGE_PROFILE_NEW_PASSWORD_CONFIRM,
+  // CHANGE_PROFILE_PASSWORD,
+  // CHANGE_PROFILE_NEW_PASSWORD,
+  // CHANGE_PROFILE_NEW_PASSWORD_CONFIRM,
 } from "src/actions";
 
 export const initialState = {
@@ -31,14 +31,15 @@ export const initialState = {
   profilePhone: "",
   profileEmail: "",
   profileCity: "",
-  profileDribbble: "",
+  profileBehance: "",
   profileLinkedIn: "",
   profileGitHub: "",
   profileBio: "",
   profilePortfolio: "",
-  profilePassword: "",
-  profileNewPassword: "",
-  profileNewPasswordConfirm: "",
+  profileImage:"https://i.ibb.co/vwbw2TF/User-Icon-Flat-Isolated-on-White-Background-User-Symbol-Vector-Illustration.jpg",
+  // profilePassword: "",
+  // profileNewPassword: "",
+  // profileNewPasswordConfirm: "",
 };
 
 
@@ -63,6 +64,19 @@ const userReducer = (state = initialState, action = {}) => {
         dataUser: findUser,
         projectUser: findProject,
         loading: false,
+        
+        profileSubtitle: findUser.user_function,
+        profileStatus: findUser.user_status,
+        profileFirstname: findUser.firstname,
+        profileLastname: findUser.lastname,
+        profilePhone: findUser.phone,
+        profileEmail: findUser.email,
+        profileCity: findUser.city,
+        profileBehance: findUser.twitter,
+        profileLinkedIn: findUser.linkedin,
+        profileGitHub: findUser.github,
+        profileBio: findUser.description,
+        profilePortfolio: findUser.portfolio,
       };
     }
           case CHANGE_PROFILE_SUBTITLE: {
@@ -117,7 +131,7 @@ const userReducer = (state = initialState, action = {}) => {
     case CHANGE_PROFILE_DRIBBBLE: {
       return {
         ...state,
-        profileDribbble: action.value,
+        profileBehance: action.value,
       };
     }
 
@@ -146,24 +160,24 @@ const userReducer = (state = initialState, action = {}) => {
         profilePortfolio: action.value,
       };
     }
-    case CHANGE_PROFILE_PASSWORD: {
-      return {
-        ...state,
-        profilePassword: action.value,
-      };
-    }
-    case CHANGE_PROFILE_NEW_PASSWORD: {
-      return {
-        ...state,
-        profileNewPassword: action.value,
-      };
-    }
-    case CHANGE_PROFILE_NEW_PASSWORD_CONFIRM: {
-      return {
-        ...state,
-        profileNewPasswordConfirm: action.value,
-      };
-    }
+    // case CHANGE_PROFILE_PASSWORD: {
+    //   return {
+    //     ...state,
+    //     profilePassword: action.value,
+    //   };
+    // }
+    // case CHANGE_PROFILE_NEW_PASSWORD: {
+    //   return {
+    //     ...state,
+    //     profileNewPassword: action.value,
+    //   };
+    // }
+    // case CHANGE_PROFILE_NEW_PASSWORD_CONFIRM: {
+    //   return {
+    //     ...state,
+    //     profileNewPasswordConfirm: action.value,
+    //   };
+    // }
       
     default:
       return state;

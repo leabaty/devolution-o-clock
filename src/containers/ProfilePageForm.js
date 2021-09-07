@@ -1,7 +1,6 @@
+import { connect } from "react-redux";
 
-import { connect } from 'react-redux';
-import ProfilePageForm from 'src/components/ProfilePageForm';
-import { getAllSkills, deleteSkill, addSkill } from 'src/actions';
+import ProfilePageForm from "src/components/ProfilePageForm";
 
 import {
   modifyProfileSubmit,
@@ -12,7 +11,7 @@ import {
   changeProfilePhone,
   changeProfileEmail,
   changeProfileCity,
-  changeProfileDribbble,
+  changeProfileBehance,
   changeProfileLinkedIn,
   changeProfileGitHub,
   changeProfileBio,
@@ -20,13 +19,16 @@ import {
   changeProfilePassword,
   changeProfileNewPassword,
   changeProfileNewPasswordConfirm,
+  getAllSkills,
+  deleteSkill,
+  addSkill
 } from "src/actions";
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
+  skills: state.skills,
   userData: state.user.dataUser,
   loading: state.user.loading,
   logged: state.user.logged,
-  skills: state.skills,
   profileSubtitle: state.user.profileSubtitle,
   profileStatus: state.user.profileStatus,
   profileFirstname: state.user.profileFirstname,
@@ -34,17 +36,16 @@ const mapStateToProps = (state, ownProps) => ({
   profilePhone: state.user.profilePhone,
   profileEmail: state.user.profileEmail,
   profileCity: state.user.profileCity,
-  profileDribbble: state.user.profileDribbble,
+  profileBehance: state.user.profileBehance,
   profileLinkedIn: state.user.profileLinkedIn,
   profileGitHub: state.user.profileGitHub,
   profileBio: state.user.profileBio,
   profilePortfolio: state.user.profilePortfolio,
-  profilePassword: state.user.profilePassword,
-  profileNewPassword: state.user.profileNewPassword,
-  profileNewPasswordConfirm: state.user.profileNewPasswordConfirm,
-
+  profileImage: state.user.profileImage,
+  // profilePassword: state.user.profilePassword,
+  // profileNewPassword: state.user.profileNewPassword,
+  // profileNewPasswordConfirm: state.user.profileNewPasswordConfirm,
 });
-
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
 
@@ -80,8 +81,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     const action = changeProfileCity(value);
     dispatch(action);
   },
-  changeProfileDribbbleValue: (value) => {
-    const action = changeProfileDribbble(value);
+  changeProfileBehanceValue: (value) => {
+    const action = changeProfileBehance(value);
     dispatch(action);
   },
   changeProfileLinkedInValue: (value) => {
@@ -112,20 +113,18 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     const action = changeProfileNewPasswordConfirm(value);
     dispatch(action);
   },
-    allSkills: () => {
+  allSkills: () => {
     const action = getAllSkills();
     dispatch(action);
   },
-
   handleDeleteSkill: (id) => {
     const action = deleteSkill(id);
     dispatch(action);
   },
-
   handleAddSkill: (id) => {
     const action = addSkill(id);
+    dispatch(action);
   },
 });
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfilePageForm);

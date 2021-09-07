@@ -2,18 +2,19 @@
 // == Import : npm
 
 import React, { useEffect } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 // import PropTypes from 'prop-types';
 
 // Composants
 import ProfileCompetencies from "./ProfileCompetencies";
+
 // Icons
 import {
   AiOutlineUser,
   AiFillGithub,
   AiFillLinkedin,
-  AiFillDribbbleCircle,
+  AiOutlineBehance,
   AiFillWarning,
 } from "react-icons/ai";
 import { FiMail, FiPhone, FiExternalLink } from "react-icons/fi";
@@ -34,7 +35,7 @@ function ProfilePageForm({
   changeProfilePhoneValue,
   changeProfileEmailValue,
   changeProfileCityValue,
-  changeProfileDribbbleValue,
+  changeProfileBehanceValue,
   changeProfileLinkedInValue,
   changeProfileGitHubValue,
   changeProfileBioValue,
@@ -49,7 +50,7 @@ function ProfilePageForm({
   profilePhone,
   profileEmail,
   profileCity,
-  profileDribble,
+  profileBehance,
   profileLinkedIn,
   profileGitHub,
   profileBio,
@@ -98,8 +99,8 @@ function ProfilePageForm({
     changeProfileCityValue(event.target.value);
   };
 
-  const onChangeProfileDribbbleValue = (event) => {
-    changeProfileDribbbleValue(event.target.value);
+  const onChangeProfileBehanceValue = (event) => {
+    changeProfileBehanceValue(event.target.value);
   };
 
   const onChangeProfileLinkedInValue = (event) => {
@@ -131,6 +132,7 @@ function ProfilePageForm({
   };
 
   useEffect(allSkills, []);
+
     return (
       <div className={`profile__page ${logged ? 'islog' : ''}`}>
 

@@ -6,11 +6,12 @@ p,h3 {
   &__page {
     display: flex;
     flex-direction: row;
+    padding: 5%;
   }
 
   &__component {
-    padding: 5%;
     width: 100%;
+    padding: 5%;
   }
 
   &__greeting {
@@ -35,6 +36,7 @@ p,h3 {
 
   &__undertitle {
     font-size: 1.5rem;
+    margin-top: 0.2em;
   }
 
   &__buttons {
@@ -85,5 +87,6 @@ p,h3 {
   border-radius: 15px;
   margin-bottom: 0.5em;
   padding: 0.5em;
+  background-color: white;
 
 }

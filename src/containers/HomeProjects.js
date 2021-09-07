@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Home from 'src/components/Home';
+import HomeProjects from 'src/components/HomeProjects';
 import { getAllProjects } from 'src/actions';
 
 // quand on a un container, à l'instanciation on peut lui passer des props (cf Settings)
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeProjects);
