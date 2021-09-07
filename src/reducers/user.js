@@ -79,7 +79,8 @@ const userReducer = (state = initialState, action = {}) => {
         profilePortfolio: findUser.portfolio,
       };
     }
-          case CHANGE_PROFILE_SUBTITLE: {
+      
+    case CHANGE_PROFILE_SUBTITLE: {
       return {
         ...state,
         profileSubtitle: action.value,

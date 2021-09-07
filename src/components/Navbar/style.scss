@@ -1,11 +1,8 @@
 .Header {
   position: fixed;
   top: 0;
-  height: 10vh;
-  padding: 0.5%;
-
   /* Stick it to the top */
-  max-height: 120px;
+  max-height: 70px;
   width: 100%;
   max-width: 100%;
 
@@ -20,10 +17,9 @@
 .Header--logged {
   position: fixed;
   top: 0;
-
   /* Stick it to the top */
   height: 100%;
-  width: 10vw;
+  width: 120px;
   max-width: 100%;
 
   display: grid;
@@ -36,7 +32,7 @@
   align-items: flex-start;
 
   /* Cosmetics */
-  background-color: #1A3A58;
+  background-color: #12273b;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .Header__logo {
@@ -44,12 +40,8 @@
   grid-column: 1;
   display: flex;
   justify-content: flex-start;
-
-  height: 100%;
-  width: 10%;
-  // max-height: 70px;
+  max-height: 70px;
 }
-
 .Header__logo--logged {
   grid-area: header__logo__logged;
   grid-row: 1;
@@ -60,9 +52,10 @@
 
 .Header__logo__icon,
 .Header__logo__icon--logged {
-  height: 90%;
-  padding: 1%;
+  height: 70px;
+  width: 70px;
   color: #fff;
+  padding: 1em;
 }
 
 .Header__nav {

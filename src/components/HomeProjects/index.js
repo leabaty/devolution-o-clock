@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
@@ -8,7 +8,15 @@ import CardProject from "src/components/CardProject";
 import "./style.scss";
 
 function HomeProjects({ projects, lastProjectsLoading, logged }) {
-  useEffect(lastProjectsLoading, []);
+
+  const [limit, setlimit] = useState(3)
+
+  useEffect(lastProjectsLoading, [limit]);
+
+  const handleLimit = () => {
+    setlimit(limit+3)
+  }
+  
   return (
     <div className={`home ${ logged ? 'islog' : '' }`}>
       <HomeDevolution />
@@ -19,17 +27,23 @@ function HomeProjects({ projects, lastProjectsLoading, logged }) {
           {/* for (let index = 0 ; index < 2; index++) {
 
           } */}
-          {projects.map((project) => (
-            <Link key={project.id} to={`/more/${project.id}`}>
-              <CardProject key={project.id} {...project} />
-            </Link>
-          ))}
+          {
+            projects.map((project, index) => {
+                
+                if (index < limit) {
+                  
+                  return (
+                    <Link key={project.id} to={`/more/${project.id}`}>
+                      <CardProject key={project.id} {...project} />
+                    </Link>
+                  )
+                } else return null;
+              }
+            )
+          }
           </div>
         </div>
-
-      <Link to="/more">
-        <button className="home__button">Voir plus de projets</button>
-      </Link>
+        <button className="home__button" onClick={handleLimit}>Voir plus de projets</button>
     </div>
   );
 }
