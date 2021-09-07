@@ -75,7 +75,7 @@ function SearchProjectsResult({
     <div className={`search__page ${logged ? 'islog' : ''}`}>
     <div className="project__page">
 
-      <div className="project__subpage">
+      <div className="project__subpage1">
 
         <div className="project__component">
           <form className="signup_form" onSubmit={onProjectModifySubmit}>
