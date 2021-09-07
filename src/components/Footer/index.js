@@ -1,12 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from "react-router-dom";
 
 import "./style.scss"
 
 function Footer(props) {
   return (
     <div className="footer">
-      <span>Devolution ©2021</span>
+
+      <p className="footer__copyright">Devolution ©2021</p>
+
+      <div className="footer__links">
+
+      <Link to='/about'>
+      <p className="footer__link footer__link-left">A propos </p>
+      </Link>
+      <p className="footer__link">Charte Devolution </p>
+      <p className="footer__link">Mentions Légales</p>
+
+      </div>
+
     </div>
   )
 }
