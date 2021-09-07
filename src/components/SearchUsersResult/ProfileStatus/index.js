@@ -16,8 +16,11 @@ function ProfileStatus({status}) {
     else if (status === "Bientôt disponible") {
       return <span className="cardUser__status-soonavailable">●</span>;
     }
-    else {
+    else if (status === "Non disponible") {
       return <span className="cardUser__status-notavailable">●</span>;
+    }
+    else  {
+      return <span>Cet utilisateur n'a pas indiqué de disponibilité.</span>;
     }
   }
 
