@@ -4,7 +4,7 @@
   justify-content: space-around;
 }
 
-.element-form {
+.element-profile-form {
   border: solid lightgray 1px;
   border-radius: 15px;
   margin-bottom: 0.5em;
@@ -21,6 +21,13 @@
 }
 
 .profile-form {
+
+  &__picture{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
+  
   &__undertitle,
   &__status-indicator,
   &__surname,
