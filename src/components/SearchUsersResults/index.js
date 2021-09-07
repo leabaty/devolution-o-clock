@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import { Link, useHistory } from 'react-router-dom';
 
 // Composants
-import Menu from "src/components/Menu";
 import CardUser from "src/components/CardUser";
 
 // Icons
@@ -31,9 +30,6 @@ function SearchUsersResults({ users, changeSearchUsers, submitSearchUsers }) {
 
   return (
     <div className="search__page">
-      <div className="search__menu">
-        <Menu />
-      </div>
 
       <div className="search__subpage">
 

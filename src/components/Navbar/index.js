@@ -9,7 +9,8 @@ import { AiOutlineUser } from "react-icons/ai";
 
 import "./style.scss";
 
-function Navbar({ logged, setLogout, cleanLs }) {
+function Navbar({ logged, setLogout, cleanLs, cleanLogin }) {
+  
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
@@ -30,6 +31,7 @@ function Navbar({ logged, setLogout, cleanLs }) {
   const onClickLogout = (e) => {
     setLogout();
     cleanLs();
+    cleanLogin();
     setIsLogged(false);
   };
 
@@ -52,9 +54,8 @@ function Navbar({ logged, setLogout, cleanLs }) {
   if (!isLogged) {
     return (
       <header className="Header">
-
         <div className="Header__logo">
-        <Link to="/">
+          <Link to="/">
             <img
               className="menu__logoicon"
               src="https://cdn.discordapp.com/attachments/874925609267118140/877480623034478622/test_Logo_-_transparent_white.png"
@@ -77,7 +78,6 @@ function Navbar({ logged, setLogout, cleanLs }) {
                 </Link>
               </div>
             </nav>
-
           </>
         </CSSTransition>
         <button onClick={toggleNav} className="Header__burger">
@@ -87,15 +87,13 @@ function Navbar({ logged, setLogout, cleanLs }) {
     );
   } else {
     return (
-
       <header className="Header--logged">
-
         <div className="Header__logo--logged">
-            <img
-              className="menu__logoicon"
-              src="https://cdn.discordapp.com/attachments/874925609267118140/877480623034478622/test_Logo_-_transparent_white.png"
-              alt="Logo Devolution"
-            />
+          <img
+            className="menu__logoicon"
+            src="https://cdn.discordapp.com/attachments/874925609267118140/877480623034478622/test_Logo_-_transparent_white.png"
+            alt="Logo Devolution"
+          />
         </div>
 
         <CSSTransition
@@ -141,15 +139,12 @@ function Navbar({ logged, setLogout, cleanLs }) {
                 <button onClick={onClickLogout}>Déconnexion</button>
               </Link>
             </div>
-
           </nav>
-
         </CSSTransition>
 
         <button onClick={toggleNav} className="Header__burger">
           <FaBars />
         </button>
-
       </header>
     );
   }

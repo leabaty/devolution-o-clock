@@ -16,6 +16,7 @@ export const SIGN_IN_SUBMIT = "SIGN_IN_SUBMIT";
 export const SAVE_USER = "SAVE_USER";
 export const LOGOUT = "LOGOUT";
 export const CLEAN_LOCAL_STORAGE = "CLEAN_LOCAL_STORAGE";
+export const CLEAN_LOGIN_FORM = "CLEAN_LOGIN_FORM";
 
 // -- Projects
 export const GET_ALL_PROJECTS = "GET_ALL_PROJECTS";
@@ -24,8 +25,7 @@ export const SAVE_ALL_PROJECTS = "SAVE_ALL_PROJECTS";
 export const SAVE_ALL_PROJECTS_SEARCH = "SAVE_ALL_PROJECTS_SEARCH";
 export const SAVE_PROJECTS = "SAVE_PROJECTS";
 export const ADD_PROJECT_TO_PARTICIPATIONS = "ADD_PROJECT_TO_PARTICIPATIONS";
-export const DELETE_PROJECT_FROM_PARTICIPATIONS =
-  "DELETE_PROJECT_FROM_PARTICIPATIONS";
+export const DELETE_PROJECT_FROM_PARTICIPATIONS = "DELETE_PROJECT_FROM_PARTICIPATIONS";
 export const DELETE_PROJECT_FROM_CREATIONS = "DELETE_PROJECT_FROM_CREATIONS";
 export const MODIFY_PROJECT = "MODIFY_PROJECT";
 export const SAVE_ONE_PROJECT = "SAVE_ONE_PROJECT";
@@ -145,6 +145,9 @@ export const cleanLocalStorage = () => ({
   type: CLEAN_LOCAL_STORAGE,
 });
 
+export const cleanLoginForm =() => ({
+  type : CLEAN_LOGIN_FORM,
+})
 // --- Projects
 export const getAllProjects = () => ({
   type: GET_ALL_PROJECTS,
