@@ -37,7 +37,7 @@ module.exports = merge(common, {
           },
         ],
       },
-      // SVG Loader - solution 1 
+      // SVG Loader - solution 1
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
         use: [
@@ -50,7 +50,7 @@ module.exports = merge(common, {
         ],
       },
 
-      // SVGR Loader - solution 2 
+      // SVGR Loader - solution 2
       {
         test: /\.svg$/,
         use: ['@svgr/webpack'],

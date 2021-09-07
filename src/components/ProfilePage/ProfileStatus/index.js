@@ -11,7 +11,7 @@ function ProfileStatus({ userData }) {
   const { user_status } = userData;
   return (
       <div className="profile__status element">
-        <p className="profile__status-indicator">{user_status}</p>
+      <p className="profile__status-indicator">{ user_status ? user_status : 'Bientôt disponible' }</p>
       </div>
   );
 }

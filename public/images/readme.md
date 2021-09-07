@@ -1,5 +1,6 @@
 User : AiOutlineUser
 Logout : AiOutlineLogout
+search : FiSearch
 
 import { AiOutlineUser, AiOutlineLogout } from 'react-icons/ai';
 
