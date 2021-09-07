@@ -36,6 +36,19 @@ function ProfileCompetencies({ userData, skills, handleDeleteSkill, handleAddSki
     setChecked(!checked);
   };
 
+
+  function checkCheckbox(id) {
+    if (userSkills) {
+      for (let i = 0; i < userSkills.length; i++) {
+        const element = userSkills[i];
+        if (element.id === id) {
+          return 'checked';
+        }
+      }
+    }
+    return '';
+  }
+
   return (
     <div className="profile__skills element">
       <h3 className="profile__skills__title">Mes compétences</h3>
@@ -46,9 +59,8 @@ function ProfileCompetencies({ userData, skills, handleDeleteSkill, handleAddSki
             <input type="checkbox"
               id={id}
               onClick={handleCheckbox}
-              defaultChecked={userSkills[id - 1] ? userSkills[id - 1].id === id ? 'checked' : '' : null }
+              defaultChecked={`${checkCheckbox(id)}`}
               onChange={handleChange}
-
             />
             <label htmlFor={id}>{label}</label>
           </li>

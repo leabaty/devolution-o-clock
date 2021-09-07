@@ -29,7 +29,6 @@ const mapStateToProps = (state) => ({
   userData: state.user.dataUser,
   loading: state.user.loading,
   logged: state.user.logged,
-
   profileSubtitle: state.user.profileSubtitle,
   profileStatus: state.user.profileStatus,
   profileFirstname: state.user.profileFirstname,
@@ -49,6 +48,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
+
   modifyProfileSubmitForm: (value) => {
     const action = modifyProfileSubmit(value);
     dispatch(action);
@@ -125,7 +125,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     const action = addSkill(id);
     dispatch(action);
   },
-
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfilePageForm);

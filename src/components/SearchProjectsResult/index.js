@@ -21,14 +21,12 @@ import "./style.scss";
 function SearchProjectsResult({
   clickParticipationButton,
   clickUnparticipationButton,
-
   clickDeleteButton,
   project,
   idProject,
   myParticipatedProjects,
   fetchProfileData,
   getProjects,
-
   logged,
   getUsers,
   projectOwners,

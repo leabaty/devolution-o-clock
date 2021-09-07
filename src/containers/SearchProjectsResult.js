@@ -20,8 +20,8 @@ const mapStateToProps = (state, ownProps) => {
     logged: state.user.logged,
     myUserId: state.user.dataUser.id,
     projectOwners: state.project.owners,
-  }};
-
+  };
+}
 
 const mapDispatchToProps = (dispatch) => ({
   clickParticipationButton: (id, history) => {
