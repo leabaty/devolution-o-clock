@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ProjectModify from 'src/components/ProjectModify';
 
+import { findProject } from "src/selectors/projects";
 import { 
   modifyProject, 
   changeProjectTitle, 
@@ -9,7 +10,7 @@ import {
   changeProjectDescription, 
   changeProjectNeeds,
   // changeProjectSpecificities, 
-  changeProjectImage
+  changeProjectImage,
 } from 'src/actions';
 
 
@@ -22,14 +23,14 @@ const mapStateToProps = (state, ownProps) => ({
   // projectSpecificities: state.projectform.projectSpecificities,
   projectImage: state.projectform.projectImage,
   userData : state.user.dataUser,
-  projectData : state.user.projectUser,
-
+  project: findProject(state.project.list, Number(ownProps.match.params.id)),
+  idProject: Number(ownProps.match.params.id)
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   
-  modifyProjectForm: (value) => {
-    const action = modifyProject(value);
+  modifyProjectForm: (id, history) => {
+    const action = modifyProject(id, history);
     dispatch(action);
   },
   changeProjectTitleValue: (value) => {

@@ -6,6 +6,8 @@ import {
   CHANGE_PROJECT_NEEDS,
   // CHANGE_PROJECT_SPECIFICITIES,
   CHANGE_PROJECT_IMAGE,
+  SAVE_ONE_PROJECT,
+  EMPTY_PROJECT_FORM,
 } from 'src/actions';
 
 const initialState = {
@@ -64,6 +66,33 @@ const reducer = (state = initialState, action = {}) => {
         projectImage: action.value,
       };
     }
+
+    case SAVE_ONE_PROJECT: {
+      return {
+        ...state,
+        projectTitle: action.project.name,
+        projectStatus: action.project.is_available,
+        projectStartDate: action.project.beginning_date,
+        projectDescription: action.project.description,
+        projectNeeds: action.project.need_of_the_project,
+        // projectSpecificities:'',
+        projectImage: action.project.icon,
+      };
+    }
+
+    case EMPTY_PROJECT_FORM: {
+      return {
+        ...state,
+        projectTitle: '',
+        projectStatus: '',
+        projectStartDate: '',
+        projectDescription: '',
+        projectNeeds: '',
+        // projectSpecificities:'',
+        projectImage: '',
+      };
+    };
+
     default:
       return state;
   }

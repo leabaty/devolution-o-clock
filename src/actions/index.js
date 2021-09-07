@@ -1,74 +1,79 @@
 // ACTION TYPES
 // --- Sign Up
-export const CHANGE_FIRSTNAME_VALUE = 'CHANGE_FIRSTNAME_VALUE';
-export const CHANGE_LASTNAME_VALUE = 'CHANGE_LASTNAME_VALUE';
-export const CHANGE_USERNAME_VALUE = 'CHANGE_USERNAME_VALUE';
-export const CHANGE_EMAIL_VALUE = 'CHANGE_EMAIL_VALUE';
-export const CHANGE_PASSWORD_VALUE = 'CHANGE_PASSWORD_VALUE';
-export const CHANGE_PASSWORD_CONFIRM_VALUE = 'CHANGE_PASSWORD_CONFIRM_VALUE';
-export const SIGN_UP_SUBMIT = 'SIGN_UP_SUBMIT';
+export const CHANGE_FIRSTNAME_VALUE = "CHANGE_FIRSTNAME_VALUE";
+export const CHANGE_LASTNAME_VALUE = "CHANGE_LASTNAME_VALUE";
+export const CHANGE_USERNAME_VALUE = "CHANGE_USERNAME_VALUE";
+export const CHANGE_EMAIL_VALUE = "CHANGE_EMAIL_VALUE";
+export const CHANGE_PASSWORD_VALUE = "CHANGE_PASSWORD_VALUE";
+export const CHANGE_PASSWORD_CONFIRM_VALUE = "CHANGE_PASSWORD_CONFIRM_VALUE";
+export const SIGN_UP_SUBMIT = "SIGN_UP_SUBMIT";
+export const SIGN_UP_MESSAGE = "SIGN_UP_MESSAGE";
 
 // --- Sign In
-export const CHANGE_SIGN_IN_EMAIL_VALUE = 'CHANGE_SIGN_IN_EMAIL_VALUE';
-export const CHANGE_SIGN_IN_PASSWORD_VALUE = 'CHANGE_SIGN_IN_PASSWORD_VALUE';
-export const SIGN_IN_SUBMIT = 'SIGN_IN_SUBMIT';
-export const SAVE_USER = 'SAVE_USER';
-export const LOGOUT = 'LOGOUT';
-export const CLEAN_LOCAL_STORAGE = 'CLEAN_LOCAL_STORAGE';
+export const CHANGE_SIGN_IN_EMAIL_VALUE = "CHANGE_SIGN_IN_EMAIL_VALUE";
+export const CHANGE_SIGN_IN_PASSWORD_VALUE = "CHANGE_SIGN_IN_PASSWORD_VALUE";
+export const SIGN_IN_SUBMIT = "SIGN_IN_SUBMIT";
+export const SAVE_USER = "SAVE_USER";
+export const LOGOUT = "LOGOUT";
+export const CLEAN_LOCAL_STORAGE = "CLEAN_LOCAL_STORAGE";
 
-export const GET_ALL_PROJECTS = 'GET_ALL_PROJECTS';
-export const GET_ALL_PROJECTS_SEARCH = 'GET_ALL_PROJECTS_SEARCH';
-export const SAVE_ALL_PROJECTS = 'SAVE_ALL_PROJECTS';
-export const SAVE_ALL_PROJECTS_SEARCH = 'SAVE_ALL_PROJECTS_SEARCH';
-export const SAVE_PROJECTS = 'SAVE_PROJECTS';
-export const ADD_PROJECT_TO_PARTICIPATIONS = 'ADD_PROJECT_TO_PARTICIPATIONS';
-export const DELETE_PROJECT_FROM_PARTICIPATIONS = 'DELETE_PROJECT_FROM_PARTICIPATIONS';
-export const DELETE_PROJECT_FROM_CREATIONS = 'DELETE_PROJECT_FROM_CREATIONS';
-export const MODIFY_PROJECT = 'MODIFY_PROJECT';
-
+// -- Projects
+export const GET_ALL_PROJECTS = "GET_ALL_PROJECTS";
+export const GET_ALL_PROJECTS_SEARCH = "GET_ALL_PROJECTS_SEARCH";
+export const SAVE_ALL_PROJECTS = "SAVE_ALL_PROJECTS";
+export const SAVE_ALL_PROJECTS_SEARCH = "SAVE_ALL_PROJECTS_SEARCH";
+export const SAVE_PROJECTS = "SAVE_PROJECTS";
+export const ADD_PROJECT_TO_PARTICIPATIONS = "ADD_PROJECT_TO_PARTICIPATIONS";
+export const DELETE_PROJECT_FROM_PARTICIPATIONS =
+  "DELETE_PROJECT_FROM_PARTICIPATIONS";
+export const DELETE_PROJECT_FROM_CREATIONS = "DELETE_PROJECT_FROM_CREATIONS";
+export const MODIFY_PROJECT = "MODIFY_PROJECT";
+export const SAVE_ONE_PROJECT = "SAVE_ONE_PROJECT";
+export const EMPTY_PROJECT_FORM = "EMPTY_PROJECT_FORM";
 
 // --- ProfilePage
-export const GET_PROFILE_DATA = 'GET_PROFILE_DATA';
-export const SAVE_PROFILE_DATA = 'SAVE_PROFILE_DATA';
-export const GET_ALL_SKILLS = 'GET_ALL_SKILLS';
-export const SET_SKILLS = 'SET_SKILLS';
-export const DELETE_SKILL = 'DELETE_SKILL';
-export const ADD_SKILL = 'ADD_SKILL';
+export const GET_PROFILE_DATA = "GET_PROFILE_DATA";
+export const SAVE_PROFILE_DATA = "SAVE_PROFILE_DATA";
+export const GET_ALL_SKILLS = "GET_ALL_SKILLS";
+export const SET_SKILLS = "SET_SKILLS";
+export const DELETE_SKILL = "DELETE_SKILL";
+export const ADD_SKILL = "ADD_SKILL";
 
 // --- SearchPage
-export const CHANGE_PROJECT_VALUE = 'CHANGE_PROJECT_VALUE';
-export const CHANGE_USER_VALUE = 'CHANGE_USER_VALUE';
-export const GET_SEARCH_PROJECT = 'GET_SEARCH_PROJECT';
-export const GET_SEARCH_USER = 'GET_SEARCH_USER';
-export const GET_ALL_USERS = 'GET_ALL_USERS';
-export const SAVE_ALL_USERS = 'SAVE_ALL_USERS';
+export const CHANGE_PROJECT_VALUE = "CHANGE_PROJECT_VALUE";
+export const CHANGE_USER_VALUE = "CHANGE_USER_VALUE";
+export const GET_SEARCH_PROJECT = "GET_SEARCH_PROJECT";
+export const GET_SEARCH_USER = "GET_SEARCH_USER";
+export const GET_ALL_USERS = "GET_ALL_USERS";
+export const SAVE_ALL_USERS = "SAVE_ALL_USERS";
 
-// --- Create a new project
-export const PROJECT_SUBMIT = 'PROJECT_SUBMIT';
-export const CHANGE_PROJECT_TITLE = 'CHANGE_PROJECT_TITLE';
-export const CHANGE_PROJECT_STATUS = 'CHANGE_PROJECT_STATUS';
-export const CHANGE_PROJECT_START_DATE = 'CHANGE_PROJECT_START_DATE';
-export const CHANGE_PROJECT_DESCRIPTION = 'CHANGE_PROJECT_DESCRIPTION';
-export const CHANGE_PROJECT_NEEDS = 'CHANGE_PROJECT_NEEDS';
-export const CHANGE_PROJECT_SPECIFICITIES = 'CHANGE_PROJECT_SPECIFICITIES';
-export const CHANGE_PROJECT_IMAGE = 'CHANGE_PROJECT_IMAGE';
+// --- New Project
+export const PROJECT_SUBMIT = "PROJECT_SUBMIT";
+export const CHANGE_PROJECT_TITLE = "CHANGE_PROJECT_TITLE";
+export const CHANGE_PROJECT_STATUS = "CHANGE_PROJECT_STATUS";
+export const CHANGE_PROJECT_START_DATE = "CHANGE_PROJECT_START_DATE";
+export const CHANGE_PROJECT_DESCRIPTION = "CHANGE_PROJECT_DESCRIPTION";
+export const CHANGE_PROJECT_NEEDS = "CHANGE_PROJECT_NEEDS";
+export const CHANGE_PROJECT_SPECIFICITIES = "CHANGE_PROJECT_SPECIFICITIES";
+export const CHANGE_PROJECT_IMAGE = "CHANGE_PROJECT_IMAGE";
 
-export const MODIFY_PROFILE_SUBMIT = 'MODIFY_PROFILE_SUBMIT';
-export const CHANGE_PROFILE_SUBTITLE = 'CHANGE_PROFILE_SUBTITLE';
-export const CHANGE_PROFILE_STATUS = 'CHANGE_PROFILE_STATUS';
-export const CHANGE_PROFILE_FIRSTNAME = 'CHANGE_PROFILE_FIRSTNAME';
-export const CHANGE_PROFILE_LASTNAME = 'CHANGE_PROFILE_LASTNAME';
-export const CHANGE_PROFILE_PHONE = 'CHANGE_PROFILE_PHONE';
-export const CHANGE_PROFILE_EMAIL = 'CHANGE_PROFILE_EMAIL';
-export const CHANGE_PROFILE_CITY = 'CHANGE_PROFILE_CITY';
-export const CHANGE_PROFILE_DRIBBBLE = 'CHANGE_PROFILE_DRIBBBLE';
-export const CHANGE_PROFILE_LINKEDIN = 'CHANGE_PROFILE_LINKEDIN';
-export const CHANGE_PROFILE_GITHUB = 'CHANGE_PROFILE_GITHUB';
-export const CHANGE_PROFILE_BIO = 'CHANGE_PROFILE_BIO';
-export const CHANGE_PROFILE_PORTFOLIO = 'CHANGE_PROFILE_PORTFOLIO';
-export const CHANGE_PROFILE_PASSWORD = 'CHANGE_PROFILE_PASSWORD';
-export const CHANGE_PROFILE_NEW_PASSWORD = 'CHANGE_PROFILE_NEW_PASSWORD';
-export const CHANGE_PROFILE_NEW_PASSWORD_CONFIRM = 'CHANGE_PROFILE_NEW_PASSWORD_CONFIRM';
+export const MODIFY_PROFILE_SUBMIT = "MODIFY_PROFILE_SUBMIT";
+export const CHANGE_PROFILE_SUBTITLE = "CHANGE_PROFILE_SUBTITLE";
+export const CHANGE_PROFILE_STATUS = "CHANGE_PROFILE_STATUS";
+export const CHANGE_PROFILE_FIRSTNAME = "CHANGE_PROFILE_FIRSTNAME";
+export const CHANGE_PROFILE_LASTNAME = "CHANGE_PROFILE_LASTNAME";
+export const CHANGE_PROFILE_PHONE = "CHANGE_PROFILE_PHONE";
+export const CHANGE_PROFILE_EMAIL = "CHANGE_PROFILE_EMAIL";
+export const CHANGE_PROFILE_CITY = "CHANGE_PROFILE_CITY";
+export const CHANGE_PROFILE_DRIBBBLE = "CHANGE_PROFILE_DRIBBBLE";
+export const CHANGE_PROFILE_LINKEDIN = "CHANGE_PROFILE_LINKEDIN";
+export const CHANGE_PROFILE_GITHUB = "CHANGE_PROFILE_GITHUB";
+export const CHANGE_PROFILE_BIO = "CHANGE_PROFILE_BIO";
+export const CHANGE_PROFILE_PORTFOLIO = "CHANGE_PROFILE_PORTFOLIO";
+export const CHANGE_PROFILE_PASSWORD = "CHANGE_PROFILE_PASSWORD";
+export const CHANGE_PROFILE_NEW_PASSWORD = "CHANGE_PROFILE_NEW_PASSWORD";
+export const CHANGE_PROFILE_NEW_PASSWORD_CONFIRM =
+  "CHANGE_PROFILE_NEW_PASSWORD_CONFIRM";
 
 // ACTION CREATORS
 // --- Sign Up
@@ -89,43 +94,47 @@ export const changeUsernameValue = (value) => ({
 
 export const changeEmailValue = (value) => ({
   type: CHANGE_EMAIL_VALUE,
-  value
+  value,
 });
 
 export const changePasswordValue = (value) => ({
   type: CHANGE_PASSWORD_VALUE,
-  value
+  value,
 });
 
 export const changePasswordConfirmValue = (value) => ({
   type: CHANGE_PASSWORD_CONFIRM_VALUE,
-  value
+  value,
 });
 
 export const signUpSubmit = () => ({
   type: SIGN_UP_SUBMIT,
 });
 
+export const signUpMessage = (value) => ({
+  type: SIGN_UP_MESSAGE,
+  value,
+});
 
 // --- Sign In
 export const changeSignInEmailValue = (value) => ({
   type: CHANGE_SIGN_IN_EMAIL_VALUE,
-  value
+  value,
 });
 
 export const changeSignInPasswordValue = (value) => ({
   type: CHANGE_SIGN_IN_PASSWORD_VALUE,
-  value
+  value,
 });
 
 export const signInSubmit = (value) => ({
   type: SIGN_IN_SUBMIT,
-  value
+  value,
 });
 
 export const saveUser = (payload) => ({
   type: SAVE_USER,
-  payload
+  payload,
 });
 
 export const logout = () => ({
@@ -145,51 +154,56 @@ export const getAllProjectsSearch = () => ({
   type: GET_ALL_PROJECTS_SEARCH,
 });
 
-
 export const saveAllProjects = (projects) => ({
   type: SAVE_ALL_PROJECTS,
-  projects
+  projects,
 });
 
 export const saveAllProjectsSearch = (projects) => ({
   type: SAVE_ALL_PROJECTS_SEARCH,
-  projects
+  projects,
 });
 
 export const saveProjects = (projects) => ({
   type: SAVE_PROJECTS,
-  projects
+  projects,
 });
 
 export const addProjectToParticipations = (id, history) => ({
   type: ADD_PROJECT_TO_PARTICIPATIONS,
   id,
-  history
+  history,
 });
 
 export const deleteProjectFromParticipations = (id, history) => ({
   type: DELETE_PROJECT_FROM_PARTICIPATIONS,
   id,
-  history
+  history,
 });
 
 export const deleteProjectFromCreations = (id, history) => ({
   type: DELETE_PROJECT_FROM_CREATIONS,
-  id, 
-  history
+  id,
+  history,
 });
 
 export const modifyProject = (id, history) => ({
   type: MODIFY_PROJECT,
-  id, 
-  history
+  id,
+  history,
 });
 
+export const saveOneProject = (project) => ({
+  type: SAVE_ONE_PROJECT,
+  project,
+});
 
 // --- ProfilePage
+
 export const getProfileData = () => ({
   type: GET_PROFILE_DATA,
 });
+
 export const saveProfileData = (dataProfile) => ({
   type: SAVE_PROFILE_DATA,
   dataProfile,
@@ -214,7 +228,7 @@ export const addSkill = (id) => ({
 // --- SearchPage
 export const changeProjectValue = (value) => ({
   type: CHANGE_PROJECT_VALUE,
-  value
+  value,
 });
 
 export const changeUserValue = (value) => ({
@@ -224,20 +238,20 @@ export const changeUserValue = (value) => ({
 
 export const getSearchProject = (value) => ({
   type: GET_SEARCH_PROJECT,
-  value
+  value,
 });
 
 export const getSearchUser = (value) => ({
   type: GET_SEARCH_USER,
-  value
+  value,
 });
 
 export const getAllUsers = () => ({
-  type : GET_ALL_USERS,
+  type: GET_ALL_USERS,
 });
 
 export const saveUsers = (users) => ({
-  type : SAVE_ALL_USERS,
+  type: SAVE_ALL_USERS,
   users,
 });
 
@@ -281,6 +295,10 @@ export const changeProjectNeeds = (value) => ({
 export const changeProjectImage = (value) => ({
   type: CHANGE_PROJECT_IMAGE,
   value,
+});
+
+export const emptyProjectForm = () => ({
+  type: EMPTY_PROJECT_FORM,
 });
 
 // --- Modify an existing User
@@ -349,4 +367,3 @@ export const changeProfileNewPasswordConfirm = (value) => ({
   type: CHANGE_PROFILE_NEW_PASSWORD_CONFIRM,
   value,
 });
-

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BoardPageProjectBearer from 'src/components/BoardPageProjectBearer';
-import { getProfileData, getAllProjects } from 'src/actions';
+import { getProfileData, getAllProjects, emptyProjectForm } from 'src/actions';
 
 const mapStateToProps = (state) => ({
   myProjects: state.user.dataUser.projects,
@@ -19,7 +19,10 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(action);
   },
 
-
+  emptyProjectState: () => {
+    const action = emptyProjectForm();
+    dispatch(action);
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BoardPageProjectBearer);

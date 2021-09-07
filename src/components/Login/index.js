@@ -1,6 +1,6 @@
 /* eslint-disable arrow-body-style */
 // == Import : npm
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 // import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
@@ -31,8 +31,8 @@ function Login({
   confirmPassword,
   signInEmail,
   signInPassword,
+  message,
 }) {
-
   return (
     <div className="login">
       <div className="login__forms">
@@ -59,6 +59,8 @@ function Login({
           confirmPassword={confirmPassword}
         />
       </div>
+
+      {message ? <p>{message}</p> : null}
     </div>
   );
 }

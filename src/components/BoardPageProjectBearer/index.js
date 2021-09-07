@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 // Composants
-import Menu from "src/components/Menu";
 import CardProject from "src/components/CardProject";
 
 // Icons
@@ -15,9 +14,13 @@ import { HiOutlineLightBulb } from "react-icons/hi";
 import "./style.scss";
 
 // == Composant
-function BoardPageProjectBearer({ fetchProfileData, getProjects, myProjects, logged }) {
+function BoardPageProjectBearer({ fetchProfileData, getProjects, myProjects, logged, emptyProjectState }) {
   useEffect(fetchProfileData, []);
   useEffect(getProjects, []);
+
+  const onClickNewProject = () => {
+    emptyProjectState();
+  };
 
   return (
     <div className={`board__page ${logged ? 'islog' : ''}`}>
@@ -28,10 +31,10 @@ function BoardPageProjectBearer({ fetchProfileData, getProjects, myProjects, log
 
         <div className="board__my-projects">
           <Link to="/myProjects/new">
-            <div className="board__new-project">
+            <div className="board__new-project"
+            onClick={onClickNewProject}>
               <div className="board__new-project-card">
                 <p>
-                  {" "}
                   <HiOutlineLightBulb size="1.2em" /> Déposer un nouveau projet
                 </p>
               </div>

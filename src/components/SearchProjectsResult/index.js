@@ -21,14 +21,13 @@ import "./style.scss";
 function SearchProjectsResult({
   clickParticipationButton,
   clickUnparticipationButton,
-
   clickDeleteButton,
   project,
   idProject,
   myParticipatedProjects,
   fetchProfileData,
   getProjects,
-
+  saveProjectData,
   logged,
   getUsers,
   projectOwners,
@@ -38,6 +37,11 @@ function SearchProjectsResult({
   useEffect(getUsers, []);
   useEffect(fetchProfileData, []);
 
+  const saveCurrentProjectData = (project) => {
+    saveProjectData(project);
+  };
+  
+  saveCurrentProjectData(project);
 
   const projectOwner = projectOwners.find((searchedUser) => {
     return searchedUser.id === project.owner_id;
@@ -64,9 +68,8 @@ function SearchProjectsResult({
   };
 
   return (
-    <div className={`project__page ${logged ? 'islog' : ''}`}>
+    <div className={`project__page ${logged ? "islog" : ""}`}>
       <div className="project__subpage">
-
         <div className="project__component">
           <ProjectHeader
             name={project.name}
@@ -93,7 +96,6 @@ function SearchProjectsResult({
             {/* <ProjectSpecificities /> */}
           </div>
 
-
           <div className="project__buttons">
             {/*Je participe au projet*/}
             {participateToCurrentProject && (
@@ -115,7 +117,6 @@ function SearchProjectsResult({
                 Je participe !
               </button>
             ) : null}
-
 
             {/*Je suis le créateur de ce projet*/}
             {projectOwner.id === myUserId ? (

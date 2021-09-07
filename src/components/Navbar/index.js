@@ -22,7 +22,7 @@ function Navbar({ logged, setLogout, cleanLs }) {
     );
 
     return () => {
-      console.log("toto");
+      console.log("Check Navbar");
       //mediaQuery.removeAddEventListener(handleMediaQueryChange);
     };
   }, [logged]);
@@ -45,7 +45,7 @@ function Navbar({ logged, setLogout, cleanLs }) {
     if (setIsSmallScreen) {
       setNavVisibility(!isNavVisible);
     } else {
-      console.log("tototototottoto");
+      console.log("La Navbar est sur un grand écran");
     }
   };
 

@@ -20,7 +20,7 @@ function HomeSearch({
       <span className="searchDisconnect__resultNumber">{projects.length} résultat(s)</span>
       <div className="home__cards">
       {projects.map((project) => (
-          <Link key={project.id} to={`/searchProject/${project.id}`}>
+          <Link key={project.id} to={`/more/${project.id}`}>
             <CardProject key={project.id} {...project} />
           </Link>
         ))}

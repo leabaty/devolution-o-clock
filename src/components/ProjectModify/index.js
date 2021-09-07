@@ -29,16 +29,17 @@ function SearchProjectsResult({
   projectDescription,
   projectNeeds,
   // projectSpecificities,
-
   userData,
-  projectData,
-  logged
+  logged,
+  idProject
 }) {
+
+  console.log()
   const history = useHistory();
 
   const onProjectModifySubmit = (event) => {
     event.preventDefault();
-    modifyProjectForm(history);
+    modifyProjectForm(idProject, history);
   };
 
   const onChangeProjectTitle = (event) => {
@@ -68,8 +69,6 @@ function SearchProjectsResult({
   const onClickProjectImage = (event) => {
     changeProjectImageValue(event.target.value);
   };
-
-  console.log(projectData.name)
   
   return (
     <div className={`search__page ${logged ? 'islog' : ''}`}>
@@ -84,7 +83,6 @@ function SearchProjectsResult({
                 className="project-form__title"
                 value={projectTitle}
                 onChange={onChangeProjectTitle}
-                placeholder={projectData.name}
               />
               <p>
                 par <a className="project__bearer">{userData.pseudo}</a>

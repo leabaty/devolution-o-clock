@@ -2,6 +2,7 @@
 import {
   SAVE_ALL_PROJECTS, SAVE_ALL_USERS
 } from 'src/actions';
+import { EMPTY_PROJECT_FORM } from '../actions';
 
 export const initialState = {
     list: [],
