@@ -14,6 +14,7 @@ import {
   CHANGE_PROFILE_GITHUB,
   CHANGE_PROFILE_BIO,
   CHANGE_PROFILE_PORTFOLIO,
+  CHANGE_PROFILE_IMAGE,
   // CHANGE_PROFILE_PASSWORD,
   // CHANGE_PROFILE_NEW_PASSWORD,
   // CHANGE_PROFILE_NEW_PASSWORD_CONFIRM,
@@ -77,6 +78,7 @@ const userReducer = (state = initialState, action = {}) => {
         profileGitHub: findUser.github,
         profileBio: findUser.description,
         profilePortfolio: findUser.portfolio,
+        profileImage: "https://i.ibb.co/vwbw2TF/User-Icon-Flat-Isolated-on-White-Background-User-Symbol-Vector-Illustration.jpg",
       };
     }
       
@@ -161,6 +163,7 @@ const userReducer = (state = initialState, action = {}) => {
         profilePortfolio: action.value,
       };
     }
+
     // case CHANGE_PROFILE_PASSWORD: {
     //   return {
     //     ...state,

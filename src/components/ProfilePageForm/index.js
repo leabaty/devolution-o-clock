@@ -149,7 +149,7 @@ function ProfilePageForm({
 
           <img
             className="profile-form__picture"
-            src={userData.image_url}
+            src="https://i.ibb.co/vwbw2TF/User-Icon-Flat-Isolated-on-White-Background-User-Symbol-Vector-Illustration.jpg"
             alt="Profile picture"
           />
         </div>
