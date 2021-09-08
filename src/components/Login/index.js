@@ -32,9 +32,10 @@ function Login({
   signInEmail,
   signInPassword,
   message,
+  logged
 }) {
   return (
-    <div className="login">
+    <div className={`login ${logged ? 'islog' : ''}`}>
       <div className="login__forms">
         <SignIn
           onFormSignInSubmit={formSignInSubmit}
@@ -43,6 +44,7 @@ function Login({
           signInEmail={signInEmail}
           signInPassword={signInPassword}
         />
+        <div className="login__line"/>
         <SignUp
           onChangeInputFirstnameValue={changeInputFirstnameValue}
           onChangeInputLastnameValue={changeInputLastnameValue}

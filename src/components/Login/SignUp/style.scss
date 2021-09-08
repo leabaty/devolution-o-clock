@@ -1,18 +1,26 @@
+@use 'src/styles/vars';
+
 .signup {
+
   &__component {
-    width: 25em;
-    padding-left: 5em;
-    border-left: solid white 2px;
+    min-width: 25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 2em;
   }
 
   &__title {
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 1em;
   }
 
   &__form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   &__input {
@@ -38,15 +46,9 @@
     font-family: "Nunito";
   }
 
-  @media (max-width: 780px) {
+  @media (max-width: vars.$layout-breakpoint-small) {
     &__component {
-      border-left: none;
-      padding: 0;
-      border-top: solid white 2px;
-    }
-
-    &__title {
-      margin-top: 5vh;
+      margin: 2em;
     }
   }
 }

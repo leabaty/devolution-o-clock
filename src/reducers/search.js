@@ -3,7 +3,7 @@ import {
   CHANGE_USER_VALUE,
   SAVE_ALL_USERS,
   SAVE_PROJECTS,
-  SAVE_ALL_PROJECTS_SEARCH, 
+  SAVE_ALL_PROJECTS_SEARCH,
 } from "../actions";
 
 export const initialState = {

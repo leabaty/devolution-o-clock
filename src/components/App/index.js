@@ -34,7 +34,6 @@ function App({ loading }) {
   if (loading) {
     return <Loading />;
   }
-
   return (
     <div className="app">
       <Navbar />
@@ -103,9 +102,11 @@ function App({ loading }) {
 
         <Route path="/myProjects/modify/:id" exact component={ProjectModify} />
 
-        {/* <Route path="/loading" exact>
+
+      {/* <Route path="/loading" exact>
             <Loading />
       </Route> */}
+
 
         <Route path="/about" exact>
             <About />
@@ -114,6 +115,7 @@ function App({ loading }) {
         <Route path="*">
           <Error404 />
         </Route>
+
       </Switch>
       <Footer />
     </div>

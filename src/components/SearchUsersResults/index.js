@@ -14,7 +14,7 @@ import { FiSearch } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchUsersResults({ users, changeSearchUsers, submitSearchUsers }) {
+function SearchUsersResults({ users, changeSearchUsers, submitSearchUsers, logged }) {
 
   const history = useHistory();
 
@@ -29,7 +29,7 @@ function SearchUsersResults({ users, changeSearchUsers, submitSearchUsers }) {
   };
 
   return (
-    <div className="search__page">
+    <div className={`search__page ${logged ? 'islog' : ''}`}>
 
       <div className="search__subpage">
 
@@ -51,7 +51,7 @@ function SearchUsersResults({ users, changeSearchUsers, submitSearchUsers }) {
             <div className="search-details__results">
               {users.map((user)=>(
                 <Link key={user.id} to={`/search/users/${user.id}`}>
-                <CardUser 
+                <CardUser
                   key={user.id}
                   {...user}
                 />

@@ -18,7 +18,7 @@ import {
   AiFillWarning,
 } from "react-icons/ai";
 import { FiMail, FiPhone, FiExternalLink } from "react-icons/fi";
-import { BiMap, BiLockAlt } from "react-icons/bi";
+import { BiMap } from "react-icons/bi";
 import { BsPen } from "react-icons/bs";
 
 // Style

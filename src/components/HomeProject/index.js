@@ -14,9 +14,9 @@ import ProjectNeeds from "./ProjectNeeds";
 import "./style.scss";
 
 // == Composant
-function HomeProject({ project }) {
+function HomeProject({ project, logged }) {
   return (
-    <div className="project-home__subpage">
+    <div className={`profile__page ${ logged ? 'islog' : ''}`}>
       <div className="project-home__component">
         <ProjectHeader name={project.name} icon={project.icon} />
 

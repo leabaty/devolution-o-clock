@@ -1,26 +1,44 @@
+@use 'src/styles/vars';
+
 .login {
-  padding: 35px;
   background-color: #1a3a58;
   background-image: linear-gradient(0deg, #1a3a58 0%, #12273b 100%);
   background-repeat: no-repeat;
   color: white;
   font-family: "Nunito", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 
   &__forms {
-    margin-top: 20vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
 
-  @media (max-width: 780px) {
-    height: 100%;
+  &__forms .login__line {
+    height: 50vh;
+    width: 5px;
+    background-color: white;
+    border-radius: 15px;
+  }
 
+  @media (max-width: vars.$layout-breakpoint-small) {
+    height: 100%;
     &__forms {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
+      margin: vars.$navbarHeigt 0;
+    }
+    &__forms .login__line {
+      height: 5px;
+      width: 50vw;
+      background-color: white;
+      border-radius: 15px;
+      margin: 2em;
     }
   }
 }

@@ -1,25 +1,24 @@
+@use 'src/styles/vars';
+
 .app {
   //width: 100vw;
   //height: 100vh;
   position: relative;
   box-sizing: border-box;
   background-color: #F9F9F9;
- 
 
-@media (min-width: 780px) {
-  // le margin du menu quand on est logged
-  // ajouter toutes les pages qui sont uniquement logged
-  .app .islog {
-    margin-left: 170px;
-    margin-bottom: 10vh;
+  .islog {
+    margin-left: vars.$navbarWidth;
+    margin-bottom: vars.$footerHeigt;
     min-height: 100vh;
-    background-color: #F9F9F9;
   }
 }
 
-// @media (max-width: 780px) {
-//   .app .islog {
-//     margin-top: 15vh;
-//     margin-bottom: 5vh;
-//   }
+@media (max-width: 780px) {
+  // Quand 780px ou moins, je cible la premiere div .islog (premier enfant de app)
+  // et j'annule le décalage de islog pour recentrer avec un margin auto
+  .app div.islog {
+    margin: 0 auto;
+    margin-top: vars.$navbarHeigt;
+  }
 }
