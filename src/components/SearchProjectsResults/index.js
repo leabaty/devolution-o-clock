@@ -20,10 +20,11 @@ function SearchProjectsResults({
   changeSearchProjects,
   getProjects,
   getUsers,
+  logged
 }) {
   useEffect(getProjects, []);
   useEffect(getUsers, []);
-  
+
   const history = useHistory();
 
   const onChangeSearchProjects = (event) => {
@@ -51,7 +52,7 @@ function SearchProjectsResults({
   };
 
   return (
-    <div className="search__page">
+    <div className={`search__page ${ logged ? 'islog' : ''}`}>
 
       <div className="search__subpage">
 

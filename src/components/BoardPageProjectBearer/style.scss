@@ -1,6 +1,6 @@
 p,
 h3 {
-  padding: 6px;
+  //padding: 6px;
 }
 
 .board {
@@ -28,7 +28,22 @@ h3 {
   &__new-project-card{
     color: white;
     font-size: 1.5em;
+
+    & p {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & svg {
+        margin-right: 1em;
+      }
+    }
+  }
+
+  &__component{
+    display: flex;
+    flex-direction: column;
+    background-color: #F9F9F9;
   }
 }
-
-

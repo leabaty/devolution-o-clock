@@ -1,18 +1,26 @@
+@use 'src/styles/vars';
+
 .signin {
+
     &__component{
-        width: 25em;
-        padding-right: 5em;
-        text-align: left;
+        min-width: 25em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0 2em;
     }
 
     &__title{
         font-size: 30px;
-        margin-bottom: 20px;
+        margin-bottom: 1em;
     }
 
     &__form{
         flex-direction: column;
         align-content: flex-end;
+        display: flex;
+        align-items: center;
     }
 
     &__input{
@@ -36,5 +44,11 @@
         background-color: #0D273F;
         color: white;
         font-family: 'Nunito';
+    }
+
+    @media (max-width: vars.$layout-breakpoint-small) {
+        &__component{
+            margin: 2em;
+        }
     }
 }

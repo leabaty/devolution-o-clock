@@ -44,7 +44,7 @@ function SignUp({
   return (
     <div className="signup__component">
       <h1 className="signup__title">Je crée un compte</h1>
-      <form className="signup_form" onSubmit={onSignUpSubmit}>
+      <form className="signup__form" onSubmit={onSignUpSubmit}>
         <input
           className="signup__input"
           value={firstname}

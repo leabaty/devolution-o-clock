@@ -37,45 +37,6 @@ module.exports = merge(common, {
           },
         ],
       },
-      // SVG Loader - solution 1
-      {
-        test: /\.(png|jp(e*)g|svg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'images/[hash]-[name].[ext]',
-            },
-          },
-        ],
-      },
-
-      // SVGR Loader - solution 2
-      {
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
-      },
-
-
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
-
-
-      // SVG URL Loader - solution 3
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'svg-url-loader',
-            options: {
-              limit: 10000,
-            },
-          },
-        ],
-      },
     ],
   },
 

@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import { CSSTransition } from "react-transition-group";
-import { FaHands, FaBars, FaRegLightbulb, FaUserAlt } from 'react-icons/fa';
-import { MdWeb } from 'react-icons/md';
+import { FaHands, FaBars, FaUserAlt } from 'react-icons/fa';
 import { AiOutlineUser, AiOutlineLogout } from 'react-icons/ai';
-import { FiSearch } from 'react-icons/fi';
+
+import myProjectsIcon from 'src/assets/images/code-white.svg';
+import ideasIcon from 'src/assets/images/idea-white.svg';
+import searchIcon from 'src/assets/images/search-white.svg';
 
 import "./style.scss";
-
-import { ReactComponent as ReactLogo } from 'src/assets/images/idea-white.svg';
 
 function Navbar({ logged, setLogout, cleanLs, cleanLogin }) {
   const [isNavVisible, setNavVisibility] = useState(false);
@@ -77,7 +77,9 @@ function Navbar({ logged, setLogout, cleanLs, cleanLogin }) {
               */}
               <div className="Header__login">
                 <Link to="/login">
-                  <button><AiOutlineUser></AiOutlineUser></button>
+                  <button>
+                    <AiOutlineUser/>
+                  </button>
                 </Link>
               </div>
             </nav>
@@ -93,8 +95,7 @@ function Navbar({ logged, setLogout, cleanLs, cleanLogin }) {
       <header className="Header--logged">
         <div className="Header__logo--logged">
           <Link to="/">
-            {/*  <FaHands className="Header__logo__icon--logged" /> */}
-            <ReactLogo />
+            <FaHands className="Header__logo__icon--logged" />
           </Link>
         </div>
         <CSSTransition
@@ -105,13 +106,13 @@ function Navbar({ logged, setLogout, cleanLs, cleanLogin }) {
         >
           <nav className="Header__nav--logged">
             <Link to="/searchProjects">
-              <FiSearch className="Header__logo__icon--logged" />
+              <img className="Header__logo__icon--logged" src={searchIcon} />
             </Link>
             <Link to="/myProjects">
-              <FaRegLightbulb className="Header__logo__icon--logged" />
+              <img className="Header__logo__icon--logged" src={ideasIcon} />
             </Link>
             <Link to="/myParticipations">
-              <MdWeb className="Header__logo__icon--logged" />
+              <img className="Header__logo__icon--logged" src={myProjectsIcon} />
             </Link>
             <Link to="/profile">
               <FaUserAlt className="Header__logo__icon--logged" />

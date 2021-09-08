@@ -23,7 +23,7 @@
   z-index: 10;
   /* Stick it to the top */
   height: 100%;
-  width: 120px;
+  width: vars.$navbarWidth;
   max-width: 100%;
 
   display: grid;
@@ -101,17 +101,19 @@
 
 .Header__logout button,
 .Header__logout--logged button {
+  margin-top: 2em;
   padding: 10px;
   outline: none;
   border: none;
-  font-size: 20px;
+  font-size: 30px;
   color: #fff;
   font-weight: 600;
   background-color: rgba(255, 0, 0, 0.5);
-  box-shadow: 0px 5px 0px 0px rgba(255, 0, 0, 0.25);
-  border-radius: 10px;
+  //box-shadow: 0px 5px 0px 0px rgba(255, 0, 0, 0.25);
+  border-radius: 50%;
   cursor: pointer;
   transition: 70ms;
+  display: flex;
 
   &:hover svg {
     transform: scale(1.2);
@@ -124,14 +126,15 @@
   padding: 10px;
   outline: none;
   border: none;
-  font-size: 20px;
+  font-size: 30px;
   color: #fff;
   font-weight: 600;
   background-color: rgba(9, 255, 0, 0.5);
-  box-shadow: 0px 5px 0px 0px rgba(9, 255, 0, 0.25);
-  border-radius: 10px;
+  //box-shadow: 0px 5px 0px 0px rgba(9, 255, 0, 0.25);
+  border-radius: 50%;
   cursor: pointer;
   transition: 70ms;
+  display: flex;
 }
 .Header__nav button:active,
 .Header__nav--logged button:active {
