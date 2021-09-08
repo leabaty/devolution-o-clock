@@ -22,8 +22,9 @@ import SearchUsersResult from "src/containers/SearchUsersResult";
 import ProjectForm from "src/containers/ProjectForm";
 import ProjectModify from "src/containers/ProjectModify";
 
-import Error404 from "src/components/Error404";
-import About from "src/components/About";
+import Error404 from "src/containers/Error404";
+import About from "src/containers/About";
+import Charter from "src/containers/Charter";
 import Loading from "./Loading";
 
 import "./style.scss";
@@ -111,6 +112,10 @@ function App({ loading }) {
         <Route path="/about" exact>
             <About />
       </Route>
+
+      <Route path="/charter">
+          <Charter />
+        </Route>
 
         <Route path="*">
           <Error404 />

@@ -23,6 +23,7 @@ const mapStateToProps = (state, ownProps) => ({
   // projectSpecificities: state.projectform.projectSpecificities,
   projectImage: state.projectform.projectImage,
   userData : state.user.dataUser,
+  logged: state.user.logged,
   project: findProject(state.project.list, Number(ownProps.match.params.id)),
   idProject: Number(ownProps.match.params.id)
 });

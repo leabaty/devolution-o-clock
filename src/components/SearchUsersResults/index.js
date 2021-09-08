@@ -14,9 +14,13 @@ import { FiSearch } from "react-icons/fi";
 import "./style.scss";
 
 // == Composant
-function SearchUsersResults({ users, changeSearchUsers, submitSearchUsers, logged }) {
+function SearchUsersResults({ users, changeSearchUsers, submitSearchUsers, logged, getSkills }) {
 
   const history = useHistory();
+
+  const getSkillsWithId = () => {
+    getSkills(user.id)
+  };
 
   const onChangeSearchUsers = (event) => {
     event.preventDefault()
@@ -32,7 +36,6 @@ function SearchUsersResults({ users, changeSearchUsers, submitSearchUsers, logge
     <div className={`search__page ${logged ? 'islog' : ''}`}>
 
       <div className="search__subpage">
-
 
         <div className="search-details__container">
 
@@ -50,10 +53,11 @@ function SearchUsersResults({ users, changeSearchUsers, submitSearchUsers, logge
 
             <div className="search-details__results">
               {users.map((user)=>(
-                <Link key={user.id} to={`/search/users/${user.id}`}>
+                <Link key={user.id} to={`/search/users/${user.id}` }>
                 <CardUser
                   key={user.id}
                   {...user}
+                  onClick={getSkillsWithId}
                 />
                 </Link>
               ))}

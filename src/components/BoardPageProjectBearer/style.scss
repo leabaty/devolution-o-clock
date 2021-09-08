@@ -1,7 +1,7 @@
-p,
-h3 {
-  //padding: 6px;
-}
+// p,
+// h3 {
+//   //padding: 6px;
+// }
 
 .board {
 
@@ -44,6 +44,6 @@ h3 {
   &__component{
     display: flex;
     flex-direction: column;
-    background-color: #F9F9F9;
+    background-color: white;
   }
 }

@@ -3,11 +3,17 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import "./style.scss";
+import devolutionIcon from "src/assets/images/devolution-white.svg";
 
 function HomeDevolution({}) {
   return (
     <header className="header">
       <h1 className="header__title">Devolution</h1>
+      <img
+        className="charter__logo"
+        src={devolutionIcon}
+        alt="logo devolution"
+      />
       <div className="header__description">
         <p>
           Proposez vos projets 📝, trouvez des compétences 💪: Devolution permet la

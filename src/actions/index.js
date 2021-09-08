@@ -31,6 +31,10 @@ export const MODIFY_PROJECT = "MODIFY_PROJECT";
 export const SAVE_ONE_PROJECT = "SAVE_ONE_PROJECT";
 export const EMPTY_PROJECT_FORM = "EMPTY_PROJECT_FORM";
 
+// -- Users
+export const GET_SKILLS_USER = "GET_SKILLS_USER";
+export const SAVE_USER_SKILLS = "SAVE_USER_SKILLS";
+
 // --- ProfilePage
 export const GET_PROFILE_DATA = "GET_PROFILE_DATA";
 export const SAVE_PROFILE_DATA = "SAVE_PROFILE_DATA";
@@ -199,6 +203,18 @@ export const modifyProject = (id, history) => ({
 export const saveOneProject = (project) => ({
   type: SAVE_ONE_PROJECT,
   project,
+});
+
+
+// --- User
+export const getSkillsUser = (value) => ({
+  type: GET_SKILLS_USER,
+  value,
+});
+
+export const saveUserSkills = (userSkills) => ({
+  type: SAVE_USER_SKILLS,
+  userSkills,
 });
 
 // --- ProfilePage

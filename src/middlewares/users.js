@@ -18,6 +18,8 @@ import {
   ADD_SKILL,
   MODIFY_PROFILE_SUBMIT,
   signUpMessage,
+  GET_SKILLS_USER,
+  saveUserSkills, 
 } from "src/actions";
 
 const users = (store) => (next) => (action) => {
@@ -189,6 +191,26 @@ const users = (store) => (next) => (action) => {
           const actionSaveUserData = saveUsers(Users);
           store.dispatch(actionSaveUserData);
           action.value.push("/search/users");
+        })
+        .catch((error) => console.log(error));
+      break;
+    }
+
+    case GET_SKILLS_USER: {
+      const token = localStorage.getItem("token");
+      instance({
+        method: "GET",
+        url: `/user/${action.value}/skills`,
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          const userSkills = response.data.users_skills;
+          console.log("User Skills dans le MW", userSkills)
+          
+          const actionSaveUserSkills = saveUserSkills(userSkills);
+          store.dispatch(actionSaveUserSkills);
         })
         .catch((error) => console.log(error));
       break;

@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import { CSSTransition } from "react-transition-group";
-import { FaHands, FaBars, FaUserAlt } from 'react-icons/fa';
-import { AiOutlineUser, AiOutlineLogout } from 'react-icons/ai';
+import { FaHands, FaBars, FaUserAlt } from "react-icons/fa";
+import { AiOutlineUser, AiOutlineLogout } from "react-icons/ai";
 
-import myProjectsIcon from 'src/assets/images/code-white.svg';
-import ideasIcon from 'src/assets/images/idea-white.svg';
-import searchIcon from 'src/assets/images/search-white.svg';
+import myProjectsIcon from "src/assets/images/code-white.svg";
+import ideasIcon from "src/assets/images/idea-white.svg";
+import searchIcon from "src/assets/images/search-white.svg";
+import devolutionIcon from "src/assets/images/devolution-white.svg";
 
 import "./style.scss";
 
@@ -59,7 +60,8 @@ function Navbar({ logged, setLogout, cleanLs, cleanLogin }) {
       <header className="Header">
         <div className="Header__logo">
           <Link to="/">
-            <FaHands className="Header__logo__icon--logged" />
+            <img className="Header__logo__icon--logged" src={devolutionIcon} />
+            {/* <FaHands className="Header__logo__icon--logged" /> */}
           </Link>
         </div>
         <CSSTransition
@@ -70,7 +72,7 @@ function Navbar({ logged, setLogout, cleanLs, cleanLogin }) {
         >
           <>
             <nav className="Header__nav">
-            {/*
+              {/*
               <Link to="/">Home</Link>
               <Link to="/">Oclock</Link>
               <Link to="/">About</Link>
@@ -94,8 +96,9 @@ function Navbar({ logged, setLogout, cleanLs, cleanLogin }) {
     return (
       <header className="Header--logged">
         <div className="Header__logo--logged">
-          <Link to="/">
-            <FaHands className="Header__logo__icon--logged" />
+          <Link to="/charter">
+            {/* <FaHands className="Header__logo__icon--logged" /> */}
+            <img className="Header__logo__icon--logged" src={devolutionIcon} />
           </Link>
         </div>
         <CSSTransition
@@ -112,10 +115,13 @@ function Navbar({ logged, setLogout, cleanLs, cleanLogin }) {
               <img className="Header__logo__icon--logged" src={ideasIcon} />
             </Link>
             <Link to="/myParticipations">
-              <img className="Header__logo__icon--logged" src={myProjectsIcon} />
+              <img
+                className="Header__logo__icon--logged"
+                src={myProjectsIcon}
+              />
             </Link>
             <Link to="/profile">
-              <FaUserAlt className="Header__logo__icon--logged" />
+              <AiOutlineUser className="Header__logo__icon--logged" />
             </Link>
             <div className="Header__logout--logged">
               <Link to="/">
