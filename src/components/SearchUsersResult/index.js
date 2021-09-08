@@ -13,9 +13,6 @@ import ProfileCompetencies from "./ProfileCompetencies";
 import ProfileBio from "./ProfileBio";
 import ProfilePortfolio from "./ProfilePortfolio";
 
-// Icons
-import { FiArrowLeftCircle } from "react-icons/fi";
-
 // Style
 import "./style.scss";
 
@@ -53,7 +50,7 @@ function SearchUsersResult({ user }) {
 
           <ProfileCityLinks city={user.city} />
 
-          <ProfileCompetencies user={user} />
+          <ProfileCompetencies /*userskills={skills}*/ />
 
           <ProfileBio bio={user.description} />
 
