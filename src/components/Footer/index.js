@@ -15,7 +15,9 @@ function Footer(props) {
       <Link to='/about'>
       <p className="footer__link footer__link-left">A propos </p>
       </Link>
+      <Link to='/charter'>
       <p className="footer__link">Charte Devolution </p>
+      </Link>
       <p className="footer__link">Mentions Légales</p>
 
       </div>
