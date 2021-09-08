@@ -259,15 +259,14 @@ function ProfilePageForm({
           </div>
         </div>
 
-        <div className="profile-form__competencies element-profile-form">
-          <h3 className="profile-form__category-title">Mes compétences</h3>
+  
           <ProfileCompetencies
             userData={userData}
             skills={skills}
             handleDeleteSkill={handleDeleteSkill}
             handleAddSkill={handleAddSkill}
           />
-        </div>
+       
 
         <div className="profile-form__bio element-profile-form">
           <h3 className="profile-form__category-title">Ma bio</h3>
