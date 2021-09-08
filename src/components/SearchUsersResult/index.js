@@ -1,11 +1,10 @@
 /* eslint-disable arrow-body-style */
 // == Import : npm
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from 'react-router-dom';
 
 // Composants
-import Menu from "src/components/Menu";
 import ProfileStatus from "./ProfileStatus";
 import ProfileContact from "./ProfileContact";
 import ProfileCityLinks from "./ProfileCityLinks";
@@ -17,13 +16,20 @@ import ProfilePortfolio from "./ProfilePortfolio";
 import "./style.scss";
 
 // == Composant
-function SearchUsersResult({ user }) {
+function SearchUsersResult({ user, logged, getSkills, userSkills }) {
+
+  console.log(userSkills)
+
+  const getSkillsWithId = () => {
+    getSkills(user.id)
+  };
+
+  useEffect(getSkillsWithId, []);
+
 
   return (
+    <div className={`search__page ${logged ? 'islog' : ''}`}>
     <div className="user__page">
-      <div className="user__menu">
-        <Menu />
-      </div>
 
       <div className="user__subpage">
 
@@ -50,7 +56,7 @@ function SearchUsersResult({ user }) {
 
           <ProfileCityLinks city={user.city} />
 
-          <ProfileCompetencies /*userskills={skills}*/ />
+          <ProfileCompetencies userskills={userSkills} />
 
           <ProfileBio bio={user.description} />
 
@@ -58,6 +64,7 @@ function SearchUsersResult({ user }) {
 
         </div>
       </div>
+    </div>
     </div>
   );
 }

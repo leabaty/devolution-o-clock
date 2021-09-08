@@ -32,10 +32,13 @@ function Login({
   signInEmail,
   signInPassword,
   message,
-  logged
+  logged,
 }) {
   return (
-    <div className={`login ${logged ? 'islog' : ''}`}>
+    <div className={`login ${logged ? "islog" : ""}`}>
+
+      <div className="login__signup-message">{message ? <p>{message}</p> : null}</div>
+
       <div className="login__forms">
         <SignIn
           onFormSignInSubmit={formSignInSubmit}
@@ -44,7 +47,7 @@ function Login({
           signInEmail={signInEmail}
           signInPassword={signInPassword}
         />
-        <div className="login__line"/>
+        <div className="login__line" />
         <SignUp
           onChangeInputFirstnameValue={changeInputFirstnameValue}
           onChangeInputLastnameValue={changeInputLastnameValue}
@@ -61,8 +64,6 @@ function Login({
           confirmPassword={confirmPassword}
         />
       </div>
-
-      {message ? <p>{message}</p> : null}
     </div>
   );
 }

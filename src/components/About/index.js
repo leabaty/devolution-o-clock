@@ -6,9 +6,9 @@ import "./style.scss";
 import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa";
 
-function About() {
+function About({logged}) {
   return (
-    <header className="about">
+    <div className={`about ${logged ? "islog" : ""}`}>
       <h1 className="about__title">L'équipe Devolution</h1>
 
       <div className="about__profiles">
@@ -101,7 +101,7 @@ function About() {
           </div>
         </div>
       </div>
-    </header>
+    </div>
   );
 }
 

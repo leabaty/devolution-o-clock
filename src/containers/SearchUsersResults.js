@@ -7,6 +7,7 @@ import { changeUserValue, getSearchUser } from "src/actions";
 const mapStateToProps = (state) => ({
   users: state.search.users,
   logged: state.user.logged,
+  userSkills: state.skills.userSkills
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -18,6 +19,7 @@ const mapDispatchToProps = (dispatch) => ({
     const action = getSearchUser(value);
     dispatch(action);
   },
+
 
 });
 

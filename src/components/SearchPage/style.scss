@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 p,
 h3 {
   padding: 6px;
@@ -42,6 +44,21 @@ h3 {
     display: flex;
     flex-direction: row;
 
+  }
+
+  @media (max-width: vars.$layout-breakpoint-small) {
+    height: 100%;
+
+    &__component {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__subpage {
+      margin-bottom: vars.$navbarHeigt;
+    }
   }
 
   &__subtitle {
@@ -97,6 +114,13 @@ h3 {
 
   &__user {
     border-left: lightgrey 1px solid;
+  }
+
+  @media (max-width: vars.$layout-breakpoint-small) {
+    &__user {
+      border-left: none;
+      border-top: lightgrey 1px solid;
+    }
   }
 
   &__button-all{
